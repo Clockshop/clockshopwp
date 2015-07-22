@@ -21,9 +21,6 @@ function enqueue_scripts_method() {
 	$flexsliderjs = get_template_directory_uri() . '/js/jquery.flexslider.js';
 	wp_register_script('flexsliderjs',$flexsliderjs, false, $version);
 
-	$waypointsjs = get_template_directory_uri() . '/js/waypoints.js';
-	wp_register_script('waypointsjs',$waypointsjs, false, $version);
-
 	$mainjs = get_template_directory_uri() . '/js/main.js';
 	wp_register_script('mainjs',$mainjs, false, $version);
 
@@ -55,15 +52,11 @@ function enqueue_scripts_method() {
 
 	// Enqueue
 
-	if( is_page_template('page-home.php') ):
+	wp_enqueue_script( 'flexsliderjs',array('jquery'));
+	wp_enqueue_script( 'mainjs',array('jquery','flexsliderjs'));
 
-		wp_enqueue_script( 'waypointsjs',array('jquery'));
-		wp_enqueue_script( 'flexsliderjs',array('jquery'));
-		wp_enqueue_script( 'mainjs',array('jquery','flexsliderjs','waypointsjs'));
+	wp_enqueue_style( 'flexslidercss');
 
-		wp_enqueue_style( 'flexslidercss');
-
-	endif;
 
 	if( is_page('contact') ):
 		wp_enqueue_script( 'googlemapsapi');

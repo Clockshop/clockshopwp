@@ -19,7 +19,7 @@ h2 { font-weight: 100; font-size: 30px; text-transform: uppercase; color: black;
 h2 { /*year*/ font-size: 150px; margin-top: 40px; margin-bottom: 0px; } /* #infopage h2, #contribute h2, #aboutpage h2 */
 h2.mobile { font-size: 30px; }
 
-#archive h2{ font-size: 145px; margin-bottom: 10px;  }
+#archive h2{ font-size: 145px; margin-bottom: 10px; margin-top: 1em;  }
 #archive .smaller h2{ font-size: 110px; line-height: 1em; }
 
 h3 { font-weight: 100; font-size: 25px; }
@@ -36,7 +36,12 @@ h5 {    /*date*/ margin: 0; font-weight: 100;  } /* #infopage h5, #contribute h5
 ul { list-style: none; margin: 0;  padding: 0; }
 li { margin: 0; padding: 0; }
 
-#uparrow{ display: none; position: fixed; z-index: 3000; top: 0; right: 0; margin-top: 20px; margin-right: 20px; }
+hr { border: none; border-top: 1px solid #000; margin: 2em 0; }
+
+
+img { max-width: 100%;}
+
+#uparrow{ position: fixed; z-index: 3000; top: 0; right: 0; margin-top: 20px; margin-right: 20px; }
 
 /* Index Mobile Styling */
 
@@ -150,7 +155,7 @@ nav li a:hover{ border-top: 6px solid black; padding-top: 4px; color: black; }
 
 /* next event */
 
-#nextevent{ color: black; overflow: hidden; padding: 20px 30px 5px 30px; width: 280px; margin: 0 auto; background-color: #ffd051; margin-bottom: 15px; }
+#nextevent{ color: black; overflow: hidden; padding: 20px; margin: 0 21px; background-color: #ffd051; margin-bottom: 15px; }
 
 #nextevent a{ color: black; }
 #nextevent a:hover{ color: white; }
@@ -161,7 +166,7 @@ nav li a:hover{ border-top: 6px solid black; padding-top: 4px; color: black; }
 
 #nextevent #month{ font-size: 15px; padding: 2px; }
 #nextevent #time{ margin-top: -12px; padding-bottom:20px; }
-#nextevent #text{ text-align: center; float: right; width: 150px; font-weight: 100; font-size: 20px; margin-top: -20px; margin-bottom: 0; }
+#nextevent #text{ text-align: center; float: right; font-weight: 100; font-size: 20px; }
 
 #home h1{ font-size: 40px; margin-top: 120px; text-align: center; color: #ffd051; line-height: 26px; font-weight: 400;  }
 
