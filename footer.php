@@ -10,6 +10,8 @@
 	</div><!-- mobilewrapper -->
 <?php endif; ?>
 
+<a href="#top" id="uparrow"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/uparrow.png"></a>
+
 <?php wp_footer(); ?>
 
 </body>
