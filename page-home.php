@@ -7,7 +7,7 @@ get_header(); ?>
     <div class="flexslider desktop">
       <ol class="slides">
 		<?php foreach( $images as $image ): ?>
-        	<li> <img src="<?php echo $image['url']; ?>"></li> 
+        	<li style="background: url(<?php echo $image['url']; ?>) center; background-size: cover;"></li> 
     	<?php endforeach; ?>
       </ol>
     </div>
