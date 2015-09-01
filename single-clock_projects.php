@@ -11,6 +11,7 @@
 	<?php while (have_posts()) : the_post(); ?>
 		<div id="container">
 			<?php the_content(); ?>
+			<?php if ( !is_single('bowtie') ) clock_p2p_the_related(); ?>
 		</div>
 	<?php endwhile; ?>
 <?php endif; ?>
