@@ -2,7 +2,7 @@
 
 function enqueue_scripts_method() {
 
-	$version = "b";
+	$version = "j";
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -24,14 +24,8 @@ function enqueue_scripts_method() {
 	$mainjs = get_template_directory_uri() . '/js/main.js';
 	wp_register_script('mainjs',$mainjs, false, $version);
 
-	$googlemapsapi = 'http://maps.googleapis.com/maps/api/js?sensor=false';
-	wp_register_script('googlemapsapi',$googlemapsapi, false);
-
-	$infoboxjs = get_template_directory_uri() . '/js/infobox.js';
-	wp_register_script('infoboxjs',$infoboxjs, false);
-	
-	$mapjs = get_template_directory_uri() . '/js/map.js';
-	wp_register_script('mapjs',$mapjs, false, $version);
+	$projectslandingjs = get_template_directory_uri() . '/js/projectslanding.js';
+	wp_register_script('projectslandingjs',$projectslandingjs, false, $version);
 
 	// Define CSS
 
@@ -57,11 +51,8 @@ function enqueue_scripts_method() {
 
 	wp_enqueue_style( 'flexslidercss');
 
-
-	if( is_page('contact') ):
-		wp_enqueue_script( 'googlemapsapi');
-		wp_enqueue_script( 'infoboxjs',array('googlemapsapi'));
-		wp_enqueue_script( 'mapjs',array('jquery','googlemapsapi','infoboxjs'));
+	if( is_page_template('page-pgrid.php') ):
+		wp_enqueue_script( 'projectslandingjs',array('jquery'));
 	endif;
 
 	wp_enqueue_style( 'ralewaycss');
