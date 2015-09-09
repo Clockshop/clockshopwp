@@ -32,18 +32,10 @@ $event_id = get_the_ID();
 		<h4><?php echo tribe_events_event_schedule_details( $event_id ); ?></h4>
 
 		<?php 
-			do_action( 'tribe_events_single_event_before_the_content' );
-			the_content();
-			do_action( 'tribe_events_single_event_after_the_content' ); 
-		?>
-
-		<?php 
-			do_action( 'tribe_events_single_event_before_the_meta' );
 			tribe_get_template_part( 'modules/meta' );
-			do_action( 'tribe_events_single_event_after_the_meta' ); 
+			the_content();
 		?>
 
-		<?php clock_p2p_the_related(); ?>
 
 	<?php endwhile; ?>
 

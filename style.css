@@ -14,7 +14,7 @@ a:hover{ color: #ffd051; outline: 0;  }
 
 h1 { font-weight: 100; font-size: 200px; margin: 20px 0 0 0; line-height: 1; word-break:break-all;}
 
-h2 { font-weight: 100; font-size: 30px; text-transform: uppercase; color: black; }
+h2 { font-weight: 100; font-size: 30px; color: black; }
 h2 { /*year*/ font-size: 150px; margin-top: 40px; margin-bottom: 0px; } 
 h2.mobile { font-size: 30px; }
 
@@ -64,11 +64,15 @@ background : url(images/whitelogo.png) no-repeat 0 0; }
 
 .flex-direction-nav{ display: none; }
 .tag { position: fixed; bottom: 0; right: 0; margin: 0 170px 20px 20px; color: white; text-shadow: 1px 1px 5px rgba(0, 0, 0, 1); margin-left: 250px; }
-#container{ max-width: 700px; width: 70%; margin: 0 auto; padding: 20px; }	
+
+#container{ max-width: 700px; width: 70%; margin: 0 auto; padding: 20px 20px 5em 20px; }	
+
 #home .subscribe{ color: white; }
 
 
 /* Nav */
+
+.topnav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
 
 nav{ overflow: hidden; margin: 0; }
 
@@ -155,10 +159,10 @@ a#nexteventbox:active { outline: none; }
 -webkit-transform: rotate(315deg); /* Chrome, Safari, Opera */
 text-transform: uppercase; }
 
-#nexteventbox #dateline{ text-align: right; }
+#nexteventbox #dateline{ text-align: center; padding-left: .5em; }
 
 
-.arrowstyle{ font-family: 'PT Sans Narrow', sans-serif; font-size: 30px; }
+.arrowstyle{ font-family: 'PT Sans Narrow', sans-serif; font-size: 25px; padding-left: .25em; }
 
 
 a#nexteventbox.largedate{ width: 120px; height: 130px; }
@@ -275,43 +279,34 @@ a#nexteventbox.largedate{ width: 120px; height: 130px; }
 
 .projects { width: 700px; margin: auto; padding-top: 3em; line-height: 1;}
 
-.projectstoggle { padding: 3em 0 5em 0; text-align: center; font-weight: 100; font-size: 16px; }
+.projectstoggle { padding: 30px 0 50px 0; text-align: center; font-weight: 100; font-size: 27px; }
 .projectstoggle ul { list-style: none; margin: 0; padding: 0; }
-.projectstoggle li { margin: 0 10px; padding: 0; display: inline-block; cursor: pointer; }
-.projectstoggle li:hover { text-decoration: line-through;  }
-.projectstoggle li.hovering:hover { text-decoration: none; }
+.projectstoggle li { margin: 0 10px; padding: 3px; display: inline-block; cursor: pointer; border-bottom: 6px solid black; border-top: 6px solid #fff;}
+.projectstoggle li:hover { border-top: 6px solid black; }
+.projectstoggle li.off { border-bottom: 6px solid #fff; }
 
-.projectstoggle li.off { text-decoration: line-through; color: #ccc; }
-.projectstoggle li.off:hover { text-decoration: none;  }
-.projectstoggle li.off.hovering:hover { text-decoration: line-through; }
+
 
 .project { padding-bottom: 5em; }
-.project h2 { font-size: 110px; font-weight: 200; margin: 12px 0; }
+.project h2 { font-size: 100px; font-weight: 200; margin: 12px 0; text-transform: none; }
 
+.related h3 { font-size: 45px; margin: 1em 0 .5em 0; }
+.related h4 { margin: .75em 0 0 0; line-height: 1.2; }
+.related p { margin: .5em 0 3em 0; }
 
+/* Events */
 
-/* Archive */
-
-.archive { width: 700px; margin: auto; padding: 3em 0; line-height: 1;}
-.archive h2 { font-size: 90px; font-weight: 100; margin: .5em 0; }
-.archive h3 { font-size: 45px;  margin: .5em 0; }
-.archive h3 a { font-weight: 200; }
-
-
-/* Bowtie */
-
-.bowtie { width: 700px; margin: auto; padding: 3em 0; line-height: 1;}
-.bowtie h2 { font-size: 90px; font-weight: 100; margin: .5em 0; }
-.bowtie h3 { font-size: 45px;  margin: .5em 0; }
-.bowtie h3 a { font-weight: 200; }
-
-
-/* Event Single */
+#tribe-events-bar { padding-top: 3em; }
 
 .eventsingle h2 { font-size: 90px; line-height: 1; margin-bottom: .5em; }
 .eventsingle h3 { font-size: 45px; line-height: 1; margin-bottom: .5em; }
+.eventsingle h4 { margin-top: 1.5em; line-height: 1; }
 
 a.tribe-events-ical, a.tribe-events-gcal { display: none !important; }
 
 h2.tribe-events-page-title { font-weight: 200 !important; }
 .tribe-events-list-separator-month { font-weight: 200 !important; }
+
+.tribe-events-event-meta address.tribe-events-address, .tribe-events-list .tribe-events-venue-details { font-style: normal !important; }
+
+
