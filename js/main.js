@@ -21,14 +21,16 @@
 
 		$('body').addClass('js');
 
-
-		var pagetitleTop = 0;
+		var adminbarheight = 0;
 
 		if ($('#wpadminbar').length != 0) {
 			var adminbarheight = $('#wpadminbar').outerHeight();
 			$('#uparrow').css('top', adminbarheight + 'px');
-
+			$('.wpadminbarspacer').css({'height': adminbarheight + 'px'});
 		}
+
+		var topTitle = $('.topnav').outerHeight();
+		$('.layoutspacer').css({'height': topTitle + 'px'});
 
 		$("#uparrow").hide();
 

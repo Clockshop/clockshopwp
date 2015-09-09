@@ -25,12 +25,16 @@
 
 </head>
 <body <?php if ( is_front_page() ) echo 'id="home"'; ?> >
-	<?php if ( is_front_page() ) : ?>
-		<div id="mobilewrapper">
-	<?php endif; ?>
 
-    <nav> 
-        <a href="<?php echo get_site_url(); ?>" id="main" class="logo"></a>
-        <a href="<?php echo get_site_url(); ?>" id="type" class="logo" ></a>
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-    </nav>
+   <nav class="topnav"> 
+
+	<div class="wpadminbarspacer"></div>
+
+       <a href="<?php echo get_site_url(); ?>" id="main" class="logo"></a>
+       <a href="<?php echo get_site_url(); ?>" id="type" class="logo" ></a>
+	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+   </nav>
+
+<?php if ( !is_front_page() ) : ?>
+	<div class="layoutspacer"></div>
+<?php endif; ?>

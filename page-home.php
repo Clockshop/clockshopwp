@@ -25,7 +25,7 @@ foreach( $events as $post ) : ?>
 
 <a id="nexteventbox" class="largedate" href="<?php the_permalink(); ?>">
 	<p id="nextline">NEXT:</p>
-	<p id="dateline"><?php tribe_get_start_date( null, false ); ?><span class="arrowstyle">></span></p>
+	<p id="dateline"><?php echo tribe_get_start_date( $post->ID, true, 'M j' ); ?><span class="arrowstyle">></span></p>
 </a>
 
 <?php endforeach; wp_reset_postdata();?>

@@ -7,8 +7,9 @@ get_header(); ?>
 	<?php if( have_rows('projects') ): ?>
 
 		<div class="projectstoggle">
-			<li id="commissionstoggle">Commissions</li>
-			<li id="seriestoggle">Series</li>
+			<li id="alltoggle">All</li>
+			<li id="commissionstoggle" class="off">Artworks</li>
+			<li id="seriestoggle" class="off">Series</li>
 		</div>
 
 		<?php while ( have_rows('projects') ) : the_row(); ?>

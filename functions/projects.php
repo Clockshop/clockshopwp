@@ -34,43 +34,43 @@ add_action( 'init', 'create_clock_project' );
 
 
 // Taxonomy
-
-function create_clock_project_categories() {
-
-	$labels = array(
-		'name'              => _x( 'Project Categories', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Project Category', 'taxonomy singular name' ),
-		'search_items'      => __( 'Search Project Categories' ),
-		'all_items'         => __( 'All Categories' ),
-		'parent_item'       => __( 'Parent Category' ),
-		'parent_item_colon' => __( 'Parent Category:' ),
-		'edit_item'         => __( 'Edit Project Category' ),
-		'update_item'       => __( 'Update Project Category' ),
-		'add_new_item'      => __( 'Add New Project Category' ),
-		'new_item_name'     => __( 'New Category Name' ),
-		'menu_name'         => __( 'Categories' ),
-	);
-
-	$args = array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'projects'),
-	);
-
-	register_taxonomy( 'clock_project_categories', array( 'clock_projects' ), $args );
-
-}
-
-add_action( 'init', 'create_clock_project_categories', 0 );
-
-
-function date_compare($a, $b) {
-    $t1 = strtotime($a['startDate']);
-    $t2 = strtotime($b['startDate']);
-    return $t1 - $t2;
-}
+// 
+// function create_clock_project_categories() {
+// 
+// 	$labels = array(
+// 		'name'              => _x( 'Project Categories', 'taxonomy general name' ),
+// 		'singular_name'     => _x( 'Project Category', 'taxonomy singular name' ),
+// 		'search_items'      => __( 'Search Project Categories' ),
+// 		'all_items'         => __( 'All Categories' ),
+// 		'parent_item'       => __( 'Parent Category' ),
+// 		'parent_item_colon' => __( 'Parent Category:' ),
+// 		'edit_item'         => __( 'Edit Project Category' ),
+// 		'update_item'       => __( 'Update Project Category' ),
+// 		'add_new_item'      => __( 'Add New Project Category' ),
+// 		'new_item_name'     => __( 'New Category Name' ),
+// 		'menu_name'         => __( 'Categories' ),
+// 	);
+// 
+// 	$args = array(
+// 		'hierarchical'      => true,
+// 		'labels'            => $labels,
+// 		'show_ui'           => true,
+// 		'show_admin_column' => true,
+// 		'query_var'         => true,
+// 		'rewrite'           => array( 'slug' => 'projects'),
+// 	);
+// 
+// 	register_taxonomy( 'clock_project_categories', array( 'clock_projects' ), $args );
+// 
+// }
+// 
+// add_action( 'init', 'create_clock_project_categories', 0 );
+// 
+// 
+// function date_compare($a, $b) {
+//     $t1 = strtotime($a['startDate']);
+//     $t2 = strtotime($b['startDate']);
+//     return $t1 - $t2;
+// }
 
 ?>
