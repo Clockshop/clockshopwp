@@ -10,8 +10,6 @@
 			echo ' &ndash; ' . sprintf( __( 'Page %s' ), max( $paged, $page ) );
 		?></title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon-180.png" />
 	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon-152.png" />
@@ -27,12 +25,16 @@
 
 </head>
 <body <?php if ( is_front_page() ) echo 'id="home"'; ?> >
-	<?php if ( is_front_page() ) : ?>
-		<div id="mobilewrapper">
-	<?php endif; ?>
 
-    <nav> 
-        <a href="<?php echo get_site_url(); ?>" id="main" class="logo"></a>
-        <a href="<?php echo get_site_url(); ?>" id="type" class="logo" ></a>
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-    </nav>
+   <nav class="topnav"> 
+
+	<div class="wpadminbarspacer"></div>
+
+       <a href="<?php echo get_site_url(); ?>" id="main" class="logo"></a>
+       <a href="<?php echo get_site_url(); ?>" id="type" class="logo" ></a>
+	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+   </nav>
+
+<?php if ( !is_front_page() ) : ?>
+	<div class="layoutspacer"></div>
+<?php endif; ?>
