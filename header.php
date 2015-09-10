@@ -24,16 +24,15 @@
 	<?php wp_head(); ?>
 
 </head>
-<body <?php if ( is_front_page() ) echo 'id="home"'; ?> >
+<body <?php if ( is_front_page() ) echo 'class="home"'; ?> >
 
-   <nav class="topnav"> 
+    <a href="<?php echo get_site_url(); ?>" class="logo"><span>Clockshop</span></a>
+    <a href="<?php echo get_site_url(); ?>" class="logotype"></a>
 
+   <nav> 
 	<div class="wpadminbarspacer"></div>
-
-       <a href="<?php echo get_site_url(); ?>" id="main" class="logo"></a>
-       <a href="<?php echo get_site_url(); ?>" id="type" class="logo" ></a>
-	<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-   </nav>
+	<div class="topnav"><?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?></div>
+ </nav>
 
 <?php if ( !is_front_page() ) : ?>
 	<div class="layoutspacer"></div>

@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
-		<div id="container">
+		<article>
 			<?php the_content(); ?>
 
 			<?php 
@@ -46,19 +46,18 @@
 
 						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 
-						<p><?php echo tribe_events_event_schedule_details( $event_id ); ?></p>
+						<p class="date"><?php echo tribe_events_event_schedule_details( $event_id ); ?></p>
 
 						<?php 
 					endforeach;
 
 				endif;
 
-				wp_reset_postdata();
+				wp_reset_postdata(); ?>
 
-				echo '</div>';
+			</article>
 
-			endif;
-			?>
+		<?php endif; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
 <?php get_footer(); ?>

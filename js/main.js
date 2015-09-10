@@ -52,13 +52,20 @@
 
 
 	});
-	
+
+
 	$(window).load(function() {
-		$('.flexslider').flexslider();
+
+		$('.flexslider').flexslider({            
+		    controlNav: false,
+		    directionNav: false
+		});
+
 	});
 
+
 	$(window).scroll(function() {
-//		var viewportHeight = $(window).height();
+
 		var scrolltop = $(window).scrollTop();
 
 		if ( scrolltop > 1000 ) {
@@ -66,6 +73,7 @@
 		} else {
 			hideToplink();
 		}
+
 	});
 
 })(jQuery);

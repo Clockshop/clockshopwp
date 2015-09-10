@@ -5,7 +5,7 @@
 get_header(); ?>
 
 <?php $images = get_field('gallery'); if( $images ): ?>
-	<div class="flexslider desktop">
+	<div class="flexslider">
 		<ol class="slides">
 		<?php foreach( $images as $image ): ?>
         	<li style="background: url(<?php echo $image['url']; ?>) center; background-size: cover;"></li> 
@@ -23,10 +23,12 @@ $events = tribe_get_events(array(
 
 foreach( $events as $post ) : ?>
 
-<a id="nexteventbox" class="largedate" href="<?php the_permalink(); ?>">
-	<p id="nextline">NEXT:</p>
-	<p id="dateline"><?php echo tribe_get_start_date( $post->ID, true, 'M j' ); ?><span class="arrowstyle">></span></p>
-</a>
+<div class="nextevent">
+	<a href="<?php the_permalink(); ?>">
+		<p>Next: <br /><?php echo tribe_get_start_date( $post->ID, true, 'M j' ); ?><span class="arrow"></span></p>
+		<span class="box"></span>
+	</a>
+</div>
 
 <?php endforeach; wp_reset_postdata();?>
 
