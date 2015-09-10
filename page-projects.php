@@ -4,10 +4,11 @@
 
 get_header(); ?>
 	<?php if (have_posts()) : ?>
-		<div id="container">
-			<?php while (have_posts()) : the_post(); ?>
-				<?php the_content(); ?>
-			<?php endwhile; ?>
-		</div>
+		<article>
+			<?php while (have_posts()) : 
+				the_post();
+				the_content();
+			endwhile; ?>
+		</article>
 	<?php endif; ?>
 <?php get_footer(); ?>

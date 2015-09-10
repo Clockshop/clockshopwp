@@ -3,7 +3,7 @@
 /* Template Name: Projects */ 
 
 get_header(); ?>
-	<div class="projects">
+<article>
 	<?php if( have_rows('projects') ): ?>
 
 		<div class="projectstoggle">
@@ -13,7 +13,9 @@ get_header(); ?>
 		</div>
 
 		<?php while ( have_rows('projects') ) : the_row(); ?>
+
 			<?php
+
 				$project_object = get_sub_field('project_object');
 				$project_title = $project_object->post_title;
 				$project_subtitle = $project_object->post_excerpt;
@@ -31,20 +33,21 @@ get_header(); ?>
 
 			?>
 
-					<div class="project <?php echo $tags; ?>">
+			<div class="project <?php echo $tags; ?>">
 
-						<?php if ( $project_image ) : ?>
-							<a href="<?php echo $project_url; ?>"><?php echo $project_image; ?></a>
-						<?php endif; ?>
+				<?php if ( $project_image ) : ?>
+					<a href="<?php echo $project_url; ?>"><?php echo $project_image; ?></a>
+				<?php endif; ?>
 
-						<h2><a href="<?php echo $project_url; ?>"><?php echo $project_title; ?></a></h2>
+				<h2><a href="<?php echo $project_url; ?>"><?php echo $project_title; ?></a></h2>
 
-						<?php if ( $project_subtitle ) : ?>
-							<p><?php echo $project_subtitle; ?></p>
-						<?php endif; ?>
+				<?php if ( $project_subtitle ) : ?>
+					<p><?php echo $project_subtitle; ?></p>
+				<?php endif; ?>
 
-					</div>
-			<?php endwhile; ?>
-		<?php endif; ?>
-	</div>
+			</div>
+
+		<?php endwhile; ?>
+	<?php endif; ?>
+</article>
 <?php get_footer(); ?>
