@@ -26,7 +26,7 @@
 </head>
 <body <?php if ( is_front_page() ) echo 'class="home"'; ?> >
 
-    <a href="<?php echo get_site_url(); ?>" class="logo"><span>Clockshop</span></a>
+    <h1><a href="<?php echo get_site_url(); ?>" class="logo"><span>Clockshop</span></a></h1>
     <a href="<?php echo get_site_url(); ?>" class="logotype"></a>
 
    <nav> 
