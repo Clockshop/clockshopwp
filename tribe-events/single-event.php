@@ -29,7 +29,7 @@ $event_id = get_the_ID();
 
 		<?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
 
-		<h4><?php echo tribe_events_event_schedule_details( $event_id ); ?></h4>
+		<h3><?php echo spellerberg_sp_date($event_id); ?></h3>
 
 		<?php 
 			tribe_get_template_part( 'modules/meta' );
