@@ -14,8 +14,6 @@
 
 			the_content();
 
-
-
 				/* Related Projects */
 
 				$related_projects = get_field('related_projects');

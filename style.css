@@ -100,6 +100,8 @@ nav .subscribe a:after {  font-family: "Genericons"; content: '\f410'; -webkit-f
 .relatedevents h4 { margin: 20px 0 0 0; }
 .relatedprojects h4 { margin: 20px 0 48px 0; }
 
+.relatedlinks h3 { margin: 20px 0 0 0; }
+
 p.date { margin: 10px 0 48px 0; }
 
 /* Events */
@@ -114,3 +116,6 @@ h2.tribe-events-page-title { font-weight: 200 !important; }
 
 .tribe-events-event-meta address.tribe-events-address { font-style: normal !important; }
 .tribe-events-list .tribe-events-venue-details { font-style: normal !important; }
+
+#rsvp a { padding: 3px 20px 3px 5px; margin: 12px 10px 0 0; background : url(images/check.png) no-repeat calc(100% - 5px) center; border: 1px solid #000; }
+#rsvp a:hover { color:  #ffd051; border: 1px solid #ffd051; background : url(images/checkyellow.png) no-repeat calc(100% - 5px) center; }
