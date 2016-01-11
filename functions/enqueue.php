@@ -2,7 +2,7 @@
 
 function enqueue_scripts_method() {
 
-	$version = "f";
+	$version = "k";
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -51,7 +51,7 @@ function enqueue_scripts_method() {
 
 	wp_enqueue_style( 'flexslidercss');
 
-	if( is_page_template('page-pgrid.php') ):
+	if( is_page_template('page-projects.php') ):
 		wp_enqueue_script( 'projectslandingjs',array('jquery'));
 	endif;
 

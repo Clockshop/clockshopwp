@@ -2,6 +2,17 @@
 
 	var toplinkVisible = false;
 
+	function vmsAdjustments() {
+
+		var hidevms = Cookies.get('hidevms');
+
+		if ( typeof hidevms == 'undefined' ) {
+			$('body').addClass('withvms');
+		}
+		
+		
+	}
+
 	function showToplink() {
 		if ( toplinkVisible == false ) {
 			toplinkVisible = true;
@@ -20,6 +31,8 @@
 	function setupLayout() {
 
 		$('body').addClass('js');
+
+		vmsAdjustments();
 
 		var adminbarheight = 0;
 
