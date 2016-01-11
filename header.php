@@ -24,7 +24,13 @@
 	<?php wp_head(); ?>
 
 </head>
-<body <?php if ( is_front_page() ) echo 'class="home"'; ?> >
+<body <?php 
+		if ( is_front_page() ) :
+			echo 'class="home"'; 
+		elseif ( $post->post_name == 'radio-imagination' ) :
+			echo 'class="radioimagination"'; 
+		endif;
+?>>
 
     <h1><a href="<?php echo get_site_url(); ?>" class="logo"><span>Clockshop</span></a></h1>
     <a href="<?php echo get_site_url(); ?>" class="logotype"></a>

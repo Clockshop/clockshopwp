@@ -60,8 +60,13 @@
 	 							'terms'    => $term,
 	 						),
 	 					),
-
 					) );
+
+					$events_order = get_field('events_order');
+
+					if ( $events_order == 'desc' ):
+						$events = array_reverse($events);
+					endif;
 
 					if ( count($events) > 0 ) : ?>
 
