@@ -37,7 +37,16 @@
 
    <nav> 
 	<div class="wpadminbarspacer"></div>
-	<div class="topnav"><?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?></div>
+
+	<div class="mobiletoggle">
+		<div class="opennav toggle"><span class="icon icon-menu"></span>Menu</div>	
+		<div class="closenav toggle"><span class="icon icon-close"></span>Close</div>
+	</div>
+
+	<div class="topnav">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>		
+	</div>
+
  </nav>
 
 <?php if ( !is_front_page() ) : ?>
