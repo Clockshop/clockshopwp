@@ -134,16 +134,6 @@ h2.tribe-events-page-title { font-weight: 200 !important; }
 .tribe-events-loop .tribe-events-event-meta { font-size: 18px; font-weight: 400; }
 
 
-/* Radio Imagination */
-
-.radioimagination { background: #cef5ff; }
-.radioimagination a:hover { color: #fff; }
-
-.radioimagination nav { background: rgba(206,245,255,0.9); }
-.radioimagination nav a:hover { color: #000; }
-.radioimagination nav .subscribe a:hover { color:  #fff; border: 1px solid #fff; }
-
-
 /* Logo Pizza */
 
 .logopizza { margin: 2em 0; padding: 0; overflow: hidden; list-style: none; text-align: center; }
