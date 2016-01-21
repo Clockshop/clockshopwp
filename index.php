@@ -22,8 +22,9 @@
 
 							?>
 
-							<?php if ( $image ) : ?>
-								<a href="<?php echo $url; ?>"><?php echo wp_get_attachment_image($image['ID'],'full'); ?></a>
+							<?php if ( $image ) : 
+								$src = wp_get_attachment_image_src( $image['ID'], 'full' );?>
+								<a href="<?php echo $url; ?>"><img src="<?php echo $src[0]; ?>" alt="<?php echo $title; ?>" /></a>
 							<?php endif; ?>
 
 							<h3><a href="<?php echo $url; ?>"><?php echo $title; ?></a></h3>
