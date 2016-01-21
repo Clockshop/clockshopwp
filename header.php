@@ -10,6 +10,8 @@
 			echo ' &ndash; ' . sprintf( __( 'Page %s' ), max( $paged, $page ) );
 		?></title>
 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon-180.png" />
 	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon-152.png" />
@@ -35,7 +37,17 @@
 
    <nav> 
 	<div class="wpadminbarspacer"></div>
-	<div class="topnav"><?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?></div>
+
+	<div class="mobiletoggle">
+		<a class="homelink" href="<?php echo get_site_url(); ?>"><span>Home</span></a>
+		<div class="opennav toggle"><span class="icon icon-menu"></span>Menu</div>	
+		<div class="closenav toggle"><span class="icon icon-close"></span>Close</div>
+	</div>
+
+	<div class="topnav">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>		
+	</div>
+
  </nav>
 
 <?php if ( !is_front_page() ) : ?>
