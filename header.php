@@ -27,8 +27,6 @@
 <body <?php 
 		if ( is_front_page() ) :
 			echo 'class="home"'; 
-		elseif ( $post->post_name == 'radio-imagination' ) :
-			echo 'class="radioimagination"'; 
 		endif;
 ?>>
 
