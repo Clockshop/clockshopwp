@@ -3,14 +3,9 @@
 /* Template Name: Projects */ 
 
 get_header(); ?>
-<article>
-	<?php if( have_rows('projects') ): ?>
 
-		<div class="projectstoggle">
-			<li id="alltoggle">All</li>
-			<li id="commissionstoggle" class="off">Artworks</li>
-			<li id="seriestoggle" class="off">Series</li>
-		</div>
+<article class="projectarchive">
+	<?php if( have_rows('projects') ): ?>
 
 		<?php while ( have_rows('projects') ) : the_row(); ?>
 
@@ -34,16 +29,20 @@ get_header(); ?>
 			?>
 
 			<div class="project <?php echo $tags; ?>">
+				<div class="ratio"></div>
+				<div class="inner"><div class="padding">
 
-				<?php if ( $project_image ) : ?>
-					<a href="<?php echo $project_url; ?>"><?php echo $project_image; ?></a>
-				<?php endif; ?>
+					<?php if ( $project_image ) : ?>
+						<a href="<?php echo $project_url; ?>"><?php echo $project_image; ?></a>
+					<?php endif; ?>
 
-				<h2><a href="<?php echo $project_url; ?>"><?php echo $project_title; ?></a></h2>
+					<h2><a href="<?php echo $project_url; ?>"><?php echo $project_title; ?></a></h2>
 
-				<?php if ( $project_subtitle ) : ?>
-					<p><?php echo $project_subtitle; ?></p>
-				<?php endif; ?>
+					<?php if ( $project_subtitle ) : ?>
+						<p><?php echo $project_subtitle; ?></p>
+					<?php endif; ?>
+
+				</div></div>
 
 			</div>
 

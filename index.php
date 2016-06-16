@@ -10,7 +10,7 @@
 
 				if ( have_rows('links') ): ?>
 
-				<div class="relatedlinks">
+				<div id="links" class="relatedlinks">
 
 					    <?php while ( have_rows('links') ) : the_row();
 
