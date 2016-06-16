@@ -62,16 +62,7 @@
 
 	}
 
-	function vmsAdjustments() {
 
-		var hidevms = Cookies.get('hidevms');
-
-		if ( typeof hidevms == 'undefined' ) {
-			$('body').addClass('withvms');
-		}
-		
-		
-	}
 
 	function showToplink() {
 		if ( topLinkVisible == false ) {
@@ -91,8 +82,6 @@
 	function setupLayout() {
 
 		$('body').addClass('js');
-
-		vmsAdjustments();
 
 		handleResize();
 

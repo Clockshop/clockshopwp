@@ -27,7 +27,7 @@
 
 </head>
 <body <?php 
-		if ( is_front_page() ) :
+		if ( is_page_template('page-home.php')) :
 			echo 'class="home"'; 
 		endif;
 ?>>
@@ -50,6 +50,6 @@
 
  </nav>
 
-<?php if ( !is_front_page() ) : ?>
+<?php if ( !is_page_template('page-home.php') ) : ?>
 	<div class="layoutspacer"></div>
 <?php endif; ?>

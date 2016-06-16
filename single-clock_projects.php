@@ -20,7 +20,7 @@
 
 				if ( $related_projects ): ?>
 
-				<div class="relatedprojects">
+				<div id="related" class="relatedprojects">
 
 					<h3>Select Artworks &amp; Happenings</h3>
 
@@ -70,7 +70,7 @@
 
 					if ( count($events) > 0 ) : ?>
 
-					<div class="relatedevents">
+					<div id="events" class="relatedevents">
 						<h3>Events</h3>
 
 					<?php foreach ( $events as $post ) :
