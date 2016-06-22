@@ -1,15 +1,6 @@
 <html lang="en">
 <head>
 
-	<title><?php 
-		wp_title( '&ndash;', true, 'right' );
-		bloginfo( 'name' ); 
-		$site_description = get_bloginfo( 'description', 'display' );
-
-		if ( $paged >= 2 || $page >= 2 )
-			echo ' &ndash; ' . sprintf( __( 'Page %s' ), max( $paged, $page ) );
-		?></title>
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon.ico">
