@@ -24,6 +24,9 @@ function enqueue_scripts_method() {
 	$mainjs = get_template_directory_uri() . '/js/main.js';
 	wp_register_script('mainjs',$mainjs, false, $version);
 
+	$projecttemplatejs = get_template_directory_uri() . '/js/projecttemplate.js';
+	wp_register_script('projecttemplatejs',$projecttemplatejs, false, $version);
+
 	$flickityjs = get_template_directory_uri() . '/js/flickity.pkgd.min.js';
 	wp_register_script('flickityjs',$flickityjs, false, $version);
 
@@ -57,6 +60,7 @@ function enqueue_scripts_method() {
 
 	wp_enqueue_script( 'flexsliderjs',array('jquery'));
 	wp_enqueue_script( 'mainjs',array('jquery','flexsliderjs'));
+	wp_enqueue_script( 'projecttemplatejs',array('jquery'));
 
 	wp_enqueue_style( 'flexslidercss');
 
