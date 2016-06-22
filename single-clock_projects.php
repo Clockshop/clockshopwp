@@ -9,6 +9,9 @@
 <?php get_header(); ?>
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
+
+		<?php include(locate_template('parts/projecttemplate-head.php')); ?>
+
 		<article>
 			<?php 
 
@@ -94,6 +97,8 @@
 
 				?>
 			</article>
+
+			<?php include(locate_template('parts/projecttemplate-foot.php')); ?>
 
 		<?php endif; ?>
 	<?php endwhile; ?>

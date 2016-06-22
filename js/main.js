@@ -87,7 +87,6 @@
 
 		$("#uparrow").hide();
 
-
 	}
 
 	function handleResize() {
@@ -106,14 +105,12 @@
 
 		} else {
 			if ( mobileNav == true ) {
-
 				$('.topnav').show();
 				mobileNav = false;
-
 			}
 
 		}
-		
+
 		setupPadding();
 	}
 

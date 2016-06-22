@@ -1,5 +1,8 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : ?>
+
+		<?php include(locate_template('parts/projecttemplate-head.php')); ?>
+
 		<article>
 			<?php while (have_posts()) : the_post(); 
 				the_content();
@@ -43,5 +46,8 @@
 
 			endwhile; ?>
 		</article>
+
+		<?php include(locate_template('parts/projecttemplate-foot.php')); ?>
+
 	<?php endif; ?>
 <?php get_footer(); ?>
