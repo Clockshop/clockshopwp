@@ -26,7 +26,7 @@
     <h1><a href="<?php echo get_site_url(); ?>" class="logo"><span>Clockshop</span></a></h1>
     <a href="<?php echo get_site_url(); ?>" class="logotype"></a>
 
-   <nav> 
+   <nav class="primarynav"> 
 	<div class="wpadminbarspacer"></div>
 
 	<div class="mobiletoggle">
