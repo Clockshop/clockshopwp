@@ -3,18 +3,34 @@
 	var projectwasdesktop = true;
 
 	function isProjectMobile() {
+
+		// console.log("a");
+
 		if ( $(".projecttemplatecue").css("float") == "right" ) { 
+
+			// console.log("b");
+
 			return false;
 		} else {
+
+			// console.log("c");
+
 			return true;
 		}
 	}
 
 
 	function handleProjectResize() {
+
+		// console.log("1");
+
 		if ( isProjectMobile() ) {
 
+			// console.log("2");
+
 			if ( projectwasdesktop == true ) {
+
+				// console.log("3");
 
 				var element = $('.projectmenutoggle');
 
@@ -31,7 +47,11 @@
 
 		} else {
 
+			// console.log("4");
+
 			if ( projectwasdesktop == false ) {
+
+				// console.log("5");
 
 				$('.projecttemplate .menuwrap').show();
 				projectwasdesktop = true;
