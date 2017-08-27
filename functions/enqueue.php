@@ -2,7 +2,7 @@
 
 function enqueue_scripts_method() {
 
-	$version = "g";
+	$version = "h";
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -80,4 +80,13 @@ function enqueue_scripts_method() {
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts_method');
 
-?>
+add_action( 'gform_enqueue_scripts_4', 'dequeue_gf_stylesheets', 11 );
+function dequeue_gf_stylesheets() {
+    wp_dequeue_style( 'gforms_reset_css' );
+    wp_dequeue_style( 'gforms_datepicker_css' );
+    wp_dequeue_style( 'gforms_formsmain_css' );
+    wp_dequeue_style( 'gforms_ready_class_css' );
+    wp_dequeue_style( 'gforms_browsers_css' );
+}
+
+
