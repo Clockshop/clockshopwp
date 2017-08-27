@@ -56,6 +56,9 @@ function enqueue_scripts_method() {
 	$descriptivehomecss = get_stylesheet_directory_uri() . '/css/descriptivehome.css';
 	wp_register_style('descriptivehomecss',$descriptivehomecss, false, $version);
 
+	$all = get_stylesheet_directory_uri() . '/assets/css/all.css';
+	wp_register_style('all', $all, false, $version);
+
 	// Enqueue
 
 	wp_enqueue_script( 'flexsliderjs',array('jquery'));
@@ -68,6 +71,8 @@ function enqueue_scripts_method() {
 	wp_enqueue_style( 'ptsanscss');
 	wp_enqueue_style( 'normalizecss');
 	wp_enqueue_style( 'themecss');
+
+	wp_enqueue_style( 'all');
 
 	if ( is_page_template('page-descriptivehome.php') ) :
 		wp_enqueue_style( 'flickitycss');
