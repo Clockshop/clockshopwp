@@ -8,4 +8,15 @@
 		right: 6px;
 		z-index: 1000;
 	}
+	.logo { 
+		display: block;
+		width: 69px;
+		height: 180px;
+		background : url("../../images/logo.svg") no-repeat 0 0;
+		position: fixed;
+		top: 150px;
+		left: 0;
+		z-index: 1000;
+	}
 }
+
