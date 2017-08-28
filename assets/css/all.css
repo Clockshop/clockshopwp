@@ -6,4 +6,13 @@
     position: fixed;
     top: 150px;
     right: 6px;
+    z-index: 1000; }
+  .logo {
+    display: block;
+    width: 69px;
+    height: 180px;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA2OSAxODAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDY5IDE4MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cGF0aCBkPSJNMjAuNiw2LjhjMTcuOCwxLjksMzQsOS43LDQ2LjYsMjEuNGwtNi40LDcuMUM1MCwyNS4yLDM2LDE4LjQsMjAuNiwxNi4zVjYuOEwyMC42LDYuOHoiLz4KPHBhdGggZD0iTTIwLjYsMTYzLjVjMTUuNC0yLjEsMjkuNC04LjksNDAuMi0xOWw2LjQsNy4xYy0xMi42LDExLjYtMjguOCwxOS40LTQ2LjYsMjEuNVYxNjMuNUwyMC42LDE2My41eiIvPgo8L3N2Zz4K) no-repeat 0 0;
+    position: fixed;
+    top: 150px;
+    left: 0;
     z-index: 1000; } }
