@@ -28,6 +28,12 @@
 								}
 							}
 						}
+						.current-menu-item {
+							a {
+							    border-bottom: 5px solid black!important;
+							    border-top: none !important;
+							}
+						}
 						.social {
 							a {
 								margin-left: 5px;

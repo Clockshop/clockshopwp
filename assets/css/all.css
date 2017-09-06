@@ -69,6 +69,9 @@
                 border-top: none !important; }
               nav .topnav div .menu-primary-navigation-container #menu-primary-navigation li a:focus {
                 outline: none !important; }
+            nav .topnav div .menu-primary-navigation-container #menu-primary-navigation .current-menu-item a {
+              border-bottom: 5px solid black !important;
+              border-top: none !important; }
             nav .topnav div .menu-primary-navigation-container #menu-primary-navigation .social a {
               margin-left: 5px;
               margin-right: 5px;
