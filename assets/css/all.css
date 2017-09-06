@@ -84,18 +84,19 @@
         nav .topnav div #searchform {
           position: absolute;
           top: 0;
-          height: 36px;
+          height: 41px;
           margin: 0;
           width: 100%;
           display: none;
-          border-bottom: 5px solid black !important; }
+          background-color: white; }
           nav .topnav div #searchform .s {
             width: 100%;
             border: none;
-            height: 36px;
+            height: 40px;
             font-size: 22px;
             font-family: CircularBook;
-            padding: 5px; }
+            padding: 5px;
+            border-bottom: 5px solid black !important; }
             nav .topnav div #searchform .s::-webkit-input-placeholder {
               color: black; }
             nav .topnav div #searchform .s::-moz-placeholder {
