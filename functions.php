@@ -1,14 +1,16 @@
 <?php
 
-require_once( 'functions/enqueue.php' );
-require_once( 'functions/events.php' );
-require_once( 'functions/gallery.php' );
-require_once( 'functions/menus.php' );
-require_once( 'functions/projects.php' );
-require_once( 'functions/projecttemplates.php' );
-
+require_once( 'lib/enqueue.php' );
+require_once( 'lib/events.php' );
+require_once( 'lib/gallery.php' );
+require_once( 'lib/menus.php' );
+require_once( 'lib/projects.php' );
+require_once( 'lib/projecttemplates.php' );
+require_once( 'lib/acf.php' );
 
 function theme_slug_setup() {
    add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'theme_slug_setup' );
+
+add_filter('show_admin_bar', '__return_false');

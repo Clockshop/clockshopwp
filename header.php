@@ -17,30 +17,32 @@
 	<?php wp_head(); ?>
 
 </head>
-<body <?php 
-		if ( is_page_template('page-home.php')) :
-			echo 'class="home"'; 
-		endif;
-?>>
+<body <?php if ( is_page_template('page-home.php')) : echo 'class="home"'; endif; ?>>
 
-    <h1><a href="<?php echo get_site_url(); ?>" class="logo"><span>Clockshop</span></a></h1>
-    <a href="<?php echo get_site_url(); ?>" class="logotype"></a>
+	<h1><a href="<?php echo get_site_url(); ?>" class="logo"><span>Clockshop</span></a></h1>
+	<a href="<?php echo get_site_url(); ?>" class="logotype"></a>
 
-   <nav class="primarynav"> 
-	<div class="wpadminbarspacer"></div>
+	<nav class="primarynav"> 
+		<div class="wpadminbarspacer"></div>
 
-	<div class="mobiletoggle">
-		<a class="homelink" href="<?php echo get_site_url(); ?>"><span>Home</span></a>
-		<div class="opennav toggle"><span class="icon icon-menu"></span>Menu</div>	
-		<div class="closenav toggle"><span class="icon icon-close"></span>Close</div>
-	</div>
+		<div class="mobiletoggle">
+			<a class="homelink" href="<?php echo get_site_url(); ?>"><span>Home</span></a>
+			<div class="opennav toggle"><span class="icon icon-menu"></span>Menu</div>	
+			<div class="closenav toggle"><span class="icon icon-close"></span>Close</div>
+		</div>
 
-	<div class="topnav">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>		
-	</div>
+		<div class="topnav">
+			<div>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<?php get_search_form(); ?>
+			</div>
+			<button class="search">
+				<i class="fa fa-search" aria-hidden="true"></i>
+			</button>
+		</div>
 
- </nav>
+	</nav>
 
-<?php if ( !is_page_template('page-home.php') ) : ?>
-	<div class="layoutspacer"></div>
-<?php endif; ?>
+	<?php if ( !is_page_template('page-home.php') ) : ?>
+		<div class="layoutspacer"></div>
+	<?php endif; ?>

@@ -24,6 +24,9 @@ function enqueue_scripts_method() {
 	$mainjs = get_template_directory_uri() . '/js/main.js';
 	wp_register_script('mainjs',$mainjs, false, $version);
 
+	$scripts = get_template_directory_uri() . '/js/scripts.js';
+	wp_register_script('scripts', $scripts, false, $version);
+
 	$projecttemplatejs = get_template_directory_uri() . '/js/projecttemplate.js';
 	wp_register_script('projecttemplatejs',$projecttemplatejs, false, $version);
 
@@ -56,6 +59,9 @@ function enqueue_scripts_method() {
 	$descriptivehomecss = get_stylesheet_directory_uri() . '/css/descriptivehome.css';
 	wp_register_style('descriptivehomecss',$descriptivehomecss, false, $version);
 
+	$fontawesome = get_stylesheet_directory_uri() . '/assets/fonts/font-awesome.min.css';
+	wp_register_style('fontawesome',$fontawesome, false, $version);
+
 	$all = get_stylesheet_directory_uri() . '/assets/css/all.css';
 	wp_register_style('all', $all, false, $version);
 
@@ -63,6 +69,7 @@ function enqueue_scripts_method() {
 
 	wp_enqueue_script( 'flexsliderjs',array('jquery'));
 	wp_enqueue_script( 'mainjs',array('jquery','flexsliderjs'));
+	wp_enqueue_script( 'scripts',array('jquery'));
 	wp_enqueue_script( 'projecttemplatejs',array('jquery'));
 
 	wp_enqueue_style( 'flexslidercss');
@@ -72,6 +79,7 @@ function enqueue_scripts_method() {
 	wp_enqueue_style( 'normalizecss');
 	wp_enqueue_style( 'themecss');
 
+	wp_enqueue_style( 'fontawesome');
 	wp_enqueue_style( 'all');
 
 	if ( is_page_template('page-descriptivehome.php') ) :
