@@ -4,7 +4,6 @@
 		.topnav {
 			display: inline-block!important;
 			padding-top: 25px!important;
-			max-width: 765px;
 			div {
 				position: relative;
 				.menu-primary-navigation-container {
@@ -25,6 +24,11 @@
 								}
 								&:focus {
 									outline: none!important;
+								}
+							}
+							&:first-child {
+								a {
+									margin-left: 0!important;
 								}
 							}
 						}
@@ -54,17 +58,18 @@
 				#searchform {
 					position: absolute;
 					top: 0;
-					height: 41px;
+					height: 36px;
 					margin: 0;
 					width: 100%;
 					display: none;
+				    border-bottom: 5px solid black!important;
 					.s {
 						width: 100%;
 						border: none;
-						height: 41px;
+						height: 36px;
 						font-size: 22px;
 						font-family: CircularBook;
-					    padding: 0 0 5px 15px;
+					    padding: 5px;
 						&::-webkit-input-placeholder {
 							color: black;
 						}
