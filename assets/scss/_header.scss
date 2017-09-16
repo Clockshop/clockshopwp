@@ -18,12 +18,16 @@
 		}
 		.topnav {
 			display: inline-block!important;
-   			padding: 25px 0 21px!important;
+   			padding: 30px 0 24px!important;
    			float: right;
 			div {
 				display: inline-block;
 				position: relative;
 				.menu-primary-navigation-container {
+				-webkit-transition: opacity .25s ease-in-out;
+				-moz-transition: opacity .25s ease-in-out;
+				-o-transition: opacity .25s ease-in-out;
+				transition: opacity .25s ease-in-out;				
 					display: inline-block;
 					#menu-primary-navigation {
 						display: inline-block;
@@ -35,6 +39,8 @@
 								font-family: CircularBookBold;
 								padding: 6px 0 4px;
 								margin: 0 13px;
+								border-top: none;
+								border-bottom: none;
 								&:hover {
 									border-bottom: 4px solid black;
 									border-top: none!important;
@@ -51,7 +57,7 @@
 						}
 						.current-menu-item {
 							a {
-							    border-bottom: 5px solid black!important;
+							    border-bottom: 4px solid black!important;
 							    border-top: none !important;
 							}
 						}
@@ -74,20 +80,21 @@
 				}
 				#searchform {
 					position: absolute;
-					top: 0;
+					top: -10px;
 					height: 41px;
 					margin: 0;
 					width: 100%;
 					display: none;
-					background-color: white;
-					.s {
+					background-color: transparent;
+					input.s {
 						width: 100%;
 						border: none;
 						height: 40px;
 						font-size: 22px;
 						font-family: CircularBook;
 					    padding: 5px;
-					    border-bottom: 5px solid black!important;
+					    border-bottom: 4px solid black!important;
+					    background-color: transparent;
 						&::-webkit-input-placeholder {
 							color: black;
 						}
@@ -106,6 +113,7 @@
 			.search {
 				display: inline-block;
 				position: relative;
+				top: -4px;
 				height: 34px;
 				width: 34px;
 			    border-radius: 50%;
