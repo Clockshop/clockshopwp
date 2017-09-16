@@ -1,10 +1,27 @@
 @media screen and (min-width: 900px) {
-	nav {
-		text-align: center;
+	.primarynav {
+		margin: 0 auto;
+		.logo_container {
+			display: inline-block;
+			.logo_horizontal {
+				background : url("../../images/logo_h.svg") no-repeat 0 0;
+			    width: 165px;
+			    height: 32px;
+			    padding: 0;
+			    border: 0;
+			    margin-left: 20px;
+			    margin-top: 20px;
+			    border: 10px solid transparent;
+			    &:hover {
+			    }
+			}
+		}
 		.topnav {
 			display: inline-block!important;
-			padding-top: 25px!important;
+   			padding: 25px 0 21px!important;
+   			float: right;
 			div {
+				display: inline-block;
 				position: relative;
 				.menu-primary-navigation-container {
 					display: inline-block;
@@ -13,13 +30,13 @@
 						font-size: 0;
 						li {
 							a {
-								font-size: 18px;
+								font-size: 16px;
 								letter-spacing: .04em;
 								font-family: CircularBookBold;
-								padding: 6px 0 5px;
-								margin: 0 15px;
+								padding: 6px 0 4px;
+								margin: 0 13px;
 								&:hover {
-									border-bottom: 5px solid black;
+									border-bottom: 4px solid black;
 									border-top: none!important;
 								}
 								&:focus {
@@ -40,8 +57,8 @@
 						}
 						.social {
 							a {
-								margin-left: 5px;
-								margin-right: 5px;
+								margin-left: 4.5px;
+								margin-right: 4.5px;
 								cursor: pointer;
 								&:hover {
 									border-bottom: none;
@@ -50,7 +67,7 @@
 						}
 						.social.first {
 							a {
-								margin-left: 15px;
+								margin-left: 20px;
 							}
 						}
 					}
@@ -87,18 +104,16 @@
 				}				
 			}
 			.search {
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				right: 20px;
-				margin: auto;
+				display: inline-block;
+				position: relative;
 				height: 34px;
 				width: 34px;
 			    border-radius: 50%;
 			    background: black;
 			    padding: 0;
 			    border: 0;
-				margin-top: 28px;
+			    vertical-align: top;
+			    margin: 0 35px 0px 10px;
 			    i {
 			    	color: white;
 					font-size: 17px;

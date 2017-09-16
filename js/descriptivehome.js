@@ -55,7 +55,25 @@
 			pauseAutoPlayOnHover: false
 		});
 
+		$('.prev').on( 'click', function() {
+			$('.carousel-main').flickity('previous');
+		});
+
+		$('.next').on( 'click', function() {
+			$('.carousel-main').flickity('next');
+		});
+
 	});
+
+    $(document).bind('gform_post_render', function(event, formId, currentPage){
+    	if(formId == 4) {
+    		$('#input_4_1').attr("placeholder", "Your Email Address...");
+			$(".gform_validation_error .ginput_container_email input").addClass('error');
+			$(".gform_validation_error .ginput_container_email input").keydown(function() {
+				$(this).removeClass('error');
+			});
+    	}
+    });
 
 	$(window).load(function(){
 		setHomeHeights();

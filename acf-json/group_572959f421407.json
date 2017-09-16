@@ -162,6 +162,27 @@
                     "disabled": 0
                 },
                 {
+                    "key": "field_59bc96f3dcbe8",
+                    "label": "Content Type",
+                    "name": "content_type",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
                     "key": "field_573a27e716ec5",
                     "label": "Call To Action",
                     "name": "call_to_action",
@@ -243,7 +264,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-descriptivehome.php"
+                "value": "page-home.php"
             }
         ]
     ],
@@ -257,5 +278,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1504686132
+    "modified": 1505532464
 }
