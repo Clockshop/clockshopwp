@@ -71,12 +71,16 @@
         border: 10px solid transparent; }
     .primarynav .topnav {
       display: inline-block !important;
-      padding: 25px 0 21px !important;
+      padding: 30px 0 24px !important;
       float: right; }
       .primarynav .topnav div {
         display: inline-block;
         position: relative; }
         .primarynav .topnav div .menu-primary-navigation-container {
+          -webkit-transition: opacity .25s ease-in-out;
+          -moz-transition: opacity .25s ease-in-out;
+          -o-transition: opacity .25s ease-in-out;
+          transition: opacity .25s ease-in-out;
           display: inline-block; }
           .primarynav .topnav div .menu-primary-navigation-container #menu-primary-navigation {
             display: inline-block;
@@ -86,7 +90,9 @@
               letter-spacing: .04em;
               font-family: CircularBookBold;
               padding: 6px 0 4px;
-              margin: 0 13px; }
+              margin: 0 13px;
+              border-top: none;
+              border-bottom: none; }
               .primarynav .topnav div .menu-primary-navigation-container #menu-primary-navigation li a:hover {
                 border-bottom: 4px solid black;
                 border-top: none !important; }
@@ -95,7 +101,7 @@
             .primarynav .topnav div .menu-primary-navigation-container #menu-primary-navigation li:first-child a {
               margin-left: 0 !important; }
             .primarynav .topnav div .menu-primary-navigation-container #menu-primary-navigation .current-menu-item a {
-              border-bottom: 5px solid black !important;
+              border-bottom: 4px solid black !important;
               border-top: none !important; }
             .primarynav .topnav div .menu-primary-navigation-container #menu-primary-navigation .social a {
               margin-left: 4.5px;
@@ -107,31 +113,33 @@
               margin-left: 20px; }
         .primarynav .topnav div #searchform {
           position: absolute;
-          top: 0;
+          top: -10px;
           height: 41px;
           margin: 0;
           width: 100%;
           display: none;
-          background-color: white; }
-          .primarynav .topnav div #searchform .s {
+          background-color: transparent; }
+          .primarynav .topnav div #searchform input.s {
             width: 100%;
             border: none;
             height: 40px;
             font-size: 22px;
             font-family: CircularBook;
             padding: 5px;
-            border-bottom: 5px solid black !important; }
-            .primarynav .topnav div #searchform .s::-webkit-input-placeholder {
+            border-bottom: 4px solid black !important;
+            background-color: transparent; }
+            .primarynav .topnav div #searchform input.s::-webkit-input-placeholder {
               color: black; }
-            .primarynav .topnav div #searchform .s::-moz-placeholder {
+            .primarynav .topnav div #searchform input.s::-moz-placeholder {
               color: black; }
-            .primarynav .topnav div #searchform .s:-ms-input-placeholder {
+            .primarynav .topnav div #searchform input.s:-ms-input-placeholder {
               color: black; }
-            .primarynav .topnav div #searchform .s:-moz-placeholder {
+            .primarynav .topnav div #searchform input.s:-moz-placeholder {
               color: black; }
       .primarynav .topnav .search {
         display: inline-block;
         position: relative;
+        top: -4px;
         height: 34px;
         width: 34px;
         border-radius: 50%;
