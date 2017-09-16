@@ -153,6 +153,10 @@
     display: none; }
   .carouselwrap .carousel-main > div > div .carousel-cell .slide {
     min-height: 600px;
+    height: -moz-calc(100vh - 88px) !important;
+    height: -webkit-calc(100vh - 88px) !important;
+    height: -o-calc(100vh - 88px) !important;
+    height: calc(100vh - 88px) !important;
     position: relative; }
     .carouselwrap .carousel-main > div > div .carousel-cell .slide .content {
       height: 100%; }
