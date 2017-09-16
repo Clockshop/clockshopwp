@@ -82,7 +82,7 @@ function enqueue_scripts_method() {
 	wp_enqueue_style( 'fontawesome');
 	wp_enqueue_style( 'all');
 
-	if ( is_page_template('page-descriptivehome.php') ) :
+	if ( is_page_template('page-home.php') ) :
 		wp_enqueue_style( 'flickitycss');
 		wp_enqueue_style( 'descriptivehomecss');
 		wp_enqueue_script( 'flickityjs',array('jquery'));

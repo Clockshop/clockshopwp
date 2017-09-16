@@ -7,6 +7,8 @@ require_once( 'lib/menus.php' );
 require_once( 'lib/projects.php' );
 require_once( 'lib/projecttemplates.php' );
 require_once( 'lib/acf.php' );
+require_once( 'lib/images.php' );
+require_once( 'lib/gravityforms.php' );
 
 function theme_slug_setup() {
    add_theme_support( 'title-tag' );

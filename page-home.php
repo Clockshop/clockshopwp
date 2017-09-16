@@ -2,34 +2,97 @@
 
 /* Template Name: Home */ 
 
-get_header(); ?>
+	get_header(); ?>
 
-<?php $images = get_field('gallery'); if( $images ): ?>
-	<div class="flexslider">
-		<ol class="slides">
-		<?php foreach( $images as $image ): ?>
-        	<li style="background: url(<?php echo $image['url']; ?>) center; background-size: cover;"></li> 
-    	<?php endforeach; ?>
-		</ol>
+	<?php if( have_rows('features') ): ?>
+		<div class="carouselwrap">
+			<div class="carousel-main">
+				<?php while ( have_rows('features') ) : 
+				the_row();
+				$carousel_image = get_sub_field('carousel_image');
+
+				$feature_type = get_sub_field('feature_type');
+				$internal_link = get_sub_field('internal_link');
+				$external_link = get_sub_field('external_link');
+
+				if ( $feature_type == 'internal' ) :
+					$linkurl = get_permalink($internal_link->ID);
+				else:
+					$linkurl = $external_link;
+				endif;
+
+				?>
+				<div class="carousel-cell">
+					<div class="slide" style="background-image: url('<?php echo $carousel_image['url']; ?>');">
+						<div class="content">
+							<div>
+								<div class="arrows">
+									<a class="prev"><img class="left-arrow" src="<?php echo get_stylesheet_directory_uri() ?>/images/arrow.png" /></a>
+									<a class="next"><img class="right-arrow" src="<?php echo get_stylesheet_directory_uri() ?>/images/arrow.png" /></a>
+								</div>
+								<p class="project-title"><?php echo get_sub_field('headline'); ?></p>
+								<a class="project-more" href="<?php echo $linkurl; ?>">LEARN MORE</a>
+							</div>
+						</div>
+						<div class="project-overlay"></div>
+						<div class="ratio"></div>
+					</div>
+				</div>
+			<?php endwhile; ?>
+			<div class="arrow"><a href="#homer"><span>&darr;</span></a></div>
+		</div>
 	</div>
-<?php endif; ?>
+	<?php endif; ?>
 
-<?php 
+	<div class="content">
+	<?php if( have_rows('features') ): ?>
+		<div class="grid featured-grid">
+			<h3>Featured Call Outs</h3>
+			<?php while ( have_rows('features') ) : the_row(); ?>
 
-$events = tribe_get_events(array( 
-	'posts_per_page' => 1,
-	'eventDisplay' => 'upcoming'
-));
+				<?php 
+				$feature_type = get_sub_field('feature_type');
+				$internal_link = get_sub_field('internal_link');
+				$external_link = get_sub_field('external_link');
+				$headline = get_sub_field('headline');
+				$content_type = get_sub_field('content_type');
+				$description = get_sub_field('description');
+				$call_to_action = get_sub_field('call_to_action');
+				$thumbnail_image = get_sub_field('thumbnail_image');
 
-foreach( $events as $post ) : ?>
+				if ( $feature_type == 'internal' ) :
+					$linkurl = get_permalink($internal_link->ID);
+				else:
+					$linkurl = $external_link;
+				endif;
+				?>
 
-<div class="nextevent">
-	<a href="<?php the_permalink(); ?>">
-		<p>Next: <br /><?php echo tribe_get_start_date( $post->ID, true, 'M j' ); ?><span class="arrow"></span></p>
-		<span class="box"></span>
-	</a>
+				<div class="grid-3">
+
+					<div class="imagecell">
+						<a href="<?php echo $linkurl; ?>"><img src="<?php echo $thumbnail_image['sizes']['grid-3']; ?>" /></a>
+					</div>
+
+					<div class="descriptioncell">
+						<h3><a href="<?php echo $linkurl; ?>"><?php echo $headline; ?></a></h3>
+						<p class="content-type"><?php echo $content_type; ?></p>
+						<p class="description"><?php echo $description; ?></p>
+
+						<?php if ( $call_to_action && $call_to_action != '' ) : ?>
+							<p class="calltoaction"><a href="<?php echo $linkurl; ?>"><?php echo $call_to_action; ?></a></p>
+						<?php endif; ?>
+					</div>
+
+				</div>
+
+			<?php endwhile; ?>
+
+			<div class="grid-bottom"></div>
+
+		</div>
+	<?php endif; ?>
+	</div>
+
 </div>
-
-<?php endforeach; wp_reset_postdata();?>
 
 <?php get_footer(); ?>
