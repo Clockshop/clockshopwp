@@ -29,9 +29,9 @@
 			<div class="wpadminbarspacer"></div>
 
 			<div class="mobiletoggle">
-				<a class="homelink" href="<?php echo get_site_url(); ?>"><span>Home</span></a>
-				<div class="opennav toggle"><span class="icon icon-menu"></span>Menu</div>	
-				<div class="closenav toggle"><span class="icon icon-close"></span>Close</div>
+				<a class="homelink" href="<?php echo get_site_url(); ?>"></a>
+				<div class="opennav toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>	
+				<div class="closenav toggle"><i class="fa fa-times" aria-hidden="true"></i></div>
 			</div>
 
 			<div class="logo_container">
