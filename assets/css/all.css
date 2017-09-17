@@ -205,6 +205,10 @@ body {
             font-family: CircularBookBold;
             border-top: none;
             border-bottom: none; }
+            .primarynav .topnav div .menu-primary-navigation-container #menu-primary-navigation li a::selection {
+              background: white; }
+            .primarynav .topnav div .menu-primary-navigation-container #menu-primary-navigation li a::-moz-selection {
+              background: white; }
         .primarynav .topnav div .menu-primary-navigation-container #menu-primary-navigation .social {
           display: inline-block;
           margin-right: 0;
@@ -232,6 +236,10 @@ body {
         padding: 5px;
         border-bottom: 4px solid black !important;
         background-color: transparent; }
+        .primarynav .topnav div #searchform input.s::selection {
+          background: white; }
+        .primarynav .topnav div #searchform input.s::-moz-selection {
+          background: white; }
         .primarynav .topnav div #searchform input.s::-webkit-input-placeholder {
           color: black; }
         .primarynav .topnav div #searchform input.s::-moz-placeholder {
@@ -253,7 +261,7 @@ body {
     height: -webkit-calc(100vh - 88px) !important;
     height: -o-calc(100vh - 88px) !important;
     height: calc(100vh - 88px) !important;
-    max-height: 120vw;
+    max-height: 140vw;
     position: relative; }
     @media screen and (max-width: 899px) {
       .carouselwrap .carousel-main > div > div .carousel-cell .slide {
@@ -488,3 +496,98 @@ footer.contactfooter {
     @media screen and (max-width: 899px) {
       footer.contactfooter .copyright {
         margin-top: 20px; } }
+
+.search-template > h2 {
+  font-family: CircularBookBold;
+  font-size: 36px;
+  display: block;
+  text-align: center; }
+
+.search-template > h4 {
+  font-family: CircularBookBold;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 30px;
+  line-height: 24px; }
+
+.search-template #searchform {
+  box-sizing: border-box;
+  height: 80px !important;
+  height: 41px;
+  margin: 0;
+  width: 100%;
+  background-color: transparent; }
+  .search-template #searchform input.s {
+    width: 100%;
+    border: none;
+    height: 40px;
+    font-size: 22px;
+    font-family: CircularBook;
+    padding: 5px;
+    border-bottom: 4px solid black !important;
+    background-color: transparent; }
+    .search-template #searchform input.s::selection {
+      background: white; }
+    .search-template #searchform input.s::-moz-selection {
+      background: white; }
+    .search-template #searchform input.s::-webkit-input-placeholder {
+      color: black; }
+    .search-template #searchform input.s::-moz-placeholder {
+      color: black; }
+    .search-template #searchform input.s:-ms-input-placeholder {
+      color: black; }
+    .search-template #searchform input.s:-moz-placeholder {
+      color: black; }
+
+.search-template .search-list {
+  padding-bottom: 60px; }
+  .search-template .search-list article {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    margin-bottom: 30px;
+    display: table; }
+    .search-template .search-list article .list-image {
+      width: 25%;
+      display: table-cell;
+      vertical-align: middle; }
+      .search-template .search-list article .list-image img {
+        width: 100%; }
+    .search-template .search-list article .list-title {
+      position: relative;
+      width: 75%;
+      display: table-cell;
+      vertical-align: middle;
+      font-family: CircularBookBold;
+      font-size: 28px;
+      padding-left: 20px; }
+      @media screen and (max-width: 899px) {
+        .search-template .search-list article .list-title {
+          font-size: 24px; } }
+      @media screen and (max-width: 768px) {
+        .search-template .search-list article .list-title {
+          font-size: 18px; } }
+      @media screen and (max-width: 479px) {
+        .search-template .search-list article .list-title {
+          font-size: 16px;
+          padding-left: 15px; } }
+      .search-template .search-list article .list-title a:hover {
+        color: black;
+        text-decoration: none;
+        border-bottom: 2px solid black; }
+  .search-template .search-list .search-pag {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center; }
+    .search-template .search-list .search-pag a, .search-template .search-list .search-pag span {
+      font-family: CircularBook;
+      font-size: 19px;
+      letter-spacing: .1em;
+      display: inline-block;
+      padding: 0 5px; }
+      .search-template .search-list .search-pag a.current, .search-template .search-list .search-pag span.current {
+        font-family: CircularBookBold; }

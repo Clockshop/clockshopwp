@@ -8,24 +8,24 @@ function spellerberg_sp_date($postid, $format='') {
 
 function spellerberg_return_sp_date($postid, $format='') {
 
-	$startYear = sp_get_start_date($postid,'','Y'); 
-	$endYear = sp_get_end_date($postid,'','Y');
+	$startYear = tribe_get_start_date($postid,'','Y'); 
+	$endYear = tribe_get_end_date($postid,'','Y');
 
-	$startMonth = sp_get_start_date($postid,'','M'); 
-	$endMonth = sp_get_end_date($postid,'','M');
+	$startMonth = tribe_get_start_date($postid,'','M'); 
+	$endMonth = tribe_get_end_date($postid,'','M');
 
-	$startDay = sp_get_start_date($postid,'','j'); 
-	$endDay = sp_get_end_date($postid,'','j');
+	$startDay = tribe_get_start_date($postid,'','j'); 
+	$endDay = tribe_get_end_date($postid,'','j');
 
-	$weekday = sp_get_start_date($postid,'','D'); 
+	$weekday = tribe_get_start_date($postid,'','D'); 
 
-	$s_hour = sp_get_start_date($postid,'','g'); 
-	$s_min = sp_get_start_date($postid,'','i'); 
-	$s_am = ' ' . sp_get_start_date($postid,'','a');
+	$s_hour = tribe_get_start_date($postid,'','g'); 
+	$s_min = tribe_get_start_date($postid,'','i'); 
+	$s_am = ' ' . tribe_get_start_date($postid,'','a');
 	
-	$e_hour = sp_get_end_date($postid,'','g'); 
-	$e_min = sp_get_end_date($postid,'','i'); 
-	$e_am = ' ' . sp_get_end_date($postid,'','a');
+	$e_hour = tribe_get_end_date($postid,'','g'); 
+	$e_min = tribe_get_end_date($postid,'','i'); 
+	$e_am = ' ' . tribe_get_end_date($postid,'','a');
 
 	if ( tribe_is_recurring_event($postid) ) :
 		$recurrence_text = tribe_get_recurrence_text($postid);
