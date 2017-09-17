@@ -10,18 +10,26 @@
 			> div {
 				.carousel-cell {
 					.slide {
-						min-height: 600px;
+						min-height: 500px;
 						height: -moz-calc(100vh - 88px)!important;
 						height: -webkit-calc(100vh - 88px)!important;
 						height: -o-calc(100vh - 88px)!important;
 						height: calc(100vh - 88px)!important;
+						max-height: 120vw;
 						position: relative;
+						@media screen and (max-width: 899px) {
+							height: -moz-calc(100vh - 54px)!important;
+							height: -webkit-calc(100vh - 54px)!important;
+							height: -o-calc(100vh - 54px)!important;
+							height: calc(100vh - 54px)!important;
+						}
 						.content {
 							height: 100%;
 							> div {
 								position: absolute;
 								bottom: 0;
 								z-index: 1;
+								text-align: left;
 								.arrows {
 									height: 21px;
 									a {
@@ -56,9 +64,9 @@
 									font-family: CircularBookBold;
 									color: white;
 									margin-top: 40px;
-									margin-bottom: 80px;
 									display: inline-block;
 									margin-right: 30px;
+									margin-bottom: 20px;
 								}
 								.project-more {
 									display: inline-block;
@@ -71,6 +79,8 @@
 								    position: relative;
 								    bottom: 5px;
 									display: inline-block;
+									margin-bottom: 80px;
+									margin-right: 20px;
 								}
 							}
 						}
@@ -111,6 +121,10 @@
 		padding: 0 10px;
 		box-sizing: border-box;
 		vertical-align: top;
+		@media screen and (max-width: 767px) {
+			width: 100%;
+			margin-bottom: 75px;
+		}
 		.descriptioncell {
 			h3 {
 				font-family: CircularBookBold;
@@ -153,113 +167,8 @@
 	    padding-top: 80px;
 	    border-bottom: 4px solid black;
 	    margin: 0 10px;
-	}
-}
-
-footer.followfooter {
-	border-top: none;
-	padding: 60px 0 80px;
-	.content {
-		text-align: center;
-		p {
-			margin: 0;
-			font-family: CircularBookBold;
-			font-size: 32px;
-			line-height: 41px;
-			margin-bottom: 35px;
-		}
-		.newsform {
-			margin: 0 auto;
-			display: block;
-			float: none;
-			width: 100%;
+		@media screen and (max-width: 767px) {
 			padding-top: 0;
-			div {
-				form {
-					.validation_error {
-						display: none!important;
-					}
-					.gform_body  {
-						ul {
-							li {
-								div {
-									input {
-										border-top: none;
-										border-left: none;
-										border-right: none;
-										border-bottom: 4px solid black;
-										width: 100%;
-										max-width: 500px;
-										text-align: center;
-										padding: 10px 10px 6px;
-										font-family: CircularBookBold;
-										font-size: 18px;
-										line-height: 1;
-										&::-webkit-input-placeholder {
-										  color: #b3b3b3;
-										}
-										&::-moz-placeholder {
-										  color: #b3b3b3;
-										}
-										&:-ms-input-placeholder {
-										  color: #b3b3b3;
-										}
-										&:-moz-placeholder {
-										  color: #b3b3b3;
-										}
-									}
-								}
-							}
-						}
-						.validation_message {
-							display: none;
-						}
-					}
-					.gform_footer {
-						input {
-							font-family: CircularBookBold;
-							font-size: 18px;
-							letter-spacing: .08em;
-							padding: 12px 25px;
-							margin-top: 35px;
-							border: 4px solid black;
-							width: auto;
-							line-height: 1;
-							border-radius: 0;
-						}
-						.gform_ajax_spinner {
-							display: none;
-						}
-					}
-				}
-			}
-			.gform_validation_error {
-				form {
-					.gform_body  {
-						ul {
-							li {
-								div {
-									input.error {
-										color: red;
-										&::-webkit-input-placeholder {
-										  color: red;
-										}
-										&::-moz-placeholder {
-										  color: red;
-										}
-										&:-ms-input-placeholder {
-										  color: red;
-										}
-										&:-moz-placeholder {
-										  color: red;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
 		}
 	}
 }

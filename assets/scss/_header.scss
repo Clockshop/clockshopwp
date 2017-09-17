@@ -24,10 +24,10 @@
 				display: inline-block;
 				position: relative;
 				.menu-primary-navigation-container {
-				-webkit-transition: opacity .25s ease-in-out;
-				-moz-transition: opacity .25s ease-in-out;
-				-o-transition: opacity .25s ease-in-out;
-				transition: opacity .25s ease-in-out;				
+					-webkit-transition: opacity .25s ease-in-out;
+					-moz-transition: opacity .25s ease-in-out;
+					-o-transition: opacity .25s ease-in-out;
+					transition: opacity .25s ease-in-out;
 					display: inline-block;
 					#menu-primary-navigation {
 						display: inline-block;
@@ -108,7 +108,7 @@
 							color: black;
 						}
 					}
-				}				
+				}
 			}
 			.search {
 				display: inline-block;
@@ -129,6 +129,145 @@
 			    }
 			    .fa-times {
 			    	font-size: 20px;
+			    }
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 899px) {
+	.layoutspacer {
+		height: 54px!important;
+	}
+	.primarynav {
+		background-color: white;
+		.mobiletoggle {
+			a {
+				left: 0;
+				background : url("../../images/logo_h.svg") no-repeat 0 0;
+				height: 100%;
+				width: 162px;
+				box-sizing: border-box;
+				border: 14px solid transparent;
+				display: inline-block;
+				height: 54px;
+			}
+			.opennav {
+				float: right;
+				font-size: 26px;
+				padding: 14px;
+				color: black;
+				width: 24px;
+				text-align: center;
+   				&:before {
+					display: none;
+				}
+			}
+			.closenav {
+				float: right;
+				font-size: 26px;
+				padding: 14px;
+				color: black;
+				width: 24px;
+				text-align: center;
+				&:before {
+					display: none;
+				}
+			}
+		}
+		.logo_container {
+			.logo_horizontal {
+			    &:hover {
+			    }
+			}
+		}
+		.topnav {
+			div {
+				.menu-primary-navigation-container {
+					padding: 50px 0 0;
+					#menu-primary-navigation {
+						padding: 0 0 0 15px;
+						li {
+							margin: 15px 0;
+							font-size: 0;
+							a {
+								display: inline-block;
+								color: black;
+								font-size: 18px;
+								letter-spacing: .04em;
+								font-family: CircularBookBold;
+								border-top: none;
+								border-bottom: none;
+								&:hover {
+								}
+								&:focus {
+								}
+							}
+							&:first-child {
+								a {
+								}
+							}
+						}
+						.current-menu-item {
+							a {
+							}
+						}
+						.social {
+							display: inline-block;
+							margin-right: 0;
+							margin-top: 0;
+							margin-bottom: 0;
+							a {
+								padding: 5px;
+								&:hover {
+								}
+							}
+						}
+						.social.first {
+   							margin-left: -5px;
+   							a {
+							}
+						}
+					}
+				}
+				#searchform {
+					padding: 10px 15px 30px 15px;
+					box-sizing: border-box;
+					height: 80px!important;
+					top: -10px;
+					height: 41px;
+					margin: 0;
+					width: 100%;
+					background-color: transparent;
+					input.s {
+						width: 100%;
+						border: none;
+						height: 40px;
+						font-size: 22px;
+						font-family: CircularBook;
+					    padding: 5px;
+					    border-bottom: 4px solid black!important;
+					    background-color: transparent;
+						&::-webkit-input-placeholder {
+							color: black;
+						}
+						&::-moz-placeholder {
+							color: black;
+						}
+						&:-ms-input-placeholder {
+							color: black;
+						}
+						&:-moz-placeholder {
+							color: black;
+						}
+					}
+				}				
+			}
+			.search {
+				display: none;
+			    i {
+			    }
+			    .fa-times {
 			    }
 			}
 		}
