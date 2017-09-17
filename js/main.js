@@ -22,7 +22,6 @@
 			$( ".topnav" ).stop().slideDown(150, function() {
 				topNavVisible = true;
 			});
-
 		}
 
 	}

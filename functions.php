@@ -9,6 +9,7 @@ require_once( 'lib/projecttemplates.php' );
 require_once( 'lib/acf.php' );
 require_once( 'lib/images.php' );
 require_once( 'lib/gravityforms.php' );
+require_once( 'lib/search.php' );
 
 function theme_slug_setup() {
    add_theme_support( 'title-tag' );

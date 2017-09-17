@@ -1,17 +1,3 @@
-<footer class="followfooter">
-	<div class="content">
-
-		<p>Subscribe to our mailing list</p>
-
-		<div class="newsform">
-			<?php echo do_shortcode('[gravityform id="4" title="false" description="false" ajax="true"]')?>
-		</div>
-
-	</div>
-</footer>
-
-
-
 <footer class="contactfooter">
 	<div class="padding">
 		<div class="margin">
