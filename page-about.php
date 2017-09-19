@@ -5,7 +5,8 @@
 get_header(); ?>
 
 	<div class="about-hero">
-		<div style="background-image: url('<?php echo get_field('hero_background_image')['url'] ?>');">
+		<?php $backgroundImage = get_field('hero_background_image'); ?> 
+		<div style="background-image: url('<?php echo $backgroundImage['url']; ?>');">
 			<div class="content">
 				<div>
 					<p class="mission"><?php echo get_field('mission_statement'); ?></p>
