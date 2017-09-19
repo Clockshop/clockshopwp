@@ -17,3 +17,8 @@ function theme_slug_setup() {
 add_action( 'after_setup_theme', 'theme_slug_setup' );
 
 add_filter('show_admin_bar', '__return_false');
+
+function enable_wpautop(){
+	add_filter('the_content', 'wpautop');
+}
+add_action( 'after_setup_theme', 'enable_wpautop' );

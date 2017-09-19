@@ -1,6 +1,6 @@
 {
     "key": "group_572959f421407",
-    "title": "Homepage Options",
+    "title": "Homepage",
     "fields": [
         {
             "key": "field_57296083e0a6a",
@@ -257,11 +257,6 @@
     "location": [
         [
             {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            },
-            {
                 "param": "page_template",
                 "operator": "==",
                 "value": "page-home.php"
@@ -278,5 +273,6 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1505532464
+    "modified": 1505787837,
+    "local": "json"
 }

@@ -12,7 +12,7 @@
 		
 		<?php while (have_posts()) : the_post(); ?>
 			<article>
-				<?php if (has_post_thumbnail()) { ?>
+				<?php if (get_the_post_thumbnail()) { ?>
 					<div class="list-image">
 						<?php the_post_thumbnail('list'); ?>
 					</div>
@@ -43,6 +43,12 @@
 		<?php } ?>
 
 	</div>
+
+	<?php else: ?>
+
+	<h2>No Posts Found!</h2>
+	<h4>Try another search</h4>
+	<?php get_search_form(); ?>
 
 	<?php endif; ?>
 	

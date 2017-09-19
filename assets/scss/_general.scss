@@ -35,7 +35,11 @@
 }
 
 body {
+	position: relative;
 	min-width: 320px;
+	min-height: 100vh;
+	padding-bottom: 430px;
+	box-sizing: border-box;
 }
 
 #uparrow {
@@ -53,6 +57,27 @@ body {
 
 *:focus {
 	outline: none!important;
+}
+
+p {
+	font-size: 18px;
+	line-height: 26px;	
+	font-family: CircularBook;
+	margin-top: 0;
+}
+
+a {
+	text-decoration: underline;
+	&:hover {
+		color: black;
+	}
+}
+
+h3 {
+	font-size: 24px;
+	font-family: CircularBookBold;
+	line-height: 28px;
+	margin-top: 0;
 }
 
 @media screen and (min-width: 900px) {

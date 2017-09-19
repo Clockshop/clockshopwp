@@ -112,6 +112,11 @@ footer {
 		}
 	}
 	&.contactfooter {
+	    position: absolute;
+	    width: 100%;
+		height: 430px;
+		box-sizing: border-box;
+	    bottom: 0;
 	    padding: 60px 0 120px;
 		background-color: black;
 		.logo_container {

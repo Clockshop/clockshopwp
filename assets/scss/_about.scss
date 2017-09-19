@@ -1,0 +1,95 @@
+.about-hero {
+	padding: 0!important;
+	> div {
+		background-size: cover;
+		min-height: 500px;
+		height: -moz-calc(100vh - 88px)!important;
+		height: -webkit-calc(100vh - 88px)!important;
+		height: -o-calc(100vh - 88px)!important;
+		height: calc(100vh - 88px)!important;
+		max-height: 140vw;
+		position: relative;
+		@media screen and (max-width: 899px) {
+			height: -moz-calc(100vh - 54px)!important;
+			height: -webkit-calc(100vh - 54px)!important;
+			height: -o-calc(100vh - 54px)!important;
+			height: calc(100vh - 54px)!important;
+		}
+		.content {
+			height: 100%;
+			> div {
+				position: absolute;
+				bottom: 0;
+				z-index: 1;
+				text-align: left;
+				.mission {
+					font-size: 32px;
+					line-height: 38px;
+					font-family: CircularBookBold;
+					color: white;
+					margin-top: 40px;
+					display: inline-block;
+					margin-bottom: 60px;
+				}
+			}
+		}
+		.project-overlay {
+			background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 100%);
+			background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 100%);
+			background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 100%);
+			background: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 100%);
+			background: linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 100%);
+			width: 100%;
+		    height: 500px;
+		    bottom: 0;
+		    position: absolute;
+		    z-index: 0;
+		}
+		.photo-credit {
+		    position: absolute;
+		    bottom: 0;
+		    right: 20px;
+		    color: #999;
+			font-size: 14px;
+			font-family: CircularBookItalic;
+		}
+	}
+}
+
+.about-content {
+	margin-top: 65px;
+	margin-bottom: 60px;
+}
+
+.about-sections {
+	margin-bottom: 80px;
+	section {
+		border: 4px solid black;
+		margin-bottom: 20px;
+		padding: 8px 15px;
+		position: relative;
+		.section-title {
+			margin-bottom: 0;
+			font-size: 24px;
+			line-height: 26px;
+			font-family: CircularBookBold;
+		}
+		i {
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    margin: auto;
+		    padding: 13px;
+		    font-size: 20px;
+		    line-height: 18px;
+		    cursor: pointer;
+		}
+		.section-content {
+			display: none;
+			margin-top: 8px;
+			*:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
