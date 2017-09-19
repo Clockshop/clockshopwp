@@ -40,7 +40,7 @@
 
 			<div class="topnav">
 				<div>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'menu-primary-navigation-container' ) ); ?>
 					<?php get_search_form(); ?>
 				</div>
 				<button class="search">

@@ -3,7 +3,7 @@
 		<div class="margin">
 
 			<div class="logo_container">
-				<a href="<?php echo get_site_url(); ?>" class="logo_footer"></a>			
+				<a href="<?php echo get_site_url(); ?>" class="logo_footer"></a>
 			</div>
 
 			<p class="contacts">

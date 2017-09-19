@@ -39,7 +39,7 @@
 					</div>
 				</div>
 			<?php endwhile; ?>
-			<div class="arrow"><a href="#homer"><span>&darr;</span></a></div>
+			</div>
 		</div>
 	</div>
 	<?php endif; ?>
