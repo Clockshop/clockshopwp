@@ -110,6 +110,7 @@ h3 {
             display: inli ne-block;
             font-size: 0; }
             .primarynav .topnav > div .menu-primary-navigation-container ul li a {
+              text-decoration: none;
               font-size: 16px;
               letter-spacing: .04em;
               font-family: CircularBookBold;
