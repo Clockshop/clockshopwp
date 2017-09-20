@@ -4,10 +4,10 @@
 
 	get_header(); ?>
 
-	<?php if( have_rows('features') ): ?>
+	<?php if( have_rows('hero_slider') ): ?>
 		<div class="carouselwrap">
 			<div class="carousel-main">
-				<?php while ( have_rows('features') ) : 
+				<?php while ( have_rows('hero_slider') ) : 
 				the_row();
 				$carousel_image = get_sub_field('carousel_image');
 
