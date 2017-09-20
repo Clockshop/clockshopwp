@@ -11,11 +11,11 @@
 				<span class="dot">&#9679;</span>
 				<span>info[@]clockshop.org</span>
 				<span class="dot">&#9679;</span>
-				<span>2806 Clearwater St. Los Angeles, CA 90039</span>
+				<span>2806 Clearwater St. <span style="white-space: nowrap; display: inline-block;">Los Angeles, CA 90039</span></span>
 			</p>
 
 			<p class="copyright">
-				<span>©2017 Clockshop. All Rights Reserved.</span>
+				<span>©2017 Clockshop. <span style="white-space: nowrap; display: inline-block;">All Rights Reserved.</span></span>
 			</p>
 
 		</div>

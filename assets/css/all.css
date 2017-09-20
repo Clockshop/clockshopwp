@@ -29,17 +29,6 @@ body {
   padding-bottom: 430px;
   box-sizing: border-box; }
 
-#uparrow {
-  display: none !important; }
-
-.content {
-  max-width: 1000px;
-  padding-left: 25px;
-  padding-right: 25px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  position: relative; }
-
 *:focus {
   outline: none !important; }
 
@@ -52,6 +41,7 @@ p {
 a {
   text-decoration: underline; }
   a:hover {
+    cursor: pointer;
     color: black; }
 
 h3 {
@@ -59,6 +49,20 @@ h3 {
   font-family: CircularBookBold;
   line-height: 28px;
   margin-top: 0; }
+
+#uparrow {
+  display: none !important; }
+
+.content {
+  max-width: 1000px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative; }
+
+input {
+  border-radius: 0; }
 
 @media screen and (min-width: 900px) {
   .logotype {
@@ -220,6 +224,7 @@ h3 {
           margin: 15px 0;
           font-size: 0; }
           .primarynav .topnav div .menu-primary-navigation-container #menu-primary-navigation li a {
+            text-decoration: none;
             display: inline-block;
             color: black;
             font-size: 18px;
@@ -301,6 +306,7 @@ h3 {
         .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .arrows {
           height: 21px; }
           .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .arrows a {
+            text-decoration: none;
             display: block;
             cursor: pointer; }
             .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .arrows a .left-arrow {
@@ -330,7 +336,8 @@ h3 {
           margin-top: 40px;
           display: inline-block;
           margin-right: 30px;
-          margin-bottom: 20px; }
+          margin-bottom: 20px;
+          line-height: 42px; }
         .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .project-more {
           display: inline-block;
           font-size: 16px;
@@ -343,7 +350,8 @@ h3 {
           bottom: 5px;
           display: inline-block;
           margin-bottom: 80px;
-          margin-right: 20px; }
+          margin-right: 20px;
+          text-decoration: none; }
     .carouselwrap .carousel-main > div > div .carousel-cell .slide .project-overlay {
       background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), black 120%);
       background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), black 120%);
@@ -377,12 +385,17 @@ h3 {
       .featured-grid .grid-3 {
         width: 100%;
         margin-bottom: 75px; } }
+  @media screen and (max-width: 767px) and (max-width: 767px) {
+    .featured-grid .grid-3 {
+      margin-bottom: 50px; } }
     .featured-grid .grid-3 .descriptioncell h3 {
       font-family: CircularBookBold;
       font-size: 28px;
       line-height: 35px;
       margin-top: 15px;
       margin-bottom: 0; }
+      .featured-grid .grid-3 .descriptioncell h3 a {
+        text-decoration: none; }
     .featured-grid .grid-3 .descriptioncell .content-type {
       font-family: CircularBookBold;
       font-size: 18px;
@@ -403,10 +416,14 @@ h3 {
       letter-spacing: .1em;
       margin-top: 30px;
       margin-bottom: 0; }
+      @media screen and (max-width: 767px) {
+        .featured-grid .grid-3 .descriptioncell .calltoaction {
+          margin-top: 20px; } }
       .featured-grid .grid-3 .descriptioncell .calltoaction a {
         border-bottom: 4px solid black;
         padding-bottom: 3px;
-        display: inline-block; }
+        display: inline-block;
+        text-decoration: none; }
   .featured-grid .grid-bottom {
     padding-top: 80px;
     border-bottom: 4px solid black;
@@ -490,8 +507,12 @@ footer.contactfooter {
   height: 430px;
   box-sizing: border-box;
   bottom: 0;
-  padding: 60px 0 120px;
-  background-color: black; }
+  padding-top: 60px;
+  background-color: black;
+  border: none; }
+  @media screen and (max-width: 479px) {
+    footer.contactfooter {
+      padding-top: 55px; } }
   footer.contactfooter .logo_container .logo_footer {
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIxLjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAxODcuMyAxOTQuOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTg3LjMgMTk0Ljg7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT4KPGc+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNODkuNCwwYzIwLjksMi4zLDM5LjksMTEuMyw1NC43LDI0LjlsLTcuNSw4LjJDMTIzLjksMjEuMywxMDcuNSwxMy40LDg5LjQsMTFWMEw4OS40LDB6Ii8+Cgk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNODkuNCwxODMuNmMxOC4xLTIuNCwzNC41LTEwLjMsNDcuMi0yMi4xbDcuNSw4LjJjLTE0LjgsMTMuNC0zMy44LDIyLjUtNTQuNywyNVYxODMuNkw4OS40LDE4My42eiIvPgoJPGc+CgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTAsOTkuNGMwLTksNi44LTE0LjgsMTQuNC0xNC44YzcuOCwwLDExLjgsNC44LDEzLDkuNGwtNS4yLDEuNkMyMS41LDkzLDE5LjMsOTAsMTQuNCw5MAoJCQljLTQuMiwwLTguNywzLTguNyw5LjVjMCw2LDQuMiw5LjMsOC44LDkuM2M0LjgsMCw3LjItMy4yLDcuOS01LjhsNS4xLDEuNmMtMS4xLDQuMy01LjEsOS42LTEzLjEsOS42QzYuNiwxMTQuMSwwLDEwOC40LDAsOTkuNHoiCgkJCS8+CgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTMxLDExMy41Vjg0LjdoNS4zdjI4LjlIMzF6Ii8+Cgk8L2c+Cgk8Zz4KCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNTkuNiwxMDMuN2MwLDYtNC40LDEwLjQtMTAuMywxMC40cy0xMC4zLTQuNC0xMC4zLTEwLjRjMC02LjEsNC40LTEwLjQsMTAuMy0xMC40UzU5LjYsOTcuNyw1OS42LDEwMy43egoJCQkgTTU0LjMsMTAzLjdjMC0zLjctMi40LTUuNi01LTUuNmMtMi42LDAtNSwxLjktNSw1LjZjMCwzLjcsMi40LDUuNiw1LDUuNkM1MS45LDEwOS4zLDU0LjMsMTA3LjQsNTQuMywxMDMuN3oiLz4KCTwvZz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik02Ny4yLDEwMy43YzAsMy42LDIuMyw1LjUsNSw1LjVjMi43LDAsNC4xLTEuOCw0LjUtMy4zbDQuNywxLjZjLTAuOSwzLjMtMy45LDYuNi05LjIsNi42CgkJCWMtNS44LDAtMTAuMy00LjQtMTAuMy0xMC40YzAtNi4xLDQuNS0xMC40LDEwLjItMTAuNGM1LjMsMCw4LjQsMy4zLDkuMiw2LjZsLTQuNywxLjZjLTAuNS0xLjYtMS43LTMuMy00LjMtMy4zCgkJCUM2OS41LDk4LjIsNjcuMiwxMDAuMiw2Ny4yLDEwMy43eiIvPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik05NS40LDEwMi4ybDgsMTEuNGgtNi41bC01LjItNy41bC0yLjIsMi4zdjUuMmgtNS4zVjg0LjdoNS4zdjE2LjZsNi44LTcuM2g2LjlMOTUuNCwxMDIuMnoiLz4KCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTA4LjMsMTA3LjFjMC4xLDEuNiwxLjMsMywzLjYsM2MxLjgsMCwyLjYtMC45LDIuNi0yYzAtMC45LTAuNi0xLjYtMi4xLTEuOWwtMi42LTAuNgoJCQljLTMuOC0wLjgtNS41LTMuMS01LjUtNS45YzAtMy41LDMuMS02LjQsNy4zLTYuNGM1LjYsMCw3LjUsMy42LDcuNyw1LjdsLTQuNCwxYy0wLjItMS4yLTEtMi42LTMuMi0yLjZjLTEuNCwwLTIuNSwwLjgtMi41LDIKCQkJYzAsMSwwLjcsMS42LDEuOCwxLjhsMi44LDAuNmMzLjksMC44LDUuOCwzLjIsNS44LDZjMCwzLjItMi41LDYuNS03LjYsNi41Yy01LjksMC03LjktMy44LTguMi02LjFMMTA4LjMsMTA3LjF6Ii8+CgkJPHBhdGggY2xhc3M9InN0MCIgZD0iTTEyOCwxMTMuNWgtNS4zVjg0LjdoNS4zdjEwLjljMS4zLTEuNSwzLjQtMi4yLDUuMy0yLjJjNSwwLDcuMywzLjUsNy4zLDcuOHYxMi40aC01LjN2LTExLjQKCQkJYzAtMi4yLTEuMS0zLjktMy42LTMuOWMtMi4yLDAtMy41LDEuNy0zLjcsMy44VjExMy41eiIvPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xNjQsMTAzLjdjMCw2LTQuNCwxMC40LTEwLjMsMTAuNHMtMTAuMy00LjQtMTAuMy0xMC40YzAtNi4xLDQuNC0xMC40LDEwLjMtMTAuNFMxNjQsOTcuNywxNjQsMTAzLjd6CgkJCSBNMTU4LjcsMTAzLjdjMC0zLjctMi40LTUuNi01LTUuNmMtMi42LDAtNSwxLjktNSw1LjZjMCwzLjcsMi40LDUuNiw1LDUuNkMxNTYuMywxMDkuMywxNTguNywxMDcuNCwxNTguNywxMDMuN3oiLz4KCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMTY3LDEyMS4xVjkzLjloNS4xdjIuNGMwLjktMS41LDMuMS0yLjgsNi0yLjhjNS43LDAsOS4xLDQuNCw5LjEsMTAuMmMwLDUuOS0zLjcsMTAuMy05LjMsMTAuMwoJCQljLTIuNywwLTQuNy0xLjEtNS43LTIuNHY5LjVIMTY3eiBNMTc3LjIsOTguMmMtMi43LDAtNC45LDItNC45LDUuNWMwLDMuNSwyLjIsNS41LDQuOSw1LjVjMi43LDAsNC45LTIsNC45LTUuNQoJCQlDMTgyLDEwMC4zLDE3OS45LDk4LjIsMTc3LjIsOTguMnoiLz4KCTwvZz4KPC9nPgo8L3N2Zz4K) no-repeat 0 0;
     width: 100px;
@@ -504,11 +525,17 @@ footer.contactfooter {
     text-align: center;
     margin-top: 40px;
     font-size: 15px;
+    line-height: 21px;
     letter-spacing: .04em; }
     @media screen and (max-width: 899px) {
       footer.contactfooter .contacts span:not(.dot) {
         display: block;
-        margin-bottom: 5px; } }
+        margin-bottom: 10px; } }
+    footer.contactfooter .contacts span a {
+      text-decoration: none;
+      color: white; }
+    footer.contactfooter .contacts span:last-child {
+      margin-bottom: 0; }
     footer.contactfooter .contacts .dot {
       font-size: 12px; }
   footer.contactfooter .copyright {
@@ -595,7 +622,7 @@ footer.contactfooter {
       @media screen and (max-width: 899px) {
         .search-template .search-list article .list-title {
           font-size: 24px; } }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         .search-template .search-list article .list-title {
           font-size: 18px; } }
       @media screen and (max-width: 479px) {
@@ -642,7 +669,13 @@ footer.contactfooter {
         position: absolute;
         bottom: 0;
         z-index: 1;
-        text-align: left; }
+        text-align: left;
+        padding: 0 25px;
+        left: 0;
+        right: 0; }
+        @media screen and (max-width: 479px) {
+          .about-hero > div .content > div {
+            padding: 0 20px; } }
         .about-hero > div .content > div .mission {
           font-size: 32px;
           line-height: 38px;
@@ -651,6 +684,15 @@ footer.contactfooter {
           margin-top: 40px;
           display: inline-block;
           margin-bottom: 60px; }
+          @media screen and (max-width: 767px) {
+            .about-hero > div .content > div .mission {
+              font-size: 24px;
+              line-height: 32px;
+              margin-bottom: 40px; } }
+          @media screen and (max-width: 479px) {
+            .about-hero > div .content > div .mission {
+              font-size: 18px;
+              line-height: 24px; } }
     .about-hero > div .project-overlay {
       background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), black 100%);
       background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), black 100%);
@@ -669,6 +711,9 @@ footer.contactfooter {
       color: #999;
       font-size: 14px;
       font-family: CircularBookItalic; }
+      @media screen and (max-width: 767px) {
+        .about-hero > div .photo-credit {
+          font-size: 12px; } }
 
 .about-content {
   margin-top: 65px;

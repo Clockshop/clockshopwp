@@ -4,14 +4,14 @@
 		
 		function search() {
 			$('.search').on('click', function() {
-				if ($('.searchform').is(':visible')) {
-					$('.searchform').hide();
+				if ($('.topnav .searchform').is(':visible')) {
+					$('.topnav .searchform').hide();
 					$('.menu-primary-navigation-container').css('opacity', '1');
 					$('.search .fa-times').replaceWith( "<i class='fa fa-search' aria-hidden='true'></i>" );
-					$('.searchform input').focus();
+					$('.topnav .searchform input').focus();
 				} else {
 					$('.menu-primary-navigation-container').css('opacity', '0');
-					$('.searchform').fadeIn();
+					$('.topnav .searchform').fadeIn();
 					$('.search .fa-search').replaceWith( "<i class='fa fa-times' aria-hidden='true'></i>" );
 				}
 			});

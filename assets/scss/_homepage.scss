@@ -30,9 +30,10 @@
 								bottom: 0;
 								z-index: 1;
 								text-align: left;
-								.arrows {
+    							.arrows {
 									height: 21px;
 									a {
+										text-decoration: none;
 										display: block;
 										cursor: pointer;
 										.left-arrow {
@@ -67,6 +68,7 @@
 									display: inline-block;
 									margin-right: 30px;
 									margin-bottom: 20px;
+									line-height: 42px;
 								}
 								.project-more {
 									display: inline-block;
@@ -81,6 +83,7 @@
 									display: inline-block;
 									margin-bottom: 80px;
 									margin-right: 20px;
+									text-decoration: none;
 								}
 							}
 						}
@@ -124,6 +127,9 @@
 		@media screen and (max-width: 767px) {
 			width: 100%;
 			margin-bottom: 75px;
+			@media screen and (max-width: 767px) {
+				margin-bottom: 50px;
+			}
 		}
 		.descriptioncell {
 			h3 {
@@ -132,6 +138,9 @@
 				line-height: 35px;
 				margin-top: 15px;
 				margin-bottom: 0;
+				a {
+					text-decoration: none;
+				}
 			}
 			.content-type {
 				font-family: CircularBookBold;
@@ -155,10 +164,14 @@
 				letter-spacing: .1em;
 				margin-top: 30px;
 				margin-bottom: 0;
+				@media screen and (max-width: 767px) {
+					margin-top: 20px;
+				}
 				a {
 					border-bottom: 4px solid black;
 					padding-bottom: 3px;
 					display: inline-block;
+					text-decoration: none;
 				}
 			}
 		}

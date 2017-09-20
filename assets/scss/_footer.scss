@@ -117,8 +117,12 @@ footer {
 		height: 430px;
 		box-sizing: border-box;
 	    bottom: 0;
-	    padding: 60px 0 120px;
+	    padding-top: 60px;
 		background-color: black;
+		border: none;
+		@media screen and (max-width: 479px) {
+		    padding-top: 55px;
+		}
 		.logo_container {
 			.logo_footer {
 				background : url("../../images/logo_footer.svg") no-repeat 0 0;				
@@ -134,11 +138,21 @@ footer {
 		    text-align: center;
 		    margin-top: 40px;
 		    font-size: 15px;
+		    line-height: 21px;
 		    letter-spacing: .04em;
 			@media screen and (max-width: 899px) {
 				span:not(.dot) {
 					display: block;
-					margin-bottom: 5px;
+					margin-bottom: 10px;
+				}
+			}
+			span {
+				a {
+					text-decoration: none;
+					color: white;
+				}
+				&:last-child {
+					margin-bottom: 0;
 				}
 			}
 		    .dot {
