@@ -1,0 +1,69 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="carouselwrap">
+		<div class="carousel-main">
+
+		    {% for item in post.get_field('hero_slider') %}
+
+			<div class="carousel-cell">
+				<div class="slide" style="background-image: url('{{TimberImage(item.carousel_image).src}}');">
+					<div class="content">
+						<div>
+							<div class="arrows">
+								<a class="prev"><img class="left-arrow" src="{{theme.link}}/images/arrow.png" /></a>
+								<a class="next"><img class="right-arrow" src="{{theme.link}}/images/arrow.png" /></a>
+							</div>
+							<p class="project-title">{{item.headline}}</p>
+							<a class="project-more" href="{{item.external_link}}">LEARN MORE</a>
+						</div>
+					</div>
+					<div class="project-overlay"></div>
+					<div class="ratio"></div>
+				</div>
+			</div>
+
+		    {% endfor %}
+
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="grid featured-grid">
+			<h3>Featured Call Outs</h3>
+		    {% for item in post.get_field('features') %}
+
+				<div class="grid-3">
+					<div class="imagecell">
+						<a href="{{item.external_link}}"><img src="{{TimberImage(item.thumbnail_image).src('grid-3')}}" /></a>
+					</div>
+					<div class="descriptioncell">
+						<h3><a href="<?php echo $linkurl; ?>">{{item.headline}}</a></h3>
+						<p class="content-type">{{item.content_type}}</p>
+						<p class="description">{{item.description}}</p>
+						<p class="calltoaction"><a href="<?php echo $linkurl; ?>">{{item.call_to_action}}</a></p>
+					</div>
+				</div>
+
+		    {% endfor %}
+
+			<div class="grid-bottom"></div>
+
+		</div>
+	</div>
+
+
+	<footer class="followfooter">
+		<div class="content">
+
+			<p>Subscribe to our mailing list</p>
+
+			<div class="newsform">
+				{{signup_form}}
+			</div>
+
+		</div>
+	</footer>
+
+{% endblock %}
