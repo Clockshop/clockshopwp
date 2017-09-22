@@ -2,12 +2,6 @@
 	$project_template = get_field('project_template');
 	if ( $project_template ) : ?>
 
-
-<pre><?php var_dump($post); ?></pre>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<pre><?php var_dump(get_post_meta($post->ID)); ?></pre>
-
-
 <section class="projecttemplate">
 
 	<?php 
