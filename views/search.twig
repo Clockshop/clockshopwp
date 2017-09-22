@@ -1,0 +1,66 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="search-template content">
+
+		{% if (posts) %}
+
+			<h2>Search Results</h2>
+			<h4>YOU SEARCHED FOR "{{query}}"</h4>
+			{% include "searchform.twig" %}
+
+
+			<div class="search-list">
+
+				{% for post in posts %}
+					<article>
+						{% if post.thumbnail != '' %}
+							<div class="list-image">
+							    <img class="thumbnail" src="{{ post.thumbnail.src|resize(424, 272) }}">
+							</div>
+						{% else %}
+							<div class="list-image">
+							    <img class="catch-first-image" src="{{function('catch_first_image', post.id)|resize(424, 272)}}">
+							</div>
+						{% endif %}
+						<div class="list-title">
+							<a href="{{ post.link }}">{{ post.title }}</a>
+						</div>
+					</article>
+
+				{% endfor %}
+
+				<div class="search-pag">
+
+					{% if pagination.prev %}
+				    {% endif %}
+
+			        {% for page in pagination.pages %}
+		                {% if page.link %}
+		                    <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+		                {% else %}
+		                    <span class="{{page.class}}">{{page.title}}</span>
+		                {% endif %}
+			        {% endfor %}
+
+				    {% if pagination.next %}
+				    {% endif %}	
+
+				</div>
+
+			</div>
+
+		{% else %}
+
+			<div class="no-results">
+				<h2>No results for "{{query}}"</h2>
+				<h4>Try another search...</h4>
+				{% include "searchform.twig" %}
+			</div>
+
+		{% endif %}
+
+	</div
+
+{% endblock %}

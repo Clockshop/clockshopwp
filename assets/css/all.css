@@ -104,16 +104,16 @@ input {
       .primarynav .topnav > div {
         display: inline-block;
         position: relative; }
-        .primarynav .topnav > div .menu-primary-navigation-container {
+        .primarynav .topnav > div .menu-container {
           -webkit-transition: opacity .25s ease-in-out;
           -moz-transition: opacity .25s ease-in-out;
           -o-transition: opacity .25s ease-in-out;
           transition: opacity .25s ease-in-out;
           display: inline-block; }
-          .primarynav .topnav > div .menu-primary-navigation-container ul {
+          .primarynav .topnav > div .menu-container ul {
             display: inli ne-block;
             font-size: 0; }
-            .primarynav .topnav > div .menu-primary-navigation-container ul li a {
+            .primarynav .topnav > div .menu-container ul li a {
               text-decoration: none;
               font-size: 16px;
               letter-spacing: .04em;
@@ -122,23 +122,23 @@ input {
               margin: 0 13px;
               border-top: none;
               border-bottom: none; }
-              .primarynav .topnav > div .menu-primary-navigation-container ul li a:hover {
+              .primarynav .topnav > div .menu-container ul li a:hover {
                 border-bottom: 4px solid black;
                 border-top: none !important; }
-              .primarynav .topnav > div .menu-primary-navigation-container ul li a:focus {
+              .primarynav .topnav > div .menu-container ul li a:focus {
                 outline: none !important; }
-            .primarynav .topnav > div .menu-primary-navigation-container ul li:first-child a {
+            .primarynav .topnav > div .menu-container ul li:first-child a {
               margin-left: 0 !important; }
-            .primarynav .topnav > div .menu-primary-navigation-container ul .current-menu-item a {
+            .primarynav .topnav > div .menu-container ul .current-menu-item a {
               border-bottom: 4px solid black !important;
               border-top: none !important; }
-            .primarynav .topnav > div .menu-primary-navigation-container ul .social a {
+            .primarynav .topnav > div .menu-container ul .social a {
               margin-left: 4.5px;
               margin-right: 4.5px;
               cursor: pointer; }
-              .primarynav .topnav > div .menu-primary-navigation-container ul .social a:hover {
+              .primarynav .topnav > div .menu-container ul .social a:hover {
                 border-bottom: none; }
-            .primarynav .topnav > div .menu-primary-navigation-container ul .social.first a {
+            .primarynav .topnav > div .menu-container ul .social.first a {
               margin-left: 20px; }
         .primarynav .topnav > div .searchform {
           position: absolute;
@@ -606,15 +606,16 @@ footer.contactfooter {
     margin-bottom: 30px;
     display: table; }
     .search-template .search-list article .list-image {
-      width: 25%;
-      display: table-cell;
+      width: 22.316%;
+      display: inline-block;
       vertical-align: middle; }
       .search-template .search-list article .list-image img {
         width: 100%; }
     .search-template .search-list article .list-title {
+      box-sizing: border-box;
       position: relative;
-      width: 75%;
-      display: table-cell;
+      width: 77.684%;
+      display: inline-block;
       vertical-align: middle;
       font-family: CircularBookBold;
       font-size: 28px;
@@ -629,15 +630,18 @@ footer.contactfooter {
         .search-template .search-list article .list-title {
           font-size: 16px;
           padding-left: 15px; } }
-      .search-template .search-list article .list-title a:hover {
-        color: black;
-        text-decoration: none;
-        border-bottom: 2px solid black; }
+      .search-template .search-list article .list-title a {
+        text-decoration: none; }
+        .search-template .search-list article .list-title a:hover {
+          color: black;
+          text-decoration: none;
+          border-bottom: 2px solid black; }
   .search-template .search-list .search-pag {
     padding-top: 40px;
     padding-bottom: 20px;
     text-align: center; }
     .search-template .search-list .search-pag a, .search-template .search-list .search-pag span {
+      text-decoration: none;
       font-family: CircularBook;
       font-size: 19px;
       letter-spacing: .1em;
@@ -646,10 +650,58 @@ footer.contactfooter {
       .search-template .search-list .search-pag a.current, .search-template .search-list .search-pag span.current {
         font-family: CircularBookBold; }
 
+.search-template .no-results > h2 {
+  font-family: CircularBookBold;
+  font-size: 36px;
+  display: block;
+  text-align: center;
+  margin-top: 80px; }
+
+.search-template .no-results > h4 {
+  font-family: CircularBookBold;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 30px;
+  line-height: 24px; }
+
+.search-template .no-results .searchform {
+  box-sizing: border-box;
+  height: 80px !important;
+  height: 41px;
+  margin: 0;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 80px; }
+  .search-template .no-results .searchform input.s {
+    width: 100%;
+    border: none;
+    height: 40px;
+    font-size: 22px;
+    font-family: CircularBook;
+    padding: 5px;
+    border-bottom: 4px solid black !important;
+    background-color: transparent; }
+    .search-template .no-results .searchform input.s::selection {
+      background: white; }
+    .search-template .no-results .searchform input.s::-moz-selection {
+      background: white; }
+    .search-template .no-results .searchform input.s::-webkit-input-placeholder {
+      color: black; }
+    .search-template .no-results .searchform input.s::-moz-placeholder {
+      color: black; }
+    .search-template .no-results .searchform input.s:-ms-input-placeholder {
+      color: black; }
+    .search-template .no-results .searchform input.s:-moz-placeholder {
+      color: black; }
+
 .about-hero {
   padding: 0 !important; }
   .about-hero > div {
     background-size: cover;
+    background-position: center;
     min-height: 500px;
     height: -moz-calc(100vh - 88px) !important;
     height: -webkit-calc(100vh - 88px) !important;

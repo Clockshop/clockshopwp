@@ -1,7 +1,7 @@
 <?php
 
 add_image_size('grid-3', 1434, 956, true);
-add_image_size('list', 424, 272);
+add_image_size('list', 424, 272, true);
 
 function image_crop_dimensions($default, $orig_w, $orig_h, $new_w, $new_h, $crop){
     if ( !$crop ) return null; // let the wordpress default function handle this
@@ -18,5 +18,25 @@ function image_crop_dimensions($default, $orig_w, $orig_h, $new_w, $new_h, $crop
     return array( 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h );
 }
 add_filter('image_resize_dimensions', 'image_crop_dimensions', 10, 6);
+
+function catch_first_image($id) {
+	$post = get_post($id);
+	$first_img = '';
+	ob_start();
+	ob_end_clean();
+	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+	if(isset($matches[1][0])) {
+		return $matches[1][0];
+	} else {
+		$meta = get_post_meta(get_the_ID());
+		foreach($meta as $key=>$value){
+			if (strpos($key, 'image') !== false && substr($key, 0, 1) !== '_') {
+				$first_img = wp_get_attachment_image_src( $value[0], 'list' );
+				return $first_img[0];
+			}
+		}
+		return '/wp-content/themes/clockshopwp/images/placeholder.png';
+	}
+}
 
 ?>
