@@ -18,7 +18,7 @@
 		}	
 
 		function collapsable_sections() {
-			$('.about-sections section .fa').on('click', function() {
+			$('.collapsable-sections section .fa').on('click', function() {
 				if ($(this).hasClass('fa-plus')) {
 					$(this).removeClass('fa-plus');
 					$(this).addClass('fa-minus');

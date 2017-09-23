@@ -16,7 +16,7 @@
 	<div class="content about-content">
 		{{post.content}}
 	</div>
-	<div class="content about-sections">
+	<div class="content collapsable-sections">
 	    {% for item in post.get_field('collapsable_sections') %}
 			<section>
 			    <p class="section-title">{{item.section_title}}</p>

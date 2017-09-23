@@ -20,6 +20,7 @@ do_action( 'tribe_events_before_template' );
 	<h1>Events This Month</h1>
 
 <?php
+/*
 function add_months($months, DateTime $dateObject) {
 	$next = new DateTime($dateObject->format('Y-m-d'));
 	$next->modify('last day of +'.$months.' month');
@@ -48,10 +49,15 @@ function endCycle($d1, $months) {
 
 $today = current_time('Y-m-d');
 $oneMonth = endCycle($today, 1);
+*/
+
+$today = date("Y-m-d");
+$firstNextMonth = date("Y-m-01");
+$nextMonth = date("Y-m-d", strtotime("$firstNextMonth +1 month"));
 
 $events = tribe_get_events( array(
 	'start_date' => $today,
-	'end_date'   => $oneMonth
+	'end_date'   => $nextMonth
 ));
 
 if ( empty( $events ) ) {
@@ -89,7 +95,7 @@ else { ?>
 
 <?php 
 $events = tribe_get_events( array(
-	'start_date' => $oneMonth,
+	'start_date' => $nextMonth,
 	'posts_per_page'   => 3,
 
 ));
@@ -120,6 +126,61 @@ else { ?>
 				</div>
 			<?php } ?>
 			<div class="grid-bottom"></div>
+		</div>
+	</section>
+<?php } ?>
+
+<?php 
+$events = tribe_get_events( array(
+	'end_date' => $today,
+	'posts_per_page'   => -1,
+	'order' => 'DESC',
+));
+
+$eventYears = [];
+
+$years = [];
+
+foreach($events as $key => $event) {
+	$eventDate = $event->EventStartDate;
+	$eventYear = date('Y', strtotime($eventDate));
+	if (!in_array($eventYear, $years)) {
+		array_push($years, $eventYear);
+		$eventYears[$eventYear]['year'] = $eventYear;
+	}
+	$eventYears[$eventYear]['events'][$key] = $event;
+}
+
+?><pre><?php // print_r($eventYears); ?></pre><?php
+
+
+if ( empty( $events ) ) {
+	echo 'Sorry, nothing found.';
+}
+else { ?>
+	<section class="content upcoming-events">
+		<h4>Past Events</h4>
+		<div class="collapsable-sections">
+			<?php foreach( $eventYears as $eventYear ) { ?>
+				<section>
+				    <p class="section-title"><?php echo $eventYear['year'] ?></p>
+					<i class="fa fa-plus" aria-hidden="true"></i>
+					<div class="section-content">
+					<?php $months = []; ?>
+					<?php foreach( $eventYear['events'] as $event ) {
+						$month = date('m', strtotime($event->EventStartDate));
+						if (!in_array($month, $months)) { ?>
+							<?php array_push($months, $month); ?>
+							<p class="event-month"><span><?php echo date('F', strtotime($event->EventStartDate)); ?></span></p>
+						<?php } ?>
+						<div class="event-info">
+							<p class="event-title"><a href="<?php echo get_permalink($event); ?>"><?php echo $event->post_title ?></a></p>
+							<p class="event-date"><span><?php echo date('F j, Y', strtotime($event->EventStartDate)); ?></span></p>
+						</div>
+					<?php } ?>
+					</div>
+				</section>
+			<?php } ?>
 		</div>
 	</section>
 <?php } ?>

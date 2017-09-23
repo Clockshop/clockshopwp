@@ -148,6 +148,33 @@ input {
     .grid .grid-bottom {
       padding-top: 0; } }
 
+.collapsable-sections {
+  margin-bottom: 80px; }
+  .collapsable-sections section {
+    border: 4px solid black;
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    position: relative; }
+    .collapsable-sections section .section-title {
+      margin-bottom: 0;
+      font-size: 24px;
+      line-height: 26px;
+      font-family: CircularBookBold; }
+    .collapsable-sections section i {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: auto;
+      padding: 13px;
+      font-size: 20px;
+      line-height: 18px;
+      cursor: pointer; }
+    .collapsable-sections section .section-content {
+      display: none;
+      margin-top: 8px; }
+      .collapsable-sections section .section-content *:last-child {
+        margin-bottom: 0; }
+
 @media screen and (min-width: 1000px) {
   .logotype {
     width: 69px;
@@ -817,33 +844,6 @@ footer.contactfooter {
   margin-top: 65px;
   margin-bottom: 60px; }
 
-.about-sections {
-  margin-bottom: 80px; }
-  .about-sections section {
-    border: 4px solid black;
-    margin-bottom: 20px;
-    padding: 8px 15px;
-    position: relative; }
-    .about-sections section .section-title {
-      margin-bottom: 0;
-      font-size: 24px;
-      line-height: 26px;
-      font-family: CircularBookBold; }
-    .about-sections section i {
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin: auto;
-      padding: 13px;
-      font-size: 20px;
-      line-height: 18px;
-      cursor: pointer; }
-    .about-sections section .section-content {
-      display: none;
-      margin-top: 8px; }
-      .about-sections section .section-content *:last-child {
-        margin-bottom: 0; }
-
 #tribe-events-pg-template {
   padding: 0; }
   @media screen and (min-width: 999px) {
@@ -904,12 +904,47 @@ footer.contactfooter {
           font-size: 16px;
           line-height: 24px; }
 
-.upcoming-events {
-  margin-bottom: 40px; }
-  .upcoming-events > h4 {
-    font-size: 18px;
-    font-family: CircularBookBold;
-    margin: 0;
-    padding: 15px 0 30px;
-    letter-spacing: .1em;
-    text-transform: uppercase; }
+.upcoming-events > h4 {
+  font-size: 18px;
+  font-family: CircularBookBold;
+  margin: 0;
+  padding: 15px 0 30px;
+  letter-spacing: .1em;
+  text-transform: uppercase; }
+
+.collapsable-sections section .section-title {
+  text-align: center; }
+
+.collapsable-sections section .section-content {
+  font-size: 0;
+  margin-top: 0; }
+  .collapsable-sections section .section-content > :first-child {
+    margin-top: 30px !important; }
+  .collapsable-sections section .section-content .event-month {
+    margin-top: 5px;
+    border-top: 4px solid black; }
+    .collapsable-sections section .section-content .event-month span {
+      background-color: black;
+      color: white;
+      padding: 2px 5px;
+      text-transform: uppercase;
+      font-size: 18px;
+      letter-spacing: .1em; }
+  .collapsable-sections section .section-content .event-info {
+    width: 50%;
+    display: inline-block;
+    margin-bottom: 25px;
+    vertical-align: top;
+    padding-right: 20px;
+    box-sizing: border-box; }
+    @media screen and (max-width: 767px) {
+      .collapsable-sections section .section-content .event-info {
+        width: 100%; } }
+    .collapsable-sections section .section-content .event-info .event-title {
+      font-family: CircularBookBold;
+      font-size: 22px;
+      margin-bottom: 2px; }
+      .collapsable-sections section .section-content .event-info .event-title a {
+        text-decoration: none; }
+    .collapsable-sections section .section-content .event-info .event-date {
+      font-size: 16px; }
