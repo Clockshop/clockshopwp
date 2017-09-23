@@ -19,6 +19,9 @@ function spellerberg_return_sp_date($postid, $format='') {
 
 	$weekday = tribe_get_start_date($postid,'','D'); 
 
+	$startTime = tribe_get_start_date($postid,'','g'); 
+	$endTime = tribe_get_end_date($postid,'','g');
+
 	$s_hour = tribe_get_start_date($postid,'','g'); 
 	$s_min = tribe_get_start_date($postid,'','i'); 
 	$s_am = ' ' . tribe_get_start_date($postid,'','a');
@@ -149,4 +152,26 @@ function spellerberg_show_event_datetime ( $startYear, $endYear, $startMonth, $e
 
 	return $output;
 	
+}
+
+if ( class_exists('Tribe__Events__Main') ){
+ 
+    function tribe_get_text_categories( $event_id = null ) {
+ 
+        if ( is_null( $event_id ) ) {
+            $event_id = get_the_ID();
+        }
+ 
+        $event_cats = '';
+ 
+        $term_list = wp_get_post_terms( $event_id, Tribe__Events__Main::TAXONOMY );
+ 
+        foreach( $term_list as $term_single ) {
+            $event_cats .= $term_single->name . ', ';
+        }
+ 
+        return rtrim($event_cats, ', ');
+ 
+    }
+ 
 }

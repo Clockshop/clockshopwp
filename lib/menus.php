@@ -7,7 +7,6 @@ function register_custom_menus() {
 
 add_action('init', 'register_custom_menus');
 
-
 function menu_shortcode( $atts ) {
 
 	extract( shortcode_atts( array(

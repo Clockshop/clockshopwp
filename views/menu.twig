@@ -6,5 +6,20 @@
 			{% include "menu.twig" with {'menu': item.get_children} %}
 		</li>
 	{% endfor %}
+	{% if options.instagram_url %}
+		<li class="social first"><a target="_blank" href="{{options.instagram_url}}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+	{% endif %}
+	{% if options.facebook_url %}
+		<li class="social"><a target="_blank" href="{{options.facebook_url}}"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+	{% endif %}
+	{% if options.tumblr_url %}
+		<li class="social"><a target="_blank" href="{{options.tumblr_url}}"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
+	{% endif %}
+	{% if options.vimeo_url %}
+		<li class="social"><a target="_blank" href="{{options.vimeo_url}}"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+	{% endif %}
+	{% if options.twitter_url %}
+		<li class="social"><a target="_blank" href="{{options.twitter_url}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+	{% endif %}
 	</ul>
 {% endif %}

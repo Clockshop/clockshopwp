@@ -44,7 +44,7 @@ article + p, article > p { margin-top: 0; }
 	h2 { font-size: 90px; margin: 40px 0 40px 0; }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
 	h2 { margin: 50px 0 40px 0; }
 	.responsivecue { float: right; }
 }
@@ -181,7 +181,7 @@ article + p, article > p { margin-top: 0; }
 
 #uparrow { display: none; }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
 
 	.mobiletoggle { display: none; }
 

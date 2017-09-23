@@ -1,4 +1,4 @@
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
 	.primarynav {
 		margin: 0 auto;
 		.logo_container {
@@ -81,7 +81,7 @@
 				}
 				.searchform {
 					position: absolute;
-					top: -10px;
+					top: -2px;
 					height: 41px;
 					margin: 0;
 					width: 100%;
@@ -90,10 +90,11 @@
 					input.s {
 						width: 100%;
 						border: none;
-						height: 40px;
-						font-size: 22px;
-						font-family: CircularBook;
-					    padding: 5px;
+						height: 32px;
+						font-size: 16px;
+						text-transform: uppercase;
+						font-family: CircularBookBold;
+					    padding: 5px 0;
 					    border-bottom: 4px solid black!important;
 					    background-color: transparent;
 						&::-webkit-input-placeholder {
@@ -136,7 +137,7 @@
 	}
 }
 
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 999px) {
 	.layoutspacer {
 		height: 54px!important;
 	}
@@ -183,10 +184,11 @@
 			}
 		}
 		.topnav {
+			display: none;
 			div {
-				.menu-primary-navigation-container {
+				.menu-container {
 					padding: 50px 0 0;
-					#menu-primary-navigation {
+					ul {
 						padding: 0 0 0 15px;
 						li {
 							margin: 15px 0;
