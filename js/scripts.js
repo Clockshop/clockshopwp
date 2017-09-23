@@ -30,8 +30,29 @@
 			});
 		}
 
+		function eventsSlider() {
+			$('.events-slider').flickity({
+				cellSelector: '.slide-cell',
+				cellAlign: 'left',
+				wrapAround: true,
+				pageDots: false,
+				prevNextButtons: false,
+				autoPlay: 3500,
+				pauseAutoPlayOnHover: false
+			});
+
+			$('.prev').on( 'click', function() {
+				$('.events-slider').flickity('previous');
+			});
+
+			$('.next').on( 'click', function() {
+				$('.events-slider').flickity('next');
+			});
+		}
+
 		collapsable_sections();
 		search();
+		eventsSlider();
 
 	});
 

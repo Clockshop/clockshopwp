@@ -172,5 +172,15 @@ footer {
 			    margin-top: 20px;
 			}
 		}
+		.edit-this {
+			position: absolute;
+			right: 25px;
+			bottom: 15px;
+			margin: auto;
+			a {
+				color: white;
+				font-size: 16px;
+			}
+		}
 	}
 }

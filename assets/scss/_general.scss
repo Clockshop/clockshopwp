@@ -61,11 +61,35 @@ a {
 	}
 }
 
+h1 {
+	font-family: CircularBookBold;
+	font-size: 36px;
+	line-height: 42px;
+	display: block;
+	text-align: center;
+}
+
+
+h2 {
+	font-family: CircularBookBold;
+	font-size: 32px;
+	line-height: 36px;
+	@media screen and (min-width: 1000px) {
+	    margin: 30px 0 20px 0!important;
+	}
+}
+
 h3 {
 	font-size: 24px;
 	font-family: CircularBookBold;
 	line-height: 28px;
 	margin-top: 0;
+}
+
+h5 {
+	font-size: 22px;
+	font-family: CircularBook;
+	line-height: 24px;
 }
 
 #uparrow {
@@ -85,7 +109,83 @@ input {
 	border-radius: 0;
 }
 
-@media screen and (min-width: 900px) {
+.grid {
+	.grid-3 {
+		width: 33.33%;
+		display: inline-block;
+		padding: 0 10px;
+		box-sizing: border-box;
+		vertical-align: top;
+		@media screen and (max-width: 767px) {
+			width: 100%;
+			margin-bottom: 75px;
+			@media screen and (max-width: 767px) {
+				margin-bottom: 50px;
+			}
+		}
+		.descriptioncell {
+			h3 {
+				font-family: CircularBookBold;
+				font-size: 28px;
+				line-height: 35px;
+				margin-top: 15px;
+				margin-bottom: 0;
+				a {
+					text-decoration: none;
+				}
+			}
+			.content-type {
+				font-family: CircularBookBold;
+				font-size: 18px;
+				line-height: 27px;
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+			.add-descriptor {
+				font-family: CircularBook;
+				font-size: 16px;
+				line-height: 22px;
+				margin-top: 2px;
+				margin-bottom: 0;				
+			}
+			.description {
+				font-family: CircularBook;
+				font-size: 16px;
+				line-height: 22px;
+				margin-top: 12px;
+				margin-bottom: 0;
+			}
+			.calltoaction {
+				font-family: CircularBookBold;
+				font-size: 16px;
+				line-height: 22px;
+				text-transform: uppercase;
+				letter-spacing: .1em;
+				margin-top: 30px;
+				margin-bottom: 0;
+				@media screen and (max-width: 767px) {
+					margin-top: 20px;
+				}
+				a {
+					border-bottom: 4px solid black;
+					padding-bottom: 3px;
+					display: inline-block;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.grid-bottom {
+	    padding-top: 80px;
+	    border-bottom: 4px solid black;
+	    margin: 0 10px;
+		@media screen and (max-width: 767px) {
+			padding-top: 0;
+		}
+	}
+}
+
+@media screen and (min-width: 1000px) {
 	.logotype { 
 		width: 69px;
 		height: 180px;

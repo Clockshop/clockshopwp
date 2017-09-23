@@ -1,0 +1,93 @@
+#tribe-events-pg-template {
+	padding: 0;
+	#tribe-events-content-wrapper {
+		h1 {
+			@media screen and (min-width: 999px) {
+			    margin: 50px 0 40px 0;
+			}
+		}
+		#tribe-events-content {
+		}
+	}
+}
+
+.events-slider {
+	> div {
+		padding-bottom: 42px;
+		border-bottom: 4px solid black;	
+		.slide-cell {
+			width: 100%;
+			.slide {
+				font-size: 0;
+				.event-image {
+					display: inline-block;
+					width: 66.66%;
+				}
+				.event-content {
+					display: inline-block;
+					width: 33.33%;
+					font-size: 12px;
+					padding-left: 30px;
+					box-sizing: border-box;
+					vertical-align: top;
+					padding-top: 25px;
+					.left-arrow {
+						width: 12px;
+						height: auto;
+						-moz-transform: scaleX(-1);
+						-o-transform: scaleX(-1);
+						-webkit-transform: scaleX(-1);
+						transform: scaleX(-1);
+						filter: FlipH;
+						-ms-filter: "FlipH";
+						display: inline-block;
+						left: 0;
+					}
+					.right-arrow {
+						display: inline-block;
+						width: 12px;
+						height: auto;
+						margin-left: 15px;
+						left: 0;
+					}
+					h2 {
+						margin-bottom: 8px!important;
+						line-height: 32px!important;
+						a {
+							text-decoration: none!important;
+						}
+					}
+					h3 {
+						line-height: 26px!important;
+						margin-bottom: 12px;
+					}
+					h5 {
+						margin-top: 0px;
+						margin-bottom: 10px;
+					}
+					.cost {
+						font-family: CircularBookBold;
+						letter-spacing: .02em;
+						text-transform: uppercase;
+					}
+					.excerpt {
+						font-size: 16px;
+						line-height: 24px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.upcoming-events {
+	margin-bottom: 40px;
+	> h4 {
+		font-size: 18px;
+		font-family: CircularBookBold;
+		margin: 0;
+	    padding: 15px 0 30px;
+		letter-spacing: .1em;
+		text-transform: uppercase;
+	}	
+}

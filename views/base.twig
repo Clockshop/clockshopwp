@@ -1,52 +1,10 @@
-{% block html_head_container %}
-
-{% include 'html-header.twig' %}
-	{% block head %}
-	{% endblock %}
-	</head>
+{% block header %}
+	{% include 'header.twig' %}
 {% endblock %}
 
-	<body>
+{% block content %}
+{% endblock %}
 
-		<div class="container">
-
-			<nav class="primarynav"> 
-				<div class="wpadminbarspacer"></div>
-
-				<div class="mobiletoggle">
-					<a class="homelink" href="<?php echo get_site_url(); ?>"></a>
-					<div class="opennav toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>	
-					<div class="closenav toggle"><i class="fa fa-times" aria-hidden="true"></i></div>
-				</div>
-
-				<div class="logo_container">
-					<a href="{{ site.url }}" class="logo_horizontal"></a>			
-				</div>
-
-				<div class="topnav">
-					<div>
-						<div class="menu-container">
-							{% include "menu.twig" with {'menu': menu.get_items} %}
-						</div>
-						{% include "searchform.twig" %}
-					</div>
-					<button class="search">
-						<i class="fa fa-search" aria-hidden="true"></i>
-					</button>
-				</div>
-
-			</nav>
-
-			<div class="layoutspacer"></div>
-
-			{% block content %}
-			{% endblock %}
-
-			{% block footer %}
-				<footer id="footer">
-					{% include 'footer.twig' %}
-				</footer>
-				{{ function('wp_footer') }}
-			{% endblock %}
-		</body>
-	</html>
+{% block footer %}
+	{% include 'footer.twig' %}
+{% endblock %}

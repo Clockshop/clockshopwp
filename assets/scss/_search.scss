@@ -28,7 +28,7 @@
 			height: 40px;
 			font-size: 22px;
 			font-family: CircularBook;
-		    padding: 5px;
+		    padding: 5px 3px;
 		    border-bottom: 4px solid black!important;
 		    background-color: transparent;
 			&::selection {
@@ -66,8 +66,11 @@
 				width: 22.316%;
 				display: inline-block;
 				vertical-align: middle;
-				img {
-					width: 100%;
+				a {
+					display: block;
+					img {
+						width: 100%;
+					}					
 				}
 			}
 			.list-title {
@@ -103,16 +106,22 @@
 			padding-top: 40px;
 			padding-bottom: 20px;
 			text-align: center;
+			font-size: 0;
 			a, span {
 				text-decoration: none;
 				font-family: CircularBook;
 				font-size: 19px;
 				letter-spacing: .1em;
 				display: inline-block;
-				padding: 0 5px;
-				&.current {
-					font-family: CircularBookBold;
+				padding: 0 10px;
+				margin: 0 3px;
+   				&.current {
+					background-color: black;
+					color: white;
 				}
+			}
+			.prev, .next {
+				margin: 0;
 			}
 		}
 	}
@@ -148,7 +157,7 @@
 				height: 40px;
 				font-size: 22px;
 				font-family: CircularBook;
-			    padding: 5px;
+			    padding: 5px 3px;
 			    border-bottom: 4px solid black!important;
 			    background-color: transparent;
 				&::selection {
