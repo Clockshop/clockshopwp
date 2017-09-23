@@ -185,6 +185,39 @@ input {
 	}
 }
 
+.collapsable-sections {
+	margin-bottom: 80px;
+	section {
+		border: 4px solid black;
+		margin-bottom: 20px;
+		padding: 8px 15px;
+		position: relative;
+		.section-title {
+			margin-bottom: 0;
+			font-size: 24px;
+			line-height: 26px;
+			font-family: CircularBookBold;
+		}
+		i {
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    margin: auto;
+		    padding: 13px;
+		    font-size: 20px;
+		    line-height: 18px;
+		    cursor: pointer;
+		}
+		.section-content {
+			display: none;
+			margin-top: 8px;
+			*:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
 @media screen and (min-width: 1000px) {
 	.logotype { 
 		width: 69px;

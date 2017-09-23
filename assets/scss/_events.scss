@@ -81,7 +81,6 @@
 }
 
 .upcoming-events {
-	margin-bottom: 40px;
 	> h4 {
 		font-size: 18px;
 		font-family: CircularBookBold;
@@ -90,4 +89,53 @@
 		letter-spacing: .1em;
 		text-transform: uppercase;
 	}	
+}
+
+.collapsable-sections {
+	section {
+		.section-title {
+			text-align: center;
+		}
+		.section-content {
+			font-size: 0;
+			margin-top: 0;
+			> :first-child {
+				margin-top: 30px!important;
+			}
+			.event-month {
+				margin-top: 5px;
+				border-top: 4px solid black;
+				span {
+					background-color: black;
+					color: white;
+					padding: 2px 5px;
+					text-transform: uppercase;
+					font-size: 18px;
+					letter-spacing: .1em;
+				}
+			}
+			.event-info {
+				width: 50%;
+				display: inline-block;
+				margin-bottom: 25px;
+				vertical-align: top;
+				padding-right: 20px;
+				box-sizing: border-box;
+				@media screen and (max-width: 767px) {
+					width: 100%;
+				}
+				.event-title {
+					font-family: CircularBookBold;
+					font-size: 22px;
+					margin-bottom: 2px;
+					a {
+						text-decoration: none;
+					}
+				}
+				.event-date {
+					font-size: 16px;
+				}				
+			}
+		}
+	}
 }
