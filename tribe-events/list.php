@@ -70,7 +70,7 @@ else { ?>
 				<div class="slide">
 					<div class="event-image">
 						<a href="<?php echo get_permalink($event->ID); ?>">
-							<?php echo get_the_post_thumbnail($event); ?>
+							<?php echo get_the_post_thumbnail($event, 'grid-3'); ?>
 						</a>
 					</div>
 					<div class="event-content">
@@ -110,7 +110,7 @@ else { ?>
 			<?php foreach( $events as $event ) { ?>
 				<div class="grid-3">
 					<div class="imagecell">
-						<a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_post_thumbnail($event); ?></a>
+						<a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_post_thumbnail($event, 'grid-3'); ?></a>
 					</div>
 					<div class="descriptioncell">
 						<h3><a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_title($event); ?></a></h3>
