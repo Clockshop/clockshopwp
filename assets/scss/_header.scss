@@ -1,16 +1,40 @@
+.primarynav {
+	border-bottom: 4px solid black;
+}
+
 @media screen and (min-width: 1000px) {
+	.layoutspacer {
+		height: 92px!important;
+		transition: height .1s ease;
+		&.scroll {
+			height: 72px!important;
+		}
+	}
 	.primarynav {
 		margin: 0 auto;
+		height: 88px;
+		transition: all .1s ease;
+		&.scroll {
+			height: 68px;
+			.topnav {
+	   			top: 20px;
+			}
+			.logo_container {
+				top: 10px;
+			}
+		}
 		.logo_container {
 			display: inline-block;
+		    margin-left: 20px;
+			top: 20px;
+			position: relative;
+			transition: all .1s ease;
 			.logo_horizontal {
 				background : url("../../images/logo_h.svg") no-repeat 0 0;
 			    width: 165px;
 			    height: 32px;
 			    padding: 0;
 			    border: 0;
-			    margin-left: 20px;
-			    margin-top: 20px;
 			    border: 10px solid transparent;
 			    &:hover {
 			    }
@@ -18,7 +42,10 @@
 		}
 		.topnav {
 			display: inline-block!important;
-   			padding: 30px 0 24px!important;
+   			position: relative;
+   			top: 30px;
+   			padding: 0!important;
+			transition: all .1s ease;
    			float: right;
 			> div {
 				display: inline-block;
@@ -139,10 +166,10 @@
 
 @media screen and (max-width: 999px) {
 	.layoutspacer {
-		height: 54px!important;
+		height: 58px!important;
 	}
 	.primarynav {
-		background-color: white;
+		background: rgba(256,256,256,0.9);
 		.mobiletoggle {
 			a {
 				left: 0;
@@ -249,6 +276,7 @@
 					margin: 0;
 					width: 100%;
 					background-color: transparent;
+					display: block!important;
 					input.s {
 						width: 100%;
 						border: none;
