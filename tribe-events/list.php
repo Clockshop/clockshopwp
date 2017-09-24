@@ -160,7 +160,7 @@ if ( empty( $events ) ) {
 else { ?>
 	<section class="content upcoming-events">
 		<h4>Past Events</h4>
-		<div class="collapsable-sections">
+		<div class="collapsable-sections collapsable-events">
 			<?php foreach( $eventYears as $eventYear ) { ?>
 				<section>
 				    <p class="section-title"><?php echo $eventYear['year'] ?></p>
