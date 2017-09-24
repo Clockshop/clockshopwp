@@ -8,7 +8,7 @@
 		    {% for item in post.get_field('hero_slider') %}
 
 			<div class="carousel-cell">
-				<div class="slide" style="background-image: url('{{TimberImage(item.carousel_image).src}}');">
+				<div class="slide" style="background-image: url('{{TimberImage(item.carousel_image).src|resize(2880)}}');">
 					<div class="content">
 						<div>
 							<div class="arrows">

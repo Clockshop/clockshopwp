@@ -50,9 +50,26 @@
 			});
 		}
 
+		function resizeHeader() {
+			$(window).scroll(function(){
+				if ($(document).scrollTop() > 0) {
+					if ($('.primarynav').hasClass('top')) $('.primarynav').removeClass('top');
+					if ($('.layoutspacer').hasClass('top')) $('.layoutspacer').removeClass('top');
+					$('.primarynav').addClass('scroll');
+					$('.layoutspacer').addClass('scroll');
+				} else {
+					if ($('.primarynav').hasClass('scroll')) $('.primarynav').removeClass('scroll');
+					if ($('.layoutspacer').hasClass('scroll')) $('.layoutspacer').removeClass('scroll');
+					$('.primarynav').addClass('top');
+					$('.layoutspacer').addClass('top');
+				}
+			});
+		}
+
 		collapsable_sections();
 		search();
 		eventsSlider();
+		resizeHeader();
 
 	});
 
