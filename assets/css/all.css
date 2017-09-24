@@ -846,9 +846,11 @@ footer.contactfooter {
 
 #tribe-events-pg-template {
   padding: 0; }
-  @media screen and (min-width: 999px) {
-    #tribe-events-pg-template #tribe-events-content-wrapper h1 {
-      margin: 50px 0 40px 0; } }
+  #tribe-events-pg-template #tribe-events-content-wrapper h1 {
+    margin: 40px 0 30px 0; }
+    @media screen and (min-width: 1000px) {
+      #tribe-events-pg-template #tribe-events-content-wrapper h1 {
+        margin: 50px 0 40px 0; } }
 
 .events-slider > div {
   padding-bottom: 42px;
@@ -860,14 +862,25 @@ footer.contactfooter {
       .events-slider > div .slide-cell .slide .event-image {
         display: inline-block;
         width: 66.66%; }
+        @media screen and (max-width: 767px) {
+          .events-slider > div .slide-cell .slide .event-image {
+            width: 100%; } }
       .events-slider > div .slide-cell .slide .event-content {
         display: inline-block;
         width: 33.33%;
         font-size: 12px;
         padding-left: 30px;
+        padding-top: 25px;
         box-sizing: border-box;
-        vertical-align: top;
-        padding-top: 25px; }
+        vertical-align: top; }
+        @media screen and (max-width: 999px) {
+          .events-slider > div .slide-cell .slide .event-content {
+            padding-left: 20px;
+            padding-top: 20px; } }
+        @media screen and (max-width: 767px) {
+          .events-slider > div .slide-cell .slide .event-content {
+            width: 100%;
+            padding-left: 0; } }
         .events-slider > div .slide-cell .slide .event-content .left-arrow {
           width: 12px;
           height: auto;
@@ -888,14 +901,29 @@ footer.contactfooter {
         .events-slider > div .slide-cell .slide .event-content h2 {
           margin-bottom: 8px !important;
           line-height: 32px !important; }
+          @media screen and (max-width: 999px) {
+            .events-slider > div .slide-cell .slide .event-content h2 {
+              margin-top: 20px;
+              font-size: 28px;
+              line-height: 30px !important; } }
           .events-slider > div .slide-cell .slide .event-content h2 a {
             text-decoration: none !important; }
         .events-slider > div .slide-cell .slide .event-content h3 {
           line-height: 26px !important;
           margin-bottom: 12px; }
+          @media screen and (max-width: 999px) {
+            .events-slider > div .slide-cell .slide .event-content h3 {
+              font-size: 21px;
+              line-height: 24px;
+              margin-bottom: 8px; } }
         .events-slider > div .slide-cell .slide .event-content h5 {
           margin-top: 0px;
           margin-bottom: 10px; }
+          @media screen and (max-width: 999px) {
+            .events-slider > div .slide-cell .slide .event-content h5 {
+              font-size: 18px;
+              line-height: 21px;
+              margin-bottom: 5px; } }
         .events-slider > div .slide-cell .slide .event-content .cost {
           font-family: CircularBookBold;
           letter-spacing: .02em;
@@ -903,6 +931,9 @@ footer.contactfooter {
         .events-slider > div .slide-cell .slide .event-content .excerpt {
           font-size: 16px;
           line-height: 24px; }
+          @media screen and (min-width: 768px) and (max-width: 999px) {
+            .events-slider > div .slide-cell .slide .event-content .excerpt {
+              display: none; } }
 
 .upcoming-events > h4 {
   font-size: 18px;
@@ -911,6 +942,14 @@ footer.contactfooter {
   padding: 15px 0 30px;
   letter-spacing: .1em;
   text-transform: uppercase; }
+
+@media screen and (min-width: 768px) {
+  .collapsable-events section {
+    padding: 8px 50px; } }
+
+@media screen and (max-width: 767px) {
+  .collapsable-events section {
+    padding: 8px 25px; } }
 
 .collapsable-events section .section-title {
   text-align: center; }
@@ -935,8 +974,10 @@ footer.contactfooter {
     display: inline-block;
     margin-bottom: 25px;
     vertical-align: top;
-    padding-right: 20px;
     box-sizing: border-box; }
+    @media screen and (min-width: 768px) {
+      .collapsable-events section .section-content .event-info {
+        padding-right: 30px; } }
     @media screen and (max-width: 767px) {
       .collapsable-events section .section-content .event-info {
         width: 100%; } }
