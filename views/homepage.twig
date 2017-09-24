@@ -16,7 +16,11 @@
 								<a class="next"><img class="right-arrow" src="{{theme.link}}/images/arrow.png" /></a>
 							</div>
 							<p class="project-title">{{item.headline}}</p>
-							<a class="project-more" href="{{item.external_link}}">LEARN MORE</a>
+							{% if item.feature_type == 'external' %}
+								<a class="project-more" target="_blank" href="{{item.external_link}}">LEARN MORE</a>
+							{% elseif item.feature_type == 'internal' %}
+								<a class="project-more" href="{{item.internal_link}}">LEARN MORE</a>
+							{% endif %}
 						</div>
 					</div>
 					<div class="project-overlay"></div>
@@ -36,10 +40,20 @@
 
 				<div class="grid-3">
 					<div class="imagecell">
-						<a href="{{item.external_link}}"><img src="{{TimberImage(item.thumbnail_image).src('grid-3')}}" /></a>
+					{% if item.feature_type == 'external' %}
+						<a target="_blank" href="{{item.external_link}}"><img src="{{TimberImage(item.thumbnail_image).src('grid-3')}}" /></a>
+					{% elseif item.feature_type == 'internal' %}
+						<a href="{{item.internal_link}}"><img src="{{TimberImage(item.thumbnail_image).src('grid-3')}}" /></a>
+					{% endif %}
 					</div>
 					<div class="descriptioncell">
-						<h3><a href="<?php echo $linkurl; ?>">{{item.headline}}</a></h3>
+						<h3>
+						{% if item.feature_type == 'external' %}
+							<a target="_blank" href="{{item.external_link}}">{{item.headline}}</a>
+						{% elseif item.feature_type == 'internal' %}
+							<a href="{{item.internal_link}}">{{item.headline}}</a>
+						{% endif %}
+						</h3>
 						<p class="content-type">{{item.content_type}}</p>
 						<p class="description">{{item.description}}</p>
 						<p class="calltoaction"><a href="<?php echo $linkurl; ?>">{{item.call_to_action}}</a></p>
