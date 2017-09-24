@@ -912,25 +912,25 @@ footer.contactfooter {
   letter-spacing: .1em;
   text-transform: uppercase; }
 
-.collapsable-sections section .section-title {
+.collapsable-events section .section-title {
   text-align: center; }
 
-.collapsable-sections section .section-content {
+.collapsable-events section .section-content {
   font-size: 0;
   margin-top: 0; }
-  .collapsable-sections section .section-content > :first-child {
+  .collapsable-events section .section-content > :first-child {
     margin-top: 30px !important; }
-  .collapsable-sections section .section-content .event-month {
+  .collapsable-events section .section-content .event-month {
     margin-top: 5px;
     border-top: 4px solid black; }
-    .collapsable-sections section .section-content .event-month span {
+    .collapsable-events section .section-content .event-month span {
       background-color: black;
       color: white;
       padding: 2px 5px;
       text-transform: uppercase;
       font-size: 18px;
       letter-spacing: .1em; }
-  .collapsable-sections section .section-content .event-info {
+  .collapsable-events section .section-content .event-info {
     width: 50%;
     display: inline-block;
     margin-bottom: 25px;
@@ -938,13 +938,13 @@ footer.contactfooter {
     padding-right: 20px;
     box-sizing: border-box; }
     @media screen and (max-width: 767px) {
-      .collapsable-sections section .section-content .event-info {
+      .collapsable-events section .section-content .event-info {
         width: 100%; } }
-    .collapsable-sections section .section-content .event-info .event-title {
+    .collapsable-events section .section-content .event-info .event-title {
       font-family: CircularBookBold;
       font-size: 22px;
       margin-bottom: 2px; }
-      .collapsable-sections section .section-content .event-info .event-title a {
+      .collapsable-events section .section-content .event-info .event-title a {
         text-decoration: none; }
-    .collapsable-sections section .section-content .event-info .event-date {
+    .collapsable-events section .section-content .event-info .event-date {
       font-size: 16px; }
