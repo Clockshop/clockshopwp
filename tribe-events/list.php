@@ -137,9 +137,9 @@ $events = tribe_get_events( array(
 	'order' => 'DESC',
 ));
 
-$eventYears = [];
+$eventYears = array();
 
-$years = [];
+$years = array();
 
 foreach($events as $key => $event) {
 	$eventDate = $event->EventStartDate;
@@ -166,7 +166,7 @@ else { ?>
 				    <p class="section-title"><?php echo $eventYear['year'] ?></p>
 					<i class="fa fa-plus" aria-hidden="true"></i>
 					<div class="section-content">
-					<?php $months = []; ?>
+					<?php $months = array(); ?>
 					<?php foreach( $eventYear['events'] as $event ) {
 						$month = date('m', strtotime($event->EventStartDate));
 						if (!in_array($month, $months)) { ?>
