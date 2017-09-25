@@ -4,6 +4,7 @@
 		font-size: 36px;
 		display: block;
 		text-align: center;
+		margin: 50px 0 40px 0!important;
 	}
 	> h4 {
 		font-family: CircularBookBold;
@@ -134,61 +135,5 @@
 				margin: 0;
 			}
 		}
-	}
-	.no-results {
-		> h2 {
-			font-family: CircularBookBold;
-			font-size: 36px;
-			display: block;
-			text-align: center;
-			margin-top: 80px;
-		}
-		> h4 {
-			font-family: CircularBookBold;
-			font-size: 18px;
-			display: block;
-			text-align: center;
-			text-transform: uppercase;
-			letter-spacing: .1em;
-			margin-bottom: 30px;
-			line-height: 24px;
-		}
-		.searchform {
-			box-sizing: border-box;
-			height: 80px!important;
-			height: 41px;
-			margin: 0;
-			width: 100%;
-			background-color: transparent;
-			margin-bottom: 80px;
-			input.s {
-				width: 100%;
-				border: none;
-				height: 40px;
-				font-size: 22px;
-				font-family: CircularBook;
-			    padding: 5px 3px;
-			    border-bottom: 4px solid black!important;
-			    background-color: transparent;
-				&::selection {
-					background: white;
-				}
-				&::-moz-selection {
-					background: white;
-				}
-				&::-webkit-input-placeholder {
-					color: black;
-				}
-				&::-moz-placeholder {
-					color: black;
-				}
-				&:-ms-input-placeholder {
-					color: black;
-				}
-				&:-moz-placeholder {
-					color: black;
-				}
-			}
-		}		
 	}
 }

@@ -175,6 +175,108 @@ input {
       .collapsable-sections section .section-content *:last-child {
         margin-bottom: 0; }
 
+.no-results > h2 {
+  font-family: CircularBookBold;
+  font-size: 36px;
+  line-height: 42px;
+  display: block;
+  text-align: center;
+  margin-top: 80px;
+  margin: 50px 0 40px 0 !important; }
+
+.no-results > h4 {
+  font-family: CircularBookBold;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: 30px;
+  line-height: 24px; }
+
+.no-results .searchform {
+  box-sizing: border-box;
+  height: 80px !important;
+  height: 41px;
+  margin: 0;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 80px; }
+  .no-results .searchform input.s {
+    width: 100%;
+    border: none;
+    height: 40px;
+    font-size: 22px;
+    font-family: CircularBook;
+    padding: 5px 3px;
+    border-bottom: 4px solid black !important;
+    background-color: transparent; }
+    .no-results .searchform input.s::selection {
+      background: white; }
+    .no-results .searchform input.s::-moz-selection {
+      background: white; }
+    .no-results .searchform input.s::-webkit-input-placeholder {
+      color: black; }
+    .no-results .searchform input.s::-moz-placeholder {
+      color: black; }
+    .no-results .searchform input.s:-ms-input-placeholder {
+      color: black; }
+    .no-results .searchform input.s:-moz-placeholder {
+      color: black; }
+
+.newsform {
+  margin: 0 auto;
+  display: block;
+  float: none;
+  width: 100%;
+  padding-top: 0; }
+  .newsform div form .validation_error {
+    display: none !important; }
+  .newsform div form .gform_body ul li div input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 4px solid black;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    padding: 10px 10px 6px;
+    font-family: CircularBookBold;
+    font-size: 18px;
+    line-height: 1; }
+    .newsform div form .gform_body ul li div input::-webkit-input-placeholder {
+      color: #b3b3b3; }
+    .newsform div form .gform_body ul li div input::-moz-placeholder {
+      color: #b3b3b3; }
+    .newsform div form .gform_body ul li div input:-ms-input-placeholder {
+      color: #b3b3b3; }
+    .newsform div form .gform_body ul li div input:-moz-placeholder {
+      color: #b3b3b3; }
+  .newsform div form .gform_body .validation_message {
+    display: none; }
+  .newsform div form .gform_footer input {
+    font-family: CircularBookBold;
+    font-size: 18px;
+    letter-spacing: .08em;
+    padding: 12px 25px;
+    margin-top: 35px;
+    border: 4px solid black;
+    width: auto;
+    line-height: 1;
+    border-radius: 0; }
+  .newsform div form .gform_footer .gform_ajax_spinner {
+    display: none; }
+  .newsform .gform_validation_error form .gform_body ul li div input.error {
+    color: red; }
+    .newsform .gform_validation_error form .gform_body ul li div input.error::-webkit-input-placeholder {
+      color: red; }
+    .newsform .gform_validation_error form .gform_body ul li div input.error::-moz-placeholder {
+      color: red; }
+    .newsform .gform_validation_error form .gform_body ul li div input.error:-ms-input-placeholder {
+      color: red; }
+    .newsform .gform_validation_error form .gform_body ul li div input.error:-moz-placeholder {
+      color: red; }
+
 @media screen and (min-width: 1000px) {
   .logotype {
     width: 69px;
@@ -527,58 +629,6 @@ footer.followfooter {
       @media screen and (max-width: 767px) {
         footer.followfooter .content p {
           margin-bottom: 15px; } }
-    footer.followfooter .content .newsform {
-      margin: 0 auto;
-      display: block;
-      float: none;
-      width: 100%;
-      padding-top: 0; }
-      footer.followfooter .content .newsform div form .validation_error {
-        display: none !important; }
-      footer.followfooter .content .newsform div form .gform_body ul li div input {
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom: 4px solid black;
-        width: 100%;
-        max-width: 500px;
-        text-align: center;
-        padding: 10px 10px 6px;
-        font-family: CircularBookBold;
-        font-size: 18px;
-        line-height: 1; }
-        footer.followfooter .content .newsform div form .gform_body ul li div input::-webkit-input-placeholder {
-          color: #b3b3b3; }
-        footer.followfooter .content .newsform div form .gform_body ul li div input::-moz-placeholder {
-          color: #b3b3b3; }
-        footer.followfooter .content .newsform div form .gform_body ul li div input:-ms-input-placeholder {
-          color: #b3b3b3; }
-        footer.followfooter .content .newsform div form .gform_body ul li div input:-moz-placeholder {
-          color: #b3b3b3; }
-      footer.followfooter .content .newsform div form .gform_body .validation_message {
-        display: none; }
-      footer.followfooter .content .newsform div form .gform_footer input {
-        font-family: CircularBookBold;
-        font-size: 18px;
-        letter-spacing: .08em;
-        padding: 12px 25px;
-        margin-top: 35px;
-        border: 4px solid black;
-        width: auto;
-        line-height: 1;
-        border-radius: 0; }
-      footer.followfooter .content .newsform div form .gform_footer .gform_ajax_spinner {
-        display: none; }
-      footer.followfooter .content .newsform .gform_validation_error form .gform_body ul li div input.error {
-        color: red; }
-        footer.followfooter .content .newsform .gform_validation_error form .gform_body ul li div input.error::-webkit-input-placeholder {
-          color: red; }
-        footer.followfooter .content .newsform .gform_validation_error form .gform_body ul li div input.error::-moz-placeholder {
-          color: red; }
-        footer.followfooter .content .newsform .gform_validation_error form .gform_body ul li div input.error:-ms-input-placeholder {
-          color: red; }
-        footer.followfooter .content .newsform .gform_validation_error form .gform_body ul li div input.error:-moz-placeholder {
-          color: red; }
 
 footer.contactfooter {
   position: absolute;
@@ -642,7 +692,8 @@ footer.contactfooter {
   font-family: CircularBookBold;
   font-size: 36px;
   display: block;
-  text-align: center; }
+  text-align: center;
+  margin: 50px 0 40px 0 !important; }
 
 .search-template > h4 {
   font-family: CircularBookBold;
@@ -755,53 +806,6 @@ footer.contactfooter {
     .search-template .search-list .search-pag .prev, .search-template .search-list .search-pag .next {
       margin: 0; }
 
-.search-template .no-results > h2 {
-  font-family: CircularBookBold;
-  font-size: 36px;
-  display: block;
-  text-align: center;
-  margin-top: 80px; }
-
-.search-template .no-results > h4 {
-  font-family: CircularBookBold;
-  font-size: 18px;
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  margin-bottom: 30px;
-  line-height: 24px; }
-
-.search-template .no-results .searchform {
-  box-sizing: border-box;
-  height: 80px !important;
-  height: 41px;
-  margin: 0;
-  width: 100%;
-  background-color: transparent;
-  margin-bottom: 80px; }
-  .search-template .no-results .searchform input.s {
-    width: 100%;
-    border: none;
-    height: 40px;
-    font-size: 22px;
-    font-family: CircularBook;
-    padding: 5px 3px;
-    border-bottom: 4px solid black !important;
-    background-color: transparent; }
-    .search-template .no-results .searchform input.s::selection {
-      background: white; }
-    .search-template .no-results .searchform input.s::-moz-selection {
-      background: white; }
-    .search-template .no-results .searchform input.s::-webkit-input-placeholder {
-      color: black; }
-    .search-template .no-results .searchform input.s::-moz-placeholder {
-      color: black; }
-    .search-template .no-results .searchform input.s:-ms-input-placeholder {
-      color: black; }
-    .search-template .no-results .searchform input.s:-moz-placeholder {
-      color: black; }
-
 .about-hero {
   padding: 0 !important; }
   .about-hero > div {
@@ -878,11 +882,26 @@ footer.contactfooter {
 
 #tribe-events-pg-template {
   padding: 0; }
-  #tribe-events-pg-template #tribe-events-content-wrapper h1 {
+  #tribe-events-pg-template #tribe-events-content-wrapper .content h1 {
     margin: 40px 0 30px 0; }
     @media screen and (min-width: 1000px) {
-      #tribe-events-pg-template #tribe-events-content-wrapper h1 {
+      #tribe-events-pg-template #tribe-events-content-wrapper .content h1 {
         margin: 50px 0 40px 0; } }
+  #tribe-events-pg-template #tribe-events-content-wrapper .no-events {
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center; }
+    #tribe-events-pg-template #tribe-events-content-wrapper .no-events .newsform {
+      padding-bottom: 60px;
+      border-bottom: 4px solid black; }
+      #tribe-events-pg-template #tribe-events-content-wrapper .no-events .newsform h2 {
+        font-family: CircularBookBold;
+        font-size: 36px;
+        line-height: 42px;
+        display: block;
+        text-align: center;
+        margin-top: 80px;
+        margin: 100px 0 40px 0 !important; }
 
 .events-slider > div {
   padding-bottom: 42px;

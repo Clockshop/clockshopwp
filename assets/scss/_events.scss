@@ -1,13 +1,33 @@
 #tribe-events-pg-template {
 	padding: 0;
 	#tribe-events-content-wrapper {
-		h1 {
-		    margin: 40px 0 30px 0;
-			@media screen and (min-width: 1000px) {
-			    margin: 50px 0 40px 0;
+		.content {
+			h1 {
+			    margin: 40px 0 30px 0;
+				@media screen and (min-width: 1000px) {
+				    margin: 50px 0 40px 0;
+				}
 			}
 		}
 		#tribe-events-content {
+		}
+		.no-events {
+			padding-left: 25px;
+			padding-right: 25px;
+			text-align: center;
+			.newsform {
+				padding-bottom: 60px;
+				border-bottom: 4px solid black;
+				h2 {
+					font-family: CircularBookBold;
+					font-size: 36px;
+					line-height: 42px;
+					display: block;
+					text-align: center;
+					margin-top: 80px;
+					margin: 100px 0 40px 0!important;
+				}
+			}
 		}
 	}
 }

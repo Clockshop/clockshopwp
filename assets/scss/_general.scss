@@ -218,6 +218,159 @@ input {
 	}
 }
 
+.no-results {
+	> h2 {
+		font-family: CircularBookBold;
+		font-size: 36px;
+		line-height: 42px;
+		display: block;
+		text-align: center;
+		margin-top: 80px;
+		margin: 50px 0 40px 0!important;
+	}
+	> h4 {
+		font-family: CircularBookBold;
+		font-size: 18px;
+		display: block;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		margin-bottom: 30px;
+		line-height: 24px;
+	}
+	.searchform {
+		box-sizing: border-box;
+		height: 80px!important;
+		height: 41px;
+		margin: 0;
+		width: 100%;
+		background-color: transparent;
+		margin-bottom: 80px;
+		input.s {
+			width: 100%;
+			border: none;
+			height: 40px;
+			font-size: 22px;
+			font-family: CircularBook;
+		    padding: 5px 3px;
+		    border-bottom: 4px solid black!important;
+		    background-color: transparent;
+			&::selection {
+				background: white;
+			}
+			&::-moz-selection {
+				background: white;
+			}
+			&::-webkit-input-placeholder {
+				color: black;
+			}
+			&::-moz-placeholder {
+				color: black;
+			}
+			&:-ms-input-placeholder {
+				color: black;
+			}
+			&:-moz-placeholder {
+				color: black;
+			}
+		}
+	}
+}
+
+.newsform {
+	margin: 0 auto;
+	display: block;
+	float: none;
+	width: 100%;
+	padding-top: 0;
+	div {
+		form {
+			.validation_error {
+				display: none!important;
+			}
+			.gform_body  {
+				ul {
+					li {
+						div {
+							input {
+								border-top: none;
+								border-left: none;
+								border-right: none;
+								border-bottom: 4px solid black;
+								width: 100%;
+								max-width: 500px;
+								text-align: center;
+								padding: 10px 10px 6px;
+								font-family: CircularBookBold;
+								font-size: 18px;
+								line-height: 1;
+								&::-webkit-input-placeholder {
+								  color: #b3b3b3;
+								}
+								&::-moz-placeholder {
+								  color: #b3b3b3;
+								}
+								&:-ms-input-placeholder {
+								  color: #b3b3b3;
+								}
+								&:-moz-placeholder {
+								  color: #b3b3b3;
+								}
+							}
+						}
+					}
+				}
+				.validation_message {
+					display: none;
+				}
+			}
+			.gform_footer {
+				input {
+					font-family: CircularBookBold;
+					font-size: 18px;
+					letter-spacing: .08em;
+					padding: 12px 25px;
+					margin-top: 35px;
+					border: 4px solid black;
+					width: auto;
+					line-height: 1;
+					border-radius: 0;
+				}
+				.gform_ajax_spinner {
+					display: none;
+				}
+			}
+		}
+	}
+	.gform_validation_error {
+		form {
+			.gform_body  {
+				ul {
+					li {
+						div {
+							input.error {
+								color: red;
+								&::-webkit-input-placeholder {
+								  color: red;
+								}
+								&::-moz-placeholder {
+								  color: red;
+								}
+								&:-ms-input-placeholder {
+								  color: red;
+								}
+								&:-moz-placeholder {
+								  color: red;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @media screen and (min-width: 1000px) {
 	.logotype { 
 		width: 69px;
