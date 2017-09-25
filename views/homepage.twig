@@ -56,7 +56,13 @@
 						</h3>
 						<p class="content-type">{{item.content_type}}</p>
 						<p class="description">{{item.description}}</p>
-						<p class="calltoaction"><a href="<?php echo $linkurl; ?>">{{item.call_to_action}}</a></p>
+						<p class="calltoaction">
+						{% if item.feature_type == 'external' %}
+							<a target="_blank" href="{{item.external_link}}">{{item.call_to_action}}</a>
+						{% elseif item.feature_type == 'internal' %}
+							<a href="{{item.internal_link}}">{{item.call_to_action}}</a>
+						{% endif %}
+						</p>
 					</div>
 				</div>
 
