@@ -26,7 +26,7 @@
 					$(this).removeClass('fa-minus');
 					$(this).addClass('fa-plus');
 				}
-				$(this).next().toggle('normal');
+				$(this).next().toggle('fast');
 			});
 		}
 
