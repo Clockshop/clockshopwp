@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 do_action( 'tribe_events_before_template' );
 ?>
-
-	<h1>Events This Month</h1>
-
+<div class="content">
+	<h1>Events This Month</h1>	
+</div>
 <?php
 /*
 function add_months($months, DateTime $dateObject) {
@@ -61,7 +61,14 @@ $events = tribe_get_events( array(
 ));
 
 if ( empty( $events ) ) {
-	echo 'Sorry, nothing found.';
+?>
+<div class="no-events">
+	<div class="newsform">
+		<h2>Nothing this month! Subscribe and stay tuned.</h2>
+		<?php echo do_shortcode('[gravityform id="4" title="false" description="false" ajax="true"]'); ?>
+	</div>
+</div>
+<?php
 }
 else { ?>
 	<section class="events-slider content">
@@ -101,7 +108,6 @@ $events = tribe_get_events( array(
 ));
 
 if ( empty( $events ) ) {
-	echo 'Sorry, nothing found.';
 }
 else { ?>
 	<section class="content upcoming-events">

@@ -80,4 +80,18 @@
 
 	});
 
+	function signUpForm() {
+	    $(document).bind('gform_post_render', function(event, formId, currentPage){
+	    	if(formId == 4) {
+	    		$('#input_4_1').attr("placeholder", "Your Email Address...");
+				$(".gform_validation_error .ginput_container_email input").addClass('error');
+				$(".gform_validation_error .ginput_container_email input").keydown(function() {
+					$(this).removeClass('error');
+				});
+	    	}
+	    });
+	}
+
+	signUpForm();
+
 })(jQuery);
