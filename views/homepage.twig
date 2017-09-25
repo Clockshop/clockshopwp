@@ -19,7 +19,7 @@
 							{% if item.feature_type == 'external' %}
 								<a class="project-more" target="_blank" href="{{item.external_link}}">LEARN MORE</a>
 							{% elseif item.feature_type == 'internal' %}
-								<a class="project-more" href="{{item.internal_link}}">LEARN MORE</a>
+								<a class="project-more" href="{{item.internal_link.link}}">LEARN MORE</a>
 							{% endif %}
 						</div>
 					</div>
@@ -43,7 +43,7 @@
 					{% if item.feature_type == 'external' %}
 						<a target="_blank" href="{{item.external_link}}"><img src="{{TimberImage(item.thumbnail_image).src('grid-3')}}" /></a>
 					{% elseif item.feature_type == 'internal' %}
-						<a href="{{item.internal_link}}"><img src="{{TimberImage(item.thumbnail_image).src('grid-3')}}" /></a>
+						<a href="{{item.internal_link.link}}"><img src="{{TimberImage(item.thumbnail_image).src('grid-3')}}" /></a>
 					{% endif %}
 					</div>
 					<div class="descriptioncell">
@@ -51,7 +51,7 @@
 						{% if item.feature_type == 'external' %}
 							<a target="_blank" href="{{item.external_link}}">{{item.headline}}</a>
 						{% elseif item.feature_type == 'internal' %}
-							<a href="{{item.internal_link}}">{{item.headline}}</a>
+							<a href="{{item.internal_link.link}}">{{item.headline}}</a>
 						{% endif %}
 						</h3>
 						<p class="content-type">{{item.content_type}}</p>
@@ -60,7 +60,7 @@
 						{% if item.feature_type == 'external' %}
 							<a target="_blank" href="{{item.external_link}}">{{item.call_to_action}}</a>
 						{% elseif item.feature_type == 'internal' %}
-							<a href="{{item.internal_link}}">{{item.call_to_action}}</a>
+							<a href="{{item.internal_link.link}}">{{item.call_to_action}}</a>
 						{% endif %}
 						</p>
 					</div>
