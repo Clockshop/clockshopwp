@@ -66,10 +66,17 @@
 			});
 		}
 
+		function hideBrokenImages() {
+			$(".search-template article img").load(function() { 
+			    $(this).css('opacity', '1');
+			});
+		}
+
 		collapsable_sections();
 		search();
 		eventsSlider();
 		resizeHeader();
+		hideBrokenImages();
 
 	});
 

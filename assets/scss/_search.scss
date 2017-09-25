@@ -53,8 +53,6 @@
 	}
 	.search-list {
 		padding-bottom: 60px;
-		@media screen and (max-width: 899px) {
-		}
 		article {
 			width: 100%;
 			margin: 0;
@@ -63,13 +61,16 @@
 			margin-bottom: 30px;
 			display: table;
 			.list-image {
-				width: 22.316%;
-				display: inline-block;
-				vertical-align: middle;
+			    width: 22.316%;
+			    max-height: 0;
+			    padding-bottom: 14.315%;
+			    display: inline-block;
+			    vertical-align: middle;
 				a {
 					display: block;
 					img {
 						width: 100%;
+						opacity: 0;
 					}					
 				}
 			}
@@ -115,10 +116,19 @@
 				display: inline-block;
 				padding: 0 10px;
 				margin: 0 3px;
+				@media screen and (max-width: 767px) {
+					margin: 0 1px;
+					font-size: 16px;
+					padding: 0 8px;
+				}
    				&.current {
 					background-color: black;
 					color: white;
 				}
+			}
+			.dots {
+				padding: 0;
+				margin: 0;
 			}
 			.prev, .next {
 				margin: 0;

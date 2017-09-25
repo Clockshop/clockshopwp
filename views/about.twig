@@ -3,7 +3,7 @@
 {% block content %}
 
 	<div class="about-hero">
-		<div style="background-image: url('{{TimberImage(post.get_field('hero_background_image')).src}}');">
+		<div style="background-image: url('{{TimberImage(post.get_field('hero_background_image')).src|resize(2880)}}');">
 			<div class="content">
 				<div>
 					<p class="mission">{{post.mission_statement}}</p>

@@ -35,7 +35,7 @@ function catch_first_image($id) {
 				return $first_img[0];
 			}
 		}
-		return '/wp-content/themes/clockshopwp/images/placeholder.png';
+		return '';
 	}
 }
 

@@ -1,5 +1,6 @@
 .primarynav {
 	border-bottom: 4px solid black;
+	background: rgba(256,256,256,0.95)!important;
 }
 
 @media screen and (min-width: 1000px) {
@@ -169,7 +170,6 @@
 		height: 58px!important;
 	}
 	.primarynav {
-		background: rgba(256,256,256,0.9);
 		.mobiletoggle {
 			a {
 				left: 0;
