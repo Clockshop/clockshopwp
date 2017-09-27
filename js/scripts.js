@@ -22,11 +22,12 @@
 				if ($(this).hasClass('fa-plus')) {
 					$(this).removeClass('fa-plus');
 					$(this).addClass('fa-minus');
+					$(this).next().show();
 				} else {
 					$(this).removeClass('fa-minus');
 					$(this).addClass('fa-plus');
+					$(this).next().hide();
 				}
-				$(this).next().toggle('fast');
 			});
 		}
 
