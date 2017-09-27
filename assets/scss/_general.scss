@@ -67,29 +67,58 @@ h1 {
 	line-height: 42px;
 	display: block;
 	text-align: center;
+	@media screen and (max-width: 999px) {
+		font-size: 32px;
+		line-height: 36px;
+	}
 }
-
 
 h2 {
 	font-family: CircularBookBold;
 	font-size: 32px;
 	line-height: 36px;
-	@media screen and (min-width: 1000px) {
-	    margin: 30px 0 20px 0!important;
+	@media screen and (max-width: 999px) {
+		font-size: 28px;
+		line-height: 32px;
 	}
 }
 
 h3 {
 	font-size: 24px;
-	font-family: CircularBookBold;
 	line-height: 28px;
+	font-family: CircularBookBold;
 	margin-top: 0;
+	@media screen and (max-width: 767px) {
+		font-size: 21px;
+		line-height: 24px;
+	}
+}
+
+h4 {
+	font-size: 18px!important;
+	font-family: CircularBookBold;
+	letter-spacing: .1em;
+	text-transform: uppercase;
 }
 
 h5 {
 	font-size: 22px;
 	font-family: CircularBook;
 	line-height: 24px;
+}
+
+button, .button {
+    font-family: CircularBookBold;
+    font-size: 18px;
+    letter-spacing: .08em;
+    padding: 13px 25px 12px;
+    border: 4px solid black;
+    line-height: 1;
+    border-radius: 0;
+	&:hover {
+		background-color: black;
+		color: white;
+	}
 }
 
 #uparrow {
@@ -118,18 +147,22 @@ input {
 		vertical-align: top;
 		@media screen and (max-width: 767px) {
 			width: 100%;
-			margin-bottom: 75px;
-			@media screen and (max-width: 767px) {
-				margin-bottom: 50px;
-			}
+			// margin-bottom: 75px;
+			margin-bottom: 50px;
 		}
 		.descriptioncell {
-			h3 {
+			h2 {
 				font-family: CircularBookBold;
 				font-size: 28px;
 				line-height: 35px;
 				margin-top: 15px;
 				margin-bottom: 0;
+			    margin-top: 30px;
+				@media screen and (max-width: 999px) {
+					margin-top: 25px;
+					font-size: 24px;
+					line-height: 28px;
+				}
 				a {
 					text-decoration: none;
 				}
@@ -163,7 +196,9 @@ input {
 				letter-spacing: .1em;
 				margin-top: 30px;
 				margin-bottom: 0;
-				@media screen and (max-width: 767px) {
+				@media screen and (max-width: 999px) {
+					font-size: 14px;
+					line-height: 18px;
 					margin-top: 20px;
 				}
 				a {
@@ -197,6 +232,9 @@ input {
 			font-size: 24px;
 			line-height: 26px;
 			font-family: CircularBookBold;
+			@media screen and (max-width: 767px) {
+				font-size: 21px;				
+			}
 		}
 		i {
 		    position: absolute;
@@ -329,7 +367,7 @@ input {
 					font-family: CircularBookBold;
 					font-size: 18px;
 					letter-spacing: .08em;
-					padding: 12px 25px;
+					padding: 13px 25px 12px;
 					margin-top: 35px;
 					border: 4px solid black;
 					width: auto;

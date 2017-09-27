@@ -110,7 +110,7 @@
 				.searchform {
 					position: absolute;
 					top: -2px;
-					height: 41px;
+					height: 32px;
 					margin: 0;
 					width: 100%;
 					display: none;
@@ -215,6 +215,7 @@
 			div {
 				.menu-container {
 					padding: 50px 0 0;
+					opacity: 1!important;
 					ul {
 						padding: 0 0 0 15px;
 						li {
@@ -270,9 +271,8 @@
 				.searchform {
 					padding: 10px 15px 30px 15px;
 					box-sizing: border-box;
-					height: 80px!important;
+					height: 72px!important;
 					top: -10px;
-					height: 41px;
 					margin: 0;
 					width: 100%;
 					background-color: transparent;
@@ -280,9 +280,10 @@
 					input.s {
 						width: 100%;
 						border: none;
-						height: 40px;
-						font-size: 22px;
-						font-family: CircularBook;
+						height: 32px;
+						font-size: 16px;
+						text-transform: uppercase;
+						font-family: CircularBookBold;
 					    padding: 5px;
 					    border-bottom: 4px solid black!important;
 					    background-color: transparent;

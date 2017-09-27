@@ -17,7 +17,7 @@
 						height: calc(100vh - 88px)!important;
 						max-height: 140vw;
 						position: relative;
-						@media screen and (max-width: 899px) {
+						@media screen and (max-width: 999px) {
 							height: -moz-calc(100vh - 54px)!important;
 							height: -webkit-calc(100vh - 54px)!important;
 							height: -o-calc(100vh - 54px)!important;
@@ -62,13 +62,19 @@
 								}
 								.project-title {
 									font-size: 32px;
+									line-height: 40px;
 									font-family: CircularBookBold;
 									color: white;
-									margin-top: 40px;
 									display: inline-block;
+									margin-top: 40px;
 									margin-right: 30px;
 									margin-bottom: 20px;
 									line-height: 42px;
+									@media screen and (max-width: 767px) {
+										font-size: 28px;
+										line-height: 36px;
+										margin-top: 30px;
+									}
 								}
 								.project-more {
 									display: inline-block;
@@ -84,6 +90,9 @@
 									margin-bottom: 80px;
 									margin-right: 20px;
 									text-decoration: none;
+									@media screen and (max-width: 767px) {
+										font-size: 14px;
+									}
 								}
 							}
 						}
@@ -109,13 +118,9 @@
 .featured-grid {
 	font-size: 0;
 	margin: 0 -10px;
-	> h3 {
-		font-size: 18px;
-		font-family: CircularBookBold;
+	> h4 {
 		padding: 15px 0 30px;
 		border-top: 4px solid black;
 		margin: 40px 10px 0;
-		letter-spacing: .1em;
-		text-transform: uppercase;
 	}
 }

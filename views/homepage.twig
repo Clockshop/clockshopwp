@@ -35,7 +35,7 @@
 
 	<div class="content">
 		<div class="grid featured-grid">
-			<h3>Featured Call Outs</h3>
+			<h4>Featured Call Outs</h4>
 		    {% for item in post.get_field('features') %}
 
 				<div class="grid-3">
@@ -47,13 +47,13 @@
 					{% endif %}
 					</div>
 					<div class="descriptioncell">
-						<h3>
+						<h2>
 						{% if item.feature_type == 'external' %}
 							<a target="_blank" href="{{item.external_link}}">{{item.headline}}</a>
 						{% elseif item.feature_type == 'internal' %}
 							<a href="{{item.internal_link.link}}">{{item.headline}}</a>
 						{% endif %}
-						</h3>
+						</h2>
 						<p class="content-type">{{item.content_type}}</p>
 						<p class="description">{{item.description}}</p>
 						<p class="calltoaction">
@@ -77,7 +77,7 @@
 	<footer class="followfooter">
 		<div class="content">
 
-			<p>Subscribe to our mailing list</p>
+			<h2>Subscribe to our mailing list</h2>
 
 			<div class="newsform">
 				{{signup_form}}

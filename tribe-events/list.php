@@ -20,7 +20,7 @@ do_action( 'tribe_events_before_template' );
 	<h1>Events This Month</h1>	
 </div>
 <?php
-/*
+
 function add_months($months, DateTime $dateObject) {
 	$next = new DateTime($dateObject->format('Y-m-d'));
 	$next->modify('last day of +'.$months.' month');
@@ -47,24 +47,25 @@ function endCycle($d1, $months) {
 	return $dateReturned;
 }
 
-$today = current_time('Y-m-d');
+$today = date("Y-m-d");
 $oneMonth = endCycle($today, 1);
-*/
 
+/*
 $today = date("Y-m-d");
 $firstNextMonth = date("Y-m-01");
 $nextMonth = date("Y-m-d", strtotime("$firstNextMonth +1 month"));
+*/
 
 $events = tribe_get_events( array(
 	'start_date' => $today,
-	'end_date'   => $nextMonth
+	'end_date'   => $oneMonth
 ));
 
 if ( empty( $events ) ) {
 ?>
 <div class="no-events">
 	<div class="newsform">
-		<h2>Nothing this month! Subscribe and stay tuned.</h2>
+		<h1>Nothing this month! Subscribe and stay tuned.</h1>
 		<?php echo do_shortcode('[gravityform id="4" title="false" description="false" ajax="true"]'); ?>
 	</div>
 </div>
@@ -102,7 +103,7 @@ else { ?>
 
 <?php 
 $events = tribe_get_events( array(
-	'start_date' => $nextMonth,
+	'start_date' => $oneMonth,
 	'posts_per_page'   => 3,
 
 ));
@@ -119,7 +120,7 @@ else { ?>
 						<a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_post_thumbnail($event, 'grid-3'); ?></a>
 					</div>
 					<div class="descriptioncell">
-						<h3><a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_title($event); ?></a></h3>
+						<h2><a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_title($event); ?></a></h2>
 						<p class="content-type"><?php echo spellerberg_sp_date($event); ?></p>
 						<p class="add-descriptor"><?php echo tribe_get_text_categories($event->ID); ?></p>
 						<?php if (get_the_excerpt($event->ID) != '' && get_the_excerpt($event->ID) != ' ') { ?>
@@ -156,9 +157,6 @@ foreach($events as $key => $event) {
 	}
 	$eventYears[$eventYear]['events'][$key] = $event;
 }
-
-?><pre><?php // print_r($eventYears); ?></pre><?php
-
 
 if ( empty( $events ) ) {
 	echo 'Sorry, nothing found.';

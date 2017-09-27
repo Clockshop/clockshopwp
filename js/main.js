@@ -19,9 +19,8 @@
 			$('.opennav').hide();
 			$('.closenav').show();
 
-			$( ".topnav" ).stop().slideDown(150, function() {
-				topNavVisible = true;
-			});
+			$( ".topnav" ).show();
+			topNavVisible = true;
 		}
 
 	}
@@ -30,12 +29,11 @@
 
 		if ( topNavVisible == true ) {
 
-		$('.closenav').hide();
-		$('.opennav').show();
+			$('.closenav').hide();
+			$('.opennav').show();
 
-		$( ".topnav" ).stop().slideUp(150, function() {
+			$( ".topnav" ).hide();
 			topNavVisible = false;
-		});
 
 		}
 
