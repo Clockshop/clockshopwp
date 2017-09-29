@@ -40,6 +40,16 @@ $event_id = get_the_ID();
 				<div class="side-section-right">
 					<img src="<?php the_post_thumbnail_url('grid-3'); ?>" />
 				</div>
+				<div class="side-section-left mobile">
+					<h5 class="event-project"><?php echo tribe_get_text_categories(); ?></h5>
+					<h1><?php the_title(); ?></h1>
+					<?php if (get_field('event_cost')) { ?>
+						<p class="event-cost"><?php the_field('event_cost'); ?></p>
+					<?php } ?>
+					<?php if (get_field('event_nationbuilder_url')) { ?>
+						<a href="<?php the_field('event_nationbuilder_url') ?>" class="button">Get Tickets</a>
+					<?php } ?>
+				</div>
 			</section>
 			<section class="event-info side-section">
 				<div class="side-section-left">
@@ -83,10 +93,10 @@ $event_id = get_the_ID();
 				<div class="side-section-right">
 					<?php the_content(); ?>
 				</div>
-				<?php if (get_field('footer_cta')) { ?>
-					<div class="event-footer-cta"><?php the_field('footer_cta'); ?></div>
-				<?php } ?>
 			</section>
+			<?php if (get_field('footer_cta')) { ?>
+				<div class="event-footer-cta"><?php the_field('footer_cta'); ?></div>
+			<?php } ?>
 		</div>
 	<?php endwhile; ?>
 

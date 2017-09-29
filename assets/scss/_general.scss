@@ -140,6 +140,10 @@ input {
 	border-radius: 0;
 }
 
+.caption {
+	font-size: 18px;
+}
+
 .grid {
 	.grid-3 {
 		width: 33.33%;
@@ -417,6 +421,9 @@ input {
 		width: 33.33%;
 		display: inline-block;
 		vertical-align: bottom;
+		@media screen and (max-width: 999px) {
+			width: 30%;
+		}
 		@media screen and (max-width: 767px) {
 			width: 100%;
 		}
@@ -424,6 +431,9 @@ input {
 	.side-section-right {
 		width: 66.66%;
 		display: inline-block;
+		@media screen and (max-width: 999px) {
+			width: 70%;
+		}
 		@media screen and (max-width: 767px) {
 			width: 100%;
 		}
