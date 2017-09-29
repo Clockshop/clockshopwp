@@ -200,11 +200,17 @@
 }
 
 .event-single {
+	margin-bottom: 80px;
 	.event-header {
 		margin-top: 25px;
 		padding-bottom: 30px;
 		border-bottom: 4px solid black;
 		.side-section-left {
+			padding-right: 10px;
+			box-sizing: border-box;
+			@media screen and (max-width: 767px) {
+				display: none;
+			}
 			.event-cost {
 				font-family: 'CircularBookItalic';
 				font-size: 16px;
@@ -226,6 +232,12 @@
 				}
 			}
 		}
+		.side-section-left.mobile {
+			display: none;
+			@media screen and (max-width: 767px) {
+				display: block;
+			}
+		}
 	}
 	.event-info {
 		border-bottom: 4px solid black;
@@ -234,36 +246,58 @@
 			h4 {
 				padding: 15px 0 30px;
 				margin-top: 0;
+				@media screen and (max-width: 767px) {
+					padding-bottom: 0;
+					margin-bottom: 0;
+				}
 			}
 		}
 		.side-section-right {
 			margin-top: 25px;
 			margin-bottom: 40px;
 			font-size: 0;
+			@media screen and (max-width: 767px) {
+				margin-bottom: 30px;
+			}
 			> div {
 				vertical-align: top;
 				display: inline-block;
 				padding-right: 10px;
 				box-sizing: border-box;
+				@media screen and (max-width: 767px) {
+					width: 100%!important;
+					margin-bottom: 20px;
+				}
 				&:last-child {
 					padding-right: 0;
 				}
 				p {
 					margin: 0;
 					line-height: 26px;
+				    margin-bottom: 8px;
+				    line-height: 20px;
+					@media screen and (max-width: 999px) {
+						font-size: 16px;
+					    margin-bottom: 6px;
+					}
+					@media screen and (max-width: 767px) {
+						font-size: 18px;
+					    margin-bottom: 8px;
+					}
 				}
 			}
 			.event-info-date {
-				width: 30%;
+				width: 28%;
 				p {
 					font-family: 'CircularBookBold';
 				}
 			}
 			.event-info-location {
-				width: 40%;
+				width: 37%;
 			}
 			.event-info-social {
-				width: 30%;
+				width: 35%;
+				margin-bottom: 0;
 				a {
 					font-size: 18px;
 					line-height: 26px;
@@ -281,30 +315,35 @@
 			h4 {
 				padding: 15px 0 30px;
 				margin-top: 0;
+				@media screen and (max-width: 767px) {
+					padding-bottom: 0;
+					margin-bottom: 0;
+				}
 			}
 		}
 		.side-section-right {
-			margin: 25px 0 50px;
+			margin: 25px 0 0;
 			*:last-child {
 				margin-bottom: 0;
 			}
 		}
-		.event-footer-cta {
-			width: 100%;
-			padding: 27px;
-			border: 4px solid black;
-			margin-bottom: 80px;
-			p {
-				font-size: 24px;
-				line-height: 28px;
-				font-family: CircularBookBold;
-				margin-top: 0;
-				margin-bottom: 0;
-				text-align: center;
-				@media screen and (max-width: 767px) {
-					font-size: 21px;
-					line-height: 24px;
-				}
+	}
+	.event-footer-cta {
+		width: 100%;
+		padding: 27px;
+		border: 4px solid black;
+		margin-top: 60px;
+		box-sizing: border-box;
+		p {
+			font-size: 24px;
+			line-height: 28px;
+			font-family: CircularBookBold;
+			margin-top: 0;
+			margin-bottom: 0;
+			text-align: center;
+			@media screen and (max-width: 767px) {
+				font-size: 21px;
+				line-height: 24px;
 			}
 		}
 	}

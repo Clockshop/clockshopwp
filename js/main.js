@@ -102,7 +102,7 @@
 
 		} else {
 			if ( mobileNav == true ) {
-				$('.topnav').show();
+				//$('.topnav').show();
 				mobileNav = false;
 			}
 
