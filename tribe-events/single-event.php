@@ -56,34 +56,40 @@ $event_id = get_the_ID();
 					<h4>Details</h4>
 				</div>
 				<div class="side-section-right">
-					<div class="event-info-date">
-						<p><?php echo tribe_get_start_date(get_the_id(), false, 'l'); ?></p>
-						<p><?php echo tribe_get_start_date(get_the_id(), false, 'F j, Y'); ?></p>
-						<p><?php echo tribe_get_start_date(get_the_id(), false, 'g'); ?>-<?php echo tribe_get_end_date(get_the_id(), false, 'g'); ?> <?php echo tribe_get_end_date(get_the_id(), false, 'a'); ?></p>
-					</div>
-					<div class="event-info-location">
-						<p><?php echo tribe_get_text_categories(); ?></p>
-						<?php if (get_field('event_address')) { ?>
-							<p><?php the_field('event_address'); ?></p>
-						<?php } ?>
-						<?php if (get_field('event_address_2')) { ?>
-							<p><?php the_field('event_address_2'); ?></p>
-						<?php } ?>
-					</div>
-					<div class="event-info-social">
-						<?php if (get_field('event_first_hashtag')) { ?>
-							<p><?php the_field('event_first_hashtag'); ?></p>
-						<?php } ?>
-						<?php if (get_field('event_second_hashtag')) { ?>
-							<p><?php the_field('event_second_hashtag'); ?></p>
-						<?php } ?>
-						<?php if (get_field('event_facebook_url')) { ?>
-							<a href="<?php the_field('event_facebook_url'); ?>"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-						<?php } ?>
-						<?php if (get_field('event_twitter_url')) { ?>
-							<a href="<?php the_field('event_twitter_url'); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-						<?php } ?>
-					</div>
+					<?php if (tribe_get_start_date(get_the_id(), false, 'l') || tribe_get_end_date(get_the_id(), false, 'g')) { ?>
+						<div class="event-info-date">
+							<p><?php echo tribe_get_start_date(get_the_id(), false, 'l'); ?></p>
+							<p><?php echo tribe_get_start_date(get_the_id(), false, 'F j, Y'); ?></p>
+							<p><?php echo tribe_get_start_date(get_the_id(), false, 'g'); ?>-<?php echo tribe_get_end_date(get_the_id(), false, 'g'); ?> <?php echo tribe_get_end_date(get_the_id(), false, 'a'); ?></p>
+						</div>
+					<?php } ?>
+					<?php if (tribe_get_text_categories() || get_field('event_address') || get_field('event_address_2')) { ?>
+						<div class="event-info-location">
+							<p><?php echo tribe_get_text_categories(); ?></p>
+							<?php if (get_field('event_address')) { ?>
+								<p><?php the_field('event_address'); ?></p>
+							<?php } ?>
+							<?php if (get_field('event_address_2')) { ?>
+								<p><?php the_field('event_address_2'); ?></p>
+							<?php } ?>
+						</div>
+					<?php } ?>
+					<?php if (get_field('event_first_hashtag') || get_field('event_second_hashtag') || get_field('event_facebook_url') || get_field('event_twitter_url')) { ?>
+						<div class="event-info-social">
+							<?php if (get_field('event_first_hashtag')) { ?>
+								<p><?php the_field('event_first_hashtag'); ?></p>
+							<?php } ?>
+							<?php if (get_field('event_second_hashtag')) { ?>
+								<p><?php the_field('event_second_hashtag'); ?></p>
+							<?php } ?>
+							<?php if (get_field('event_facebook_url')) { ?>
+								<a href="<?php the_field('event_facebook_url'); ?>"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+							<?php } ?>
+							<?php if (get_field('event_twitter_url')) { ?>
+								<a href="<?php the_field('event_twitter_url'); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+							<?php } ?>
+						</div>
+					<?php } ?>
 				</div>
 			</section>
 			<section class="event-content side-section">

@@ -25,7 +25,8 @@ function create_clock_project() {
 			'public' => true,
 			'supports' => array( 'title','editor','author','thumbnail','custom-fields','revisions','page-attributes' ),
 			'rewrite' => array('slug' => 'project'),
-			'has_archive' => true
+			'has_archive' => true,
+			'hierarchical' => true,
 		)
 	);
 }

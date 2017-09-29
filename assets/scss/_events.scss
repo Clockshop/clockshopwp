@@ -54,6 +54,7 @@
 					font-size: 12px;
 					padding-left: 30px;
 					padding-top: 25px;
+					padding-right: 10px;
 					box-sizing: border-box;
 					vertical-align: top;
 					@media screen and (max-width: 999px) {
@@ -121,6 +122,7 @@
 					.excerpt {
 						font-size: 16px;
 						line-height: 24px;
+						margin-bottom: 0;
 						@media screen and (min-width: 768px) and (max-width: 999px) {
 							display: none;
 						}
@@ -211,6 +213,9 @@
 			@media screen and (max-width: 767px) {
 				display: none;
 			}
+			.event-project {
+				margin-top: 20px;
+			}
 			.event-cost {
 				font-family: 'CircularBookItalic';
 				font-size: 16px;
@@ -234,6 +239,7 @@
 		}
 		.side-section-left.mobile {
 			display: none;
+			padding-right: 0;
 			@media screen and (max-width: 767px) {
 				display: block;
 			}
@@ -270,12 +276,16 @@
 				}
 				&:last-child {
 					padding-right: 0;
+					margin-bottom: 0;
 				}
 				p {
 					margin: 0;
 					line-height: 26px;
 				    margin-bottom: 8px;
 				    line-height: 20px;
+					&:last-child {
+						margin-bottom: 0;
+					}
 					@media screen and (max-width: 999px) {
 						font-size: 16px;
 					    margin-bottom: 6px;
@@ -297,7 +307,6 @@
 			}
 			.event-info-social {
 				width: 35%;
-				margin-bottom: 0;
 				a {
 					font-size: 18px;
 					line-height: 26px;
@@ -323,6 +332,9 @@
 		}
 		.side-section-right {
 			margin: 25px 0 0;
+			*:first-child {
+				margin-top: 0!important;
+			}
 			*:last-child {
 				margin-bottom: 0;
 			}
