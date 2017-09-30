@@ -22,9 +22,9 @@ function create_clock_project() {
 				'not_found_in_trash' => 'No Projects found in Trash',
 				'parent' => 'Parent'
 			),
-			'public' => true,
 			'supports' => array( 'title','editor','author','thumbnail','custom-fields','revisions','page-attributes' ),
-			'rewrite' => array('slug' => 'project'),
+			//'rewrite' => array('slug' => 'projects'),
+			'public' => true,
 			'has_archive' => true,
 			'hierarchical' => true,
 		)
@@ -32,7 +32,6 @@ function create_clock_project() {
 }
 
 add_action( 'init', 'create_clock_project' );
-
 
 // Taxonomy
 // 
