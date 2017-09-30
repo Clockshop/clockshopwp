@@ -1,7 +1,5 @@
 <?php 
 
-/* Template Name: Projects */ 
-
 get_header(); ?>
 
 <article class="projectarchive">

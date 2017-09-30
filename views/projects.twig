@@ -1,0 +1,54 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="content projects-ongoing">
+
+		<h1>Ongoing Projects</h1>
+
+	    {% for item in ongoingProjects %}
+		
+		<section class="side-section projects-side-section">
+
+			<div class="side-section-right">
+				<img src="{{ item.thumbnail.src('grid-3') }}" />
+			</div>
+			<div class="side-section-left">
+				<h2>{{ item.title }}</h2>
+				<p>{{ item.get_field('project_excerpt') }}</p>
+				<a href="#"><h4>Learn More</h4></a>
+			</div>
+
+		</section>
+
+	    {% endfor %}
+
+	</div>
+	<div class="content projects-past">
+		<div>
+			
+			<h4>Past Projects</h4>
+
+			<section class="projects-grid grid">
+
+				{% for item in pastProjects %}
+				<div class="grid-3">
+					<div class="imagecell">
+						<a target="_blank" href="#">
+							<img src="{{ item.thumbnail.src('grid-3') }}" />
+						</a>
+					</div>
+					<div class="descriptioncell">
+						<h2>
+							<a href="#">{{ item.title }}</a>
+						</h2>
+					</div>
+				</div>
+			    {% endfor %}
+
+			</section>
+
+		</div>
+	</div>
+
+{% endblock %}
