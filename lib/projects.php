@@ -3,7 +3,7 @@
 // Post Type
 
 function create_clock_project() {
-	register_post_type( 'clock_projects',
+	register_post_type( 'projects',
 		array(
 			'labels' => array(
 				'name' => 'Projects',
@@ -23,7 +23,7 @@ function create_clock_project() {
 				'parent' => 'Parent'
 			),
 			'supports' => array( 'title','editor','author','thumbnail','custom-fields','revisions','page-attributes' ),
-			//'rewrite' => array('slug' => 'projects'),
+			//'rewrite' => array('slug' => 'project'),
 			'public' => true,
 			'has_archive' => true,
 			'hierarchical' => true,

@@ -1,6 +1,6 @@
 {
     "key": "group_59cf2ce0011db",
-    "title": "Projects",
+    "title": "Projects (Main)",
     "fields": [
         {
             "key": "field_59cf2cebd46a7",
@@ -20,6 +20,23 @@
             "maxlength": "",
             "rows": 4,
             "new_lines": ""
+        },
+        {
+            "key": "field_59d5cec43de20",
+            "label": "Project Menu",
+            "name": "project_menu",
+            "type": "nav_menu",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "save_format": "object",
+            "container": 0,
+            "allow_null": 0
         }
     ],
     "location": [
@@ -32,7 +49,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "clock_projects"
+                "value": "projects"
             }
         ]
     ],
@@ -44,5 +61,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1506775575
+    "modified": 1507814443
 }
