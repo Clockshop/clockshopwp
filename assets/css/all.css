@@ -36,18 +36,19 @@ p {
   font-size: 18px;
   line-height: 26px;
   font-family: CircularBook;
-  margin-top: 0; }
+  margin-bottom: 25px; }
 
 a {
+  font-family: CircularBook;
   text-decoration: underline; }
   a:hover {
     cursor: pointer;
     color: black; }
 
 h1 {
-  font-family: CircularBookBold;
   font-size: 36px;
   line-height: 42px;
+  font-family: CircularBookBold;
   display: block; }
   @media screen and (max-width: 999px) {
     h1 {
@@ -55,9 +56,9 @@ h1 {
       line-height: 36px; } }
 
 h2 {
-  font-family: CircularBookBold;
   font-size: 32px;
-  line-height: 42px; }
+  line-height: 42px;
+  font-family: CircularBookBold; }
   @media screen and (max-width: 999px) {
     h2 {
       font-size: 28px;
@@ -65,9 +66,9 @@ h2 {
 
 h3 {
   font-size: 24px;
-  line-height: 28px;
+  line-height: 30px;
   font-family: CircularBookBold;
-  margin-top: 0; }
+  margin: 40px 0 30px 0; }
   @media screen and (max-width: 767px) {
     h3 {
       font-size: 21px;
@@ -75,15 +76,22 @@ h3 {
 
 h4 {
   font-size: 18px !important;
-  font-family: CircularBookBold;
   letter-spacing: .1em;
+  font-family: CircularBookBold;
   text-transform: uppercase; }
 
 h5 {
   font-size: 22px;
-  font-family: CircularBook;
   line-height: 24px;
+  font-family: CircularBook;
   margin: 15px 0; }
+
+h6 {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: CircularBook;
+  font-weight: 400;
+  margin: 20 0 30px 0; }
 
 button, .button {
   font-family: CircularBookBold;
@@ -1317,3 +1325,66 @@ footer.contactfooter {
       margin-bottom: 45px; }
       .projects-past > div .grid .grid-3 .descriptioncell h2 {
         margin-top: 0; }
+
+.project-single .project-menu {
+  background-color: black;
+  color: white;
+  padding-top: 60px;
+  padding-bottom: 40px; }
+  .project-single .project-menu h1 {
+    color: white;
+    font-size: 42px;
+    line-height: 48px; }
+    @media screen and (max-width: 999px) {
+      .project-single .project-menu h1 {
+        font-size: 36px;
+        line-height: 42px; } }
+  .project-single .project-menu ul {
+    padding-left: 0;
+    list-style-type: none;
+    border-bottom: 3px solid white;
+    margin: 22px 0 0 0;
+    font-size: 0; }
+    .project-single .project-menu ul li {
+      display: inline-block; }
+      .project-single .project-menu ul li.current-menu-item {
+        background-color: white; }
+        .project-single .project-menu ul li.current-menu-item a {
+          color: black; }
+      .project-single .project-menu ul li a {
+        padding: 10px 30px;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        display: block; }
+
+.project-single main {
+  padding-top: 40px;
+  padding-bottom: 45px; }
+  .project-single main .grid .grid-3 .project-title {
+    margin-top: 15px;
+    margin-bottom: 5px; }
+    .project-single main .grid .grid-3 .project-title a {
+      font-family: CircularBookBoldItalic;
+      text-decoration: none; }
+  .project-single main .grid .grid-3 .project-subtitle {
+    margin-top: 5px;
+    margin-bottom: 45px;
+    font-size: 22px; }
+    .project-single main .grid .grid-3 .project-subtitle a {
+      font-family: CircularBook;
+      text-decoration: none; }
+  .project-single main .project-next {
+    display: block;
+    text-align: right; }
+    .project-single main .project-next a {
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 50px;
+      margin-bottom: 10px;
+      display: inline-block;
+      letter-spacing: .1em;
+      text-decoration: none;
+      border-bottom: 4px solid black;
+      padding-bottom: 5px;
+      text-transform: uppercase; }

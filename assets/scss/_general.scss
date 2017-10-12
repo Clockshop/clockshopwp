@@ -50,10 +50,11 @@ p {
 	font-size: 18px;
 	line-height: 26px;	
 	font-family: CircularBook;
-	margin-top: 0;
+	margin-bottom: 25px;
 }
 
 a {
+	font-family: CircularBook;
 	text-decoration: underline;
 	&:hover {
 		cursor: pointer;
@@ -62,9 +63,9 @@ a {
 }
 
 h1 {
-	font-family: CircularBookBold;
 	font-size: 36px;
 	line-height: 42px;
+	font-family: CircularBookBold;
 	display: block;
 	@media screen and (max-width: 999px) {
 		font-size: 32px;
@@ -73,9 +74,9 @@ h1 {
 }
 
 h2 {
-	font-family: CircularBookBold;
 	font-size: 32px;
 	line-height: 42px;
+	font-family: CircularBookBold;
 	@media screen and (max-width: 999px) {
 		font-size: 28px;
 		line-height: 36px;
@@ -84,9 +85,9 @@ h2 {
 
 h3 {
 	font-size: 24px;
-	line-height: 28px;
+	line-height: 30px;
 	font-family: CircularBookBold;
-	margin-top: 0;
+	margin: 40px 0 30px 0;
 	@media screen and (max-width: 767px) {
 		font-size: 21px;
 		line-height: 24px;
@@ -95,16 +96,24 @@ h3 {
 
 h4 {
 	font-size: 18px!important;
-	font-family: CircularBookBold;
 	letter-spacing: .1em;
+	font-family: CircularBookBold;
 	text-transform: uppercase;
 }
 
 h5 {
 	font-size: 22px;
-	font-family: CircularBook;
 	line-height: 24px;
+	font-family: CircularBook;
 	margin: 15px 0;
+}
+
+h6 {
+	font-size: 16px;
+	line-height: 24px;
+	font-family: CircularBook;
+	font-weight: 400;
+	margin: 20 0 30px 0;
 }
 
 button, .button {

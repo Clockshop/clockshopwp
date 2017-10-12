@@ -1,15 +1,12 @@
 <?php
 
-/* Template Name: Projects */ 
-
 $context = $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
-
 $args = array(
     'post_parent' => 0,
-	'post_type' => 'clock_projects',
+	'post_type' => 'projects',
 	'posts_per_page' => -1,
 	'orderby' => 'menu_order',
 	'order' => 'ASC',
@@ -20,7 +17,7 @@ $context['ongoingProjects'] = Timber::get_posts($args);
 
 $args = array(
     'post_parent' => 0,
-	'post_type' => 'clock_projects',
+	'post_type' => 'projects',
 	'posts_per_page' => -1,
 	'orderby' => 'menu_order',
 	'order' => 'ASC',
