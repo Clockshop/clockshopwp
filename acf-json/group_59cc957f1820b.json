@@ -3,11 +3,36 @@
     "title": "Event",
     "fields": [
         {
+            "key": "field_59feb1a6bfd5e",
+            "label": "Event Images",
+            "name": "event_images",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "insert": "append",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_59cc958b29cf8",
             "label": "Event Cost",
             "name": "event_cost",
             "type": "text",
-            "instructions": "",
+            "instructions": "Use this field to override The Events Calendar cost field in case you need to add additional info to the cost line--e.g. \"Suggested Donation\"",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -36,44 +61,6 @@
             },
             "default_value": "",
             "placeholder": ""
-        },
-        {
-            "key": "field_59cca48e4fca6",
-            "label": "Event Address",
-            "name": "event_address",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_59cca49a4fca7",
-            "label": "Event City, State and Zip Code",
-            "name": "event_address_2",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         },
         {
             "key": "field_59cca56de416b",
@@ -182,5 +169,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1506611070
+    "modified": 1510318125
 }

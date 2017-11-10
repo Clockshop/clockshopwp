@@ -162,7 +162,7 @@
 
 	$(window).load(function() {
 
-		$('.flexslider').flexslider({            
+		$('.flexslider').flexslider({
 		    controlNav: false,
 		    directionNav: false
 		});

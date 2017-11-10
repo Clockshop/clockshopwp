@@ -1,6 +1,6 @@
 {
     "key": "group_59cf2ce0011db",
-    "title": "Projects (Main)",
+    "title": "Projects (Parent)",
     "fields": [
         {
             "key": "field_59cf2cebd46a7",
@@ -25,7 +25,7 @@
             "key": "field_59d5cec43de20",
             "label": "Project Menu",
             "name": "project_menu",
-            "type": "nav_menu",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,9 +34,54 @@
                 "class": "",
                 "id": ""
             },
-            "save_format": "object",
-            "container": 0,
-            "allow_null": 0
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_59e8327391415",
+                    "label": "Menu Item Title",
+                    "name": "menu_item_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59e8328891416",
+                    "label": "Menu Item Page",
+                    "name": "menu_item_page",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "projects"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
         }
     ],
     "location": [
@@ -61,5 +106,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1507814443
+    "modified": 1508414775
 }

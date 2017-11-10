@@ -40,6 +40,7 @@ body {
 	min-height: 100vh;
 	padding-bottom: 430px;
 	box-sizing: border-box;
+	font-family: CircularBook;
 }
 
 *:focus {
@@ -54,7 +55,6 @@ p {
 }
 
 a {
-	font-family: CircularBook;
 	text-decoration: underline;
 	&:hover {
 		cursor: pointer;
@@ -180,7 +180,7 @@ input {
 				font-family: CircularBookBold;
 				font-size: 28px;
 				line-height: 35px;
-				margin-top: 15px;
+				margin-top: 16px!important;
 				margin-bottom: 0;
 			    margin-top: 30px;
 				@media screen and (max-width: 999px) {
@@ -212,6 +212,7 @@ input {
 				line-height: 22px;
 				margin-top: 12px;
 				margin-bottom: 0;
+				overflow-wrap: break-word;
 			}
 			.calltoaction {
 				font-family: CircularBookBold;
@@ -253,6 +254,7 @@ input {
 		padding: 8px 15px;
 		position: relative;
 		.section-title {
+			margin-top: 0;
 			margin-bottom: 0;
 			font-size: 24px;
 			line-height: 26px;
@@ -430,6 +432,13 @@ input {
 					}
 				}
 			}
+		}
+	}
+	.gform_confirmation_wrapper {
+		.gform_confirmation_message {
+			font-size: 28px;
+			line-height: 36px;
+			font-family: CircularBook;
 		}
 	}
 }

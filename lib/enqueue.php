@@ -34,7 +34,10 @@ function enqueue_scripts_method() {
 	wp_register_script('flickityjs',$flickityjs, false, $version);
 
 	$descriptivehomejs = get_template_directory_uri() . '/js/descriptivehome.js';
-	wp_register_script('descriptivehomejs',$descriptivehomejs, false, $version);
+	wp_register_script('descriptivehomejs', $descriptivehomejs, false, $version);
+
+	$slickjs = get_template_directory_uri() . '/js/slick.min.js';
+	wp_register_script('slickjs', $slickjs, false, $version);
 
 	// Define CSS
 
@@ -65,10 +68,14 @@ function enqueue_scripts_method() {
 	$all = get_stylesheet_directory_uri() . '/assets/css/all.css';
 	wp_register_style('all', $all, false, $version);
 
+	$slickcss = get_template_directory_uri() . '/js/slick.css';
+	wp_register_style('slickcss', $slickcss, false, $version);
+
 	// Enqueue
 
 	wp_enqueue_script( 'flexsliderjs',array('jquery'));
 	wp_enqueue_script( 'flickityjs',array('jquery'));
+	wp_enqueue_script( 'slickjs',array('jquery'));
 	wp_enqueue_script( 'mainjs',array('jquery','flexsliderjs'));
 	wp_enqueue_script( 'scripts',array('jquery'));
 	wp_enqueue_script( 'projecttemplatejs',array('jquery'));
@@ -83,6 +90,7 @@ function enqueue_scripts_method() {
 
 	wp_enqueue_style( 'fontawesome');
 	wp_enqueue_style( 'all');
+	wp_enqueue_style( 'slickcss');
 
 	if ( is_page_template('page-home.php') ) :
 		wp_enqueue_style( 'descriptivehomecss');

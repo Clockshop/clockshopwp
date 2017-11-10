@@ -1,17 +1,23 @@
-	{% extends "base.twig" %}
+{% extends "base.twig" %}
 
-{% block content %}
+{% block content %}	
 
 	<div class="project-single">
 
 		<div class="project-menu">
 			<div class="content">
-				<h1>{{post.title}}</h1>
+				<h1>{{parent.title}}</h1>
 				<ul>
-					{% for item in projectMenu.get_items %}
-						<li class="{{item.classes | join(' ')}}">
-							<a href="{{item.link}}">
-								{{item.title}}
+					{% for item in parent.get_field('project_menu') %}
+						{% if item.menu_item_page.link == post.link %}
+							<li class="active">
+						{% elseif item.menu_item_page.link == direct_parent.link %}
+							<li class="active">
+						{% else %}
+							<li>
+						{% endif %}
+							<a href="{{item.menu_item_page.link}}">
+								{{item.menu_item_title}}
 							</a>
 						</li>
 					{% endfor %}
@@ -21,7 +27,9 @@
 
 		<main class="content">
 			{% if post.get_field('project_content_type') == 'text' %}
+
 				{{post.get_field('project_text_content')}}
+
 			{% elseif post.get_field('project_content_type') == 'artist_list' %}
 
 				<div class="grid featured-grid">
@@ -40,8 +48,32 @@
 				    {% endfor %}
 				</div>
 
+			{% elseif post.get_field('project_content_type') == 'artist_single' %}
+
+			    {% if post.get_field('project_image_slider') %}
+				    <div class="project-slider">
+					    {% for item in post.get_field('project_image_slider') %}
+							<div class="project-slide">
+								<img src="{{TimberImage(item.slide_image).src|resize(1900)}}" />
+								<div class="caption caption-left">
+									{{item.slide_caption_left}}
+								</div>
+								<div class="caption caption-right">
+									{{item.slide_caption_right}}
+								</div>
+							</div>
+					    {% endfor %}
+				    </div>
+			    {% endif %}
+				
+				<div class="project-content">
+					{{post.get_field('project_text_content')}}				
+				</div>
+
 			{% endif %}
+
 			{% if projectMenu.get_items|length > 1 %}
+
 				{% for item in projectMenu.get_items %}
 					{% if loop.index == next %}
 						<div class="project-next">
