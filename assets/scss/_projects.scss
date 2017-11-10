@@ -111,7 +111,7 @@
 			font-size: 0;
 			li {
 				display: inline-block;
-				&.current-menu-item {
+				&.active {
 					background-color: white;
 					a {
 						color: black;
@@ -169,6 +169,73 @@
 				padding-bottom: 5px;
 				text-transform: uppercase;
 			}			
+		}
+		.project-slider {
+			.project-slide {
+				height: auto;
+				font-size: 0;
+				.caption {
+					width: 50%;
+					display: inline-block;
+					vertical-align: top;
+					margin-top: 20px;
+					margin-bottom: 20px;
+					font-family: CircularBook;
+					font-size: 14px;
+				}
+				.caption-left {
+					text-align: left;
+				}
+				.caption-right {
+					text-align: right;
+				}
+			}
+			.slick-arrow {
+			    font-size: 0;
+			    position: absolute;
+			    border: none;
+			    padding: 0;
+			    margin: auto;
+			    top: 0;
+			    bottom: 0;
+			    height: 40px;
+			    padding: 9px;
+			    &:hover {
+			    	background: transparent;
+			    }
+			    &.slick-prev {
+				    left: -60px;
+				    &:before {
+				    	content: '';
+					    height: 22px;
+					    width: 13px;
+					    display: block;
+					    background-size: contain;
+					    background-repeat: no-repeat;
+					    background-image: url('../../images/arrow-slider.png');
+				    }
+			    }
+			    &.slick-next {
+				    right: -60px;
+				    &:before {
+				    	content: '';
+					    height: 22px;
+					    width: 13px;
+					    display: block;
+					    background-size: contain;
+					    background-repeat: no-repeat;
+					    background-image: url('../../images/arrow-slider.png');
+						-moz-transform: scale(-1, 1);
+						-webkit-transform: scale(-1, 1);
+						-o-transform: scale(-1, 1);
+						-ms-transform: scale(-1, 1);
+						transform: scale(-1, 1);
+				    }
+			    }
+			}
+		}
+		.project-content {
+			border-top: 4px solid black;			
 		}
 	}
 }

@@ -3,6 +3,7 @@
 	max-width: none;
 	#tribe-events-content-wrapper {
 		.content {
+			text-align: center;
 			h1 {
 			    margin: 40px 0 30px 0;
 				@media screen and (min-width: 1000px) {
@@ -33,28 +34,32 @@
 	}
 }
 
-.events-slider {
-	> div {
-		padding-bottom: 42px;
-		border-bottom: 4px solid black;	
+.events-this-month {
+	.slick-list {
+		border-bottom: 4px solid black;
 		.slide-cell {
 			width: 100%;
+			height: auto;
 			.slide {
 				font-size: 0;
 				.event-image {
+					padding-bottom: 42px;
 					display: inline-block;
-					width: 66.66%;
+					width: 60%;
 					@media screen and (max-width: 767px) {
 						width: 100%;
+						padding-bottom: 0;
 					}
 				}
 				.event-content {
+					text-align: left;
+					padding-bottom: 30px;
 					display: inline-block;
-					width: 33.33%;
+					width: 40%;
 					font-size: 12px;
-					padding-left: 30px;
-					padding-top: 25px;
-					padding-right: 10px;
+					padding-left: 28px;
+					padding-top: 20px;
+					padding-right: 8px;
 					box-sizing: border-box;
 					vertical-align: top;
 					@media screen and (max-width: 999px) {
@@ -64,6 +69,8 @@
 					@media screen and (max-width: 767px) {
 						width: 100%;
 						padding-left: 0;
+						padding-top: 30px;
+						padding-right: 0;
 					}
 					.left-arrow {
 						width: 12px;
@@ -76,6 +83,7 @@
 						-ms-filter: "FlipH";
 						display: inline-block;
 						left: 0;
+						margin-bottom: 30px;
 					}
 					.right-arrow {
 						display: inline-block;
@@ -83,14 +91,19 @@
 						height: auto;
 						margin-left: 15px;
 						left: 0;
+						margin-bottom: 30px;
 					}
 					h2 {
-						margin-bottom: 8px!important;
-						line-height: 32px!important;
+						margin-bottom: 10px;
+						margin-top: 0;
+						line-height: 36px!important;
 						@media screen and (max-width: 999px) {
 							margin-top: 20px;
 							font-size: 28px;
 							line-height: 30px!important;
+						}
+						@media screen and (max-width: 767px) {
+							margin-top: 0;
 						}
 						a {
 							text-decoration: none!important;
@@ -98,7 +111,8 @@
 					}
 					h3 {
 						line-height: 26px!important;
-						margin-bottom: 12px;
+						margin-top: 10px;
+						margin-bottom: 10px;
 						@media screen and (max-width: 999px) {
 							font-size: 21px;
 							line-height: 24px;
@@ -121,8 +135,10 @@
 					}
 					.excerpt {
 						font-size: 16px;
-						line-height: 24px;
+						line-height: 21px;
 						margin-bottom: 0;
+						margin-top: 10px;
+						overflow: hidden;
 						@media screen and (min-width: 768px) and (max-width: 999px) {
 							display: none;
 						}
@@ -134,68 +150,89 @@
 }
 
 .upcoming-events {
-	> h4 {
-		font-size: 18px;
-		font-family: CircularBookBold;
-		margin: 0;
-	    padding: 15px 0 30px;
-		letter-spacing: .1em;
-		text-transform: uppercase;
-	}	
+	> div {
+		text-align: left;
+		border-bottom: 4px solid black;
+		h4 {
+			font-size: 18px;
+			font-family: CircularBookBold;
+			margin: 0;
+		    padding: 15px 0 30px;
+			letter-spacing: .1em;
+			text-transform: uppercase;
+		}
+		.featured-grid {
+			.grid-bottom {
+				padding-top: 60px;
+				border-bottom: none;
+			}
+		}
+	}
 }
 
-.collapsable-events {
-	section {
-		@media screen and (min-width: 768px) {
-			padding: 8px 50px;
-		}
-		@media screen and (max-width: 767px) {
-			padding: 8px 25px;
-		}
-		.section-title {
-			text-align: center;
-		}
-		.section-content {
-			font-size: 0;
-			margin-top: 0;
-			> :first-child {
-				margin-top: 30px!important;
+.past-events {
+	text-align: left!important;
+	h4 {
+		padding: 15px 0 30px;
+		margin: 0;
+		text-align: left;
+	}
+	.collapsable-events {
+		section {
+			@media screen and (min-width: 768px) {
+				padding: 8px 50px;
 			}
-			.event-month {
-				margin-top: 5px;
-				border-top: 4px solid black;
-				span {
-					background-color: black;
-					color: white;
-					padding: 2px 5px;
-					text-transform: uppercase;
-					font-size: 18px;
-					letter-spacing: .1em;
-				}
+			@media screen and (max-width: 767px) {
+				padding: 8px 25px;
 			}
-			.event-info {
-				width: 50%;
-				display: inline-block;
-				margin-bottom: 25px;
-				vertical-align: top;
-				box-sizing: border-box;
-				@media screen and (min-width: 768px) {
-					padding-right: 30px;
+			.section-title {
+				text-align: center;
+				margin-top: 0;
+			}
+			.section-content {
+				font-size: 0;
+				margin-top: 0;
+				> :first-child {
+					margin-top: 30px!important;
 				}
-				@media screen and (max-width: 767px) {
-					width: 100%;
-				}
-				.event-title {
-					font-family: CircularBookBold;
-					font-size: 22px;
-					margin-bottom: 2px;
-					a {
-						text-decoration: none;
+				.event-month {
+					margin-top: 5px;
+					border-top: 4px solid black;
+					span {
+						background-color: black;
+						color: white;
+						padding: 2px 5px;
+						text-transform: uppercase;
+						font-size: 18px;
+						letter-spacing: .1em;
 					}
 				}
-				.event-date {
-					font-size: 16px;
-				}				
+				.event-info {
+					width: 50%;
+					display: inline-block;
+					margin-bottom: 25px;
+					vertical-align: top;
+					box-sizing: border-box;
+					@media screen and (min-width: 768px) {
+						padding-right: 30px;
+					}
+					@media screen and (max-width: 767px) {
+						width: 100%;
+					}
+					.event-title {
+						font-family: CircularBookBold;
+						font-size: 22px;
+						margin-bottom: 2px;
+						margin-top: 0;
+						a {
+							text-decoration: none;
+						}
+					}
+					.event-date {
+						font-size: 16px;
+						margin-top: 0;
+					}
+				}
 			}
 		}
 	}
@@ -213,8 +250,13 @@
 			@media screen and (max-width: 767px) {
 				display: none;
 			}
+			.past {
+				font-family: CircularBookBoldItalic;
+				color: #999;
+				margin-bottom: 0;
+			}
 			.event-project {
-				margin-top: 20px;
+				margin-top: 15px;
 			}
 			.event-cost {
 				font-family: 'CircularBookItalic';
@@ -235,6 +277,12 @@
 					background: white;
 					color: black;
 				}
+			}
+		}
+		.side-section-right {
+			//height: auto;
+			img {
+				height: auto;
 			}
 		}
 		.side-section-left.mobile {

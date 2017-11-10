@@ -63,7 +63,7 @@ $events = tribe_get_events( array(
 
 if ( empty( $events ) ) {
 ?>
-<div class="no-events">
+<div class="no-events content">
 	<div class="newsform">
 		<h1>Nothing this month! Subscribe and stay tuned.</h1>
 		<?php echo do_shortcode('[gravityform id="4" title="false" description="false" ajax="true"]'); ?>
@@ -72,8 +72,14 @@ if ( empty( $events ) ) {
 <?php
 }
 else { ?>
-	<section class="events-slider content">
+	<section class="events-slider events-this-month content">
 		<?php foreach( $events as $event ) { ?>
+			<?php
+				$terms = get_terms( array(
+				    'taxonomy' => 'project',
+				    'hide_empty' => false,
+				) );
+			?>
 			<div class="slide-cell">
 				<div class="slide">
 					<div class="event-image">
@@ -82,22 +88,23 @@ else { ?>
 						</a>
 					</div>
 					<div class="event-content">
-						<a class="prev"><img class="left-arrow" src="<?php echo get_template_directory_uri() ?>/images/arrow_black.png" /></a>
-						<a class="next"><img class="right-arrow" src="<?php echo get_template_directory_uri() ?>/images/arrow_black.png" /></a>
+						<?php if (count($events) > 1) { ?>
+							<a class="prev"><img class="left-arrow" src="<?php echo get_template_directory_uri() ?>/images/arrow_black.png" /></a>
+							<a class="next"><img class="right-arrow" src="<?php echo get_template_directory_uri() ?>/images/arrow_black.png" /></a>
+						<?php } ?> 
 						<h2><a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_title($event); ?></a></h2>
 						<h3><?php echo spellerberg_sp_date($event); ?></h3>
-						<h5><?php echo tribe_get_text_categories($event->ID); ?></h5>
+						<h5><?php echo $terms[0]->name; ?></h5>
 						<h5 class="cost"><?php echo tribe_get_cost( null, true ); ?></h5>
 						<?php if (get_the_excerpt($event->ID) != '') { ?>
 							<p class="excerpt"><?php echo get_the_excerpt($event->ID); ?></p>
 						<?php } else { ?>
-							<p class="excerpt"><?php echo wp_trim_words( get_post_field('post_content', $event->ID), 15, '...' ); ?></p>
+							<p class="excerpt"><?php echo wp_html_excerpt( get_post_field('post_content', $events[0]->ID), 150 ); ?>...</p>
 						<?php } ?>
 					</div>
 				</div>
 			</div>
 		<?php } ?>
-		</div>
 	</section>
 <?php } ?>
 
@@ -112,27 +119,35 @@ if ( empty( $events ) ) {
 }
 else { ?>
 	<section class="content upcoming-events">
-		<h4>Further Out</h4>
-		<div class="grid featured-grid">
-			<?php foreach( $events as $event ) { ?>
-				<div class="grid-3">
-					<div class="imagecell">
-						<a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_post_thumbnail($event, 'grid-3'); ?></a>
+		<div>
+			<h4>Further Out</h4>
+			<div class="grid featured-grid">
+				<?php foreach( $events as $event ) { ?>
+					<?php
+						$terms = get_terms( array(
+						    'taxonomy' => 'project',
+						    'hide_empty' => false,
+						) );
+					?>
+					<div class="grid-3">
+						<div class="imagecell">
+							<a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_post_thumbnail($event, 'grid-3'); ?></a>
+						</div>
+						<div class="descriptioncell">
+							<h2><a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_title($event); ?></a></h2>
+							<p class="content-type"><?php echo spellerberg_sp_date($event); ?></p>
+							<p class="add-descriptor"><?php echo $terms[0]->name; ?></p>
+							<?php if (get_the_excerpt($event->ID) != '' && get_the_excerpt($event->ID) != ' ') { ?>
+								<p class="description"><?php echo get_the_excerpt($event->ID); ?></p>
+							<?php } else { ?>
+								<p class="description"><?php echo wp_trim_words( get_post_field('post_content', $event->ID), 15, '...' ); ?></p>
+							<?php } ?>
+							<p class="calltoaction"><a href="<?php echo get_permalink($event->ID); ?>">RSVP</a></p>
+						</div>
 					</div>
-					<div class="descriptioncell">
-						<h2><a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_title($event); ?></a></h2>
-						<p class="content-type"><?php echo spellerberg_sp_date($event); ?></p>
-						<p class="add-descriptor"><?php echo tribe_get_text_categories($event->ID); ?></p>
-						<?php if (get_the_excerpt($event->ID) != '' && get_the_excerpt($event->ID) != ' ') { ?>
-							<p class="description"><?php echo get_the_excerpt($event->ID); ?></p>
-						<?php } else { ?>
-							<p class="description"><?php echo wp_trim_words( get_post_field('post_content', $event->ID), 15, '...' ); ?></p>
-						<?php } ?>
-						<p class="calltoaction"><a href="<?php echo get_permalink($event->ID); ?>">RSVP</a></p>
-					</div>
-				</div>
-			<?php } ?>
-			<div class="grid-bottom"></div>
+				<?php } ?>
+				<div class="grid-bottom"></div>
+			</div>
 		</div>
 	</section>
 <?php } ?>
@@ -162,7 +177,7 @@ if ( empty( $events ) ) {
 	echo 'Sorry, nothing found.';
 }
 else { ?>
-	<section class="content upcoming-events">
+	<section class="content past-events">
 		<h4>Past Events</h4>
 		<div class="collapsable-sections collapsable-events">
 			<?php foreach( $eventYears as $eventYear ) { ?>

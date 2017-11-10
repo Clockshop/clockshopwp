@@ -16,8 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $events_label_singular = tribe_get_event_label_singular();
 $events_label_plural = tribe_get_event_label_plural();
-
 $event_id = get_the_ID();
+$today = date("Y-m-d");
+
+$terms = get_terms( array(
+    'taxonomy' => 'project',
+    'hide_empty' => false,
+) );
 
 ?>
 
@@ -28,20 +33,28 @@ $event_id = get_the_ID();
 		<div class="event-single content">
 			<section class="event-header side-section">
 				<div class="side-section-left">
-					<h5 class="event-project"><?php echo tribe_get_text_categories(); ?></h5>
+					<?php if ($today > tribe_get_end_date(get_the_id(), false, 'Y-m-d')) { ?>
+						<p class="past">PAST EVENT</p>
+					<?php } ?>
+					<h5 class="event-project"><?php echo $terms[0]->name; ?></h5>
 					<h1><?php the_title(); ?></h1>
 					<?php if (get_field('event_cost')) { ?>
 						<p class="event-cost"><?php the_field('event_cost'); ?></p>
+					<?php } elseif (tribe_get_cost()) { ?>
+						<p class="event-cost"><?php echo tribe_get_cost($event_id, true); ?></p>
 					<?php } ?>
 					<?php if (get_field('event_nationbuilder_url')) { ?>
 						<a href="<?php the_field('event_nationbuilder_url') ?>" class="button">Get Tickets</a>
 					<?php } ?>
 				</div>
-				<div class="side-section-right">
-					<img src="<?php the_post_thumbnail_url('grid-3'); ?>" />
+				<div class="side-section-right event-images">
+					<?php $event_images = get_field('event_images') ?>
+					<?php foreach( $event_images as $image ) { ?>
+						<img src="<?php echo $image['sizes']['grid-3']; ?>" />
+					<?php } ?>
 				</div>
 				<div class="side-section-left mobile">
-					<h5 class="event-project"><?php echo tribe_get_text_categories(); ?></h5>
+					<h5 class="event-project"><?php echo $terms[0]->name; ?></h5>
 					<h1><?php the_title(); ?></h1>
 					<?php if (get_field('event_cost')) { ?>
 						<p class="event-cost"><?php the_field('event_cost'); ?></p>
@@ -63,14 +76,16 @@ $event_id = get_the_ID();
 							<p><?php echo tribe_get_start_date(get_the_id(), false, 'g'); ?>-<?php echo tribe_get_end_date(get_the_id(), false, 'g'); ?> <?php echo tribe_get_end_date(get_the_id(), false, 'a'); ?></p>
 						</div>
 					<?php } ?>
-					<?php if (tribe_get_text_categories() || get_field('event_address') || get_field('event_address_2')) { ?>
+					<?php if ($terms[0]->name || get_field('event_address') || get_field('event_address_2')) { ?>
 						<div class="event-info-location">
-							<p><?php echo tribe_get_text_categories(); ?></p>
+							<?php if ($terms[0]->name) { ?>
+								<p><?php echo $terms[0]->name; ?></p>
+							<?php } ?>
 							<?php if (get_field('event_address')) { ?>
-								<p><?php the_field('event_address'); ?></p>
+								<p><?php echo tribe_get_address(); ?></p>
 							<?php } ?>
 							<?php if (get_field('event_address_2')) { ?>
-								<p><?php the_field('event_address_2'); ?></p>
+								<p><?php echo tribe_get_city(); ?></p>
 							<?php } ?>
 						</div>
 					<?php } ?>

@@ -27,11 +27,41 @@ function create_clock_project() {
 			'public' => true,
 			'has_archive' => true,
 			'hierarchical' => true,
+			'menu_icon' => 'dashicons-media-document',
 		)
 	);
 }
-
 add_action( 'init', 'create_clock_project' );
+
+// Create Projects Taxonomy
+function create_project_tax() {
+	register_taxonomy(
+		'project',
+		array( 'projects', 'tribe_events', 'post', 'page' ),
+		array(
+			'labels' => array(
+				'name' => 'Projects',
+				'menu_name' => 'Projects',
+				'singular_name' => 'Project',
+				'all_items' => 'All Projects',
+				'add_new' => 'Add New',
+				'add_new_item' => 'Add New Project',
+				'edit' => 'Edit',
+				'edit_item' => 'Edit Project',
+				'new_item' => 'New Project',
+				'view' => 'View',
+				'view_item' => 'View Project',
+				'search_items' => 'Search Projects',
+				'not_found' => 'No Projects found',
+				'not_found_in_trash' => 'No Projects found in Trash',
+				'parent' => 'Parent'
+			),
+			'rewrite' => array( 'slug' => 'project' ),
+			'hierarchical' => false,
+		)
+	);
+}
+add_action( 'init', 'create_project_tax' );
 
 // Taxonomy
 // 

@@ -175,3 +175,31 @@ if ( class_exists('Tribe__Events__Main') ){
     }
  
 }
+
+add_action( 'admin_menu', 'remove_events_submenu_items', 100 );
+function remove_events_submenu_items() {
+	remove_submenu_page(
+		'edit.php?post_type=tribe_events',
+		'edit-tags.php?taxonomy=tribe_events_cat&amp;post_type=tribe_events' // must be &amp;
+	);
+	remove_submenu_page(
+		'edit.php?post_type=tribe_events',
+		'aggregator'
+	);
+	remove_submenu_page(
+		'edit.php?post_type=tribe_events',
+		'events-importer'
+	);
+	remove_submenu_page(
+		'edit.php?post_type=tribe_events',
+		'edit-tags.php?taxonomy=post_tag&amp;post_type=tribe_events'
+	);
+}
+
+function remove_event_meta_boxes() {
+	remove_meta_box( 'tagsdiv-post_tag' , 'tribe_events' , 'side' ); 
+	remove_meta_box( 'tribe_events_catdiv' , 'tribe_events' , 'side' ); 
+	remove_meta_box( 'tribe_events_event_options' , 'tribe_events' , 'side' ); 
+}
+add_action( 'admin_menu' , 'remove_event_meta_boxes' );
+

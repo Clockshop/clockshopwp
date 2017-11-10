@@ -17,7 +17,8 @@
             },
             "choices": {
                 "text": "Rich Text Editor",
-                "artist_list": "Artwork and Artists List"
+                "artist_list": "Artwork and Artists List",
+                "artist_single": "Artwork and Artists Detail"
             },
             "default_value": [
                 "text"
@@ -28,6 +29,97 @@
             "ajax": 0,
             "return_format": "value",
             "placeholder": ""
+        },
+        {
+            "key": "field_59e574cd18ce1",
+            "label": "Project Image Slider",
+            "name": "project_image_slider",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59df07472580d",
+                        "operator": "==",
+                        "value": "artist_single"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Slide",
+            "sub_fields": [
+                {
+                    "key": "field_59e574e518ce2",
+                    "label": "Slide Image",
+                    "name": "slide_image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_59e5750518ce3",
+                    "label": "Slide Caption Left",
+                    "name": "slide_caption_left",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "<i>Use i tags to italicize text<\/i>",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59e5751118ce4",
+                    "label": "Slide Caption Right",
+                    "name": "slide_caption_right",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "<i>Use i tags to italicize text<\/i>",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         },
         {
             "key": "field_59df07a3a9b86",
@@ -42,6 +134,13 @@
                         "field": "field_59df07472580d",
                         "operator": "==",
                         "value": "text"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_59df07472580d",
+                        "operator": "==",
+                        "value": "artist_single"
                     }
                 ]
             ],
@@ -187,13 +286,16 @@
             }
         ]
     ],
-    "menu_order": 0,
-    "position": "normal",
+    "menu_order": 1,
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "revisions",
+        "author"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1507818281
+    "modified": 1508417738
 }
