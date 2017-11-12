@@ -4,6 +4,9 @@ $context = $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
+$term = wp_get_post_terms( $post->id, 'project' );
+$context['term'] = new TimberTerm($term[0]->name, 'project');
+
 $parents = get_post_ancestors( $post->ID );
 if ($parents) {
 	$parent = end($parents);

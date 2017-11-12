@@ -98,7 +98,6 @@ function enqueue_scripts_method() {
 	endif;
 
 }
-
 add_action('wp_enqueue_scripts', 'enqueue_scripts_method');
 
 add_action( 'gform_enqueue_scripts_4', 'dequeue_gf_stylesheets', 11 );
@@ -109,5 +108,3 @@ function dequeue_gf_stylesheets() {
     wp_dequeue_style( 'gforms_ready_class_css' );
     wp_dequeue_style( 'gforms_browsers_css' );
 }
-
-
