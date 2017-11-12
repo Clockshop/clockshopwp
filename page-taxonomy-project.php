@@ -7,17 +7,21 @@ $post = new TimberPost();
 $context['post'] = $post;
 
 $terms = get_terms( array(
-	'taxonomy' => 'project',
+	'taxonomy' => 'projects',
 	'hide_empty' => false,
 ));
 $activeProjects = array();
 $inactiveProjects = array();
-foreach($terms as $term) {
-	$key = get_term_meta( $term->term_id, 'project_status', true );
-	if ( $key == 'active' ) {
-		$activeProjects[] = $term;
-	} else {
-		$inactiveProjects[] = $term;
+if ($terms) {
+	foreach($terms as $term) {
+		if (get_term_meta( $term->term_id, 'project_status', true )) {
+			$key = get_term_meta( $term->term_id, 'project_status', true );
+		}
+		if ( $key == 'active' ) {
+			$activeProjects[] = $term;
+		} else {
+			$inactiveProjects[] = $term;
+		}
 	}
 }
 $context['activeProjects'] = $activeProjects;

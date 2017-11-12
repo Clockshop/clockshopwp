@@ -107,7 +107,7 @@
             {
                 "param": "taxonomy",
                 "operator": "==",
-                "value": "project"
+                "value": "projects"
             }
         ]
     ],
@@ -119,5 +119,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1510450096
+    "modified": 1510534181
 }
