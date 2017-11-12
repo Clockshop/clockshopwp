@@ -5,7 +5,6 @@ require_once( 'lib/events.php' );
 require_once( 'lib/gallery.php' );
 require_once( 'lib/menus.php' );
 require_once( 'lib/projects.php' );
-require_once( 'lib/projecttemplates.php' );
 require_once( 'lib/acf.php' );
 require_once( 'lib/aq_resizer.php' );
 require_once( 'lib/images.php' );

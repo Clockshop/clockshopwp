@@ -6,17 +6,17 @@
 
 		<h1>Ongoing Projects</h1>
 
-	    {% for item in ongoingProjects %}
+	    {% for term in activeProjects %}
 		
 		<section class="side-section projects-side-section">
 
 			<div class="side-section-right">
-				<img src="{{ item.thumbnail.src('grid-3') }}" />
+				<img src="{{ function('get_field', 'featured_image', term).url|resize(1434, 956) }}" />
 			</div>
 			<div class="side-section-left">
-				<h2>{{ item.title }}</h2>
-				<p>{{ item.get_field('project_excerpt') }}</p>
-				<a href="{{item.link}}"><h4>Learn More</h4></a>
+				<h2>{{ term.name }}</h2>
+				<p>{{ term.description }}</p>
+				<a href="{{ function('get_field', 'action_url', term).url }}"><h4>{{ function('get_field', 'action_text', term) }}</h4></a>
 			</div>
 
 		</section>
@@ -31,16 +31,16 @@
 
 			<section class="projects-grid grid">
 
-				{% for item in pastProjects %}
+				{% for term in inactiveProjects %}
 				<div class="grid-3">
 					<div class="imagecell">
-						<a target="_blank" href="#">
-							<img src="{{ item.thumbnail.src('grid-3') }}" />
+						<a href="{{ function('get_field', 'action_url', term).url }}">
+							<img src="{{ function('get_field', 'featured_image', term).url|resize(1434, 956) }}" />
 						</a>
 					</div>
 					<div class="descriptioncell">
 						<h2>
-							<a href="#">{{ item.title }}</a>
+							<a href="{{ function('get_field', 'action_url', term).url }}">{{ term.name }}</a>
 						</h2>
 					</div>
 				</div>
