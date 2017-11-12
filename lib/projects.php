@@ -3,7 +3,7 @@
 // Post Type
 
 function create_project_pt() {
-	register_post_type( 'projects',
+	register_post_type( 'project',
 		array(
 			'labels' => array(
 				'name' => 'Projects',
@@ -37,8 +37,8 @@ add_action( 'init', 'create_project_pt' );
 // Create Projects Taxonomy
 function create_project_tax() {
 	register_taxonomy(
-		'project',
-		array( 'projects', 'tribe_events', 'post', 'page' ),
+		'projects',
+		array( 'project', 'tribe_events', 'post', 'page' ),
 		array(
 			'labels' => array(
 				'name' => 'Projects',

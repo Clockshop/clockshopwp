@@ -3,27 +3,6 @@
     "title": "Homepage",
     "fields": [
         {
-            "key": "field_57296083e0a6a",
-            "label": "Mission Statement",
-            "name": "mission_statement",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "wpautop",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_57295a169dcd4",
             "label": "Hero Slider",
             "name": "hero_slider",
@@ -36,93 +15,16 @@
                 "class": "",
                 "id": ""
             },
-            "min": "",
-            "max": "",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
             "layout": "row",
-            "button_label": "Add Row",
+            "button_label": "Add Slide",
             "sub_fields": [
                 {
-                    "key": "field_57295a309dcd5",
-                    "label": "Link Type",
-                    "name": "feature_type",
-                    "type": "radio",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "internal": "Internal",
-                        "external": "External"
-                    },
-                    "other_choice": 0,
-                    "save_other_choice": 0,
-                    "default_value": "internal",
-                    "layout": "horizontal"
-                },
-                {
-                    "key": "field_57295c7bf79ef",
-                    "label": "Internal Link",
-                    "name": "internal_link",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_57295a309dcd5",
-                                "operator": "==",
-                                "value": "internal"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "page",
-                        "tribe_events",
-                        "clock_projects"
-                    ],
-                    "taxonomy": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
-                },
-                {
-                    "key": "field_57295ce5f79f0",
-                    "label": "External Link",
-                    "name": "external_link",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_57295a309dcd5",
-                                "operator": "==",
-                                "value": "external"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
                     "key": "field_57295f86f3956",
-                    "label": "Headline",
-                    "name": "headline",
+                    "label": "Slide Text",
+                    "name": "slide_text",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -136,9 +38,22 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5a085e869b2b8",
+                    "label": "Slide Link",
+                    "name": "slide_link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
                 },
                 {
                     "key": "field_573a27e716ec5",
@@ -200,16 +115,17 @@
                 "class": "",
                 "id": ""
             },
-            "min": "",
-            "max": "",
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
             "layout": "row",
-            "button_label": "Add Row",
+            "button_label": "Add Feature",
             "sub_fields": [
                 {
-                    "key": "field_59c1f8d9b9d9b",
-                    "label": "Link Type",
-                    "name": "feature_type",
-                    "type": "radio",
+                    "key": "field_5a086140a15b5",
+                    "label": "Feature Link",
+                    "name": "feature_link",
+                    "type": "link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -218,74 +134,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "internal": "Internal",
-                        "external": "External"
-                    },
-                    "other_choice": 0,
-                    "save_other_choice": 0,
-                    "default_value": "internal",
-                    "layout": "horizontal"
-                },
-                {
-                    "key": "field_59c1f8d9b9d9c",
-                    "label": "Internal Link",
-                    "name": "internal_link",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_59c1f8d9b9d9b",
-                                "operator": "==",
-                                "value": "internal"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "page",
-                        "clock_projects"
-                    ],
-                    "taxonomy": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
-                },
-                {
-                    "key": "field_59c1f8d9b9d9d",
-                    "label": "External Link",
-                    "name": "external_link",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_59c1f8d9b9d9b",
-                                "operator": "==",
-                                "value": "external"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
+                    "return_format": "array"
                 },
                 {
                     "key": "field_59c1f8d9b9d9e",
-                    "label": "Headline",
-                    "name": "headline",
+                    "label": "Feature Title",
+                    "name": "feature_title",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -299,9 +153,7 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
+                    "maxlength": ""
                 },
                 {
                     "key": "field_59c1f8d9b9d9f",
@@ -412,5 +264,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1505885379
+    "modified": 1510527469
 }

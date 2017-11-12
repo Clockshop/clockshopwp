@@ -15,12 +15,8 @@
 								<a class="prev"><img class="left-arrow" src="{{theme.link}}/images/arrow.png" /></a>
 								<a class="next"><img class="right-arrow" src="{{theme.link}}/images/arrow.png" /></a>
 							</div>
-							<p class="project-title">{{item.headline}}</p>
-							{% if item.feature_type == 'external' %}
-								<a class="project-more" target="_blank" href="{{item.external_link}}">LEARN MORE</a>
-							{% elseif item.feature_type == 'internal' %}
-								<a class="project-more" href="{{item.internal_link.link}}">LEARN MORE</a>
-							{% endif %}
+							<p class="project-title">{{item.slide_text}}</p>
+							<a class="project-more" href="{{item.slide_link.url}}">LEARN MORE</a>
 						</div>
 					</div>
 					<div class="project-overlay"></div>
@@ -33,46 +29,35 @@
 		</div>
 	</div>
 
-	<div class="content">
-		<div class="grid featured-grid">
-			<h4>Featured Call Outs</h4>
-		    {% for item in post.get_field('features') %}
+	{% if post.get_field('features') %}
 
-				<div class="grid-3">
-					<div class="imagecell">
-					{% if item.feature_type == 'external' %}
-						<a target="_blank" href="{{item.external_link}}"><img src="{{TimberImage(item.thumbnail_image).src('grid-3')}}" /></a>
-					{% elseif item.feature_type == 'internal' %}
-						<a href="{{item.internal_link.link}}"><img src="{{TimberImage(item.thumbnail_image).src('grid-3')}}" /></a>
-					{% endif %}
+		<div class="content">
+			<div class="grid featured-grid">
+				<h4>Featured Call Outs</h4>
+			    {% for item in post.get_field('features') %}
+
+					<div class="grid-3">
+						<div class="imagecell">
+							<a href="{{item.feature_link.url}}"><img src="{{TimberImage(item.thumbnail_image).src('grid-3')}}" /></a>
+						</div>
+						<div class="descriptioncell">
+							<h2><a href="{{item.feature_link.url}}">{{item.feature_title}}</a></h2>
+							<p class="content-type">{{item.content_type}}</p>
+							<p class="description">{{item.description}}</p>
+							<p class="calltoaction">
+							<a href="{{item.feature_link.url}}">{{item.call_to_action}}</a>
+							</p>
+						</div>
 					</div>
-					<div class="descriptioncell">
-						<h2>
-						{% if item.feature_type == 'external' %}
-							<a target="_blank" href="{{item.external_link}}">{{item.headline}}</a>
-						{% elseif item.feature_type == 'internal' %}
-							<a href="{{item.internal_link.link}}">{{item.headline}}</a>
-						{% endif %}
-						</h2>
-						<p class="content-type">{{item.content_type}}</p>
-						<p class="description">{{item.description}}</p>
-						<p class="calltoaction">
-						{% if item.feature_type == 'external' %}
-							<a target="_blank" href="{{item.external_link}}">{{item.call_to_action}}</a>
-						{% elseif item.feature_type == 'internal' %}
-							<a href="{{item.internal_link.link}}">{{item.call_to_action}}</a>
-						{% endif %}
-						</p>
-					</div>
-				</div>
 
-		    {% endfor %}
+			    {% endfor %}
 
-			<div class="grid-bottom"></div>
+				<div class="grid-bottom"></div>
 
+			</div>
 		</div>
-	</div>
 
+	{% endif %}
 
 	<footer class="followfooter">
 		<div class="content">
