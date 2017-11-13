@@ -180,7 +180,7 @@
             "min": 0,
             "max": 0,
             "layout": "block",
-            "button_label": "",
+            "button_label": "Add Item",
             "sub_fields": [
                 {
                     "key": "field_59df0aac401d1",
@@ -247,8 +247,8 @@
                 {
                     "key": "field_59df0ae6401d4",
                     "label": "Artwork or Artist",
-                    "name": "artwork_or_artist",
-                    "type": "post_object",
+                    "name": "link",
+                    "type": "link",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
@@ -265,14 +265,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": [
-                        "projects"
-                    ],
-                    "taxonomy": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
+                    "return_format": "array"
                 }
             ]
         }
@@ -297,5 +290,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1510535627
+    "modified": 1510571793
 }
