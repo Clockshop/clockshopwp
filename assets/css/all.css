@@ -1403,17 +1403,15 @@ footer.contactfooter {
   padding-bottom: 45px; }
   .project-single main .grid .grid-3 .project-title {
     margin-top: 15px;
-    margin-bottom: 5px; }
-    .project-single main .grid .grid-3 .project-title a {
-      font-family: CircularBookBoldItalic;
-      text-decoration: none; }
+    margin-bottom: 5px;
+    font-family: CircularBookBoldItalic;
+    text-decoration: none; }
   .project-single main .grid .grid-3 .project-subtitle {
     margin-top: 5px;
     margin-bottom: 45px;
-    font-size: 22px; }
-    .project-single main .grid .grid-3 .project-subtitle a {
-      font-family: CircularBook;
-      text-decoration: none; }
+    font-size: 22px;
+    font-family: CircularBook;
+    text-decoration: none; }
   .project-single main .project-next {
     display: block;
     text-align: right; }

@@ -34,14 +34,10 @@
 				    {% for item in post.get_field('project_grid_content') %}
 						<div class="grid-3">
 							<div class="imagecell">
-								<a href="{{item.artwork_or_artist.link}}"><img src="{{TimberImage(item.image).src('grid-3')}}" /></a>
+								<a href="{{item.link.url}}"><img src="{{TimberImage(item.image).src('grid-3')}}" /></a>
 							</div>
-							<h3 class="project-title">
-								<a href="{{item.artwork_or_artist.link}}">{{item.title}}</a>
-							</h3>
-							<h3 class="project-subtitle">
-								<a href="{{item.artwork_or_artist.link}}">{{item.subtitle}}</a>
-							</h3>
+							<h3 class="project-title">{{item.title}}</h3>
+							<h3 class="project-subtitle">{{item.subtitle}}</h3>
 						</div>
 				    {% endfor %}
 				</div>
