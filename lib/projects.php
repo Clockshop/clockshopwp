@@ -22,11 +22,11 @@ function create_project_pt() {
 				'not_found_in_trash' => 'No Project Pages found in Trash',
 				'parent' => 'Parent'
 			),
+	        'taxonomies' => array('projects'),
+			"rewrite" => array( "slug" => "projects/%projects%", "with_front" => true ),
 			'supports' => array( 'title','editor','author','thumbnail','custom-fields','revisions','page-attributes' ),
-			//'rewrite' => array('slug' => 'projects_pt'),
 			'public' => true,
 			'show_in_menu' => true,
-			'has_archive' => true,
 			'hierarchical' => true,
 			'menu_icon' => 'dashicons-media-document',
 		)
@@ -57,7 +57,6 @@ function create_project_tax() {
 				'not_found_in_trash' => 'No Projects found in Trash',
 				'parent' => 'Parent'
 			),
-			//'rewrite' => array( 'slug' => 'projects_tax' ),
 			'public' => true,
 			'show_in_menu' => true,
 			'has_archive' => true,
@@ -66,5 +65,19 @@ function create_project_tax() {
 	);
 }
 add_action( 'init', 'create_project_tax' );
+
+add_filter('post_type_link', 'update_permalink_structure', 10, 2);
+function update_permalink_structure( $post_link, $post )
+{
+    if ( false !== strpos( $post_link, '%projects%' ) ) {
+        $taxonomy_terms = get_the_terms( $post->ID, 'projects' );
+        foreach ( $taxonomy_terms as $term ) { 
+            if ( ! $term->parent ) {
+                $post_link = str_replace( '%projects%', $term->slug, $post_link );
+            }
+        } 
+    }
+    return $post_link;
+}
 
 ?>
