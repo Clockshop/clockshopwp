@@ -13,19 +13,25 @@
 			<p class="photo-credit">{{post.photo_credit}}</p>
 		</div>
 	</div>
-	<div class="content about-content">
-		{{post.content}}
-	</div>
-	<div class="content collapsable-sections">
-	    {% for item in post.get_field('collapsable_sections') %}
-			<section>
-			    <p class="section-title">{{item.section_title}}</p>
-				<i class="fa fa-plus" aria-hidden="true"></i>
-				<div class="section-content">
-					{{item.section_content}}
-				</div>
-			</section>
-	    {% endfor %}
-	</div>
+
+	{% if post.content %}
+		<div class="content about-content">
+			{{post.content}}
+		</div>
+    {% endif %}
+
+	{% if post.get_field('collapsable_sections') %}
+		<div class="content collapsable-sections">
+		    {% for item in post.get_field('collapsable_sections') %}
+				<section>
+				    <p class="section-title">{{item.section_title}}</p>
+					<i class="fa fa-plus" aria-hidden="true"></i>
+					<div class="section-content">
+						{{item.section_content}}
+					</div>
+				</section>
+		    {% endfor %}
+		</div>
+    {% endif %}
 
 {% endblock %}

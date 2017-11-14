@@ -231,7 +231,8 @@ input {
       cursor: pointer; }
     .collapsable-sections section .section-content {
       display: none;
-      margin-top: 8px; }
+      margin-top: 8px;
+      margin-bottom: 20px; }
       .collapsable-sections section .section-content *:last-child {
         margin-bottom: 0; }
 
@@ -933,8 +934,8 @@ footer.contactfooter {
           line-height: 38px;
           font-family: CircularBookBold;
           color: white;
-          margin-top: 40px;
           display: inline-block;
+          margin-top: 40px;
           margin-bottom: 60px; }
           @media screen and (max-width: 767px) {
             .about-hero > div .content > div .mission {
@@ -957,6 +958,7 @@ footer.contactfooter {
       position: absolute;
       z-index: 0; }
     .about-hero > div .photo-credit {
+      margin-bottom: 20px;
       position: absolute;
       bottom: 0;
       right: 20px;
@@ -965,7 +967,8 @@ footer.contactfooter {
       font-family: CircularBookItalic; }
       @media screen and (max-width: 767px) {
         .about-hero > div .photo-credit {
-          font-size: 12px; } }
+          font-size: 12px;
+          margin-bottom: 12px; } }
 
 .about-content {
   margin-top: 65px;

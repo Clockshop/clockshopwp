@@ -74,12 +74,6 @@ if ( empty( $events ) ) {
 else { ?>
 	<section class="events-slider events-this-month content">
 		<?php foreach( $events as $event ) { ?>
-			<?php
-				$terms = get_terms( array(
-				    'taxonomy' => 'project',
-				    'hide_empty' => false,
-				) );
-			?>
 			<div class="slide-cell">
 				<div class="slide">
 					<div class="event-image">
@@ -94,7 +88,12 @@ else { ?>
 						<?php } ?> 
 						<h2><a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_title($event); ?></a></h2>
 						<h3><?php echo spellerberg_sp_date($event); ?></h3>
-						<h5><?php echo $terms[0]->name; ?></h5>
+
+						<?php $terms = wp_get_post_terms( $event->ID, 'projects' ); ?>
+						<?php if (has_term( '', 'projects' ) ) { ?>
+							<h5><?php echo $terms[0]->name; ?></h5>
+						<?php } ?>
+
 						<h5 class="cost"><?php echo tribe_get_cost( null, true ); ?></h5>
 						<?php if (get_the_excerpt($event->ID) != '') { ?>
 							<p class="excerpt"><?php echo get_the_excerpt($event->ID); ?></p>
@@ -123,12 +122,6 @@ else { ?>
 			<h4>Further Out</h4>
 			<div class="grid featured-grid">
 				<?php foreach( $events as $event ) { ?>
-					<?php
-						$terms = get_terms( array(
-						    'taxonomy' => 'project',
-						    'hide_empty' => false,
-						) );
-					?>
 					<div class="grid-3">
 						<div class="imagecell">
 							<a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_post_thumbnail($event, 'grid-3'); ?></a>
@@ -136,7 +129,12 @@ else { ?>
 						<div class="descriptioncell">
 							<h2><a href="<?php echo get_permalink($event->ID); ?>"><?php echo get_the_title($event); ?></a></h2>
 							<p class="content-type"><?php echo spellerberg_sp_date($event); ?></p>
-							<p class="add-descriptor"><?php echo $terms[0]->name; ?></p>
+							
+							<?php $terms = wp_get_post_terms( $event->ID, 'projects' ); ?>
+							<?php if (has_term( '', 'projects' ) ) { ?>
+								<p class="add-descriptor"><?php echo $terms[0]->name; ?></p>
+							<?php } ?>
+							
 							<?php if (get_the_excerpt($event->ID) != '' && get_the_excerpt($event->ID) != ' ') { ?>
 								<p class="description"><?php echo get_the_excerpt($event->ID); ?></p>
 							<?php } else { ?>
@@ -173,10 +171,7 @@ foreach($events as $key => $event) {
 	$eventYears[$eventYear]['events'][$key] = $event;
 }
 
-if ( empty( $events ) ) {
-	echo 'Sorry, nothing found.';
-}
-else { ?>
+if ( !empty( $events ) ) { ?>
 	<section class="content past-events">
 		<h4>Past Events</h4>
 		<div class="collapsable-sections collapsable-events">
