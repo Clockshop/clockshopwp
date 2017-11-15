@@ -53,7 +53,6 @@ $terms = get_terms( array(
 					<?php } ?>
 				</div>
 				<div class="side-section-right event-images">
-					<img src="<?php echo get_the_post_thumbnail_url($event_id, 'grid-3'); ?>" />
 					<?php $event_images = get_field('event_images') ?>
 					<?php if ($event_images) { ?>
 						<?php foreach( $event_images as $image ) { ?>
