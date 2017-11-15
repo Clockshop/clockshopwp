@@ -36,7 +36,12 @@ $terms = get_terms( array(
 					<?php if ($today > tribe_get_end_date(get_the_id(), false, 'Y-m-d')) { ?>
 						<p class="past">PAST EVENT</p>
 					<?php } ?>
-					<h5 class="event-project"><?php echo $terms[0]->name; ?></h5>
+
+					<?php $terms = wp_get_post_terms( get_the_id(), 'projects' ); ?>
+					<?php if (has_term( '', 'projects' ) ) { ?>
+						<h5 class="event-project"><?php echo $terms[0]->name; ?></h5>
+					<?php } ?>
+
 					<h1><?php the_title(); ?></h1>
 					<?php if (get_field('event_cost')) { ?>
 						<p class="event-cost"><?php the_field('event_cost'); ?></p>
@@ -48,9 +53,12 @@ $terms = get_terms( array(
 					<?php } ?>
 				</div>
 				<div class="side-section-right event-images">
+					<img src="<?php echo get_the_post_thumbnail_url($event_id, 'grid-3'); ?>" />
 					<?php $event_images = get_field('event_images') ?>
-					<?php foreach( $event_images as $image ) { ?>
-						<img src="<?php echo $image['sizes']['grid-3']; ?>" />
+					<?php if ($event_images) { ?>
+						<?php foreach( $event_images as $image ) { ?>
+							<img src="<?php echo $image['sizes']['grid-3']; ?>" />
+						<?php } ?>
 					<?php } ?>
 				</div>
 				<div class="side-section-left mobile">
