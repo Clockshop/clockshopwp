@@ -184,7 +184,7 @@ input {
       line-height: 22px;
       text-transform: uppercase;
       letter-spacing: .1em;
-      margin-top: 30px;
+      margin-top: 25px;
       margin-bottom: 0; }
       @media screen and (max-width: 999px) {
         .grid .grid-3 .descriptioncell .calltoaction {
@@ -1111,7 +1111,7 @@ footer.contactfooter {
     letter-spacing: .1em;
     text-transform: uppercase; }
   .upcoming-events > div .featured-grid .grid-bottom {
-    padding-top: 60px;
+    padding-top: 50px;
     border-bottom: none; }
 
 .past-events {
