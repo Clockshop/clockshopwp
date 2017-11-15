@@ -6,7 +6,7 @@ function create_project_pt() {
 	register_post_type( 'project',
 		array(
 			'labels' => array(
-				'name' => 'Projects Pages',
+				'name' => 'Project Pages',
 				'menu_name' => 'Project Pages',
 				'singular_name' => 'Project Page',
 				'all_items' => 'All Project Pages',
