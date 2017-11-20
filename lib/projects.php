@@ -71,11 +71,13 @@ function update_permalink_structure( $post_link, $post )
 {
     if ( false !== strpos( $post_link, '%projects%' ) ) {
         $taxonomy_terms = get_the_terms( $post->ID, 'projects' );
-        foreach ( $taxonomy_terms as $term ) { 
-            if ( ! $term->parent ) {
-                $post_link = str_replace( '%projects%', $term->slug, $post_link );
-            }
-        } 
+        if ($taxonomy_terms) {
+	        foreach ( $taxonomy_terms as $term ) { 
+	            if ( ! $term->parent ) {
+	                $post_link = str_replace( '%projects%', $term->slug, $post_link );
+	            }
+	        }
+	    }
     }
     return $post_link;
 }

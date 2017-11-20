@@ -30,17 +30,19 @@ function spellerberg_return_sp_date($postid, $format='') {
 	$e_min = tribe_get_end_date($postid,'','i'); 
 	$e_am = ' ' . tribe_get_end_date($postid,'','a');
 
+	/*
 	if ( tribe_is_recurring_event($postid) ) :
 		$recurrence_text = tribe_get_recurrence_text($postid);
 	else :
 		$recurrence_text = '';
 	endif;
+	*/
 
-	return spellerberg_show_event_datetime( $startYear, $endYear, $startMonth, $endMonth, $startDay, $endDay, $startTime, $endTime, $weekday, $s_hour, $s_min, $s_am, $e_hour, $e_min, $e_am, $format, $recurrence_text );
+	return spellerberg_show_event_datetime( $startYear, $endYear, $startMonth, $endMonth, $startDay, $endDay, $startTime, $endTime, $weekday, $s_hour, $s_min, $s_am, $e_hour, $e_min, $e_am, $format/*, $recurrence_text */ );
 
 }
 
-function spellerberg_show_event_datetime ( $startYear, $endYear, $startMonth, $endMonth, $startDay, $endDay, $startTime, $endTime, $weekday, $s_hour, $s_min, $s_am, $e_hour, $e_min, $e_am, $format, $recurrence_text ) {
+function spellerberg_show_event_datetime ( $startYear, $endYear, $startMonth, $endMonth, $startDay, $endDay, $startTime, $endTime, $weekday, $s_hour, $s_min, $s_am, $e_hour, $e_min, $e_am, $format/*, $recurrence_text */) {
 
 	$output = '';
 
@@ -148,7 +150,7 @@ function spellerberg_show_event_datetime ( $startYear, $endYear, $startMonth, $e
 
 	}
 
-	if ( $recurrence_text != '' ) $output .= '<br />' . $recurrence_text;
+	//if ( $recurrence_text != '' ) $output .= '<br />' . $recurrence_text;
 
 	return $output;
 	

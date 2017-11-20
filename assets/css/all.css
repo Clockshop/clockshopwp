@@ -1262,6 +1262,11 @@ footer.contactfooter {
           font-family: 'CircularBookBold'; }
       .event-single .event-info .side-section-right .event-info-location {
         width: 37%; }
+        .event-single .event-info .side-section-right .event-info-location .tribe-address .tribe-street-address {
+          margin-bottom: 8px;
+          display: block; }
+        .event-single .event-info .side-section-right .event-info-location .tribe-address br {
+          display: none; }
       .event-single .event-info .side-section-right .event-info-social {
         width: 35%; }
         .event-single .event-info .side-section-right .event-info-social a {
