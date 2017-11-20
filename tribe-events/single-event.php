@@ -83,16 +83,13 @@ $terms = get_terms( array(
 							<p><?php echo tribe_get_start_date(get_the_id(), false, 'g'); ?>-<?php echo tribe_get_end_date(get_the_id(), false, 'g'); ?> <?php echo tribe_get_end_date(get_the_id(), false, 'a'); ?></p>
 						</div>
 					<?php } ?>
-					<?php if ($terms[0]->name || get_field('event_address') || get_field('event_address_2')) { ?>
+					<?php if (tribe_get_venue($event_id)) { ?>
 						<div class="event-info-location">
-							<?php if ($terms[0]->name) { ?>
-								<p><?php echo $terms[0]->name; ?></p>
+							<?php if (tribe_get_venue($event_id)) { ?>
+								<p><?php echo tribe_get_venue($event_id); ?></p>
 							<?php } ?>
-							<?php if (get_field('event_address')) { ?>
-								<p><?php echo tribe_get_address(); ?></p>
-							<?php } ?>
-							<?php if (get_field('event_address_2')) { ?>
-								<p><?php echo tribe_get_city(); ?></p>
+							<?php if (tribe_get_full_address($event_id)) { ?>
+								<p><?php echo tribe_get_full_address($event_id); ?></p>
 							<?php } ?>
 						</div>
 					<?php } ?>
