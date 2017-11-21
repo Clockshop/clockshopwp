@@ -2,53 +2,62 @@
 
 {% block content %}
 
-	<div class="content projects-ongoing">
+	{% if activeProjects %}
 
-		<h1>Ongoing Projects</h1>
+		<div class="content projects-ongoing">
 
-	    {% for term in activeProjects %}
-		
-		<section class="side-section projects-side-section">
+			<h1>Ongoing Projects</h1>
 
-			<div class="side-section-right">
-				<img src="{{ function('get_field', 'featured_image', term).url|resize(1434, 956) }}" />
-			</div>
-			<div class="side-section-left">
-				<h2>{{ term.name }}</h2>
-				<p>{{ term.description }}</p>
-				<a href="{{ function('get_field', 'action_url', term).url }}"><h4>{{ function('get_field', 'action_text', term) }}</h4></a>
-			</div>
-
-		</section>
-
-	    {% endfor %}
-
-	</div>
-	<div class="content projects-past">
-		<div>
+		    {% for term in activeProjects %}
 			
-			<h4>Past Projects</h4>
+			<section class="side-section projects-side-section">
 
-			<section class="projects-grid grid">
-
-				{% for term in inactiveProjects %}
-				<div class="grid-3">
-					<div class="imagecell">
-						<a href="{{ function('get_field', 'action_url', term).url }}">
-							<img src="{{ function('get_field', 'featured_image', term).url|resize(1434, 956) }}" />
-						</a>
-					</div>
-					<div class="descriptioncell">
-						<h2>
-							<a href="{{ function('get_field', 'action_url', term).url }}">{{ term.name }}</a>
-						</h2>
-					</div>
+				<div class="side-section-right">
+					<img src="{{ function('get_field', 'featured_image', term).url|resize(1434, 956) }}" />
 				</div>
-			    {% endfor %}
+				<div class="side-section-left">
+					<h2>{{ term.name }}</h2>
+					<p>{{ term.description }}</p>
+					<a href="{{ function('get_field', 'action_url', term).url }}"><h4>{{ function('get_field', 'action_text', term) }}</h4></a>
+				</div>
 
 			</section>
 
+		    {% endfor %}
+
 		</div>
-	</div>
+
+	{% endif %}
+
+	{% if inactiveProjects %}
+
+		<div class="content projects-past">
+			<div>
+
+				<h4>Past Projects</h4>
+
+				<section class="projects-grid grid">
+
+					{% for term in inactiveProjects %}
+					<div class="grid-3">
+						<div class="imagecell">
+							<a href="{{ function('get_field', 'action_url', term).url }}">
+								<img src="{{ function('get_field', 'featured_image', term).url|resize(1434, 956) }}" />
+							</a>
+						</div>
+						<div class="descriptioncell">
+							<h2>
+								<a href="{{ function('get_field', 'action_url', term).url }}">{{ term.name }}</a>
+							</h2>
+						</div>
+					</div>
+				    {% endfor %}
+
+				</section>
+
+			</div>
+		</div>
+
+	{% endif %}
 
 {% endblock %}
