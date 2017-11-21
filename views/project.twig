@@ -9,7 +9,10 @@
 				<h1>{{term.title}}</h1>
 				<ul>
 					{% for item in termMenu.items %}
+
 						{% if item.current == true %}
+							<li class="active">
+						{% elseif ((post.project_content_type == 'artist_single') and (function('get_field', 'project_content_type', item.object_id) == 'artist_list')) %}
 							<li class="active">
 						{% else %}
 							<li>
@@ -34,10 +37,10 @@
 				    {% for item in post.get_field('project_grid_content') %}
 						<div class="grid-3">
 							<div class="imagecell">
-								<a href="{{item.link.url}}"><img src="{{TimberImage(item.image).src('grid-3')}}" /></a>
+								<a href="{{item.artwork_or_artist.link}}"><img src="{{TimberImage(item.artwork_or_artist.thumbnail).src('grid-3')}}" /></a>
 							</div>
-							<h3 class="project-title">{{item.title}}</h3>
-							<h3 class="project-subtitle">{{item.subtitle}}</h3>
+							<a href="{{item.artwork_or_artist.link}}"><h3 class="project-title">{{item.artwork_or_artist.post_title}}</h3></a>
+							<h3 class="project-subtitle">{{item.artwork_or_artist.project_artwork_and_artists_subtitle}}</h3>
 						</div>
 				    {% endfor %}
 				</div>

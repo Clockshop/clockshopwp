@@ -82,4 +82,16 @@ function update_permalink_structure( $post_link, $post )
     return $post_link;
 }
 
+/*
+function save_book_meta( $post_id, $post, $update ) {
+    $post_type = get_post_type($post_id);
+    if ( ($post_type == "project")  && ($post->project_content_type == 'artist_single') ) {
+		update_post_meta( $post_id, 'project_menu', 'active', '' );
+    } else {
+		update_post_meta( $post_id, 'project_menu', 'inactive', '' );
+    }
+}
+add_action( 'save_post', 'save_book_meta', 10, 3 );
+*/
+
 ?>
