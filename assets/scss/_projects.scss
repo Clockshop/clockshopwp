@@ -135,11 +135,13 @@
 				.imagecell {
 
 				}
-				.project-title {
-					margin-top: 15px;
-					margin-bottom: 5px;
-					font-family: CircularBookBoldItalic;
+				a {
 					text-decoration: none;
+					.project-title {
+						margin-top: 15px;
+						margin-bottom: 5px;
+						font-family: CircularBookBoldItalic;
+					}					
 				}
 				.project-subtitle {
 					margin-top: 5px;
