@@ -118,7 +118,7 @@
             "collapsed": "",
             "min": 0,
             "max": 0,
-            "layout": "row",
+            "layout": "block",
             "button_label": "Add Feature",
             "sub_fields": [
                 {
@@ -264,5 +264,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1510527469
+    "modified": 1512820203
 }

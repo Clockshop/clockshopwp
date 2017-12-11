@@ -2,6 +2,7 @@
 
 add_image_size('grid-3', 1434, 956, true);
 add_image_size('list', 424, 272, true);
+add_image_size('slider', 1900, 1267, true);
 
 function image_crop_dimensions($default, $orig_w, $orig_h, $new_w, $new_h, $crop){
     if ( !$crop ) return null; // let the wordpress default function handle this

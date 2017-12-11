@@ -12,6 +12,7 @@ require_once( 'lib/gravityforms.php' );
 require_once( 'lib/search.php' );
 require_once( 'lib/context.php' );
 require_once( 'lib/utilities.php' );
+require_once( 'lib/shortcodes.php' );
 
 function theme_slug_setup() {
    add_theme_support( 'title-tag' );
