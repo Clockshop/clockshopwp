@@ -90,7 +90,8 @@
 		function projectSlider() {
 			$('.project-slider').slick({
 				autoplay: true,
-				autoplaySpeed: 10000,
+				autoplaySpeed: 7500,
+				adaptiveHeight: true,
 			});
 		}
 

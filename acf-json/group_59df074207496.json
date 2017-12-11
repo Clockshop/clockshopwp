@@ -1,12 +1,12 @@
 {
     "key": "group_59df074207496",
-    "title": "Projects (Content)",
+    "title": "Project (Post Type)",
     "fields": [
         {
             "key": "field_59df07472580d",
             "label": "Project Content Type",
             "name": "project_content_type",
-            "type": "select",
+            "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,24 +16,50 @@
                 "id": ""
             },
             "choices": {
-                "text": "Rich Text Editor",
+                "text": "Plain Content (Rich Text Editor)",
                 "artist_list": "Artwork and Artists List",
-                "artist_single": "Artwork and Artists Detail"
+                "artist_single": "Artwork and Artists Single",
+                "program_list": "Public Programs List",
+                "program_single": "Public Programs Single",
+                "collapsable_sections": "Collapsable Sections (FAQ)",
+                "events": "Events"
             },
-            "default_value": [
-                "text"
-            ],
             "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5a2b66d05f6b7",
+            "label": "<h1 style=\"color: red;\">Detail Page Reminder<\/h1>",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59df07472580d",
+                        "operator": "==",
+                        "value": "artist_single"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Remember to set the parent to this page in order for the \"BACK: ...\" link at the bottom of the page to work. The parent page should be <b>the project's<\/b> relevant page--e.g. Artwork and Artists, Public Programs.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_5a13227addc7a",
-            "label": "Project Artwork and Artists Subtitle",
-            "name": "project_artwork_and_artists_subtitle",
+            "label": "Project Subtitle",
+            "name": "project_subtitle",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -61,6 +87,53 @@
             "key": "field_59e574cd18ce1",
             "label": "Project Image Slider",
             "name": "project_image_slider",
+            "type": "gallery",
+            "instructions": "To add the slider anywhere into the content area, add the shortcode \"slider\" like this:<br>[slider]",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59df07472580d",
+                        "operator": "==",
+                        "value": "artist_single"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_59df07472580d",
+                        "operator": "==",
+                        "value": "program_single"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_59df07472580d",
+                        "operator": "==",
+                        "value": "text"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "insert": "append",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5a2b57be3483e",
+            "label": "Related Content",
+            "name": "related_content",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -80,14 +153,105 @@
             },
             "collapsed": "",
             "min": 0,
-            "max": 0,
+            "max": 3,
             "layout": "block",
-            "button_label": "Add Slide",
+            "button_label": "Add Item",
             "sub_fields": [
                 {
-                    "key": "field_59e574e518ce2",
-                    "label": "Slide Image",
-                    "name": "slide_image",
+                    "key": "field_5a2b58207c1db",
+                    "label": "Item URL",
+                    "name": "item_url",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
+                    "key": "field_5a2b58a37c1dc",
+                    "label": "Item Title",
+                    "name": "item_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5a2b58b87c1dd",
+                    "label": "Item Description",
+                    "name": "item_description",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_5a2b5c8e7c1de",
+                    "label": "Item Type",
+                    "name": "item_type",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5a2b5c967c1df",
+                    "label": "Item Call to Action",
+                    "name": "item_call_to_action",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5a2b5c9e7c1e0",
+                    "label": "Item Image",
+                    "name": "item_image",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -107,80 +271,8 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": ""
-                },
-                {
-                    "key": "field_59e5750518ce3",
-                    "label": "Slide Caption Left",
-                    "name": "slide_caption_left",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "<i>Use i tags to italicize text<\/i>",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_59e5751118ce4",
-                    "label": "Slide Caption Right",
-                    "name": "slide_caption_right",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "<i>Use i tags to italicize text<\/i>",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
                 }
             ]
-        },
-        {
-            "key": "field_59df07a3a9b86",
-            "label": "Project Text Content",
-            "name": "project_text_content",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_59df07472580d",
-                        "operator": "==",
-                        "value": "text"
-                    }
-                ],
-                [
-                    {
-                        "field": "field_59df07472580d",
-                        "operator": "==",
-                        "value": "artist_single"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
         },
         {
             "key": "field_59df0a92401d0",
@@ -195,6 +287,13 @@
                         "field": "field_59df07472580d",
                         "operator": "==",
                         "value": "artist_list"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_59df07472580d",
+                        "operator": "==",
+                        "value": "program_list"
                     }
                 ]
             ],
@@ -211,8 +310,8 @@
             "sub_fields": [
                 {
                     "key": "field_5a131e3b3a44a",
-                    "label": "Artwork or Artist",
-                    "name": "artwork_or_artist",
+                    "label": "Grid Content",
+                    "name": "grid_content",
                     "type": "post_object",
                     "instructions": "",
                     "required": 0,
@@ -230,6 +329,151 @@
                     "multiple": 0,
                     "return_format": "object",
                     "ui": 1
+                }
+            ]
+        },
+        {
+            "key": "field_5a2e1b85929b2",
+            "label": "Upcoming Programs Section Title",
+            "name": "upcoming_programs_section_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59df07472580d",
+                        "operator": "==",
+                        "value": "program_single"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a2dbb205b631",
+            "label": "Upcoming Programs",
+            "name": "upcoming_programs",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59df07472580d",
+                        "operator": "==",
+                        "value": "program_single"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5a2dbb505b632",
+                    "label": "Event",
+                    "name": "event",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "tribe_events"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
+        },
+        {
+            "key": "field_5a2e1f34cb7d5",
+            "label": "Collapsable Sections",
+            "name": "collapsable_sections",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59df07472580d",
+                        "operator": "==",
+                        "value": "collapsable_sections"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Section",
+            "sub_fields": [
+                {
+                    "key": "field_5a2e1f52cb7d6",
+                    "label": "Section Title",
+                    "name": "section_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5a2e1f58cb7d7",
+                    "label": "Section Content",
+                    "name": "section_content",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 }
             ]
         }
@@ -254,5 +498,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1511232307
+    "modified": 1513002741
 }
