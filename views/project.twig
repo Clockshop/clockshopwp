@@ -102,29 +102,33 @@
 					{{post.content}}
 				</div>
 
-				<div class="grid project-related-grid featured-grid">
+				{% if post.get_field('related_content') %}
 
-					<h4>Related Call Outs Projects or Events</h4>
+					<div class="grid project-related-grid featured-grid">
 
-				    {% for item in post.get_field('related_content') %}
+						<h4>Related Call Outs Projects or Events</h4>
 
-						<div class="grid-3">
-							<div class="imagecell">
-								<a href="{{item.item_url.url}}"><img src="{{TimberImage(item.item_image).src('grid-3')}}" /></a>
+						{% for item in post.get_field('related_content') %}
+
+							<div class="grid-3">
+								<div class="imagecell">
+									<a href="{{item.item_url.url}}"><img src="{{TimberImage(item.item_image).src('grid-3')}}" /></a>
+								</div>
+								<div class="descriptioncell">
+									<h2><a href="{{item.item_url.url}}">{{item.item_title}}</a></h2>
+									<p class="content-type">{{item.item_type}}</p>
+									<p class="description">{{item.item_description}}</p>
+									<p class="calltoaction">
+										<a href="{{item.item_url.url}}">{{item.item_call_to_action}}</a>
+									</p>
+								</div>
 							</div>
-							<div class="descriptioncell">
-								<h2><a href="{{item.item_url.url}}">{{item.item_title}}</a></h2>
-								<p class="content-type">{{item.item_type}}</p>
-								<p class="description">{{item.item_description}}</p>
-								<p class="calltoaction">
-									<a href="{{item.item_url.url}}">{{item.item_call_to_action}}</a>
-								</p>
-							</div>
-						</div>
 
-				    {% endfor %}
+						{% endfor %}
 
-				</div>
+					</div>
+
+				{% endif %}
 
 			</main>
 
