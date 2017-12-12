@@ -159,13 +159,18 @@
 			padding-bottom: 0;
 		}
 		&.artist-single {
-
+			> :first-child {
+				margin-top: 0!important;
+			}
+			> :last-child {
+				margin-bottom: 0!important;
+			}
 		}
 		&.public-programs {
 
 		}
 		&.public-single {
-
+				
 		}
 		> .project-title {
 			font-size: 28px;
