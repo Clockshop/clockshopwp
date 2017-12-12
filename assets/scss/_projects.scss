@@ -298,14 +298,19 @@
 				}
 			}
 		}
-		.collapsable-sections {
-			margin-bottom: 0;
-		}
 		.project-events-grid {
-			h4 {
-				margin-top: 0;
+			.grid-bottom {
+				padding-top: 60px;
 			}
 		}
+		.collapsable-sections {
+			margin-bottom: 0;
+			:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.past-events {
 	}
 	.project-next {
 		display: block;

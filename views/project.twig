@@ -235,19 +235,49 @@
 
 				    {% endfor %}
 
+					<div class="grid-bottom"></div>
+
 				</div>
 
-				<div class="collapsable-sections">
-				    {% for item in post.get_field('collapsable_sections') %}
-						<section>
-						    <p class="section-title">{{item.section_title}}</p>
-							<i class="fa fa-plus" aria-hidden="true"></i>
-							<div class="section-content">
-								{{item.section_content}}
-							</div>
-						</section>
-				    {% endfor %}
-				</div>
+				{% if eventYears|length > 0 %}
+
+					<section class="past-events">
+						<h4>Past Events</h4>
+						<div class="collapsable-sections collapsable-events">
+
+							{% for eventYear in eventYears %}
+
+								<section>
+									<p class="section-title">{{eventYear.year}}</p>
+									<i class="fa fa-plus" aria-hidden="true"></i>
+									<div class="section-content">
+			
+										{% for event in eventYear.events %}
+
+											{% set currentMonth = event.EventStartDate|date("m") %}
+
+											{% if currentMonth != lastMonth %}
+												<p class="event-month"><span>{{event.EventStartDate|date("F")}}</span></p>
+											{% endif %}
+
+											<div class="event-info">
+												<p class="event-title"><a href="{{function('get_permalink', event)}}">{{event.post_title}}</a></p>
+												<p class="event-date"><span>{{event.EventStartDate|date('F j, Y')}}</span></p>
+											</div>
+
+											{% set lastMonth = event.EventStartDate|date("m") %}
+
+										{% endfor %}
+
+									</div>
+								</section>
+
+							{% endfor %}
+
+						</div>
+					</section>
+
+				{% endif %}
 
 			</main>
 
