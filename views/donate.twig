@@ -1,0 +1,52 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="content">
+
+		<div class="donate-title">
+			<h1>Donate to Clockshop</h1>
+		</div>
+
+		<div class="grid featured-grid donate-grid">
+
+			{% for item in post.get_field('donate_options') %}
+
+				<div class="grid-3">
+					<div class="imagecell">
+						<a href="{{item.donate_option_url.url}}"><img src="{{TimberImage(item.donate_option_image).src('grid-3')}}" /></a>
+					</div>
+				</div>
+
+			{% endfor %}
+
+		</div>
+
+		{% for item in post.get_field('donate_options') %}
+
+			{% if item.donate_option_title %}
+
+				<section>
+
+					<h4>{{item.donate_option_title}}</h4>
+					<h3 class="donate-decription">{{item.donate_option_description}}</h3>
+					<div class="donate-content">
+
+						<div class="donate-content-left">
+							<img src="{{TimberImage(item.donate_option_content_image)|resize(700)}}" />
+						</div>
+						<div class="donate-content-right">
+							{{item.donate_option_content}}
+						</div>
+
+					</div>
+
+				</section>
+
+			{% endif %}
+
+		{% endfor %}
+
+	</div>
+
+{% endblock %}

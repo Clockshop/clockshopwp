@@ -15,10 +15,11 @@
                 "class": "",
                 "id": ""
             },
-            "min": "",
-            "max": "",
+            "min": 0,
+            "max": 0,
             "layout": "row",
             "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_59c0ab484c10a",
@@ -57,7 +58,8 @@
                     "default_value": "",
                     "tabs": "all",
                     "toolbar": "full",
-                    "media_upload": 1
+                    "media_upload": 1,
+                    "delay": 0
                 }
             ]
         }
@@ -67,7 +69,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-about.php"
+                "value": "page-donate.php"
             }
         ]
     ],
@@ -79,5 +81,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1505799055
+    "modified": 1513144526
 }
