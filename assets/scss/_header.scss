@@ -92,8 +92,10 @@
 						}
 						.social {
 							a {
-								margin-left: 4.5px;
-								margin-right: 4.5px;
+								padding-left: 4.5px;
+								padding-right: 4.5px;
+								margin-left: 0;
+								margin-right: 0;
 								cursor: pointer;
 								&:hover {
 									border-bottom: none;
