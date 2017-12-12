@@ -1534,10 +1534,12 @@ footer.contactfooter {
     font-size: 22px;
     font-family: CircularBook;
     text-decoration: none; }
+  .project-single main .project-events-grid .grid-bottom {
+    padding-top: 60px; }
   .project-single main .collapsable-sections {
     margin-bottom: 0; }
-  .project-single main .project-events-grid h4 {
-    margin-top: 0; }
+    .project-single main .collapsable-sections :last-child {
+      margin-bottom: 0; }
 
 .project-single .project-next {
   display: block;
