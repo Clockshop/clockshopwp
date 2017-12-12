@@ -1441,6 +1441,10 @@ footer.contactfooter {
   padding-bottom: 60px; }
   .project-single main.artist-list {
     padding-bottom: 0; }
+  .project-single main.artist-single > :first-child {
+    margin-top: 0 !important; }
+  .project-single main.artist-single > :last-child {
+    margin-bottom: 0 !important; }
   .project-single main > .project-title {
     font-size: 28px;
     font-style: italic;
