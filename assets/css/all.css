@@ -1441,6 +1441,13 @@ footer.contactfooter {
   padding-bottom: 60px; }
   .project-single main.artist-list {
     padding-bottom: 0; }
+  .project-single main > .project-title {
+    font-size: 28px;
+    font-style: italic;
+    margin-bottom: 12px; }
+  .project-single main > .project-subtitle {
+    font-size: 22px;
+    margin-top: 12px; }
   .project-single main .project-slider {
     border-bottom: 4px solid black;
     margin: 40px 0; }

@@ -167,6 +167,15 @@
 		&.public-single {
 
 		}
+		> .project-title {
+			font-size: 28px;
+			font-style: italic;
+			margin-bottom: 12px;
+		}
+		> .project-subtitle {
+			font-size: 22px;
+			margin-top: 12px;
+		}
 		.project-slider {
 			border-bottom: 4px solid black;
 			margin: 40px 0;
