@@ -1624,3 +1624,8 @@ section {
         font-size: 18px;
         margin-bottom: 15px;
         padding-left: 15px; }
+    section .donate-content .donate-button {
+      margin-left: 55px;
+      font-size: 18px;
+      display: inline-block;
+      margin-top: 25px; }
