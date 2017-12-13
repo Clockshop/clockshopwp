@@ -11,8 +11,8 @@ function spellerberg_return_sp_date($postid, $format='') {
 	$startYear = tribe_get_start_date($postid,'','Y'); 
 	$endYear = tribe_get_end_date($postid,'','Y');
 
-	$startMonth = tribe_get_start_date($postid,'','M'); 
-	$endMonth = tribe_get_end_date($postid,'','M');
+	$startMonth = tribe_get_start_date($postid,'','F'); 
+	$endMonth = tribe_get_end_date($postid,'','F');
 
 	$startDay = tribe_get_start_date($postid,'','j'); 
 	$endDay = tribe_get_end_date($postid,'','j');
@@ -79,7 +79,7 @@ function spellerberg_show_event_datetime ( $startYear, $endYear, $startMonth, $e
 					if ( $format != 'noyears' ) $output .= ', ' . $endYear;
 				} else {
 					// Same Day
-					$output .= $weekday . ', ' . $startMonth . ' ' . $startDay;
+					$output .= $startMonth . ' ' . $startDay;
 					if ( $format != 'noyears' ) $output .= ', ' . $startYear;
 				}
 			}
@@ -93,37 +93,37 @@ function spellerberg_show_event_datetime ( $startYear, $endYear, $startMonth, $e
 
 			// Set PM, and also output format
 			if ( $s_am == " am" ) :
-				$s_am = "&nbsp;am";
+				$s_am = "am";
 			else :
-				$s_am = "&nbsp;pm";		
+				$s_am = "pm";		
 			endif;
 
 			if ( $e_am == " am" ) :
-				$e_am = "&nbsp;am";
+				$e_am = "am";
 			else :
-				$e_am = "&nbsp;pm";		
+				$e_am = "pm";		
 			endif;
 
 			if ( $s_min == '00' ) {
 				if($s_hour == "12"){
-					if($s_am == "&nbsp;am"){
+					if($s_am == "am"){
 						$output .= ", Midnight";
 					}else{
 						$output .= ", Noon";
 					}
 				}else{
-					$output .= ', ' . $s_hour;
+					$output .= ' @ ' . $s_hour;
 					if ( $s_am !== $e_am ) {
 						// Different AM
-						$output .= ' ' . $s_am;
+						$output .= '' . $s_am;
 					}elseif ( $e_hour == "12" && $e_min == '00' ) {
 						// End time is midnight or noon
-						$output .= ' ' . $s_am;
+						$output .= '' . $s_am;
 					}
 
 				}
 			} else {
-				$output .= ', ' . $s_hour . ':' . $s_min;
+				$output .= ' @ ' . $s_hour . ':' . $s_min;
 				if ( $s_am !== $e_am ) {
 					// Different AM
 					$output .= ' ' . $s_am;
@@ -132,7 +132,7 @@ function spellerberg_show_event_datetime ( $startYear, $endYear, $startMonth, $e
 
 			if ( $e_min == '00' ) {
 				if($e_hour == "12"){
-					if($e_am == "&nbsp;am"){
+					if($e_am == "am"){
 						$output .= "&ndash;Midnight";
 					}else{
 						$output .= "&ndash;Noon";
