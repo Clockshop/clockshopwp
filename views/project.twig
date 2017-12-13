@@ -211,37 +211,41 @@
 			
 			<main class="content">
 
-				<div class="grid project-events-grid featured-grid">
+				{% if events|length > 0 %}
 
-					<h4>Related Events</h4>
+					<div class="grid project-events-grid featured-grid">
 
-				    {% for event in events %}
+						<h4>Related Events</h4>
 
-						<div class="grid-3">
+						{% for event in events %}
 
-							<div class="imagecell">
-								<a href="{{function('get_permalink', event)}}"><img src="{{TimberImage(event).src('grid-3')}}" /></a>
+							<div class="grid-3">
+
+								<div class="imagecell">
+									<a href="{{function('get_permalink', event)}}"><img src="{{TimberImage(event).src('grid-3')}}" /></a>
+								</div>
+								<div class="descriptioncell">
+									<h2><a href="{{function('get_permalink', event)}}">{{event.post_title}}</a></h2>
+									<p class="content-type">{{function('spellerberg_sp_date', event)}}</p>
+									<p class="add-descriptor">{{function('tribe_get_venue', event)}}</p>
+									{% if event.post_excerpt %}
+										<p class="description">{{event.post_excerpt}}</p>
+									{% else %}
+										<p class="description">{{function('wp_trim_words', event.post_content, '20', '...')}}</p>
+									{% endif %}
+									<p class="calltoaction">
+										<a href="{{event.url}}">RSVP</a>
+									</p>
+								</div>
 							</div>
-							<div class="descriptioncell">
-								<h2><a href="{{function('get_permalink', event)}}">{{event.post_title}}</a></h2>
-								<p class="content-type">{{function('spellerberg_sp_date', event)}}</p>
-								<p class="add-descriptor">{{function('tribe_get_venue', event)}}</p>
-								{% if event.post_excerpt %}
-									<p class="description">{{event.post_excerpt}}</p>
-								{% else %}
-									<p class="description">{{function('wp_trim_words', event.post_content, '20', '...')}}</p>
-								{% endif %}
-								<p class="calltoaction">
-									<a href="{{event.url}}">RSVP</a>
-								</p>
-							</div>
-						</div>
 
-				    {% endfor %}
+						{% endfor %}
 
-					<div class="grid-bottom"></div>
+						<div class="grid-bottom"></div>
 
-				</div>
+					</div>
+
+				{% endif %}
 
 				{% if eventYears|length > 0 %}
 
