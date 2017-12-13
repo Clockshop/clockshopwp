@@ -178,7 +178,7 @@
 									<p class="description">{{item.event.get_preview(25, false, '', true, '')}}</p>
 								{% endif %}
 								<p class="calltoaction">
-									<a href="{{item.item_url.url}}">RSVP</a>
+									<a href="{{function('get_permalink', item.event.id)}}">RSVP</a>
 								</p>
 							</div>
 						</div>
