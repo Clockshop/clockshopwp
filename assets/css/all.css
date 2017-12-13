@@ -1569,62 +1569,62 @@ footer.contactfooter {
     padding-bottom: 5px;
     text-transform: uppercase; }
 
-.donate-title {
+.donate .donate-title {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 30px; }
 
-.donate-grid .grid-3 {
+.donate .donate-grid .grid-3 {
   margin-bottom: 50px; }
 
-section {
+.donate section {
   padding-bottom: 80px;
   border-top: 4px solid black; }
-  section > h4 {
+  .donate section > h4 {
     padding: 15px 0 30px;
     margin: 0;
     text-align: left; }
-  section .donate-decription {
+  .donate section .donate-decription {
     margin-top: 0;
     font-size: 28px;
     line-height: 36px; }
     @media screen and (max-width: 767px) {
-      section .donate-decription {
+      .donate section .donate-decription {
         font-size: 24px;
         line-height: 32px; } }
-  section .donate-content {
+  .donate section .donate-content {
     font-size: 0;
     padding-top: 40px; }
     @media screen and (max-width: 767px) {
-      section .donate-content {
+      .donate section .donate-content {
         padding-top: 20px; } }
-    section .donate-content .donate-content-left {
+    .donate section .donate-content .donate-content-left {
       width: 33%;
       display: inline-block;
       vertical-align: top;
       padding-top: 15px; }
       @media screen and (max-width: 767px) {
-        section .donate-content .donate-content-left {
+        .donate section .donate-content .donate-content-left {
           display: none; } }
-    section .donate-content .donate-content-right {
+    .donate section .donate-content .donate-content-right {
       width: 67%;
       display: inline-block;
       vertical-align: top;
       padding-left: 50px;
       box-sizing: border-box; }
       @media screen and (max-width: 767px) {
-        section .donate-content .donate-content-right {
+        .donate section .donate-content .donate-content-right {
           width: 100%;
           padding-left: 0; } }
-      section .donate-content .donate-content-right :first-child {
+      .donate section .donate-content .donate-content-right :first-child {
         margin-top: 0 !important; }
-      section .donate-content .donate-content-right :last-child {
+      .donate section .donate-content .donate-content-right :last-child {
         margin-bottom: 0 !important; }
-      section .donate-content .donate-content-right ul li {
+      .donate section .donate-content .donate-content-right ul li {
         font-size: 18px;
         margin-bottom: 15px;
         padding-left: 15px; }
-    section .donate-content .donate-button {
+    .donate section .donate-content .donate-button {
       margin-left: 55px;
       font-size: 18px;
       display: inline-block;
