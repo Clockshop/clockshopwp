@@ -289,6 +289,102 @@
 
 			</main>
 
+		{% elseif post.get_field('project_content_type') == 'media' %}
+
+			<main class="content media">
+
+				{% if media_embeds %}
+
+					<h4>Recordings</h4>
+
+					{% for media in media_embeds %}
+
+						<div class="media-item">
+							
+							<div class="media-content">
+								<h2>{{media.0}}</h2>
+								<p>{{media.1}}</p>
+							</div>
+							
+							<div class="media-embed">
+								
+								{% if media.2%}
+									<div class="media-video-embed" style="background: url('{{theme.link}}/images/loading.gif') center center no-repeat;">
+										{{media.2}}
+									</div>
+								{% endif %}
+
+								{% if media.3%}
+									<div class="media-audio-embed" style="background: url('{{theme.link}}/images/loading.gif') center center no-repeat;">
+										{{media.3}}
+									</div>
+								{% endif %}
+
+							</div>
+						</div>
+
+					{% endfor %}
+
+					{% if media_pagination %}
+
+						<div class="media-pagination">
+							{{media_pagination}}
+						</div>
+
+					{% endif %}
+
+				{% endif %}
+
+			</main>
+
+		{% elseif post.get_field('project_content_type') == 'podcast' %}
+
+			<main class="content podcast">
+
+				<img class="podcast-image" src="{{TimberImage(post.podcast_cover_image)|resize(1900)}}" />
+
+				<div class="podcast-text">
+					{{post.podcast_intro_text}}
+				</div>
+
+				{% if podcast_episodes %}
+
+					<h4>Podcast</h4>
+
+					{% for podcast in podcast_episodes %}
+
+						<div class="media-item podcast-item">
+							
+							<div class="media-content podcast-content">
+								<p class="pod-ep">{{podcast.0}}</p>
+								<h2 class="pod-title">{{podcast.1}}</h2>
+								<p class="pod-date">{{podcast.2}}</p>
+								<p class="pod-length">{{podcast.3}}</p>
+								<p class="pod-description">{{podcast.4}}</p>
+							</div>
+							
+							<div class="media-embed podcast-embed">
+								<div class="media-audio-embed" style="background: url('{{theme.link}}/images/loading.gif') center center no-repeat;">
+									{{podcast.5}}
+								</div>
+							</div>
+
+						</div>
+
+					{% endfor %}
+
+					{% if podcast_pagination %}
+
+						<div class="media-pagination">
+							{{podcast_pagination}}
+						</div>
+
+					{% endif %}
+
+				{% endif %}
+
+			</main>
+
 		{% endif %}
 
 		{% for item in termMenu.items %}

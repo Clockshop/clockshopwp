@@ -26,7 +26,7 @@ module.exports = {
                 loader: 'url-loader'
             },
             {
-                test: /\.(png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                test: /\.(png|jpg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: 'url-loader'
             }
         ]
