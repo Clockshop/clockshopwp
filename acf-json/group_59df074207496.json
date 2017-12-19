@@ -504,7 +504,7 @@
             "min": 0,
             "max": 0,
             "layout": "block",
-            "button_label": "",
+            "button_label": "Add Media File",
             "sub_fields": [
                 {
                     "key": "field_5a35b02507f13",
@@ -803,5 +803,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1513691794
+    "modified": 1513698121
 }
