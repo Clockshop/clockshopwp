@@ -708,7 +708,7 @@ main img {
   font-size: 0;
   margin: 0 -10px; }
   .featured-grid > h4 {
-    padding: 15px 0 30px;
+    padding: 12px 0 30px;
     border-top: 4px solid black;
     margin: 40px 10px 0; }
 
@@ -1114,7 +1114,7 @@ footer.contactfooter {
     font-size: 18px;
     font-family: CircularBookBold;
     margin: 0;
-    padding: 15px 0 30px;
+    padding: 12px 0 30px;
     letter-spacing: .1em;
     text-transform: uppercase; }
   .upcoming-events > div .featured-grid .grid-bottom {
@@ -1124,7 +1124,7 @@ footer.contactfooter {
 .past-events {
   text-align: left !important; }
   .past-events h4 {
-    padding: 15px 0 30px;
+    padding: 12px 0 30px;
     margin: 0;
     text-align: left; }
   @media screen and (min-width: 768px) {
@@ -1222,7 +1222,7 @@ footer.contactfooter {
     .event-single .event-info .side-section-left {
       vertical-align: top; }
       .event-single .event-info .side-section-left h4 {
-        padding: 15px 0 30px;
+        padding: 12px 0 30px;
         margin-top: 0; }
         @media screen and (max-width: 767px) {
           .event-single .event-info .side-section-left h4 {
@@ -1284,7 +1284,7 @@ footer.contactfooter {
   .event-single .event-content .side-section-left {
     vertical-align: top; }
     .event-single .event-content .side-section-left h4 {
-      padding: 15px 0 30px;
+      padding: 12px 0 30px;
       margin-top: 0; }
       @media screen and (max-width: 767px) {
         .event-single .event-content .side-section-left h4 {
@@ -1367,7 +1367,7 @@ footer.contactfooter {
 .projects-past > div {
   border-top: 4px solid black; }
   .projects-past > div h4 {
-    padding: 15px 0 30px;
+    padding: 12px 0 30px;
     margin: 0; }
   .projects-past > div .grid {
     margin: 0 -10px;
@@ -1445,6 +1445,18 @@ footer.contactfooter {
     margin-top: 0 !important; }
   .project-single main.artist-single > :last-child {
     margin-bottom: 0 !important; }
+  .project-single main.media {
+    padding-bottom: 60px; }
+    .project-single main.media > h4 {
+      border-top: 4px solid black;
+      padding: 12px 0 0;
+      margin-bottom: 0;
+      margin-top: 0; }
+  .project-single main.podcast > h4 {
+    border-top: 4px solid black;
+    padding: 12px 0 0;
+    margin-bottom: 0;
+    margin-top: 0; }
   .project-single main > .project-title {
     font-size: 28px;
     font-style: italic;
@@ -1555,6 +1567,105 @@ footer.contactfooter {
     margin-bottom: 0; }
     .project-single main .collapsable-sections :last-child {
       margin-bottom: 0; }
+  .project-single main .media-item {
+    font-size: 0;
+    border-bottom: 4px solid black;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    overflow: auto; }
+    .project-single main .media-item > div {
+      display: inline-block;
+      width: 50%; }
+      @media screen and (max-width: 767px) {
+        .project-single main .media-item > div {
+          width: 100%; } }
+    .project-single main .media-item .media-content {
+      padding-right: 20px;
+      box-sizing: border-box;
+      vertical-align: top; }
+      .project-single main .media-item .media-content h2 {
+        font-size: 28px;
+        line-height: 36px;
+        margin-top: 0;
+        margin-bottom: 4px; }
+        @media screen and (max-width: 999px) {
+          .project-single main .media-item .media-content h2 {
+            font-size: 24px;
+            line-height: 32px; } }
+      .project-single main .media-item .media-content p {
+        font-size: 18px;
+        line-height: 26px;
+        margin-top: 0; }
+    .project-single main .media-item .media-embed {
+      float: right; }
+      .project-single main .media-item .media-embed iframe {
+        width: 100%; }
+      .project-single main .media-item .media-embed > div {
+        background-size: 40px 40px !important; }
+      .project-single main .media-item .media-embed .media-video-embed {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0; }
+      .project-single main .media-item .media-embed .media-video-embed + .media-audio-embed {
+        margin-top: 20px; }
+  .project-single main .media-pagination {
+    padding-top: 70px;
+    text-align: center;
+    font-size: 0; }
+    @media screen and (max-width: 999px) {
+      .project-single main .media-pagination {
+        padding-top: 50px; } }
+    .project-single main .media-pagination ul.page-numbers {
+      padding-left: 0; }
+      .project-single main .media-pagination ul.page-numbers li {
+        display: inline-block; }
+        .project-single main .media-pagination ul.page-numbers li a, .project-single main .media-pagination ul.page-numbers li span {
+          text-decoration: none;
+          font-family: CircularBook;
+          font-size: 19px;
+          letter-spacing: .1em;
+          display: inline-block;
+          padding: 0 10px;
+          margin: 0 3px; }
+          @media screen and (max-width: 767px) {
+            .project-single main .media-pagination ul.page-numbers li a, .project-single main .media-pagination ul.page-numbers li span {
+              margin: 0 1px;
+              font-size: 16px;
+              padding: 0 8px; } }
+          .project-single main .media-pagination ul.page-numbers li a.current, .project-single main .media-pagination ul.page-numbers li span.current {
+            background-color: black;
+            color: white; }
+        .project-single main .media-pagination ul.page-numbers li .prev, .project-single main .media-pagination ul.page-numbers li .next {
+          margin: 0; }
+  .project-single main .podcast-image {
+    padding-bottom: 50px; }
+  .project-single main .podcast-text {
+    padding-bottom: 50px; }
+    .project-single main .podcast-text > :first-child {
+      margin-top: 0 !important; }
+    .project-single main .podcast-text > :last-child {
+      margin-bottom: 0 !important; }
+  .project-single main .podcast-item .podcast-content .pod-ep {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: .1em;
+    font-family: CircularBookBold;
+    margin-bottom: 0;
+    line-height: 21px; }
+  .project-single main .podcast-item .podcast-content .pod-date {
+    font-family: CircularBookBold;
+    margin-bottom: 0; }
+  .project-single main .podcast-item .podcast-content .pod-length {
+    font-size: 16px;
+    margin-bottom: 12px; }
+  .project-single main .podcast-item .podcast-content .pod-description {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 0; }
+    @media screen and (max-width: 767px) {
+      .project-single main .podcast-item .podcast-content .pod-description {
+        margin-bottom: 20px; } }
 
 .project-single .project-next {
   display: block;
@@ -1583,7 +1694,7 @@ footer.contactfooter {
   padding-bottom: 80px;
   border-top: 4px solid black; }
   .donate section > h4 {
-    padding: 15px 0 30px;
+    padding: 12px 0 30px;
     margin: 0;
     text-align: left; }
   .donate section .donate-decription {
