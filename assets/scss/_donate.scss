@@ -5,6 +5,7 @@
 		margin-bottom: 30px;
 	}
 	.donate-grid {
+		text-align: center;
 		.grid-3 {
 			margin-bottom: 50px;
 		}
@@ -21,6 +22,7 @@
 			margin-top: 0;
 			font-size: 28px;
 			line-height: 36px;
+			margin-bottom: 0;
 			@media screen and (max-width: 767px) {
 				font-size: 24px;
 				line-height: 32px;
@@ -28,9 +30,9 @@
 		}
 		.donate-content {
 			font-size: 0;
-			padding-top: 40px;
+			margin-top: 30px;
 			@media screen and (max-width: 767px) {
-				padding-top: 20px;
+				//padding-top: 20px;
 			}
 			.donate-content-left {
 				width: 33%;
@@ -41,11 +43,18 @@
 					display: none;
 				}
 			}
-			.donate-content-right {
+			.donate-content-left + .donate-content-right {
 				width: 67%;
+				padding-left: 50px;
+				@media screen and (max-width: 767px) {
+					width: 100%;
+					padding-left: 0;
+				}
+			}
+			.donate-content-right {
+				width: 100%;
 				display: inline-block;
 				vertical-align: top;
-				padding-left: 50px;
 				box-sizing: border-box;
 				@media screen and (max-width: 767px) {
 					width: 100%;
