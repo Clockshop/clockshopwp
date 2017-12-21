@@ -22,32 +22,25 @@
 
 		</div>
 
-		{% for item in post.get_field('donate_options') %}
+		<section>
 
-			{% if item.donate_option_title %}
+			<h4>{{posts.donate_content_title}}</h4>
+			<h3 class="donate-decription">{{post.donate_content_intro}}</h3>
+			<div class="donate-content">
 
-				<section>
-
-					<h4>{{item.donate_option_title}}</h4>
-					<h3 class="donate-decription">{{item.donate_option_description}}</h3>
-					<div class="donate-content">
-
-						<div class="donate-content-left">
-							<img src="{{TimberImage(item.donate_option_content_image)|resize(700)}}" />
-						</div>
-						<div class="donate-content-right">
-							{{item.donate_option_content}}
-							<a class="donate-button button" href="{{item.donate_option_url.url}}">{{item.donate_option_button_text}}</a>
-						</div>
-
+				{% if post.donate_content_image %}
+					<div class="donate-content-left">
+						<img src="{{TimberImage(post.donate_content_image)|resize(700)}}" />
 					</div>
+				{% endif %}
 
-				</section>
+				<div class="donate-content-right">
+					{{post.content}}
+				</div>
 
-			{% endif %}
+			</div>
 
-		{% endfor %}
-
+		</section>
 	</div>
 
 {% endblock %}
