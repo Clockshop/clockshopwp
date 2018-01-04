@@ -95,6 +95,18 @@
 			});
 		}
 
+		function playVideo() {
+			if ($(".video-container").length) {
+				player.on('loaded', function(data) {
+					$('.video-container').css('opacity', '1');
+				});
+				$(this).on('click', function() {
+					$(".video-container").addClass('play');
+					player.play();
+				});
+			}
+		}
+
 		collapsable_sections();
 		search();
 		eventsSlider();
@@ -102,7 +114,7 @@
 		resizeHeader();
 		hideBrokenImages();
 		projectSlider();
-
+		playVideo();
 	});
 
 	function signUpForm() {
