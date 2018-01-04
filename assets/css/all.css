@@ -68,14 +68,14 @@ h2 {
       line-height: 36px; } }
 
 h3 {
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 28px;
+  line-height: 36px;
   font-family: CircularBookBold;
   margin: 35px 0 25px 0; }
   @media screen and (max-width: 767px) {
     h3 {
-      font-size: 21px;
-      line-height: 24px; } }
+      font-size: 24px;
+      line-height: 32px; } }
 
 h4 {
   font-size: 18px !important;
@@ -850,7 +850,8 @@ footer.contactfooter {
       max-height: 0;
       padding-bottom: 14.315%;
       display: inline-block;
-      vertical-align: middle; }
+      vertical-align: middle;
+      background: #efefef; }
       .search-template .search-list article .list-image a {
         display: block; }
         .search-template .search-list article .list-image a img {
@@ -1080,7 +1081,8 @@ footer.contactfooter {
           .events-this-month .slick-list .slide-cell .slide .event-content h2 a {
             text-decoration: none !important; }
         .events-this-month .slick-list .slide-cell .slide .event-content h3 {
-          line-height: 26px !important;
+          font-size: 24px;
+          line-height: 28px !important;
           margin-top: 10px;
           margin-bottom: 10px; }
           @media screen and (max-width: 999px) {
@@ -1361,7 +1363,7 @@ footer.contactfooter {
       .projects-ongoing .projects-side-section .side-section-left h4 {
         display: inline-block;
         border-bottom: 4px solid black;
-        padding-bottom: 6px;
+        padding-bottom: 4px;
         margin: 0; }
     .projects-ongoing .projects-side-section > div {
       display: table-cell;

@@ -22,20 +22,21 @@ add_filter('image_resize_dimensions', 'image_crop_dimensions', 10, 6);
 
 function catch_first_image($id) {
 	$post = get_post($id);
+	$meta = get_post_meta($post->ID);
 	$first_img = '';
-	ob_start();
-	ob_end_clean();
 	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
 	if(isset($matches[1][0])) {
-		return $matches[1][0];
+		return $matches[1][0] . '?content';
 	} else {
-		$meta = get_post_meta(get_the_ID());
+		/*
 		foreach($meta as $key=>$value){
-			if (strpos($key, 'image') !== false && substr($key, 0, 1) !== '_') {
+			if ((strpos($key, 'image') !== false) && (substr($key, 0, 1) !== '_')) {
+				//return json_encode($key) . ': ' . json_encode($value);
 				$first_img = wp_get_attachment_image_src( $value[0], 'list' );
-				return $first_img[0];
+				return $first_img[0] . '?field';
 			}
 		}
+		*/
 		return '';
 	}
 }
