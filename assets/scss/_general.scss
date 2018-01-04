@@ -64,6 +64,16 @@ a {
 
 i, em {
 	font-family: CircularBookItalic;
+	b, strong {
+		font-family: CircularBookBoldItalic;
+	}
+}
+
+b, strong {
+	font-family: CircularBookBold;
+	i, em {
+		font-family: CircularBookBoldItalic;
+	}
 }
 
 h1 {
@@ -75,6 +85,9 @@ h1 {
 		font-size: 32px;
 		line-height: 36px;
 	}
+	i, em {
+		font-family: CircularBookBoldItalic;
+	}
 }
 
 h2 {
@@ -84,6 +97,9 @@ h2 {
 	@media screen and (max-width: 999px) {
 		font-size: 28px;
 		line-height: 36px;
+	}
+	i, em {
+		font-family: CircularBookBoldItalic;
 	}
 }
 
@@ -96,6 +112,9 @@ h3 {
 		font-size: 24px;
 		line-height: 32px;
 	}
+	i, em {
+		font-family: CircularBookBoldItalic;
+	}
 }
 
 h4 {
@@ -104,6 +123,9 @@ h4 {
 	font-family: CircularBookBold;
 	text-transform: uppercase;
 	line-height: 1.6;
+	i, em {
+		font-family: CircularBookBoldItalic;
+	}
 }
 
 h5 {
@@ -134,6 +156,9 @@ button, .button {
 	&:hover {
 		background-color: black;
 		color: white;
+	}
+	i, em {
+		font-family: CircularBookBoldItalic;
 	}
 }
 
@@ -194,6 +219,9 @@ main {
 				margin-top: 16px!important;
 				margin-bottom: 0;
 			    margin-top: 30px;
+				i, em {
+					font-family: CircularBookBoldItalic;
+				}
 				@media screen and (max-width: 999px) {
 					margin-top: 25px;
 					font-size: 24px;
@@ -209,6 +237,9 @@ main {
 				line-height: 30px;
 				margin-top: 0;
 				margin-bottom: 0;
+				i, em {
+					font-family: CircularBookBoldItalic;
+				}			
 			}
 			.add-descriptor {
 				font-family: CircularBook;
@@ -233,6 +264,9 @@ main {
 				letter-spacing: .1em;
 				margin-top: 25px;
 				margin-bottom: 0;
+				i, em {
+					font-family: CircularBookBoldItalic;
+				}			
 				@media screen and (max-width: 999px) {
 					font-size: 14px;
 					line-height: 18px;
@@ -273,6 +307,9 @@ main {
 			@media screen and (max-width: 767px) {
 				font-size: 21px;				
 			}
+			i, em {
+				font-family: CircularBookBoldItalic;
+			}		
 		}
 		i {
 		    position: absolute;
@@ -304,6 +341,9 @@ main {
 		text-align: center;
 		margin-top: 80px;
 		margin: 50px 0 40px 0!important;
+		i, em {
+			font-family: CircularBookBoldItalic;
+		}	
 	}
 	> h4 {
 		font-family: CircularBookBold;
@@ -314,6 +354,9 @@ main {
 		letter-spacing: .1em;
 		margin-bottom: 30px;
 		line-height: 24px;
+		i, em {
+			font-family: CircularBookBoldItalic;
+		}	
 	}
 	.searchform {
 		box-sizing: border-box;
@@ -393,6 +436,9 @@ main {
 								&:-moz-placeholder {
 								  color: #b3b3b3;
 								}
+								i, em {
+									font-family: CircularBookBoldItalic;
+								}							
 							}
 						}
 					}
@@ -412,6 +458,9 @@ main {
 					width: auto;
 					line-height: 1;
 					border-radius: 0;
+					i, em {
+						font-family: CircularBookBoldItalic;
+					}				
 				}
 				.gform_ajax_spinner {
 					display: none;

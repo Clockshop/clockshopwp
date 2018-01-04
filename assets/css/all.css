@@ -47,6 +47,13 @@ a {
 
 i, em {
   font-family: CircularBookItalic; }
+  i b, i strong, em b, em strong {
+    font-family: CircularBookBoldItalic; }
+
+b, strong {
+  font-family: CircularBookBold; }
+  b i, b em, strong i, strong em {
+    font-family: CircularBookBoldItalic; }
 
 h1 {
   font-size: 36px;
@@ -57,6 +64,8 @@ h1 {
     h1 {
       font-size: 32px;
       line-height: 36px; } }
+  h1 i, h1 em {
+    font-family: CircularBookBoldItalic; }
 
 h2 {
   font-size: 32px;
@@ -66,6 +75,8 @@ h2 {
     h2 {
       font-size: 28px;
       line-height: 36px; } }
+  h2 i, h2 em {
+    font-family: CircularBookBoldItalic; }
 
 h3 {
   font-size: 28px;
@@ -76,6 +87,8 @@ h3 {
     h3 {
       font-size: 24px;
       line-height: 32px; } }
+  h3 i, h3 em {
+    font-family: CircularBookBoldItalic; }
 
 h4 {
   font-size: 18px !important;
@@ -83,6 +96,8 @@ h4 {
   font-family: CircularBookBold;
   text-transform: uppercase;
   line-height: 1.6; }
+  h4 i, h4 em {
+    font-family: CircularBookBoldItalic; }
 
 h5 {
   font-size: 22px;
@@ -110,6 +125,8 @@ button, .button {
   button:hover, .button:hover {
     background-color: black;
     color: white; }
+  button i, button em, .button i, .button em {
+    font-family: CircularBookBoldItalic; }
 
 #uparrow {
   display: none !important; }
@@ -159,6 +176,8 @@ main img {
       margin-top: 16px !important;
       margin-bottom: 0;
       margin-top: 30px; }
+      .grid .grid-3 .descriptioncell h2 i, .grid .grid-3 .descriptioncell h2 em {
+        font-family: CircularBookBoldItalic; }
       @media screen and (max-width: 999px) {
         .grid .grid-3 .descriptioncell h2 {
           margin-top: 25px;
@@ -172,6 +191,8 @@ main img {
       line-height: 30px;
       margin-top: 0;
       margin-bottom: 0; }
+      .grid .grid-3 .descriptioncell .content-type i, .grid .grid-3 .descriptioncell .content-type em {
+        font-family: CircularBookBoldItalic; }
     .grid .grid-3 .descriptioncell .add-descriptor {
       font-family: CircularBook;
       font-size: 16px;
@@ -193,6 +214,8 @@ main img {
       letter-spacing: .1em;
       margin-top: 25px;
       margin-bottom: 0; }
+      .grid .grid-3 .descriptioncell .calltoaction i, .grid .grid-3 .descriptioncell .calltoaction em {
+        font-family: CircularBookBoldItalic; }
       @media screen and (max-width: 999px) {
         .grid .grid-3 .descriptioncell .calltoaction {
           font-size: 14px;
@@ -227,6 +250,8 @@ main img {
       @media screen and (max-width: 767px) {
         .collapsable-sections section .section-title {
           font-size: 21px; } }
+      .collapsable-sections section .section-title i, .collapsable-sections section .section-title em {
+        font-family: CircularBookBoldItalic; }
     .collapsable-sections section i {
       position: absolute;
       top: 0;
@@ -251,6 +276,8 @@ main img {
   text-align: center;
   margin-top: 80px;
   margin: 50px 0 40px 0 !important; }
+  .no-results > h2 i, .no-results > h2 em {
+    font-family: CircularBookBoldItalic; }
 
 .no-results > h4 {
   font-family: CircularBookBold;
@@ -261,6 +288,8 @@ main img {
   letter-spacing: .1em;
   margin-bottom: 30px;
   line-height: 24px; }
+  .no-results > h4 i, .no-results > h4 em {
+    font-family: CircularBookBoldItalic; }
 
 .no-results .searchform {
   box-sizing: border-box;
@@ -320,6 +349,8 @@ main img {
       color: #b3b3b3; }
     .newsform div form .gform_body ul li div input:-moz-placeholder {
       color: #b3b3b3; }
+    .newsform div form .gform_body ul li div input i, .newsform div form .gform_body ul li div input em {
+      font-family: CircularBookBoldItalic; }
   .newsform div form .gform_body .validation_message {
     display: none; }
   .newsform div form .gform_footer input {
@@ -332,6 +363,8 @@ main img {
     width: auto;
     line-height: 1;
     border-radius: 0; }
+    .newsform div form .gform_footer input i, .newsform div form .gform_footer input em {
+      font-family: CircularBookBoldItalic; }
   .newsform div form .gform_footer .gform_ajax_spinner {
     display: none; }
   .newsform .gform_validation_error form .gform_body ul li div input.error {
