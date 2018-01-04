@@ -188,7 +188,16 @@ if ( !empty( $events ) ) { ?>
 							<p class="event-month"><span><?php echo date('F', strtotime($event->EventStartDate)); ?></span></p>
 						<?php } ?>
 						<div class="event-info">
-							<p class="event-title"><a href="<?php echo get_permalink($event); ?>"><?php echo $event->post_title ?></a></p>
+
+							<?php $terms = wp_get_post_terms( $event->ID, 'projects' ); ?>
+							<p class="event-title">
+								<a href="<?php echo get_permalink($event); ?>">
+									<?php if ($terms) {
+										echo $terms[0]->name . ': ';
+									}
+									echo $event->post_title; ?>
+								</a>
+							</p>
 							<p class="event-date"><span><?php echo date('F j, Y', strtotime($event->EventStartDate)); ?></span></p>
 						</div>
 					<?php } ?>
