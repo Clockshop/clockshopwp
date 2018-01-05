@@ -46,9 +46,10 @@ a {
     color: black; }
 
 i, em {
-  font-family: CircularBookItalic;
-  font-style: normal; }
-  i b, i strong, em b, em strong {
+  font-family: CircularBookItalic; }
+  i font-s
+b, i strong, em font-s
+b, em strong {
     font-family: CircularBookBoldItalic; }
 
 b, strong {
@@ -190,8 +191,6 @@ main img {
   .video-container.play {
     opacity: 0; }
     .video-container.play:before {
-      display: none; }
-    .video-container.play .poster {
       display: none; }
   .video-container .poster {
     width: 100%;
