@@ -64,7 +64,7 @@ a {
 
 i, em {
 	font-family: CircularBookItalic;
-	font-s
+	font-style: normal;
 	b, strong {
 		font-family: CircularBookBoldItalic;
 	}
@@ -72,6 +72,7 @@ i, em {
 
 b, strong {
 	font-family: CircularBookBold;
+	font-weight: normal;
 	i, em {
 		font-family: CircularBookBoldItalic;
 	}

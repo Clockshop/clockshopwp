@@ -46,14 +46,14 @@ a {
     color: black; }
 
 i, em {
-  font-family: CircularBookItalic; }
-  i font-s
-b, i strong, em font-s
-b, em strong {
+  font-family: CircularBookItalic;
+  font-style: normal; }
+  i b, i strong, em b, em strong {
     font-family: CircularBookBoldItalic; }
 
 b, strong {
-  font-family: CircularBookBold; }
+  font-family: CircularBookBold;
+  font-weight: normal; }
   b i, b em, strong i, strong em {
     font-family: CircularBookBoldItalic; }
 
