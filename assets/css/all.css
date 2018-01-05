@@ -46,7 +46,8 @@ a {
     color: black; }
 
 i, em {
-  font-family: CircularBookItalic; }
+  font-family: CircularBookItalic;
+  font-style: normal; }
   i b, i strong, em b, em strong {
     font-family: CircularBookBoldItalic; }
 
