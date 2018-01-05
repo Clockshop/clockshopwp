@@ -64,7 +64,7 @@ a {
 
 i, em {
 	font-family: CircularBookItalic;
-	font-style: normal;
+	font-s
 	b, strong {
 		font-family: CircularBookBoldItalic;
 	}
@@ -234,9 +234,6 @@ main {
 		&:before {
 			display: none;
 		}
-		.poster {
-			display: none;
-		}
 	}
 	.poster {
 		width: 100%;
@@ -245,7 +242,7 @@ main {
 		position: relative;
 		background-size: cover;
 		background-position: center center;
-		background-repeat: no-repeat;		
+		background-repeat: no-repeat;
 	}
 }
 .video-container iframe, .video-container object, .video-container embed {

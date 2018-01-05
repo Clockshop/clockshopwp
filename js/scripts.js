@@ -100,8 +100,9 @@
 				player.on('loaded', function(data) {
 					$('.video-container').css('opacity', '1');
 				});
-				$(this).on('click', function() {
+				$('.video-container').on('click', function() {
 					$(".video-container").addClass('play');
+					$(".poster").fadeOut(500);
 					player.play();
 				});
 			}
