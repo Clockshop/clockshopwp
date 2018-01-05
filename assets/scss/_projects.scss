@@ -232,7 +232,8 @@
 			    top: 0;
 			    bottom: 0;
 			    height: 40px;
-			    padding: 9px;
+				padding: 9px;
+				background-color: transparent;
 				@media screen and (max-width: 1099px) {
 					display: none!important;
 				}
