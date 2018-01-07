@@ -61,7 +61,7 @@ function video_func( $atts ) {
 						$(".video-container-' . $a['id'] . '").on("click", function() {
 							$(".video-container-' . $a['id'] . '").addClass("play");
 							$(".video-container-' . $a['id'] . ' .poster").fadeOut(500);
-							player' . $a['id'] . '.play();
+							player["' . $a['id'] . '"].playVideo();
 						});
 					}
 				});
