@@ -15,11 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 do_action( 'tribe_events_before_template' );
-?>
-<div class="content">
-	<h1>Events This Month</h1>	
-</div>
-<?php
 
 function add_months($months, DateTime $dateObject) {
 	$next = new DateTime($dateObject->format('Y-m-d'));
@@ -72,6 +67,9 @@ if ( empty( $events ) ) {
 <?php
 }
 else { ?>
+	<div class="content">
+		<h1>Events This Month</h1>	
+	</div>
 	<section class="events-slider events-this-month content">
 		<?php foreach( $events as $event ) { ?>
 			<div class="slide-cell">
