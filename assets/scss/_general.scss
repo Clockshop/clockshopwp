@@ -213,7 +213,7 @@ main {
 	margin-bottom: 40px;
 	&:before {
 		content: '';
-		background-image: url('../../images/play.png');
+		background-image: url('../images/play.png');
 		background-size: cover;
 		width: 100px;
 		height: 100px;
@@ -594,7 +594,7 @@ main {
 	.logotype { 
 		width: 69px;
 		height: 180px;
-		background : url("../../images/logotype.svg") no-repeat 0 0;
+		background : url("../images/logotype.svg") no-repeat 0 0;
 		position: fixed;
 		top: 150px;
 		right: 6px;
@@ -604,7 +604,7 @@ main {
 		display: block;
 		width: 69px;
 		height: 180px;
-		background : url("../../images/logo.svg") no-repeat 0 0;
+		background : url("../images/logo.svg") no-repeat 0 0;
 		position: fixed;
 		top: 150px;
 		left: 0;
