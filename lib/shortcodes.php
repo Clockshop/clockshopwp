@@ -32,13 +32,42 @@ function video_func( $atts ) {
     ), $atts );
 
 	if ($a['source'] == 'vimeo') {
-		$output = '<div class="video-container"><div class="poster" style="background-image: url(' . $a['poster'] . ');"></div><iframe src="https://player.vimeo.com/video/' . $a['id'] . '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
-		$output .= '<script src="https://player.vimeo.com/api/player.js"></script>';
+		$output = '<div class="video-container video-container-' . $a['id'] . '"><div class="poster" style="background-image: url(' . $a['poster'] . ');"></div><iframe class="iframe-' . $a['id'] . '" src="https://player.vimeo.com/video/' . $a['id'] . '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
 		$output .= '<script>';
-		$output .= 'var iframe = document.querySelector("iframe");';
-		$output .= 'var player = new Vimeo.Player(iframe);';
+		$output .= 'var iframe' . $a['id'] . ' = document.querySelector(".iframe-' . $a['id'] . '");';
+		$output .= 'var player' . $a['id'] . ' = new Vimeo.Player(iframe' . $a['id'] . ');';
+		$output .= '(function($) {
+				$(document).ready(function() {
+					if ($(".video-container-' . $a['id'] . '").length) {
+						player' . $a['id'] . '.on("loaded", function() {
+							$(".video-container-' . $a['id'] . '").css("opacity", "1");
+						});
+						$(".video-container-' . $a['id'] . '").on("click", function() {
+							$(".video-container-' . $a['id'] . '").addClass("play");
+							$(".video-container-' . $a['id'] . ' .poster").fadeOut(500);
+							player' . $a['id'] . '.play();
+						});
+					}
+				});
+			})(jQuery);';
 		$output .= '</script>';
 		return $output;
+	} elseif ($a['source'] == 'youtube') {
+		$output = '<div id="video-container-' . $a['id'] . '" class="video-container video-container-' . $a['id'] . '"><div class="poster" style="background-image: url(' . $a['poster'] . ');"></div><div class="youtube-video" data-id="' . $a['id'] . '" id="' . $a['id'] . '"></div></div>';
+		$output .= '<script>';
+		$output .= '(function($) {
+				$(document).ready(function() {
+					if ($(".video-container-' . $a['id'] . '").length) {
+						$(".video-container-' . $a['id'] . '").on("click", function() {
+							$(".video-container-' . $a['id'] . '").addClass("play");
+							$(".video-container-' . $a['id'] . ' .poster").fadeOut(500);
+							player' . $a['id'] . '.play();
+						});
+					}
+				});
+			})(jQuery);';
+		$output .= '</script>';
+		return $output;	
 	}
 }
 add_shortcode( 'video_embed', 'video_func' );
