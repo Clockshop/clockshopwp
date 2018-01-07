@@ -39,6 +39,9 @@ function enqueue_scripts_method() {
 	$slickjs = get_template_directory_uri() . '/js/slick.min.js';
 	wp_register_script('slickjs', $slickjs, false, $version);
 
+	$viemoPlayer = 'https://player.vimeo.com/api/player.js';
+	wp_register_script('vimeoPlayer', $viemoPlayer, false);
+	
 	// Define CSS
 
 	$ralewaycss = 'http://fonts.googleapis.com/css?family=Raleway:400,300,200,100';
@@ -79,6 +82,7 @@ function enqueue_scripts_method() {
 	wp_enqueue_script( 'mainjs',array('jquery','flexsliderjs'));
 	wp_enqueue_script( 'scripts',array('jquery'));
 	wp_enqueue_script( 'projecttemplatejs',array('jquery'));
+	wp_enqueue_script( 'vimeoPlayer' );
 
 	wp_enqueue_style( 'flickitycss');
 	wp_enqueue_style( 'flexslidercss');
