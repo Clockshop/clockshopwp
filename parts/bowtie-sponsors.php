@@ -1,1 +1,0 @@
-<img src="http://clockshop.org/wp-content/uploads/2015/07/logos.jpg">

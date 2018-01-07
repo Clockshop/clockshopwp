@@ -1,10 +1,10 @@
 <?php
 
-/* Template Name: About */ 
+/* Template Name: Donate */ 
 
 $context = $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-Timber::render( 'views/about.twig', $context );
+Timber::render( 'views/donate.twig', $context );
 
 ?>

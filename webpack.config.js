@@ -2,10 +2,10 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const autoPrefixer = require('autoprefixer');
 
 module.exports = {
-    entry: './assets/scss/app.scss',
+    entry: './index.js',
     output: {
         path: __dirname,
-        filename: 'assets/css/all.css'
+        filename: './assets/js/all.js'
     },
     module: {
         loaders: [
