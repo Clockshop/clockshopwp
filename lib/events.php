@@ -1,4 +1,36 @@
-<?php
+<?php 
+
+function create_events_pt() {
+	register_post_type( 'events',
+		array(
+			'labels' => array(
+				'name' => 'Events',
+				'menu_name' => 'Events',
+				'singular_name' => 'Event',
+				'all_items' => 'All Events',
+				'add_new' => 'Add New Event',
+				'add_new_item' => 'Add New Event',
+				'edit' => 'Edit',
+				'edit_item' => 'Edit Event',
+				'new_item' => 'New Event',
+				'view' => 'View',
+				'view_item' => 'View Event',
+				'search_items' => 'Search Events',
+				'not_found' => 'No Events found',
+				'not_found_in_trash' => 'No Events found in Trash',
+				'parent' => 'Parent'
+			),
+	        'taxonomies' => array('projects'),
+			'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'revisions', 'page-attributes', 'excerpt' ),
+			'public' => true,
+			'has_archive' => true,
+			'show_in_menu' => true,
+			'hierarchical' => true,
+			'menu_icon' => 'dashicons-calendar',
+		)
+	);
+}
+add_action( 'init', 'create_events_pt' );
 
 // Format Dates
 
@@ -8,41 +40,33 @@ function spellerberg_sp_date($postid, $format='') {
 
 function spellerberg_return_sp_date($postid, $format='') {
 
-	$startYear = tribe_get_start_date($postid,'','Y'); 
-	$endYear = tribe_get_end_date($postid,'','Y');
+	$startYear = date('Y', strtotime(get_field('_EventStartDate' , $postid)));
+	$endYear = date('Y', strtotime(get_field('_EventEndDate' , $postid)));
 
-	$startMonth = tribe_get_start_date($postid,'','F'); 
-	$endMonth = tribe_get_end_date($postid,'','F');
+	$startMonth = date('F', strtotime(get_field('_EventStartDate' , $postid)));
+	$endMonth = date('F', strtotime(get_field('_EventEndDate' , $postid)));
 
-	$startDay = tribe_get_start_date($postid,'','j'); 
-	$endDay = tribe_get_end_date($postid,'','j');
+	$startDay = date('j', strtotime(get_field('_EventStartDate' , $postid)));
+	$endDay = date('j', strtotime(get_field('_EventEndDate' , $postid)));
 
-	$weekday = tribe_get_start_date($postid,'','D'); 
+	$weekday = date('D', strtotime(get_field('_EventStartDate' , $postid)));
 
-	$startTime = tribe_get_start_date($postid,'','g'); 
-	$endTime = tribe_get_end_date($postid,'','g');
+	$startTime = date('g', strtotime(get_field('_EventStartDate' , $postid)));
+	$endTime = date('g', strtotime(get_field('_EventEndDate' , $postid)));
 
-	$s_hour = tribe_get_start_date($postid,'','g'); 
-	$s_min = tribe_get_start_date($postid,'','i'); 
-	$s_am = ' ' . tribe_get_start_date($postid,'','a');
+	$s_hour = date('g', strtotime(get_field('_EventStartDate' , $postid)));
+	$s_min = date('i', strtotime(get_field('_EventStartDate' , $postid)));
+	$s_am = ' ' . date('a', strtotime(get_field('_EventEndDate' , $postid)));
 	
-	$e_hour = tribe_get_end_date($postid,'','g'); 
-	$e_min = tribe_get_end_date($postid,'','i'); 
-	$e_am = ' ' . tribe_get_end_date($postid,'','a');
+	$e_hour = date('g', strtotime(get_field('_EventStartDate' , $postid)));
+	$e_min = date('i', strtotime(get_field('_EventStartDate' , $postid)));
+	$e_am = ' ' . date('a', strtotime(get_field('_EventEndDate' , $postid)));
 
-	/*
-	if ( tribe_is_recurring_event($postid) ) :
-		$recurrence_text = tribe_get_recurrence_text($postid);
-	else :
-		$recurrence_text = '';
-	endif;
-	*/
-
-	return spellerberg_show_event_datetime( $startYear, $endYear, $startMonth, $endMonth, $startDay, $endDay, $startTime, $endTime, $weekday, $s_hour, $s_min, $s_am, $e_hour, $e_min, $e_am, $format/*, $recurrence_text */ );
+	return spellerberg_show_event_datetime( $startYear, $endYear, $startMonth, $endMonth, $startDay, $endDay, $startTime, $endTime, $weekday, $s_hour, $s_min, $s_am, $e_hour, $e_min, $e_am, $format );
 
 }
 
-function spellerberg_show_event_datetime ( $startYear, $endYear, $startMonth, $endMonth, $startDay, $endDay, $startTime, $endTime, $weekday, $s_hour, $s_min, $s_am, $e_hour, $e_min, $e_am, $format/*, $recurrence_text */) {
+function spellerberg_show_event_datetime ( $startYear, $endYear, $startMonth, $endMonth, $startDay, $endDay, $startTime, $endTime, $weekday, $s_hour, $s_min, $s_am, $e_hour, $e_min, $e_am, $format) {
 
 	$output = '';
 
@@ -156,52 +180,4 @@ function spellerberg_show_event_datetime ( $startYear, $endYear, $startMonth, $e
 	
 }
 
-if ( class_exists('Tribe__Events__Main') ){
- 
-    function tribe_get_text_categories( $event_id = null ) {
- 
-        if ( is_null( $event_id ) ) {
-            $event_id = get_the_ID();
-        }
- 
-        $event_cats = '';
- 
-        $term_list = wp_get_post_terms( $event_id, Tribe__Events__Main::TAXONOMY );
- 
-        foreach( $term_list as $term_single ) {
-            $event_cats .= $term_single->name . ', ';
-        }
- 
-        return rtrim($event_cats, ', ');
- 
-    }
- 
-}
-
-add_action( 'admin_menu', 'remove_events_submenu_items', 100 );
-function remove_events_submenu_items() {
-	remove_submenu_page(
-		'edit.php?post_type=tribe_events',
-		'edit-tags.php?taxonomy=tribe_events_cat&amp;post_type=tribe_events' // must be &amp;
-	);
-	remove_submenu_page(
-		'edit.php?post_type=tribe_events',
-		'aggregator'
-	);
-	remove_submenu_page(
-		'edit.php?post_type=tribe_events',
-		'events-importer'
-	);
-	remove_submenu_page(
-		'edit.php?post_type=tribe_events',
-		'edit-tags.php?taxonomy=post_tag&amp;post_type=tribe_events'
-	);
-}
-
-function remove_event_meta_boxes() {
-	remove_meta_box( 'tagsdiv-post_tag' , 'tribe_events' , 'side' ); 
-	remove_meta_box( 'tribe_events_catdiv' , 'tribe_events' , 'side' ); 
-	remove_meta_box( 'tribe_events_event_options' , 'tribe_events' , 'side' ); 
-}
-add_action( 'admin_menu' , 'remove_event_meta_boxes' );
-
+?>

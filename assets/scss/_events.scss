@@ -1,32 +1,26 @@
-#tribe-events-pg-template {
-	padding: 0;
-	max-width: none;
-	#tribe-events-content-wrapper {
-		.content {
-			text-align: center;
-			h1 {
-			    margin: 40px 0 30px 0;
-				@media screen and (min-width: 1000px) {
-				    margin: 50px 0 40px 0;
-				}
+.events {
+	.content {
+		text-align: center;
+		h1 {
+			margin: 40px 0 30px 0;
+			@media screen and (min-width: 1000px) {
+				margin: 50px 0 40px 0;
 			}
 		}
-		#tribe-events-content {
-		}
-		.no-events {
-			padding-left: 25px;
-			padding-right: 25px;
-			text-align: center;
-			.newsform {
-				padding-bottom: 60px;
-				border-bottom: 4px solid black;
-				h1 {
-					display: block;
-					text-align: center;
-					margin: 80px 0 40px 0;
-					@media screen and (max-width: 999px) {
-						margin: 80px 0 30px 0;
-					}
+	}
+	.no-events {
+		padding-left: 25px;
+		padding-right: 25px;
+		text-align: center;
+		.newsform {
+			padding-bottom: 60px;
+			border-bottom: 4px solid black;
+			h1 {
+				display: block;
+				text-align: center;
+				margin: 80px 0 40px 0;
+				@media screen and (max-width: 999px) {
+					margin: 80px 0 30px 0;
 				}
 			}
 		}
@@ -36,23 +30,29 @@
 .events-this-month {
 	.slick-list {
 		border-bottom: 4px solid black;
+		padding-bottom: 42px;
 		.slide-cell {
 			width: 100%;
 			height: auto;
 			.slide {
 				font-size: 0;
 				.event-image {
-					padding-bottom: 42px;
+					position: relative;
+					height: 0;
+					padding-top: 40%;
 					display: inline-block;
 					width: 60%;
 					@media screen and (max-width: 767px) {
 						width: 100%;
 						padding-bottom: 0;
 					}
+					img {
+						position: absolute;
+						top: 0;
+					}
 				}
 				.event-content {
 					text-align: left;
-					padding-bottom: 30px;
 					display: inline-block;
 					width: 40%;
 					font-size: 12px;
@@ -162,6 +162,9 @@
 			text-transform: uppercase;
 		}
 		.featured-grid {
+			.content-type {
+				line-height: 26px!important;
+			}
 			.grid-bottom {
 				padding-top: 50px;
 				border-bottom: none;

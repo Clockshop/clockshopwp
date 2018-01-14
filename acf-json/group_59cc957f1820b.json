@@ -30,9 +30,9 @@
         {
             "key": "field_59cc958b29cf8",
             "label": "Event Cost",
-            "name": "event_cost",
-            "type": "text",
-            "instructions": "Use this field to override The Events Calendar cost field in case you need to add additional info to the cost line--e.g. \"Suggested Donation\"",
+            "name": "_EventCost",
+            "type": "number",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -42,9 +42,11 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
+            "prepend": "$",
             "append": "",
-            "maxlength": ""
+            "min": "",
+            "max": "",
+            "step": ""
         },
         {
             "key": "field_59cc97b182ff1",
@@ -150,6 +152,62 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
+        },
+        {
+            "key": "field_5a52832231df3",
+            "label": "_EventVenueID",
+            "name": "_EventVenueID",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "tribe_venue"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_5a5285b94ae11",
+            "label": "_EventStartDate",
+            "name": "_EventStartDate",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y g:i a",
+            "return_format": "m\/d\/Y g:i a",
+            "first_day": 1
+        },
+        {
+            "key": "field_5a5abbafa9d6b",
+            "label": "_EventEndDate",
+            "name": "_EventEndDate",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "m\/d\/Y g:i a",
+            "return_format": "m\/d\/Y g:i a",
+            "first_day": 1
         }
     ],
     "location": [
@@ -157,7 +215,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "tribe_events"
+                "value": "events"
             }
         ]
     ],
@@ -169,5 +227,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1510442126
+    "modified": 1515924542
 }
