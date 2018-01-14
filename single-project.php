@@ -9,47 +9,58 @@ $context['term'] = new TimberTerm($term[0], 'projects');
 $termMenu = get_field('project_menu', $term[0]);
 $context['termMenu'] = new TimberMenu($termMenu->slug);
 
-$events = tribe_get_events( array(
+$today = date("Y-m-d h:i:s A");
+$oneMonth = date('Y-m-d h:i:s A', strtotime("next month"));
+
+$args = array(
 	'posts_per_page' => 3,
-	'start_date' => date( 'Y-m-d H:i:s' ),
-	'order' => 'DESC',
+    'order' => 'DESC',
+    'orderby' => 'meta_value',
+    'meta_key' => '_EventStartDate',
+    'post_type' => 'events',
+	'post_status' => 'publish',
 	'tax_query' => array(
 		array(
 			'taxonomy' => 'projects',
-			'field'    => 'slug',
-			'terms'    => $term[0]->slug,
-		),
+			'field' => 'id',
+			'terms' => $term[0]->term_id
+		)
 	),
-) );
-
-$past_events = tribe_get_events( array(
-	'end_date' => date("Y-m-d"),
-	'posts_per_page'   => -1,
-	'order' => 'DESC',
-	'tax_query' => array(
-		array(
-			'taxonomy' => 'projects',
-			'field'    => 'slug',
-			'terms'    => $term[0]->slug,
-		),
-	),
-));
-
-$eventYears = array();
-$years = array();
-
-foreach($past_events as $key => $event) {
-	$eventDate = $event->EventStartDate;
-	$eventYear = date('Y', strtotime($eventDate));
-	if (!in_array($eventYear, $years)) {
-		array_push($years, $eventYear);
-		$eventYears[$eventYear]['year'] = $eventYear;
-	}
-	$eventYears[$eventYear]['events'][$key] = $event;
-}
-
+    'meta_query' => array(
+        array(
+            'key' => '_EventStartDate',
+            'value' => $today,
+            'compare' => '>='
+        ),
+    ),
+);
+$events = Timber::get_posts( $args );
 $context['events'] = $events;
-$context['eventYears'] = $eventYears;
+
+$args = array(
+	'posts_per_page'   => -1,
+    'order' => 'DESC',
+    'orderby' => 'meta_value',
+    'meta_key' => '_EventStartDate',
+    'post_type' => 'events',
+	'post_status' => 'publish',
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'projects',
+			'field' => 'id',
+			'terms' => $term[0]->term_id
+		)
+	),
+    'meta_query' => array(
+        array(
+            'key' => '_EventStartDate',
+            'value' => $today,
+            'compare' => '<'
+        )
+    ),
+);
+$pastEvents = Timber::get_posts( $args );
+$context['pastEvents'] = $pastEvents;
 
 // Media Embeds
 if( have_rows( 'media_files' ) ) {

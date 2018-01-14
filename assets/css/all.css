@@ -1660,6 +1660,8 @@ footer.contactfooter {
     text-decoration: none; }
   .project-single main .project-events-grid h4 {
     margin-top: 0; }
+  .project-single main .project-events-grid .content-type {
+    line-height: 26px !important; }
   .project-single main .project-events-grid .grid-bottom {
     padding-top: 60px; }
   .project-single main .collapsable-sections {
