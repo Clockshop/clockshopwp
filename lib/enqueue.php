@@ -26,6 +26,8 @@ function enqueue_scripts_method() {
 	wp_register_script('descriptivehomejs', $descriptivehomejs, false, $version);
 	$viemoPlayer = 'https://player.vimeo.com/api/player.js';
 	wp_register_script('vimeoPlayer', $viemoPlayer, false);
+	$youtubeAPI = get_template_directory_uri() . '/assets/js/youtube.js';
+	wp_register_script('youtubeAPI', $youtubeAPI, true);
 	
 	// css
 	$normalizecss = get_stylesheet_directory_uri() . '/assets/css/normalize.css';
@@ -52,6 +54,7 @@ function enqueue_scripts_method() {
 	wp_enqueue_script( 'flickityjs', array('jquery'));
 	wp_enqueue_script( 'descriptivehomejs', array('jquery','flickityjs'));
 	wp_enqueue_script( 'vimeoPlayer' );
+	wp_enqueue_script( 'youtubeAPI' );
 
 	// enqueue css
 	wp_enqueue_style( 'normalizecss');

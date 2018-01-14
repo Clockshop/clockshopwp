@@ -15,18 +15,18 @@ $args = array(
     'order' => 'DESC',
     'orderby' => 'meta_value',
     'meta_key' => '_EventStartDate',
-    'post_type'        => 'events',
-	'post_status'      => 'publish',
+    'post_type' => 'events',
+	'post_status' => 'publish',
     'meta_query' => array(
 		'relation' => 'AND',
         array(
-            'key'     => '_EventStartDate',
-            'value'   => $today,
+            'key' => '_EventStartDate',
+            'value' => $today,
             'compare' => '>='
         ),
         array(
-            'key'     => '_EventStartDate',
-            'value'   => $oneMonth,
+            'key' => '_EventStartDate',
+            'value' => $oneMonth,
             'compare' => '<='
         )
     ),
@@ -39,12 +39,12 @@ $args = array(
     'order' => 'DESC',
     'orderby' => 'meta_value',
     'meta_key' => '_EventStartDate',
-    'post_type'        => 'events',
-	'post_status'      => 'publish',
+    'post_type' => 'events',
+	'post_status' => 'publish',
     'meta_query' => array(
         array(
-            'key'     => '_EventStartDate',
-            'value'   => $oneMonth,
+            'key' => '_EventStartDate',
+            'value' => $oneMonth,
             'compare' => '>='
         )
     ),
@@ -57,12 +57,12 @@ $args = array(
     'order' => 'DESC',
     'orderby' => 'meta_value',
     'meta_key' => '_EventStartDate',
-    'post_type'        => 'events',
-	'post_status'      => 'publish',
+    'post_type' => 'events',
+	'post_status' => 'publish',
     'meta_query' => array(
         array(
-            'key'     => '_EventStartDate',
-            'value'   => $today,
+            'key' => '_EventStartDate',
+            'value' => $today,
             'compare' => '<'
         )
     ),

@@ -227,7 +227,7 @@
 								<div class="descriptioncell">								
 									<h2><a href="{{function('get_permalink', event)}}">{{event.post_title}}</a></h2>
 									<p class="content-type">{{function('spellerberg_sp_date', event)}}</p>
-									<p class="add-descriptor">{{function('tribe_get_venue', event)}}</p>
+									<p class="add-descriptor">#todo</p>
 									{% if event.post_excerpt %}
 										<p class="description">{{event.post_excerpt}}</p>
 									{% else %}
@@ -247,41 +247,54 @@
 
 				{% endif %}
 
-				{% if eventYears|length > 0 %}
+				{% if pastEvents|length > 0 %}
 
 					<section class="past-events">
 						<h4>Past Events</h4>
 						<div class="collapsable-sections collapsable-events">
+							{% for event in pastEvents %}
+								{% set lastYear = year|default('0') %}
+								{% set year = event._EventStartDate|date('Y') %}
+								
+								{% if loop.index == 1 %}
+									<section>
+										<p class="section-title">{{ year }}</p>
+										<i class="fa fa-plus" aria-hidden="true"></i>
+										<div class="section-content">
+								{% elseif year != lastYear %}
+										</div>
+									</section>
+									<section>
+										<p class="section-title">{{ year }}</p>
+										<i class="fa fa-plus" aria-hidden="true"></i>
+										<div class="section-content">
+								{% endif %}
 
-							{% for eventYear in eventYears %}
-
-								<section>
-									<p class="section-title">{{eventYear.year}}</p>
-									<i class="fa fa-plus" aria-hidden="true"></i>
-									<div class="section-content">
-			
-										{% for event in eventYear.events %}
-
-											{% set currentMonth = event.EventStartDate|date("m") %}
-
-											{% if currentMonth != lastMonth %}
-												<p class="event-month"><span>{{event.EventStartDate|date("F")}}</span></p>
-											{% endif %}
-
+								{% set lastMonth = month|default('0') %}
+								{% set month = event._EventStartDate|date('F') %}
+								{% if lastMonth != month %}
+											<p class="event-month"><span>{{ month }}</span></p>
+								{% endif %}
+					
 											<div class="event-info">
-												<p class="event-title"><a href="{{function('get_permalink', event)}}">{{event.post_title}}</a></p>
-												<p class="event-date"><span>{{event.EventStartDate|date('F j, Y')}}</span></p>
+												<p class="event-title">
+													<a href="{{ event.link }}">
+														{% if event.terms('projects') %}
+															{{ event.terms('projects')[0].name ~ ': ' }}
+														{% endif %}
+														{{ event.title }}
+													</a>
+												</p>
+												<p class="event-date"><span>{{ event._EventStartDate|date('F j, Y') }}</span></p>
 											</div>
 
-											{% set lastMonth = event.EventStartDate|date("m") %}
+								{% if loop.last %}
+										</div>
+									</section>
+								{% endif %}
 
-										{% endfor %}
-
-									</div>
-								</section>
 
 							{% endfor %}
-
 						</div>
 					</section>
 
