@@ -55,7 +55,6 @@ function df_disable_comments_admin_bar() {
 }
 add_action('init', 'df_disable_comments_admin_bar');
 
-add_filter('tiny_mce_before_init', 'override_mce_options');    
 function remove_empty_p( $content ) {
     $content = force_balance_tags( $content );
     $content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );

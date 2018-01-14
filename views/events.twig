@@ -1,0 +1,140 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<div class="events">
+
+	{% if eventsNow %}
+		<div class="content">
+			<h1>Events This Month</h1>	
+		</div>
+		<section class="events-slider events-this-month content">
+			{% for event in eventsNow %}
+				<div class="slide-cell">
+					<div class="slide">
+						{# <pre style="font-size: 12px; text-align: left;">{{dump(event)}}</pre> #}
+						<div class="event-image">
+							<a href="{{ event.link }}">
+								<img src="{{ TimberImage(event.thumbnail).src('grid-3') }}" />
+							</a>
+						</div>
+						<div class="event-content">
+							{% if eventsNow|length > 1 %}
+								<a class="prev"><img class="left-arrow" src="{{ TimberImage(theme.link ~ '/assets/images/arrow_black.png') }}"></a>
+								<a class="next"><img class="right-arrow" src="{{ TimberImage(theme.link ~ '/assets/images/arrow_black.png') }}" /></a>
+							{% endif %}
+							<h2><a href="{{ event.link }}">{{ event.title }}</a></h2>
+							<h3>{{ function('spellerberg_sp_date', event) }}</h3>
+
+							{% if event.terms('projects') %}
+								<h5>{{ event.terms('projects')[0].name }}</h5>
+							{% endif %}
+
+							{% if event._EventCost %}
+								<h5 class="cost">${{ event._EventCost }}</h5>
+							{% endif %}
+							{% if event.post_excerpt %}
+								<p class="excerpt">{{ event.post_excerpt }}</p>
+							{% else %}
+								<p class="excerpt">{{ event.preview.length(20).force.read_more(false).strip  }}</p>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</section>
+	{% else %}
+		<div class="no-events content">
+			<div class="newsform">
+				<h1>Nothing this month! Subscribe and stay tuned.</h1>
+				{{signup_form}}
+			</div>
+		</div>
+	{% endif %}
+
+	{% if upcomingEvents %}
+		<section class="content upcoming-events">
+			<div>
+				<h4>Further Out</h4>
+				<div class="grid featured-grid">
+					{% for event in upcomingEvents %}
+						<div class="grid-3">
+							<div class="imagecell">
+								<a href="{{ event.link }}"><img src="{{ TimberImage(event.thumbnail).src('grid-3') }}" /></a>
+							</div>
+							<div class="descriptioncell">
+								<h2><a href="{{ event.link }}">{{ event.title }}</a></h2>
+								<p class="content-type">{{ function('spellerberg_sp_date', event) }}</p>
+
+								{% if event.terms('projects') %}
+									<p class="add-descriptor">{{ event.terms('projects')[0].name }}</p>
+								{% endif %}
+
+								{% if event.post_excerpt %}
+									<p class="description">{{ event.post_excerpt }}</p>
+								{% else %}
+									<p class="description">{{ event.preview.length(20).force.read_more(false).strip }}</p>
+								{% endif %}
+
+								<p class="calltoaction"><a href="{{ event.link }}">RSVP</a></p>
+							</div>
+						</div>
+					{% endfor %}
+					<div class="grid-bottom"></div>
+				</div>
+			</div>
+		</section>
+	{% endif %}
+
+	<section class="content past-events">
+		<h4>Past Events</h4>
+		<div class="collapsable-sections collapsable-events">
+			{% for event in pastEvents %}
+				{% set lastYear = year|default('0') %}
+				{% set year = event._EventStartDate|date('Y') %}
+				
+				{% if loop.index == 1 %}
+					<section>
+						<p class="section-title">{{ year }}</p>
+						<i class="fa fa-plus" aria-hidden="true"></i>
+						<div class="section-content">
+				{% elseif year != lastYear %}
+						</div>
+					</section>
+					<section>
+						<p class="section-title">{{ year }}</p>
+						<i class="fa fa-plus" aria-hidden="true"></i>
+						<div class="section-content">
+				{% endif %}
+
+				{% set lastMonth = month|default('0') %}
+				{% set month = event._EventStartDate|date('F') %}
+				{% if lastMonth != month %}
+							<p class="event-month"><span>{{ month }}</span></p>
+				{% endif %}
+	
+							<div class="event-info">
+								<p class="event-title">
+									<a href="{{ event.link }}">
+										{% if event.terms('projects') %}
+											{{ event.terms('projects')[0].name ~ ': ' }}
+										{% endif %}
+										{{ event.title }}
+									</a>
+								</p>
+								<p class="event-date"><span>{{ event._EventStartDate|date('F j, Y') }}</span></p>
+							</div>
+
+				{% if loop.last %}
+						</div>
+					</section>
+				{% endif %}
+
+
+			{% endfor %}
+		</div>
+	</section>
+
+</div>
+
+{% endblock %}
