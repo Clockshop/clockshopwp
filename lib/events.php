@@ -209,7 +209,11 @@ function create_venue_tax() {
 									$output .= ", Noon";
 								}
 							}else{
-								$output .= '</p><p>' . $s_hour;
+								if ( is_page_template('single-events.php'))	 {
+									$output .= '</p><p>' . $s_hour;									
+								} else {
+									$output .= ' @ ' . $s_hour;
+								}
 								if ( $s_am !== $e_am ) {
 									// Different AM
 									$output .= '' . $s_am;
@@ -220,7 +224,11 @@ function create_venue_tax() {
 								
 							}
 						} else {
-							$output .= '</p><p>' . $s_hour . ':' . $s_min;
+							if ( is_page_template('single-events.php'))	 {
+								$output .= '</p><p>' . $s_hour . ':' . $s_min;
+							} else {
+								$output .= ' @ ' . $s_hour . ':' . $s_min;
+							}
 							if ( $s_am !== $e_am ) {
 								// Different AM
 								$output .= ' ' . $s_am;
