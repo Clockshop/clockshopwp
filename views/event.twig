@@ -1,0 +1,102 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<div class="eventsingle">
+
+	<div class="event-single content">
+		<section class="event-header side-section">
+			<div class="side-section-left">
+
+				{% if function('current_time', 'Y-m-d') > post._EventStartDate|date('Y-m-d') %}
+					<p class="past">PAST EVENT</p>
+				{% endif %}
+
+				{% if post.terms('projects') %}
+					<h5 class="event-project">{{ post.terms('projects')[0].name }}</h5>
+				{% endif %}
+
+				<h1>{{ post.title }}</h1>
+				
+				{% if post._EventCost %}
+					<p class="event-cost">{{ post._EventCost }}</p>
+				{% endif %}
+
+				{% if post.event_nationbuilder_url %}
+					<a href="{{ post.event_nationbuilder_url }}" class="button">Get Tickets</a>
+				{% endif %}
+
+			</div>
+			<div class="side-section-right event-images">
+				
+				{% if post.get_field('event_images') %}				
+					{% for item in post.get_field('event_images') %}
+						<img src="{{TimberImage(item).src('grid-3') }}" />
+					{% endfor %}
+				{% endif %}
+
+			</div>
+			<div class="side-section-left mobile">
+
+				{% if post.terms('projects') %}
+					<h5 class="event-project">{{ post.terms('projects')[0].name }}</h5>
+				{% endif %}
+
+				<h1>{{ post.title }}</h1>
+
+				{% if post._EventCost %}
+					<p class="event-cost">{{ post._EventCost }}</p>
+				{% endif %}
+
+				{% if post.event_nationbuilder_url %}
+					<a href="{{ post.event_nationbuilder_url }}" class="button">Get Tickets</a>
+				{% endif %}
+
+			</div>
+		</section>
+		<section class="event-info side-section">
+			<div class="side-section-left">
+				<h4>Details</h4>
+			</div>
+			<div class="side-section-right">
+				<div class="event-info-date">
+					<p>{{ post._EventStartDate|date('l') }}</p>
+					<p>{{ function('spellerberg_sp_date', post, 'Y-m-d') }}</p>
+				</div>
+				<div class="event-info-location">
+					<p>{{ function('get_term', post.event_venue).name }}</p>
+					<p>{{ function('get_field', '_VenueAddress', 'venue_' ~ post.event_venue) }}</p>
+					<p>{{ function('get_field', '_VenueCity', 'venue_' ~ post.event_venue) ~ ', ' ~ function('get_field', '_VenueState', 'venue_' ~ post.event_venue) ~ ' ' ~ function('get_field', '_VenueZip', 'venue_' ~ post.event_venue)  }}</p>
+				</div>
+				<div class="event-info-social">
+					{% if post.event_first_hashtag %}
+						<p>{{ post.event_first_hashtag }}</p>
+					{% endif %}
+					{% if post.event_second_hashtag %}
+						<p>{{ post.event_second_hashtag }}</p>
+					{% endif %}
+					{% if post.event_facebook_url %}
+						<a href="{{ post.event_facebook_url }}"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+					{% endif %}
+					{% if post.event_twitter_url %}
+						<a href="{{ post.event_twitter_url }}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					{% endif %}
+				</div>
+			</div>
+		</section>
+		<section class="event-content side-section">
+			<div class="side-section-left">
+				<h4>Description</h4>
+			</div>
+			<div class="side-section-right">
+				{{ post.content }}
+			</div>
+		</section>
+		{% if post.footer_cta %}
+			<div class="event-footer-cta">{{ post.footer_cta }}</div>
+		{% endif %}
+	</div>
+
+</div>
+
+{% endblock %}

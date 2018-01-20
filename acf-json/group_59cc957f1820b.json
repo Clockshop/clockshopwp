@@ -31,7 +31,7 @@
             "key": "field_59cc958b29cf8",
             "label": "Event Cost",
             "name": "_EventCost",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -42,11 +42,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "$",
+            "prepend": "",
             "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
+            "maxlength": ""
         },
         {
             "key": "field_59cc97b182ff1",
@@ -208,6 +206,28 @@
             "display_format": "m\/d\/Y g:i a",
             "return_format": "m\/d\/Y g:i a",
             "first_day": 1
+        },
+        {
+            "key": "field_5a5ba0d62f4b7",
+            "label": "Event Venue",
+            "name": "event_venue",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "venue",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "multiple": 0
         }
     ],
     "location": [
@@ -227,5 +247,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1515924542
+    "modified": 1516105859
 }
