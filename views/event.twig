@@ -60,13 +60,23 @@
 			</div>
 			<div class="side-section-right">
 				<div class="event-info-date">
-					<p>{{ post._EventStartDate|date('l') }}</p>
-					<p>{{ function('spellerberg_sp_date', post, 'Y-m-d') }}</p>
+					{% if post._EventStartDate %}
+						<p>{{ post._EventStartDate|date('l') }}</p>
+					{% endif %}
+					{% if function('spellerberg_sp_date', post, 'Y-m-d') %}
+						<p>{{ function('spellerberg_sp_date', post, 'Y-m-d') }}</p>
+					{% endif %}
 				</div>
 				<div class="event-info-location">
-					<p>{{ function('get_term', post.event_venue).name }}</p>
-					<p>{{ function('get_field', '_VenueAddress', 'venue_' ~ post.event_venue) }}</p>
-					<p>{{ function('get_field', '_VenueCity', 'venue_' ~ post.event_venue) ~ ', ' ~ function('get_field', '_VenueState', 'venue_' ~ post.event_venue) ~ ' ' ~ function('get_field', '_VenueZip', 'venue_' ~ post.event_venue)  }}</p>
+					{% if function('get_term', post.event_venue).name %}
+						<p>{{ function('get_term', post.event_venue).name }}</p>
+					{% endif %}
+					{% if function('get_field', '_VenueAddress', 'venue_' ~ post.event_venue) %}
+						<p>{{ function('get_field', '_VenueAddress', 'venue_' ~ post.event_venue) }}</p>
+					{% endif %}
+					{% if function('get_field', '_VenueCity', 'venue_' ~ post.event_venue) %}
+						<p>{{ function('get_field', '_VenueCity', 'venue_' ~ post.event_venue) ~ ', ' ~ function('get_field', '_VenueState', 'venue_' ~ post.event_venue) ~ ' ' ~ function('get_field', '_VenueZip', 'venue_' ~ post.event_venue)  }}</p>
+					{% endif %}
 				</div>
 				<div class="event-info-social">
 					{% if post.event_first_hashtag %}
