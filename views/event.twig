@@ -63,12 +63,10 @@
 					{% if post._EventStartDate %}
 						<p>{{ post._EventStartDate|date('l') }}</p>
 					{% endif %}
-					{% if function('spellerberg_sp_date', post, 'Y-m-d') %}
-						<p>{{ function('spellerberg_sp_date', post, 'Y-m-d') }}</p>
-					{% endif %}
+					<p>{{ function('spellerberg_sp_date', post, 'Y-m-d') }}</p>
 				</div>
 				<div class="event-info-location">
-					{% if function('get_term', post.event_venue).name %}
+					{% if function('get_term', post.event_venue) %}
 						<p>{{ function('get_term', post.event_venue).name }}</p>
 					{% endif %}
 					{% if function('get_field', '_VenueAddress', 'venue_' ~ post.event_venue) %}
