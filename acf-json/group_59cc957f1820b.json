@@ -152,30 +152,8 @@
             "delay": 0
         },
         {
-            "key": "field_5a52832231df3",
-            "label": "_EventVenueID",
-            "name": "_EventVenueID",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "tribe_venue"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
-        },
-        {
             "key": "field_5a5285b94ae11",
-            "label": "_EventStartDate",
+            "label": "Event Start Date\/Time",
             "name": "_EventStartDate",
             "type": "date_time_picker",
             "instructions": "",
@@ -192,7 +170,7 @@
         },
         {
             "key": "field_5a5abbafa9d6b",
-            "label": "_EventEndDate",
+            "label": "Event End Date\/Time",
             "name": "_EventEndDate",
             "type": "date_time_picker",
             "instructions": "",
@@ -247,5 +225,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1516105859
+    "modified": 1516519758
 }
