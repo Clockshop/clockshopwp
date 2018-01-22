@@ -32,22 +32,22 @@ function create_events_pt() {
 }
 add_action( 'init', 'create_events_pt' );
 
-// Admin order 
+// Admin order
 
 add_filter( 'manage_events_posts_columns', 'set_custom_edit_mycpt_columns' );
 function set_custom_edit_mycpt_columns( $columns ) {
-	$columns['Start Date'] = '_EventStartDate';
-	$columns['End Date'] = '_EventEndDate';
+	$columns['_EventStartDate'] = 'Start Date';
+	$columns['_EventEndDate'] = 'End Date';
 	return $columns;
 }
 
 add_action( 'manage_events_posts_custom_column' , 'custom_mycpt_column', 10, 2 );
 function custom_mycpt_column( $column, $post_id ) {
 	switch ( $column ) {
-		case 'Start Date' :
+		case '_EventStartDate' :
 		echo date('F j, Y', strtotime(get_field( '_EventStartDate', $post_id )));  
 		break;
-		case 'End Date' :
+		case '_EventEndDate' :
 		echo date('F j, Y', strtotime(get_field( '_EventEndDate', $post_id )));
 		break;
 	}
@@ -55,22 +55,41 @@ function custom_mycpt_column( $column, $post_id ) {
 
 add_filter( 'manage_edit-events_sortable_columns', 'set_custom_mycpt_sortable_columns' );
 function set_custom_mycpt_sortable_columns( $columns ) {
-	$columns['Start Date'] = '_EventStartDate';
-	$columns['End Date'] = '_EventEndDate';
+	$columns['_EventStartDate'] = 'Start Date';
+	$columns['_EventEndDate'] = 'End Date';
 	return $columns;
 }
 
-add_filter('pre_get_posts', 'order_events_admin');
-function order_events_admin($query) {
-	if($query->is_admin) {
-		if ($query->get('post_type') == 'events') {
-			$query->set('meta_key', '_EventStartDate' );
-			$query->set('orderby', 'meta_value_num');
-			$query->set('order', 'DESC' );
+add_action( 'pre_get_posts', function ( $query ) {
+    if ( is_admin() && $query->is_main_query() && $query->get( 'post_type' ) == 'events' ) {
+		if ( $query->query_vars['orderby'] == 'Start Date' && $query->query_vars['order'] == 'desc' ) {  
+			$query->set('orderby', 'meta_value');  
+			$query->set('meta_key', '_EventStartDate');  
+			$query->set('order', 'DESC');
+		} elseif ( $query->query_vars['orderby'] == 'Start Date' && $query->query_vars['order'] == 'asc' ) {  
+			$query->set('orderby', 'meta_value');  
+			$query->set('meta_key', '_EventStartDate');  
+			$query->set('order', 'ASC');
+		} elseif ( $query->query_vars['orderby'] == 'End Date' && $query->query_vars['order'] == 'desc' ) {  
+			$query->set('orderby', 'meta_value');  
+			$query->set('meta_key', '_EventEndDate');  
+			$query->set('order', 'DESC');
+		} elseif ( $query->query_vars['orderby'] == 'End Date' && $query->query_vars['order'] == 'asc' ) {  
+			$query->set('orderby', 'meta_value');  
+			$query->set('meta_key', '_EventEndDate');  
+			$query->set('order', 'ASC');
+		} elseif ( $query->query_vars['orderby'] == 'date' && $query->query_vars['order'] == 'desc' ) {  
+			$query->set('orderby', 'date');  
+			$query->set('order', 'DESC');
+		} elseif ( $query->query_vars['orderby'] == 'date' && $query->query_vars['order'] == 'asc' ) {  
+			$query->set('orderby', 'date');  
+			$query->set('order', 'ASC');
+		} else {
+			$query->set('orderby', 'date');  
+			$query->set('order', 'DESC');
 		}
 	}
-	return $query;
-}
+});
 
 // Create Venues Taxonomy
 
