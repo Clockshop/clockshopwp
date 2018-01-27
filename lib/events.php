@@ -201,7 +201,7 @@ function event_dates() {
 							$output .= ", Noon";
 						}
 					}else{
-						if ( is_singular() )	 {
+						if ( is_singular('events') ) {
 							$output .= '</p><p>' . $s_hour;
 						} else {
 							$output .= ' @ ' . $s_hour;
@@ -216,7 +216,7 @@ function event_dates() {
 						
 					}
 				} else {
-					if ( is_singular() ) {
+					if ( is_singular('events') ) {
 						$output .= '</p><p>' . $s_hour . ':' . $s_min;
 					} else {
 						$output .= ' @ ' . $s_hour . ':' . $s_min;

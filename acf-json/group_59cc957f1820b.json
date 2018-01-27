@@ -63,6 +63,25 @@
             "placeholder": ""
         },
         {
+            "key": "field_5a6ce7ce094a8",
+            "label": "Event Button Text",
+            "name": "event_button_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_59cca56de416b",
             "label": "Event First Hashtag",
             "name": "event_first_hashtag",
@@ -206,6 +225,82 @@
             "load_terms": 0,
             "return_format": "id",
             "multiple": 0
+        },
+        {
+            "key": "field_5a6ce65eeebf9",
+            "label": "Event Additional Info Line 1",
+            "name": "event_additional_info_line_1",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a6ce6a8eebfa",
+            "label": "Event Additional Info Line 2",
+            "name": "event_additional_info_line_2",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a6ce6aaeebfb",
+            "label": "Event Additional Info Line 3",
+            "name": "event_additional_info_line_3",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a6cea47d9e84",
+            "label": "Event List CTA Text",
+            "name": "event_list_cta_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -225,5 +320,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1516624145
+    "modified": 1517116118
 }

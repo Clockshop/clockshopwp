@@ -178,7 +178,7 @@
 									<p class="description">{{item.event.get_preview(25, false, '', true, '')}}</p>
 								{% endif %}
 								<p class="calltoaction">
-									<a href="{{function('get_permalink', item.event.id)}}">RSVP</a>
+									<a href="{{function('get_permalink', item.event.id)}}">{{ item.event_list_cta_text|default('RSVP')}}</a>
 								</p>
 							</div>
 						</div>
@@ -234,7 +234,7 @@
 										<p class="description">{{ function('wp_trim_words', event.post_content, '20', '...') }}</p>
 									{% endif %}
 									<p class="calltoaction">
-										<a href="{{event.url}}">RSVP</a>
+										<a href="{{event.url}}">{{ event.event_list_cta_text|default('RSVP')}}</a>
 									</p>
 								</div>
 							</div>

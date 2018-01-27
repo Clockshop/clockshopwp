@@ -330,10 +330,11 @@
 					margin-bottom: 0;
 				}
 				p {
+					font-size: 16px;
 					margin: 0;
 					line-height: 26px;
-				    margin-bottom: 8px;
-				    line-height: 20px;
+				    margin-bottom: 5px;
+				    line-height: 18px;
 					&:last-child {
 						margin-bottom: 0;
 					}
@@ -348,13 +349,13 @@
 				}
 			}
 			.event-info-date {
-				width: 28%;
+				width: 25%;
 				p {
 					font-family: 'CircularBookBold';
 				}
 			}
 			.event-info-location {
-				width: 37%;
+				width: 25%;
 				.tribe-address {
 					.tribe-street-address {
 						margin-bottom: 8px;
@@ -366,7 +367,7 @@
 				}
 			}
 			.event-info-social {
-				width: 35%;
+				width: 25%;
 				a {
 					font-size: 18px;
 					line-height: 26px;
@@ -375,6 +376,9 @@
 						line-height: 26px;
 					}
 				}
+			}
+			.event-additional-info {
+				width: 25%;
 			}
 		}
 	}

@@ -76,7 +76,7 @@
 									<p class="description">{{ event.preview.length(20).force.read_more(false).strip }}</p>
 								{% endif %}
 
-								<p class="calltoaction"><a href="{{ event.link }}">RSVP</a></p>
+								<p class="calltoaction"><a href="{{ event.link }}">{{ event.event_list_cta_text|default('RSVP')}}</a></p>
 							</div>
 						</div>
 					{% endfor %}
