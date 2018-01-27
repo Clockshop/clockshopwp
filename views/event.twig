@@ -23,7 +23,7 @@
 				{% endif %}
 
 				{% if post.event_nationbuilder_url %}
-					<a href="{{ post.event_nationbuilder_url }}" class="button">Get Tickets</a>
+					<a href="{{ post.event_nationbuilder_url }}" class="button">{{ post.event_button_text|default('Get Tickets')}}</a>
 				{% endif %}
 
 			</div>
@@ -88,6 +88,17 @@
 					{% endif %}
 					{% if post.event_twitter_url %}
 						<a href="{{ post.event_twitter_url }}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					{% endif %}
+				</div>
+				<div class="event-additional-info">
+					{% if post.event_additional_info_line_1 %}
+						<p>{{ post.event_additional_info_line_1 }}</p>
+					{% endif %}
+					{% if post.event_additional_info_line_2 %}
+						<p>{{ post.event_additional_info_line_2 }}</p>
+					{% endif %}
+					{% if post.event_additional_info_line_3 %}
+						<p>{{ post.event_additional_info_line_3 }}</p>
 					{% endif %}
 				</div>
 			</div>

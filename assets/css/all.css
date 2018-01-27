@@ -1346,10 +1346,11 @@ footer.contactfooter {
           padding-right: 0;
           margin-bottom: 0; }
         .event-single .event-info .side-section-right > div p {
+          font-size: 16px;
           margin: 0;
           line-height: 26px;
-          margin-bottom: 8px;
-          line-height: 20px; }
+          margin-bottom: 5px;
+          line-height: 18px; }
           .event-single .event-info .side-section-right > div p:last-child {
             margin-bottom: 0; }
           @media screen and (max-width: 999px) {
@@ -1361,24 +1362,26 @@ footer.contactfooter {
               font-size: 18px;
               margin-bottom: 8px; } }
       .event-single .event-info .side-section-right .event-info-date {
-        width: 28%; }
+        width: 25%; }
         .event-single .event-info .side-section-right .event-info-date p {
           font-family: 'CircularBookBold'; }
       .event-single .event-info .side-section-right .event-info-location {
-        width: 37%; }
+        width: 25%; }
         .event-single .event-info .side-section-right .event-info-location .tribe-address .tribe-street-address {
           margin-bottom: 8px;
           display: block; }
         .event-single .event-info .side-section-right .event-info-location .tribe-address br {
           display: none; }
       .event-single .event-info .side-section-right .event-info-social {
-        width: 35%; }
+        width: 25%; }
         .event-single .event-info .side-section-right .event-info-social a {
           font-size: 18px;
           line-height: 26px;
           margin-right: 10px; }
           .event-single .event-info .side-section-right .event-info-social a i {
             line-height: 26px; }
+      .event-single .event-info .side-section-right .event-additional-info {
+        width: 25%; }
   .event-single .event-content .side-section-left {
     vertical-align: top; }
     .event-single .event-content .side-section-left h4 {
