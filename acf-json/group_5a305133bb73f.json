@@ -130,7 +130,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-about.php"
+                "value": "page-donate.php"
             }
         ]
     ],
@@ -142,5 +142,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1513853832
+    "modified": 1517313149
 }
