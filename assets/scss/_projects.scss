@@ -333,12 +333,18 @@
 			}
 			.grid-bottom {
 				padding-top: 60px;
+				border-bottom: 0;
 			}
 		}
-		.collapsable-sections {
-			margin-bottom: 0;
-			:last-child {
+		.past-events {
+			> h4 {
+				border-top: 4px solid black;
+			}
+			.collapsable-sections {
 				margin-bottom: 0;
+				:last-child {
+					margin-bottom: 0;
+				}
 			}
 		}
 		.media-item {
