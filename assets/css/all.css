@@ -1666,10 +1666,13 @@ footer.contactfooter {
   .project-single main .project-events-grid .content-type {
     line-height: 26px !important; }
   .project-single main .project-events-grid .grid-bottom {
-    padding-top: 60px; }
-  .project-single main .collapsable-sections {
+    padding-top: 60px;
+    border-bottom: 0; }
+  .project-single main .past-events > h4 {
+    border-top: 4px solid black; }
+  .project-single main .past-events .collapsable-sections {
     margin-bottom: 0; }
-    .project-single main .collapsable-sections :last-child {
+    .project-single main .past-events .collapsable-sections :last-child {
       margin-bottom: 0; }
   .project-single main .media-item {
     font-size: 0;

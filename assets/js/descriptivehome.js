@@ -50,7 +50,7 @@
 			// imagesLoaded: true,
 			pageDots: false,
 			prevNextButtons: false,
-			autoPlay: 3500,
+			autoPlay: 5000,
 			// watchCSS: true,
 			pauseAutoPlayOnHover: false
 		});
