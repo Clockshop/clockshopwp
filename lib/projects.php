@@ -38,7 +38,7 @@ add_action( 'init', 'create_project_pt' );
 function create_project_tax() {
 	register_taxonomy(
 		'projects',
-		array( 'project', 'post', 'page', 'events' ),
+		array( 'project', 'events' ),
 		array(
 			'labels' => array(
 				'name' => 'Projects',
