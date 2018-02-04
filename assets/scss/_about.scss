@@ -32,7 +32,8 @@
 				.mission {
 					font-size: 32px;
 					line-height: 38px;
-					font-family: CircularBookBold;
+					font-family: CircularBook;
+					font-weight: bold;
 					color: white;
 					display: inline-block;
 					margin-top: 40px;
@@ -68,7 +69,8 @@
 		    right: 20px;
 		    color: #999;
 			font-size: 14px;
-			font-family: CircularBookItalic;
+			font-family: CircularBook;
+			font-style: italic;
 			@media screen and (max-width: 767px) {
 				font-size: 12px;
 				margin-bottom: 12px;

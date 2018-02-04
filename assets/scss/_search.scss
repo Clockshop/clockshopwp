@@ -1,13 +1,15 @@
 .search-template {
 	> h2 {
-		font-family: CircularBookBold;
+		font-family: CircularBook;
+		font-weight: bold;
 		font-size: 36px;
 		display: block;
 		text-align: center;
 		margin: 50px 0 40px 0!important;
 	}
 	> h4 {
-		font-family: CircularBookBold;
+		font-family: CircularBook;
+		font-weight: bold;
 		font-size: 18px;
 		display: block;
 		text-align: center;
@@ -82,7 +84,8 @@
 				width: 77.684%;
 				display: inline-block;
 				vertical-align: middle;
-				font-family: CircularBookBold;
+				font-family: CircularBook;
+				font-weight: bold;
 				font-size: 28px;
 				padding-left: 20px;
 				@media screen and (max-width: 899px) {
