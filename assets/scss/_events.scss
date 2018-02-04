@@ -129,7 +129,8 @@
 						}
 					}
 					.cost {
-						font-family: CircularBookBold;
+						font-family: CircularBook;
+						font-weight: bold;
 						letter-spacing: .02em;
 						text-transform: uppercase;
 					}
@@ -155,7 +156,8 @@
 		border-bottom: 4px solid black;
 		h4 {
 			font-size: 18px;
-			font-family: CircularBookBold;
+			font-family: CircularBook;
+			font-weight: bold;
 			margin: 0;
 		    padding: 12px 0 30px;
 			letter-spacing: .1em;
@@ -223,7 +225,8 @@
 						width: 100%;
 					}
 					.event-title {
-						font-family: CircularBookBold;
+						font-family: CircularBook;
+						font-weight: bold;
 						font-size: 22px;
 						margin-bottom: 2px;
 						margin-top: 0;
@@ -254,7 +257,9 @@
 				display: none;
 			}
 			.past {
-				font-family: CircularBookBoldItalic;
+				font-family: CircularBook;
+				font-weight: bold;
+				font-style: italic;
 				color: #999;
 				margin-bottom: 0;
 			}
@@ -262,7 +267,7 @@
 				margin-top: 15px;
 			}
 			.event-cost {
-				font-family: 'CircularBookItalic';
+				font-family: CircularBook;
 				font-size: 16px;
 				color: #b3b3b3;
 				margin-top: 5px;
@@ -271,14 +276,14 @@
 			.button {
 				margin-top: 15px;
 				display: inline-block;
-				background: black;
-				color: white;
+				background: white;
+				color: black;
 				font-size: 18px;
 				letter-spacing: .08em;
 				padding: 13px 12px 12px;
 				&:hover {
-					background: white;
-					color: black;
+					background: black;
+					color: white;
 				}
 			}
 		}
@@ -351,7 +356,8 @@
 			.event-info-date {
 				width: 25%;
 				p {
-					font-family: 'CircularBookBold';
+					font-family: CircularBook;
+					font-weight: bold;
 				}
 			}
 			.event-info-location {
@@ -413,7 +419,8 @@
 		p {
 			font-size: 24px;
 			line-height: 32px;
-			font-family: CircularBookBold;
+			font-family: CircularBook;
+			font-weight: bold;
 			margin-top: 0;
 			margin-bottom: 0;
 			text-align: center;

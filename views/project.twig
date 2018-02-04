@@ -95,6 +95,31 @@
 				    </div>
 			    {% endif %}
 
+				{% if post.parent.get_field('project_grid_content') %}
+					{% set current = false %}
+					{% for item in post.parent.get_field('project_grid_content') %}
+
+						{% if post.id == item.grid_content.id %}
+
+							{% if loop.last %}
+								<a class="aa-nav aa-next" href="{{ post.parent.get_field('project_grid_content').0.grid_content.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+							{% else %}
+								<a class="aa-nav aa-next" href="{{ post.parent.get_field('project_grid_content')[loop.index0 + 1].grid_content.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+							{% endif %}
+
+							{% if loop.first %}
+								<a class="aa-nav aa-prev" href="{{ post.parent.get_field('project_grid_content')[loop.length - 1].grid_content.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+							{% else %}
+								<a class="aa-nav aa-prev" href="{{ post.parent.get_field('project_grid_content')[loop.index0 - 1].grid_content.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+							{% endif %}
+
+						{% endif %}
+
+						{% set prev = item %}					
+
+					{% endfor %}
+				{% endif %}
+
 				<h3 class="project-title">{{post.title}}</h3>
 				<p class="project-subtitle">{{post.project_subtitle}}</p>
 

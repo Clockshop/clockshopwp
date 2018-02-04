@@ -183,6 +183,21 @@
 				margin-top: 0;
 			}
 		}
+		> .aa-nav {
+			float: right;
+			width: 13px;
+			padding: 2px;
+			&.aa-prev {
+				margin-right: 10px;
+			}
+			&.aa-next {
+				-webkit-transform: rotate(180deg);
+				-moz-transform: rotate(180deg);
+				-o-transform: rotate(180deg);
+				-ms-transform: rotate(180deg);
+				transform: rotate(180deg);			  
+			}
+		}
 		> .project-title {
 			font-size: 28px;
 			font-style: italic;
@@ -300,7 +315,9 @@
 					.project-title {
 						margin-top: 15px!important;
 						margin-bottom: 45px!important;
-						font-family: CircularBookBoldItalic;
+						font-family: CircularBook;
+						font-weight: bold;
+						font-style: italic;
 					}
 				}
 			}
@@ -312,7 +329,9 @@
 					.project-title {
 						margin-top: 15px!important;
 						margin-bottom: 5px!important;
-						font-family: CircularBookBoldItalic;
+						font-family: CircularBook;
+						font-weight: bold;
+						font-style: italic;
 					}
 				}
 				.project-subtitle {
@@ -452,7 +471,8 @@
 					text-transform: uppercase;
 					font-size: 14px;
 					letter-spacing: .1em;
-					font-family: CircularBookBold;
+					font-family: CircularBook;
+					font-weight: bold;
 					margin-bottom: 0;
 					line-height: 21px;
 				}
@@ -460,7 +480,8 @@
 					//margin-bottom: 0;
 				}
 				.pod-date {
-					font-family: CircularBookBold;
+					font-family: CircularBook;
+					font-weight: bold;
 					margin-bottom: 0;
 				}
 				.pod-length {
