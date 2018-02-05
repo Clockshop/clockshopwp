@@ -27,28 +27,9 @@
             "mime_types": ""
         },
         {
-            "key": "field_5a070ad4d53f5",
-            "label": "Action Text",
-            "name": "action_text",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Learn More",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5a070b28081d0",
-            "label": "Action URL",
-            "name": "action_url",
+            "label": "CTA Link",
+            "name": "cta_link",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -119,5 +100,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1512880289
+    "modified": 1517814881
 }

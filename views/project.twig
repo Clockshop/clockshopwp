@@ -58,15 +58,17 @@
 			<main class="content artist-list">
 				
 				<div class="grid featured-grid project-list-grid">
-				    {% for item in post.get_field('project_grid_content') %}
-						<div class="grid-3">
-							<div class="imagecell">
-								<a href="{{item.grid_content.link}}"><img src="{{TimberImage(item.grid_content.thumbnail).src('grid-3')}}" /></a>
+					{% for child in post.children %}
+						{% if child.post_type == 'project' %}
+							<div class="grid-3">
+								<div class="imagecell">
+									<a href="{{child.link}}"><img src="{{TimberImage(child.thumbnail).src('grid-3')}}" /></a>
+								</div>
+								<a href="{{child.link}}"><h3 class="project-title">{{child.post_title}}</h3></a>
+								<h3 class="project-subtitle">{{child.project_artwork_and_artists_subtitle}}</h3>
 							</div>
-							<a href="{{item.grid_content.link}}"><h3 class="project-title">{{item.grid_content.post_title}}</h3></a>
-							<h3 class="project-subtitle">{{item.grid_content.project_artwork_and_artists_subtitle}}</h3>
-						</div>
-				    {% endfor %}
+						{% endif %}
+					{% endfor %}
 				</div>
 
 			</main>
@@ -95,30 +97,27 @@
 				    </div>
 			    {% endif %}
 
-				{% if post.parent.get_field('project_grid_content') %}
-					{% set current = false %}
-					{% for item in post.parent.get_field('project_grid_content') %}
+				{% for child in post.parent.children('project') %}
 
-						{% if post.id == item.grid_content.id %}
+					{% if post.id == child.id %}
 
-							{% if loop.last %}
-								<a class="aa-nav aa-next" href="{{ post.parent.get_field('project_grid_content').0.grid_content.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
-							{% else %}
-								<a class="aa-nav aa-next" href="{{ post.parent.get_field('project_grid_content')[loop.index0 + 1].grid_content.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
-							{% endif %}
-
-							{% if loop.first %}
-								<a class="aa-nav aa-prev" href="{{ post.parent.get_field('project_grid_content')[loop.length - 1].grid_content.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
-							{% else %}
-								<a class="aa-nav aa-prev" href="{{ post.parent.get_field('project_grid_content')[loop.index0 - 1].grid_content.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
-							{% endif %}
-
+						{% if loop.last %}
+							<a class="aa-nav aa-next" href="{{ post.parent.children('project').0.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+						{% else %}
+							<a class="aa-nav aa-next" href="{{ post.parent.children('project')[loop.index0 + 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
 						{% endif %}
 
-						{% set prev = item %}					
+						{% if loop.first %}
+							<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.length - 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+						{% else %}
+							<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.index0 - 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+						{% endif %}
 
-					{% endfor %}
-				{% endif %}
+					{% endif %}
+
+					{% set prev = item %}
+
+				{% endfor %}
 
 				<h3 class="project-title">{{post.title}}</h3>
 				<p class="project-subtitle">{{post.project_subtitle}}</p>

@@ -18,7 +18,7 @@
 				<div class="side-section-left">
 					<h2>{{ term.name }}</h2>
 					<p>{{ term.description }}</p>
-					<a href="{{ function('get_field', 'action_url', term).url }}"><h4>{{ function('get_field', 'action_text', term) }}</h4></a>
+					<a href="{{ function('get_field', 'cta_link', term).url }}"><h4>{{ function('get_field', 'cta_link', term).title|default('Learn More') }}</h4></a>
 				</div>
 
 			</section>
