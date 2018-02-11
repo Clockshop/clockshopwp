@@ -21,6 +21,7 @@ function create_events_pt() {
 			'parent' => 'Parent'
 		),
 		'taxonomies' => array('projects'),
+		//"rewrite" => array( "slug" => "projects/%projects%", "with_front" => true ),
 		'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'revisions', 'page-attributes', 'excerpt' ),
 		'public' => true,
 		'has_archive' => true,

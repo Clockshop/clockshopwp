@@ -8,41 +8,34 @@
 			<h1>Donate to Clockshop</h1>
 		</div>
 
-		<div class="grid featured-grid donate-grid">
-
-			{% for item in post.get_field('donate_options') %}
-
-				<div class="grid-3">
-					<div class="imagecell">
-						<a href="{{item.donate_option_url.url}}"><img src="{{TimberImage(item.donate_option_image).src('grid-3')}}" /></a>
-					</div>
-				</div>
-
-			{% endfor %}
-
-		</div>
-
-		<section>
-
-			{% if post.donate_content_title %}
-				<h4>{{post.donate_content_title}}</h4>
-			{% endif %}
-			<h3 class="donate-decription">{{post.donate_content_intro}}</h3>
+		{% if post.content %}
 			<div class="donate-content">
-
-				{% if post.donate_content_image %}
-					<div class="donate-content-left">
-						<img src="{{TimberImage(post.donate_content_image)|resize(700)}}" />
-					</div>
-				{% endif %}
-
-				<div class="donate-content-right">
-					{{post.content}}
-				</div>
-
+				{{ post.content }}
 			</div>
+		{% endif %}
 
-		</section>
+		{% for item in post.get_field('donate_sections') %}
+
+			{% if item.donate_section_title or item.donate_section_content %}
+		
+				<section>
+
+					{% if item.donate_section_title %}
+						<h4>{{ item.donate_section_title }}</h4>
+					{% endif %}
+
+					{% if item.donate_section_content %}
+						<div class="section-content">
+							{{ item.donate_section_content }}
+						</div>
+					{% endif %}
+
+				</section>
+
+			{% endif %}
+
+		{% endfor %}
+
 	</div>
 
 {% endblock %}

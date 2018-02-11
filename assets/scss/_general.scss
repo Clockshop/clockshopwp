@@ -59,6 +59,9 @@ p {
 }
 
 a {
+	color: #000;
+	font-weight: inherit;
+	text-decoration: none;
 	text-decoration: underline;
 	&:hover {
 		cursor: pointer;
@@ -177,6 +180,12 @@ button, .button {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
+	ul {
+		margin: 25px 0;
+		li {
+			margin-bottom: 8px;
+		}
+	}
 }
 
 input {
@@ -282,6 +291,7 @@ main {
 				}
 				a {
 					text-decoration: none;
+					font-weight: bold;
 				}
 			}
 			.content-type {
@@ -326,6 +336,7 @@ main {
 					padding-bottom: 3px;
 					display: inline-block;
 					text-decoration: none;
+					font-weight: bold;
 				}
 			}
 		}
