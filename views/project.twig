@@ -58,16 +58,14 @@
 			<main class="content artist-list">
 				
 				<div class="grid featured-grid project-list-grid">
-					{% for child in post.children %}
-						{% if child.post_type == 'project' %}
-							<div class="grid-3">
-								<div class="imagecell">
-									<a href="{{child.link}}"><img src="{{TimberImage(child.thumbnail).src('grid-3')}}" /></a>
-								</div>
-								<a href="{{child.link}}"><h3 class="project-title">{{child.post_title}}</h3></a>
-								<h3 class="project-subtitle">{{child.project_artwork_and_artists_subtitle}}</h3>
+					{% for child in post.children('project') %}
+						<div class="grid-3">
+							<div class="imagecell">
+								<a href="{{child.link}}"><img src="{{TimberImage(child.thumbnail).src('grid-3')}}" /></a>
 							</div>
-						{% endif %}
+							<a href="{{child.link}}"><h3 class="project-title">{{child.post_title}}</h3></a>
+							<h3 class="project-subtitle">{{child.project_artwork_and_artists_subtitle}}</h3>
+						</div>
 					{% endfor %}
 				</div>
 
@@ -97,34 +95,40 @@
 				    </div>
 			    {% endif %}
 
-				{% for child in post.parent.children('project') %}
+				{% if post.parent.children('project')|length > 1 %}
 
-					{% if post.id == child.id %}
+					{% for child in post.parent.children('project') %}
 
-						{% if loop.last %}
-							<a class="aa-nav aa-next" href="{{ post.parent.children('project').0.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
-						{% else %}
-							<a class="aa-nav aa-next" href="{{ post.parent.children('project')[loop.index0 + 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+						{% if post.id == child.id %}
+
+							{% if loop.last %}
+								<a class="aa-nav aa-next" href="{{ post.parent.children('project').0.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+							{% else %}
+								<a class="aa-nav aa-next" href="{{ post.parent.children('project')[loop.index0 + 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+							{% endif %}
+
+							{% if loop.first %}
+								<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.length - 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+							{% else %}
+								<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.index0 - 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+							{% endif %}
+
 						{% endif %}
 
-						{% if loop.first %}
-							<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.length - 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
-						{% else %}
-							<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.index0 - 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
-						{% endif %}
+						{% set prev = item %}
 
-					{% endif %}
+					{% endfor %}
 
-					{% set prev = item %}
-
-				{% endfor %}
+				{% endif %}
 
 				<h3 class="project-title">{{post.title}}</h3>
 				<p class="project-subtitle">{{post.project_subtitle}}</p>
 
-				<div class="project-content">
-					{{post.content}}
-				</div>
+				{% if post.content %}
+					<div class="project-content">
+						{{post.content}}
+					</div>
+				{% endif %}
 
 				{% if post.get_field('related_content') %}
 
@@ -161,14 +165,15 @@
 			<main class="content artist-list">
 				
 				<div class="grid featured-grid project-programs-grid">
-				    {% for item in post.get_field('project_grid_content') %}
+					{% for child in post.children('project') %}
 						<div class="grid-3">
 							<div class="imagecell">
-								<a href="{{item.grid_content.link}}"><img src="{{TimberImage(item.grid_content.thumbnail).src('grid-3')}}" /></a>
+								<a href="{{child.link}}"><img src="{{TimberImage(child.thumbnail).src('grid-3')}}" /></a>
 							</div>
-							<a href="{{item.grid_content.link}}"><h3 class="project-title">{{item.grid_content.post_title}}</h3></a>
+							<a href="{{child.link}}"><h3 class="project-title">{{child.post_title}}</h3></a>
+							<h3 class="project-subtitle">{{child.project_artwork_and_artists_subtitle}}</h3>
 						</div>
-				    {% endfor %}
+					{% endfor %}
 				</div>
 
 			</main>
@@ -177,37 +182,43 @@
 
 			<main class="content">
 
-				<div class="project-content">
-					{{post.content}}
-				</div>
+				{% if post.content %}
+					<div class="project-content">
+						{{post.content}}
+					</div>
+				{% endif %}
 
 				<div class="grid project-related-grid featured-grid">
 
-					<h4>{{post.upcoming_programs_section_title}}</h4>
+					{% if post.upcoming_programs_section_title %}
 
-				    {% for item in post.get_field('upcoming_programs') %}
+						<h4>{{ post.upcoming_programs_section_title }}</h4>
 
-						<div class="grid-3">
+						{% for item in post.get_field('upcoming_programs') %}
 
-							<div class="imagecell">
-								<a href="{{function('get_permalink', item.event.id)}}"><img src="{{TimberImage(item.event).src('grid-3')}}" /></a>
+							<div class="grid-3">
+
+								<div class="imagecell">
+									<a href="{{function('get_permalink', item.event.id)}}"><img src="{{TimberImage(item.event).src('grid-3')}}" /></a>
+								</div>
+								<div class="descriptioncell">
+									<h2><a href="{{function('get_permalink', item.event.id)}}">{{item.event.post_title}}</a></h2>
+									<p class="content-type">{{function('spellerberg_sp_date', item.event)}}</p>
+									<p class="add-descriptor">{{ function('get_term', event.event_venue).name }}</p>
+									{% if item.event.post_excerpt %}
+										<p class="description">{{item.event.post_excerpt}}</p>
+									{% else %}
+										<p class="description">{{item.event.get_preview(25, false, '', true, '')}}</p>
+									{% endif %}
+									<p class="calltoaction">
+										<a href="{{function('get_permalink', item.event.id)}}">{{ item.event_list_cta_text|default('RSVP')}}</a>
+									</p>
+								</div>
 							</div>
-							<div class="descriptioncell">
-								<h2><a href="{{function('get_permalink', item.event.id)}}">{{item.event.post_title}}</a></h2>
-								<p class="content-type">{{function('spellerberg_sp_date', item.event)}}</p>
-								<p class="add-descriptor">{{ function('get_term', event.event_venue).name }}</p>
-								{% if item.event.post_excerpt %}
-									<p class="description">{{item.event.post_excerpt}}</p>
-								{% else %}
-									<p class="description">{{item.event.get_preview(25, false, '', true, '')}}</p>
-								{% endif %}
-								<p class="calltoaction">
-									<a href="{{function('get_permalink', item.event.id)}}">{{ item.event_list_cta_text|default('RSVP')}}</a>
-								</p>
-							</div>
-						</div>
 
-				    {% endfor %}
+						{% endfor %}
+
+					{% endif %}
 
 				</div>
 
@@ -216,6 +227,12 @@
 		{% elseif post.get_field('project_content_type') == 'collapsable_sections' %}
 			
 			<main class="content">
+
+				{% if post.content %}
+					<div class="project-content">
+						{{post.content}}
+					</div>
+				{% endif %}
 
 				<div class="collapsable-sections">
 				    {% for item in post.get_field('collapsable_sections') %}
@@ -346,13 +363,13 @@
 							<div class="media-embed">
 								
 								{% if media.2%}
-									<div class="media-video-embed" style="background: url('{{theme.link}}/images/loading.gif') center center no-repeat;">
+									<div class="media-video-embed" style="background: url('{{theme.link}}/assets/images/loading.gif') center center no-repeat;">
 										{{media.2}}
 									</div>
 								{% endif %}
 
 								{% if media.3%}
-									<div class="media-audio-embed" style="background: url('{{theme.link}}/images/loading.gif') center center no-repeat;">
+									<div class="media-audio-embed" style="background: url('{{theme.link}}/assets/images/loading.gif') center center no-repeat;">
 										{{media.3}}
 									</div>
 								{% endif %}

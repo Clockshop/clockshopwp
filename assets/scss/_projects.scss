@@ -202,6 +202,7 @@
 			font-size: 28px;
 			font-style: italic;
 			margin-bottom: 12px;
+			margin-top: 0;
 		}
 		> .project-subtitle {
 			font-size: 22px;
@@ -317,10 +318,12 @@
 						margin-bottom: 45px!important;
 						font-family: CircularBook;
 						font-weight: bold;
-						font-style: italic;
 					}
 				}
 			}
+		}
+		.project-content + .collapsable-sections {
+			margin-top: 40px;
 		}
 		.project-list-grid {
 			.grid-3 {
@@ -363,6 +366,9 @@
 				margin-bottom: 0;
 				:last-child {
 					margin-bottom: 0;
+				}
+				.section-content {
+					margin-bottom: 30px;
 				}
 			}
 		}
@@ -420,6 +426,7 @@
 		}
 		.media-pagination {
 			padding-top: 70px;
+			margin-bottom: -20px;
 			text-align: center;
 			font-size: 0;
 			@media screen and (max-width: 999px) {

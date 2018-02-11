@@ -277,64 +277,6 @@
             ]
         },
         {
-            "key": "field_59df0a92401d0",
-            "label": "Project Grid Content",
-            "name": "project_grid_content",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_59df07472580d",
-                        "operator": "==",
-                        "value": "artist_list"
-                    }
-                ],
-                [
-                    {
-                        "field": "field_59df07472580d",
-                        "operator": "==",
-                        "value": "program_list"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Item",
-            "sub_fields": [
-                {
-                    "key": "field_5a131e3b3a44a",
-                    "label": "Grid Content",
-                    "name": "grid_content",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "project"
-                    ],
-                    "taxonomy": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "return_format": "object",
-                    "ui": 1
-                }
-            ]
-        },
-        {
             "key": "field_5a2e1b85929b2",
             "label": "Upcoming Programs Section Title",
             "name": "upcoming_programs_section_title",
@@ -386,7 +328,7 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Add Program",
             "sub_fields": [
                 {
                     "key": "field_5a2dbb505b632",
@@ -402,7 +344,7 @@
                         "id": ""
                     },
                     "post_type": [
-                        "tribe_events"
+                        "events"
                     ],
                     "taxonomy": [],
                     "allow_null": 0,
@@ -803,5 +745,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1513698121
+    "modified": 1518330285
 }

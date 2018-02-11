@@ -164,7 +164,7 @@
                 "class": "",
                 "id": ""
             },
-            "display_format": "Y-m-d H:i:s",
+            "display_format": "F j, Y g:i a",
             "return_format": "Y-m-d H:i:s",
             "first_day": 1
         },
@@ -181,7 +181,7 @@
                 "class": "",
                 "id": ""
             },
-            "display_format": "Y-m-d H:i:s",
+            "display_format": "F j, Y g:i a",
             "return_format": "Y-m-d H:i:s",
             "first_day": 1
         },
@@ -320,5 +320,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1517723610
+    "modified": 1518347714
 }
