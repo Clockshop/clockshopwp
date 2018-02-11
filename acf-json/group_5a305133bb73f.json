@@ -3,25 +3,6 @@
     "title": "Donate",
     "fields": [
         {
-            "key": "field_5a3b1df2a1733",
-            "label": "Donate Content Title",
-            "name": "donate_content_title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5a80b7d48c042",
             "label": "Donate Sections",
             "name": "donate_sections",
@@ -98,5 +79,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1518414175
+    "modified": 1518416224
 }
