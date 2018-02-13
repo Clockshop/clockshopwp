@@ -113,6 +113,7 @@
 				display: none;
 			}
 			li {
+				margin-bottom: 0;
 				display: inline-block;
 				&.active {
 					background-color: white;
