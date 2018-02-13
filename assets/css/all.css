@@ -1523,6 +1523,7 @@ footer.contactfooter {
       .project-single .project-menu ul {
         display: none; } }
     .project-single .project-menu ul li {
+      margin-bottom: 0;
       display: inline-block; }
       .project-single .project-menu ul li.active {
         background-color: white; }

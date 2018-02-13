@@ -159,13 +159,18 @@
 
 	});
 
-
 	$(window).load(function() {
 
 		$('.flexslider').flexslider({
 		    controlNav: false,
 		    directionNav: false
 		});
+
+		if ($('.project-menu').length > 0) {
+			$('.project-menu select').on('change', function() {
+				document.location.href = $(this).val();
+			});
+		}
 
 	});
 

@@ -19,7 +19,7 @@
 						{% else %}
 							<li>
 						{% endif %}
-							<a href="{{item.url}}">
+							<a href="{{item.url}}" style="padding: 10px {{ term.project_menu_item_spacing }}px;">
 								{{item.name}}
 							</a>
 						</li>
@@ -27,17 +27,15 @@
 				</ul>
 
 				<form>
-
 					<select>
 
 						{% for item in termMenu.items %}
-							<option value="{{item.url}}">
+							<option {% if item.link == post.link %}selected="selected"{% endif %} value="{{item.link}}">
 								{{item.name}}
 							</option>
 						{% endfor %}
 						
 					</select>
-
 				</form>
 
 			</div>
