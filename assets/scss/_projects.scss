@@ -418,7 +418,13 @@
 				    overflow:hidden;
 					padding-bottom:56.25%;
 					position:relative;
-					height:0;	
+					height:0;
+					.video-container {
+						opacity: 1;
+						&:before {
+							display: none;
+						}
+					}
 				}
 				.media-video-embed + .media-audio-embed {
 					margin-top: 20px;
