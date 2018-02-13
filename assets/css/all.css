@@ -1753,6 +1753,10 @@ footer.contactfooter {
         padding-bottom: 56.25%;
         position: relative;
         height: 0; }
+        .project-single main .media-item .media-embed .media-video-embed .video-container {
+          opacity: 1; }
+          .project-single main .media-item .media-embed .media-video-embed .video-container:before {
+            display: none; }
       .project-single main .media-item .media-embed .media-video-embed + .media-audio-embed {
         margin-top: 20px; }
   .project-single main .media-pagination {
