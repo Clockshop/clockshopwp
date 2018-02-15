@@ -159,6 +159,13 @@
 				$('p:empty').remove();
 			}
 
+			function select2init() {
+				$('.project-select').select2({
+					width: '100%',
+					minimumResultsForSearch: -1
+				});
+			}
+
 			collapsable_sections();
 			search();
 			eventsSlider();
@@ -167,6 +174,7 @@
 			hideBrokenImages();
 			projectSlider();
 			removeEmptyPTags();
+			select2init();
 		});
 
 		$(window).load(function() {
