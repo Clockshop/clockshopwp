@@ -27,7 +27,7 @@
 				</ul>
 
 				<form>
-					<select>
+					<select class="project-select">
 
 						{% for item in termMenu.items %}
 							<option {% if item.link == post.link %}selected="selected"{% endif %} value="{{item.link}}">

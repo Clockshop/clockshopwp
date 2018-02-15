@@ -29,5 +29,17 @@
 				margin-bottom: 0; 
 			}	
 		}
+		&:last-child {
+			.section-content {
+				margin-bottom: 0;
+			}
+		}
+	}
+	iframe {
+		width: 100%!important;
+		height: 838px!important;
+		@media screen and (max-width: 786px) {
+			height: 1038px!important;
+		}
 	}
 }

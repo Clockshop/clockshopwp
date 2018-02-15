@@ -30,12 +30,13 @@
 			<div class="side-section-right event-images">
 				
 				{% if post.get_field('event_images') %}
-					{% if post.thumbnail %}
-						<img src="{{TimberImage(post.thumbnail).src('grid-3') }}" />
-					{% endif %}
 					{% for item in post.get_field('event_images') %}
 						<img src="{{TimberImage(item).src('grid-3') }}" />
 					{% endfor %}
+				{% else %}
+					{% if post.thumbnail %}
+						<img src="{{TimberImage(post.thumbnail).src('grid-3') }}" />
+					{% endif %}
 				{% endif %}
 
 			</div>

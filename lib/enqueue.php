@@ -28,6 +28,8 @@ function enqueue_scripts_method() {
 	wp_register_script('vimeoPlayer', $viemoPlayer, false);
 	$youtubeAPI = get_template_directory_uri() . '/assets/js/youtube.js';
 	wp_register_script('youtubeAPI', $youtubeAPI, true);
+	$select2 = 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js';
+	wp_register_script('select2', $select2, true);
 	
 	// css
 	$normalizecss = get_stylesheet_directory_uri() . '/assets/css/normalize.css';
@@ -46,6 +48,8 @@ function enqueue_scripts_method() {
 	wp_register_style('flexslidercss', $flexslidercss, false);
 	$flickitycss = get_stylesheet_directory_uri() . '/assets/css/flickity.min.css';
 	wp_register_style('flickitycss', $flickitycss, false);
+	$select2css = 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css';
+	wp_register_style('select2css', $select2css, false);
 
 	// enqueue js
 	wp_enqueue_script( 'alljs', array('jquery'));
@@ -55,6 +59,7 @@ function enqueue_scripts_method() {
 	wp_enqueue_script( 'descriptivehomejs', array('jquery','flickityjs'));
 	wp_enqueue_script( 'vimeoPlayer' );
 	wp_enqueue_script( 'youtubeAPI' );
+	wp_enqueue_script( 'select2' );
 
 	// enqueue css
 	wp_enqueue_style( 'normalizecss');
@@ -65,6 +70,7 @@ function enqueue_scripts_method() {
 	wp_enqueue_style( 'slickcss');
 	wp_enqueue_style( 'flexslidercss');
 	wp_enqueue_style( 'flickitycss');
+	wp_enqueue_style( 'select2css');
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts_method');
 

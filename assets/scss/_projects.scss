@@ -132,7 +132,7 @@
 		}
 		form {
 			margin-bottom: 0;
-			margin-top: 10px;
+			margin-top: 20px;
 			border-bottom: 4px solid white;
 			@media screen and (min-width: 1000px) {
 				display: none;
@@ -149,7 +149,22 @@
 				background-image: url('../images/arrow-down.png');
 				background-repeat: no-repeat;
 				background-size: 24px;
-				background-position: right 10px center;
+				background-position: right 10px top;
+			}
+			select + span {
+				background-image: url('../images/arrow-down.png');
+				background-repeat: no-repeat;
+				background-size: 24px;
+				background-position: right 10px top;
+				height: 32px;
+				span {
+					background-color: transparent;
+					border: none;
+					color: white!important;
+				}
+				.select2-selection__arrow {
+					display: none;
+				}
 			}
 		}
 	}
@@ -530,6 +545,25 @@
 			border-bottom: 4px solid black;
 			padding-bottom: 5px;
 			text-transform: uppercase;
+		}
+	}
+}
+
+.select2-container {
+	@media screen and (min-width: 1000px) {
+		display: none!important;
+	}
+	.select2-dropdown {
+		border: none;
+		border-radius: 0;
+		border-bottom: 4px solid black;
+		.select2-results {
+			.select2-results__options {
+				max-height: none!important;
+				.select2-results__option--highlighted {
+					background-color: #666;
+				}
+			}
 		}
 	}
 }
