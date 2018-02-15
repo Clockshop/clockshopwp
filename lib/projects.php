@@ -23,7 +23,7 @@ function create_project_pt() {
 				'parent' => 'Parent'
 			),
 	        'taxonomies' => array('projects'),
-			"rewrite" => array( "slug" => "projects/%projects%", "with_front" => true ),
+			//"rewrite" => array( "slug" => "projects/%projects%", "with_front" => true ),
 			'supports' => array( 'title','editor','author','thumbnail','custom-fields','revisions','page-attributes' ),
 			'public' => true,
 			'show_in_menu' => true,
