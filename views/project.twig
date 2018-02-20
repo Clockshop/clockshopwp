@@ -59,7 +59,7 @@
 					{% for child in post.children('project') %}
 						<div class="grid-3">
 							<div class="imagecell">
-								<a href="{{child.link}}"><img src="{{TimberImage(child.thumbnail).src('grid-3')}}" /></a>
+								<a href="{{child.link}}"><img src="{{ TimberImage(child.thumbnail)|resize(1434, 956) }}" /></a>
 							</div>
 							<a href="{{child.link}}"><h3 class="project-title">{{child.post_title}}</h3></a>
 							<h3 class="project-subtitle">{{child.project_artwork_and_artists_subtitle}}</h3>
@@ -138,7 +138,7 @@
 
 							<div class="grid-3">
 								<div class="imagecell">
-									<a href="{{item.item_url.url}}"><img src="{{TimberImage(item.item_image).src('grid-3')}}" /></a>
+									<a href="{{item.item_url.url}}"><img src="{{ TimberImage(item.item_image)|resize(1434, 956) }}" /></a>
 								</div>
 								<div class="descriptioncell">
 									<h2><a href="{{item.item_url.url}}">{{item.item_title}}</a></h2>
@@ -166,7 +166,7 @@
 					{% for child in post.children('project') %}
 						<div class="grid-3">
 							<div class="imagecell">
-								<a href="{{child.link}}"><img src="{{TimberImage(child.thumbnail).src('grid-3')}}" /></a>
+								<a href="{{child.link}}"><img src="{{ TimberImage(child.thumbnail)|resize(1434, 956) }}" /></a>
 							</div>
 							<a href="{{child.link}}"><h3 class="project-title">{{child.post_title}}</h3></a>
 							<h3 class="project-subtitle">{{child.project_artwork_and_artists_subtitle}}</h3>
@@ -197,7 +197,7 @@
 							<div class="grid-3">
 
 								<div class="imagecell">
-									<a href="{{function('get_permalink', item.event.id)}}"><img src="{{TimberImage(item.event).src('grid-3')}}" /></a>
+									<a href="{{function('get_permalink', item.event.id)}}"><img src="{{ TimberImage(item.event)|resize(1434, 956) }}" /></a>
 								</div>
 								<div class="descriptioncell">
 									<h2><a href="{{function('get_permalink', item.event.id)}}">{{item.event.post_title}}</a></h2>
@@ -261,7 +261,7 @@
 							<div class="grid-3">
 
 								<div class="imagecell">
-									<a href="{{function('get_permalink', event)}}"><img src="{{TimberImage(event).src('grid-3')}}" /></a>
+									<a href="{{function('get_permalink', event)}}"><img src="{{ TimberImage(event)|resize(1434, 956) }}" /></a>
 								</div>
 								<div class="descriptioncell">								
 									<h2><a href="{{function('get_permalink', event)}}">{{event.post_title}}</a></h2>
