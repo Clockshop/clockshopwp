@@ -38,7 +38,7 @@
 
 					<div class="grid-3">
 						<div class="imagecell">
-							<a href="{{item.feature_link.url}}"><img src="{{TimberImage(item.thumbnail_image).src('grid-3')}}" /></a>
+							<a href="{{ item.feature_link.url }}"><img src="{{ TimberImage(item.thumbnail_image)|resize(1434, 956) }}" /></a>
 						</div>
 						<div class="descriptioncell">
 							<h2><a href="{{item.feature_link.url}}">{{item.feature_title}}</a></h2>

@@ -31,11 +31,11 @@
 				
 				{% if post.get_field('event_images') %}
 					{% for item in post.get_field('event_images') %}
-						<img src="{{TimberImage(item).src('grid-3') }}" />
+						<img src="{{TimberImage(item)|resize(1434, 956) }}" />
 					{% endfor %}
 				{% else %}
 					{% if post.thumbnail %}
-						<img src="{{TimberImage(post.thumbnail).src('grid-3') }}" />
+						<img src="{{TimberImage(post.thumbnail)|resize(1434, 956) }}" />
 					{% endif %}
 				{% endif %}
 
