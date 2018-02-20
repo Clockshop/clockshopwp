@@ -980,6 +980,11 @@ footer.contactfooter {
           color: black;
           text-decoration: none;
           border-bottom: 3px solid black; }
+        @media screen and (max-width: 767px) {
+          .search-template .search-list article .list-title a:hover {
+            color: black;
+            text-decoration: none;
+            border-bottom: 2px solid black; } }
   .search-template .search-list .search-pag {
     padding-top: 40px;
     padding-bottom: 20px;
