@@ -39,7 +39,7 @@
 
 		<div class="content">
 			<div class="grid featured-grid">
-				<h4>Featured Call Outs</h4>
+				<h4>{{ post.featured_call_outs_section_title|default('Featured Call Outs') }}</h4>
 			    {% for item in post.get_field('features') %}
 
 					<div class="grid-3">

@@ -80,6 +80,17 @@
 						<p>{{ function('get_field', '_VenueCity', 'venue_' ~ post.event_venue) ~ ', ' ~ function('get_field', '_VenueState', 'venue_' ~ post.event_venue) ~ ' ' ~ function('get_field', '_VenueZip', 'venue_' ~ post.event_venue)  }}</p>
 					{% endif %}
 				</div>
+				<div class="event-additional-info">
+					{% if post.event_additional_info_line_1 %}
+						<p>{{ post.event_additional_info_line_1 }}</p>
+					{% endif %}
+					{% if post.event_additional_info_line_2 %}
+						<p>{{ post.event_additional_info_line_2 }}</p>
+					{% endif %}
+					{% if post.event_additional_info_line_3 %}
+						<p>{{ post.event_additional_info_line_3 }}</p>
+					{% endif %}
+				</div>
 				<div class="event-info-social">
 					{% if post.event_first_hashtag %}
 						<p>{{ post.event_first_hashtag }}</p>
@@ -92,17 +103,6 @@
 					{% endif %}
 					{% if post.event_twitter_url %}
 						<a href="{{ post.event_twitter_url }}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-					{% endif %}
-				</div>
-				<div class="event-additional-info">
-					{% if post.event_additional_info_line_1 %}
-						<p>{{ post.event_additional_info_line_1 }}</p>
-					{% endif %}
-					{% if post.event_additional_info_line_2 %}
-						<p>{{ post.event_additional_info_line_2 }}</p>
-					{% endif %}
-					{% if post.event_additional_info_line_3 %}
-						<p>{{ post.event_additional_info_line_3 }}</p>
 					{% endif %}
 				</div>
 			</div>
