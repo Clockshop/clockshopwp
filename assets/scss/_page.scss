@@ -1,0 +1,13 @@
+.page.content {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	:first-child {
+		margin-top: 0!important;
+	}
+	:last-child {
+		margin-bottom: 0!important;
+	}
+	&.fourohfour {
+		padding-top: 60px;
+	}
+}
