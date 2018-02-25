@@ -1909,3 +1909,13 @@ footer.contactfooter {
     @media screen and (max-width: 786px) {
       .donate iframe {
         height: 1038px !important; } }
+
+.page.content {
+  padding-top: 80px;
+  padding-bottom: 80px; }
+  .page.content :first-child {
+    margin-top: 0 !important; }
+  .page.content :last-child {
+    margin-bottom: 0 !important; }
+  .page.content.fourohfour {
+    padding-top: 60px; }
