@@ -808,7 +808,8 @@ main br {
             padding-top: 10px;
             height: 36px;
             text-decoration: none;
-            bottom: 0; }
+            bottom: 0;
+            margin-right: 30px; }
             @media screen and (max-width: 767px) {
               .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .slide-text .project-more {
                 font-size: 14px; } }
