@@ -5,14 +5,16 @@
 		function search() {
 			$('.search').on('click', function() {
 				if ($('.topnav .searchform').is(':visible')) {
+					$('.topnav .search div').removeClass('opened');
+					$('.topnav .search div').addClass('closed');
 					$('.topnav .searchform').hide();
 					$('.menu-container').css('opacity', '1');
-					$('.search .fa-times').replaceWith( "<i class='fa fa-search' aria-hidden='true'></i>" );
 					$('.topnav .searchform input').focus();
 				} else {
+					$('.topnav .search div').removeClass('closed');
+					$('.topnav .search div').addClass('opened');
 					$('.menu-container').css('opacity', '0');
 					$('.topnav .searchform').fadeIn();
-					$('.search .fa-search').replaceWith( "<i class='fa fa-times' aria-hidden='true'></i>" );
 				}
 			});
 		}	
