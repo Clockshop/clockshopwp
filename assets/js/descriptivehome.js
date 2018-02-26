@@ -35,9 +35,7 @@
 			$('.carousel-main .slide').css({'height': carouselheight + 'px'});
 
 		}
-
 	}
-
 
 	$(document).ready( function() {
 
