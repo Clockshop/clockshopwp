@@ -1914,10 +1914,10 @@ footer.contactfooter {
     margin-bottom: 0; }
   .donate iframe {
     width: 100% !important;
-    height: 838px !important; }
+    height: 1150px !important; }
     @media screen and (max-width: 786px) {
       .donate iframe {
-        height: 1038px !important; } }
+        height: 1150px !important; } }
 
 .page.content {
   padding-top: 80px;
