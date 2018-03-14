@@ -133,6 +133,33 @@
             "mime_types": ""
         },
         {
+            "key": "field_5aa8912887242",
+            "label": "Related Content Title",
+            "name": "related_content_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_59df07472580d",
+                        "operator": "==",
+                        "value": "artist_single"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5a2b57be3483e",
             "label": "Related Content",
             "name": "related_content",
@@ -745,5 +772,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1518330285
+    "modified": 1521021888
 }
