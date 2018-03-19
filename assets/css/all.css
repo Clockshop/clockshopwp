@@ -1630,7 +1630,7 @@ footer.contactfooter {
     .project-single main .artist-list .project-list-grid .project-grid-row .grid-3 a {
       text-decoration: none; }
       .project-single main .artist-list .project-list-grid .project-grid-row .grid-3 a .project-title {
-        margin-top: 15px !important;
+        margin-top: 0 !important;
         margin-bottom: 5px !important;
         font-family: CircularBook;
         font-weight: bold;
