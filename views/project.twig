@@ -418,7 +418,9 @@
 
 					<div class="podcast">
 
-						<img class="podcast-image" src="{{TimberImage(item.podcast_cover_image)|resize(1900)}}" />
+						{% if item.podcast_cover_image %}
+							<img class="podcast-image" src="{{TimberImage(item.podcast_cover_image)|resize(1900)}}" />
+						{% endif %}
 
 						<div class="podcast-text">
 							{{item.podcast_intro_text}}
