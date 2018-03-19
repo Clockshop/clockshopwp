@@ -60,9 +60,11 @@
 								{% for child in post.children('project') %}
 									
 									<div class="grid-3">
-										<div class="imagecell">
-											<a href="{{child.link}}"><img src="{{ TimberImage(child.thumbnail)|resize(1434, 956) }}" /></a>
-										</div>
+										{% if child.thumbnail %}
+											<div class="imagecell">
+												<a href="{{child.link}}"><img src="{{ TimberImage(child.thumbnail)|resize(1434, 956) }}" /></a>
+											</div>
+										{% endif %}
 										<a href="{{child.link}}"><h3 class="project-title">{{ child.get_field('project_page_content').0.project_title|default(child.post_title)}}</h3></a>
 										<h3 class="project-subtitle">{{ child.get_field('project_page_content').0.project_subtitle }}</h3>
 									</div>
@@ -157,9 +159,11 @@
 						{% for related in item.related_content %}
 
 							<div class="grid-3">
-								<div class="imagecell">
-									<a href="{{related.item_url.url}}"><img src="{{ TimberImage(related.item_image)|resize(1434, 956) }}" /></a>
-								</div>
+								{% if related.item_image %}
+									<div class="imagecell">
+										<a href="{{related.item_url.url}}"><img src="{{ TimberImage(related.item_image)|resize(1434, 956) }}" /></a>
+									</div>
+								{% endif %}
 								<div class="descriptioncell">
 									<h2><a href="{{related.item_url.url}}">{{related.item_title}}</a></h2>
 									<p class="content-type">{{related.item_type}}</p>
@@ -182,9 +186,11 @@
 							{% for child in post.children('project') %}
 						
 								<div class="grid-3">
-									<div class="imagecell">
-										<a href="{{child.link}}"><img src="{{ TimberImage(child.thumbnail)|resize(1434, 956) }}" /></a>
-									</div>
+									{% if child.thumbnail %}
+										<div class="imagecell">
+											<a href="{{child.link}}"><img src="{{ TimberImage(child.thumbnail)|resize(1434, 956) }}" /></a>
+										</div>
+									{% endif %}
 									<a href="{{child.link}}"><h3 class="project-title">{{child.post_title}}</h3></a>
 								</div>
 
@@ -215,9 +221,11 @@
 
 								<div class="grid-3">
 
-									<div class="imagecell">
-										<a href="{{function('get_permalink', program.event.id)}}"><img src="{{ TimberImage(program.event)|resize(1434, 956) }}" /></a>
-									</div>
+									{% if program.event %}
+										<div class="imagecell">
+											<a href="{{function('get_permalink', program.event.id)}}"><img src="{{ TimberImage(program.event)|resize(1434, 956) }}" /></a>
+										</div>
+									{% endif ss%}
 									<div class="descriptioncell">
 										<h2><a href="{{function('get_permalink', program.event.id)}}">{{program.event.post_title}}</a></h2>
 										<p class="content-type">{{function('spellerberg_sp_date', program.event)}}</p>
@@ -279,9 +287,11 @@
 
 								<div class="grid-3">
 
-									<div class="imagecell">
-										<a href="{{function('get_permalink', event)}}"><img src="{{ TimberImage(event)|resize(1434, 956) }}" /></a>
-									</div>
+									{% if event %}
+										<div class="imagecell">
+											<a href="{{function('get_permalink', event)}}"><img src="{{ TimberImage(event)|resize(1434, 956) }}" /></a>
+										</div>
+									{% endif %}
 									<div class="descriptioncell">								
 										<h2><a href="{{function('get_permalink', event)}}">{{event.post_title}}</a></h2>
 										<p class="content-type">{{ function('spellerberg_sp_date', event) }}</p>
