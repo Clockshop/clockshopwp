@@ -894,7 +894,7 @@
                             },
                             "collapsed": "",
                             "min": 0,
-                            "max": 3,
+                            "max": 0,
                             "layout": "table",
                             "button_label": "Add Program",
                             "sub_fields": [
@@ -972,5 +972,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1521448841
+    "modified": 1521449668
 }
