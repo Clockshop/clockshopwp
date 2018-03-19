@@ -2,32 +2,30 @@
 
 {% block content %}
 
-	<div class="carouselwrap">
-		<div class="carousel-main">
+	<div class="home-slider-wrap">
+		<div class="home-slider">
 
 		    {% for item in post.get_field('hero_slider') %}
 
-				<div class="carousel-cell">
-					<div class="slide" style="background-image: url('{{TimberImage(item.carousel_image).src|resize(2880)}}');">
-						<div class="content">
-							<div>
-								<div class="arrows">
-									<a class="prev"><img class="left-arrow" src="{{theme.link}}/assets/images/arrow.png" /></a>
-									<a class="next"><img class="right-arrow" src="{{theme.link}}/assets/images/arrow.png" /></a>
-								</div>
-								<div class="slide-text">
-									{% if item.slide_text %}
-										<p class="project-title">{{item.slide_text}}</p>
-									{% endif %}
-									{% if item.slide_link.url %}
-										<a class="project-more" href="{{item.slide_link.url}}">{{item.slide_link.title}}</a>
-									{% endif %}
-								</div>
+				<div class="slide" style="background-image: url('{{TimberImage(item.carousel_image).src|resize(2880)}}');">
+					<div class="content">
+						<div>
+							<div class="arrows">
+								<a class="prev"><img class="left-arrow" src="{{theme.link}}/assets/images/arrow.png" /></a>
+								<a class="next"><img class="right-arrow" src="{{theme.link}}/assets/images/arrow.png" /></a>
+							</div>
+							<div class="slide-text">
+								{% if item.slide_text %}
+									<p class="project-title">{{item.slide_text}}</p>
+								{% endif %}
+								{% if item.slide_link.url %}
+									<a class="project-more" href="{{item.slide_link.url}}">{{item.slide_link.title}}</a>
+								{% endif %}
 							</div>
 						</div>
-						<div class="project-overlay"></div>
-						<div class="ratio"></div>
 					</div>
+					<div class="project-overlay"></div>
+					<div class="ratio"></div>
 				</div>
 
 		    {% endfor %}

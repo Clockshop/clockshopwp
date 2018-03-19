@@ -715,44 +715,46 @@ main br {
     .primarynav .topnav .search {
       display: none; } }
 
-.carouselwrap {
+.home-slider-wrap {
   padding: 0 !important; }
-  .carouselwrap .carousel-main .arrow a {
+  .home-slider-wrap .home-slider .arrow a {
     display: none; }
-  .carouselwrap .carousel-main > div > div .carousel-cell .slide {
+  .home-slider-wrap .home-slider > div > div .slide {
     min-height: 500px;
     height: -moz-calc(100vh - 88px) !important;
     height: -webkit-calc(100vh - 88px) !important;
     height: -o-calc(100vh - 88px) !important;
     height: calc(100vh - 88px) !important;
     max-height: 140vw;
-    position: relative; }
+    position: relative;
+    background-size: cover;
+    background-position: center; }
     @media screen and (max-width: 999px) {
-      .carouselwrap .carousel-main > div > div .carousel-cell .slide {
+      .home-slider-wrap .home-slider > div > div .slide {
         height: -moz-calc(100vh - 54px) !important;
         height: -webkit-calc(100vh - 54px) !important;
         height: -o-calc(100vh - 54px) !important;
         height: calc(100vh - 54px) !important; } }
-    .carouselwrap .carousel-main > div > div .carousel-cell .slide .content {
+    .home-slider-wrap .home-slider > div > div .slide .content {
       height: 100%; }
-      .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div {
+      .home-slider-wrap .home-slider > div > div .slide .content > div {
         position: absolute;
         bottom: 0;
         z-index: 1;
         text-align: left;
         padding-bottom: 80px; }
         @media screen and (max-width: 999px) {
-          .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div {
+          .home-slider-wrap .home-slider > div > div .slide .content > div {
             padding-bottom: 60px; } }
-        .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .arrows {
+        .home-slider-wrap .home-slider > div > div .slide .content > div .arrows {
           height: 21px;
           width: 100px;
           margin-bottom: 40px; }
-          .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .arrows a {
+          .home-slider-wrap .home-slider > div > div .slide .content > div .arrows a {
             text-decoration: none;
             display: block;
             cursor: pointer; }
-            .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .arrows a .left-arrow {
+            .home-slider-wrap .home-slider > div > div .slide .content > div .arrows a .left-arrow {
               width: 12px;
               height: auto;
               -moz-transform: scaleX(-1);
@@ -764,19 +766,19 @@ main br {
               display: inline-block;
               position: absolute;
               left: 0; }
-            .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .arrows a .right-arrow {
+            .home-slider-wrap .home-slider > div > div .slide .content > div .arrows a .right-arrow {
               width: 12px;
               height: auto;
               margin-left: 25px;
               position: absolute;
               left: 0;
               padding-left: 12px; }
-        .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .slide-text {
+        .home-slider-wrap .home-slider > div > div .slide .content > div .slide-text {
           font-size: 0;
           min-height: 50px; }
-          .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .slide-text :first-child {
+          .home-slider-wrap .home-slider > div > div .slide .content > div .slide-text :first-child {
             margin-left: 0 !important; }
-          .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .slide-text .project-title {
+          .home-slider-wrap .home-slider > div > div .slide .content > div .slide-text .project-title {
             display: inline;
             font-size: 32px;
             line-height: 40px;
@@ -790,10 +792,10 @@ main br {
             vertical-align: bottom;
             margin-right: 30px; }
             @media screen and (max-width: 767px) {
-              .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .slide-text .project-title {
+              .home-slider-wrap .home-slider > div > div .slide .content > div .slide-text .project-title {
                 font-size: 28px;
                 line-height: 36px; } }
-          .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .slide-text .project-more {
+          .home-slider-wrap .home-slider > div > div .slide .content > div .slide-text .project-more {
             box-sizing: border-box;
             font-size: 16px;
             font-family: CircularBook;
@@ -811,9 +813,9 @@ main br {
             bottom: 0;
             margin-right: 30px; }
             @media screen and (max-width: 767px) {
-              .carouselwrap .carousel-main > div > div .carousel-cell .slide .content > div .slide-text .project-more {
+              .home-slider-wrap .home-slider > div > div .slide .content > div .slide-text .project-more {
                 font-size: 14px; } }
-    .carouselwrap .carousel-main > div > div .carousel-cell .slide .project-overlay {
+    .home-slider-wrap .home-slider > div > div .slide .project-overlay {
       background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), black 120%);
       background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), black 120%);
       background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), black 120%);
@@ -1598,45 +1600,45 @@ footer.contactfooter {
 
 .project-single main {
   padding-top: 40px;
-  padding-bottom: 60px; }
-  .project-single main.artist-list {
+  padding-bottom: 40px; }
+  .project-single main > div {
+    margin-top: 0;
+    margin-bottom: 40px; }
+    .project-single main > div:first-child {
+      margin-top: 0 !important; }
+    .project-single main > div:last-child {
+      margin-bottom: 0 !important; }
+    .project-single main > div > :first-child {
+      margin-top: 0 !important; }
+    .project-single main > div > :last-child {
+      margin-bottom: 0 !important; }
+  .project-single main .artist-list {
     padding-bottom: 0; }
-  .project-single main.artist-single > :first-child {
-    margin-top: 0 !important; }
-  .project-single main.artist-single > :last-child {
-    margin-bottom: 0 !important; }
-  .project-single main.media {
-    padding-bottom: 60px; }
-    .project-single main.media > h4 {
-      border-top: 4px solid black;
-      padding: 12px 0 0;
+    @media screen and (min-width: 768px) {
+      .project-single main .artist-list .project-list-grid .project-grid-row {
+        margin-bottom: 40px; } }
+    .project-single main .artist-list .project-list-grid .project-grid-row:last-child {
+      margin-bottom: 0 !important; }
+      .project-single main .artist-list .project-list-grid .project-grid-row:last-child :last-child {
+        margin-bottom: 0 !important; }
+    @media screen and (max-width: 767px) {
+      .project-single main .artist-list .project-list-grid .project-grid-row .grid-3 {
+        margin-bottom: 40px; } }
+    .project-single main .artist-list .project-list-grid .project-grid-row .grid-3 a {
+      text-decoration: none; }
+      .project-single main .artist-list .project-list-grid .project-grid-row .grid-3 a .project-title {
+        margin-top: 15px !important;
+        margin-bottom: 5px !important;
+        font-family: CircularBook;
+        font-weight: bold;
+        font-style: italic; }
+    .project-single main .artist-list .project-list-grid .project-grid-row .grid-3 .project-subtitle {
+      margin-top: 5px;
+      font-size: 22px;
+      font-family: CircularBook;
+      text-decoration: none;
       margin-bottom: 0;
-      margin-top: 0; }
-  .project-single main.podcast > h4 {
-    border-top: 4px solid black;
-    padding: 12px 0 0;
-    margin-bottom: 0;
-    margin-top: 0; }
-  .project-single main > .aa-nav {
-    float: right;
-    width: 13px;
-    padding: 2px; }
-    .project-single main > .aa-nav.aa-prev {
-      margin-right: 10px; }
-    .project-single main > .aa-nav.aa-next {
-      -webkit-transform: rotate(180deg);
-      -moz-transform: rotate(180deg);
-      -o-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-      transform: rotate(180deg); }
-  .project-single main > .project-title {
-    font-size: 28px;
-    font-style: italic;
-    margin-bottom: 12px;
-    margin-top: 0; }
-  .project-single main > .project-subtitle {
-    font-size: 22px;
-    margin-top: 12px; }
+      font-weight: normal; }
   .project-single main .project-slider {
     border-bottom: 4px solid black;
     margin: 40px 0; }
@@ -1702,42 +1704,97 @@ footer.contactfooter {
           -o-transform: scale(-1, 1);
           -ms-transform: scale(-1, 1);
           transform: scale(-1, 1); }
-  .project-single main .project-content > :first-child {
-    margin-top: 0 !important; }
-  .project-single main .project-content > :last-child {
-    margin-bottom: 0 !important; }
-  .project-single main .project-content .project-title {
-    margin: 30px 0 15px;
-    font-size: 28px;
-    font-style: italic; }
-  .project-single main .project-content .project-subtitle {
-    font-size: 22px;
-    margin: 15px 0 30px; }
+  .project-single main .project-title-subtitle {
+    margin-bottom: 30px; }
+    .project-single main .project-title-subtitle .project-title {
+      margin: 0 0 15px;
+      font-size: 28px;
+      font-style: italic; }
+    .project-single main .project-title-subtitle .project-subtitle {
+      font-size: 22px;
+      margin: 15px 0 0; }
+    .project-single main .project-title-subtitle .aa-nav {
+      float: right;
+      width: 13px;
+      padding: 2px; }
+      .project-single main .project-title-subtitle .aa-nav.aa-prev {
+        margin-right: 10px; }
+      .project-single main .project-title-subtitle .aa-nav.aa-next {
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg); }
   .project-single main .project-related-grid .grid-3 {
     margin-bottom: 0; }
-  .project-single main .project-programs-grid .grid-3 a {
+    @media screen and (max-width: 767px) {
+      .project-single main .project-related-grid .grid-3 {
+        margin-bottom: 40px; } }
+  .project-single main .project-related-grid .grid-2 {
+    font-size: 16px;
+    width: 50%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    vertical-align: top;
+    float: right;
+    position: relative; }
+    @media screen and (max-width: 767px) {
+      .project-single main .project-related-grid .grid-2 {
+        width: 100%;
+        float: none; } }
+    .project-single main .project-related-grid .grid-2 h6 {
+      line-height: 25px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      background: black;
+      color: white;
+      font-weight: bold;
+      display: inline-block;
+      font-size: 18px;
+      letter-spacing: .1em;
+      padding: 0 10px;
+      margin-bottom: 20px; }
+      .project-single main .project-related-grid .grid-2 h6:before {
+        content: '';
+        border-top: 4px solid black;
+        width: -moz-calc(calc(100% - 20px));
+        width: -webkit-calc(calc(100% - 20px));
+        width: -o-calc(calc(100% - 20px));
+        width: calc(calc(100% - 20px));
+        position: absolute;
+        left: 10px; }
+    .project-single main .project-related-grid .grid-2 h5 {
+      font-weight: bold;
+      margin-bottom: 5px;
+      margin-top: 0; }
+      .project-single main .project-related-grid .grid-2 h5:first-child {
+        margin-top: 0 !important; }
+      .project-single main .project-related-grid .grid-2 h5:last-child {
+        margin-bottom: 0 !important; }
+      .project-single main .project-related-grid .grid-2 h5 a {
+        text-decoration: none; }
+    .project-single main .project-related-grid .grid-2 p {
+      margin-top: 5px;
+      margin-bottom: 20px;
+      font-size: 16px; }
+  @media screen and (min-width: 768px) {
+    .project-single main .project-programs-grid .project-grid-row {
+      margin-bottom: 40px; } }
+  .project-single main .project-programs-grid .project-grid-row:last-child {
+    margin-bottom: 0 !important; }
+    .project-single main .project-programs-grid .project-grid-row:last-child :last-child {
+      margin-bottom: 0 !important; }
+  @media screen and (max-width: 767px) {
+    .project-single main .project-programs-grid .project-grid-row .grid-3 {
+      margin-bottom: 40px; } }
+  .project-single main .project-programs-grid .project-grid-row .grid-3 a {
     text-decoration: none; }
-    .project-single main .project-programs-grid .grid-3 a .project-title {
+    .project-single main .project-programs-grid .project-grid-row .grid-3 a .project-title {
       margin-top: 15px !important;
-      margin-bottom: 45px !important;
-      font-family: CircularBook;
-      font-weight: bold; }
-  .project-single main .project-content + .collapsable-sections {
-    margin-top: 40px; }
-  .project-single main .project-list-grid .grid-3 a {
-    text-decoration: none; }
-    .project-single main .project-list-grid .grid-3 a .project-title {
-      margin-top: 15px !important;
-      margin-bottom: 5px !important;
       font-family: CircularBook;
       font-weight: bold;
-      font-style: italic; }
-  .project-single main .project-list-grid .grid-3 .project-subtitle {
-    margin-top: 5px;
-    margin-bottom: 45px !important;
-    font-size: 22px;
-    font-family: CircularBook;
-    text-decoration: none; }
+      margin-bottom: 0; }
   .project-single main .project-events-grid h4 {
     margin-top: 0; }
   .project-single main .project-events-grid .content-type {
@@ -1753,65 +1810,71 @@ footer.contactfooter {
       margin-bottom: 0; }
     .project-single main .past-events .collapsable-sections .section-content {
       margin-bottom: 30px; }
-  .project-single main .media-item {
+  .project-single main .media > h4, .project-single main .podcast > h4 {
+    border-top: 4px solid black;
+    padding: 12px 0 0;
+    margin-bottom: 0;
+    margin-top: 0; }
+  .project-single main .media .media-item, .project-single main .podcast .media-item {
     font-size: 0;
     border-bottom: 4px solid black;
     padding-top: 30px;
     padding-bottom: 30px;
     overflow: auto; }
-    .project-single main .media-item > div {
+    .project-single main .media .media-item > div, .project-single main .podcast .media-item > div {
       display: inline-block;
       width: 50%; }
       @media screen and (max-width: 767px) {
-        .project-single main .media-item > div {
+        .project-single main .media .media-item > div, .project-single main .podcast .media-item > div {
           width: 100%; } }
-    .project-single main .media-item .media-content {
+    .project-single main .media .media-item .media-content, .project-single main .podcast .media-item .media-content {
       padding-right: 20px;
       box-sizing: border-box;
       vertical-align: top; }
-      .project-single main .media-item .media-content h2 {
+      .project-single main .media .media-item .media-content h2, .project-single main .podcast .media-item .media-content h2 {
         font-size: 28px;
         line-height: 36px;
         margin-top: 0;
         margin-bottom: 4px; }
         @media screen and (max-width: 999px) {
-          .project-single main .media-item .media-content h2 {
+          .project-single main .media .media-item .media-content h2, .project-single main .podcast .media-item .media-content h2 {
             font-size: 24px;
             line-height: 32px; } }
-      .project-single main .media-item .media-content p {
+      .project-single main .media .media-item .media-content p, .project-single main .podcast .media-item .media-content p {
         font-size: 18px;
         line-height: 26px;
         margin-top: 0; }
-    .project-single main .media-item .media-embed {
+    .project-single main .media .media-item .media-embed, .project-single main .podcast .media-item .media-embed {
       float: right; }
-      .project-single main .media-item .media-embed iframe {
+      .project-single main .media .media-item .media-embed iframe, .project-single main .podcast .media-item .media-embed iframe {
         width: 100%; }
-      .project-single main .media-item .media-embed > div {
+      .project-single main .media .media-item .media-embed > div, .project-single main .podcast .media-item .media-embed > div {
         background-size: 40px 40px !important; }
-      .project-single main .media-item .media-embed .media-video-embed {
+      .project-single main .media .media-item .media-embed .media-video-embed, .project-single main .podcast .media-item .media-embed .media-video-embed {
         overflow: hidden;
         padding-bottom: 56.25%;
         position: relative;
         height: 0; }
-        .project-single main .media-item .media-embed .media-video-embed .video-container {
+        .project-single main .media .media-item .media-embed .media-video-embed .video-container, .project-single main .podcast .media-item .media-embed .media-video-embed .video-container {
           opacity: 1; }
-          .project-single main .media-item .media-embed .media-video-embed .video-container:before {
+          .project-single main .media .media-item .media-embed .media-video-embed .video-container:before, .project-single main .podcast .media-item .media-embed .media-video-embed .video-container:before {
             display: none; }
-      .project-single main .media-item .media-embed .media-video-embed + .media-audio-embed {
+      .project-single main .media .media-item .media-embed .media-video-embed + .media-audio-embed, .project-single main .podcast .media-item .media-embed .media-video-embed + .media-audio-embed {
         margin-top: 20px; }
-  .project-single main .media-pagination {
-    padding-top: 70px;
+  .project-single main .media .media-pagination, .project-single main .podcast .media-pagination {
+    padding-top: 60px;
     margin-bottom: -20px;
     text-align: center;
     font-size: 0; }
     @media screen and (max-width: 999px) {
-      .project-single main .media-pagination {
+      .project-single main .media .media-pagination, .project-single main .podcast .media-pagination {
         padding-top: 50px; } }
-    .project-single main .media-pagination ul.page-numbers {
-      padding-left: 0; }
-      .project-single main .media-pagination ul.page-numbers li {
+    .project-single main .media .media-pagination ul.page-numbers, .project-single main .podcast .media-pagination ul.page-numbers {
+      padding-left: 0;
+      margin: 0; }
+      .project-single main .media .media-pagination ul.page-numbers li, .project-single main .podcast .media-pagination ul.page-numbers li {
         display: inline-block; }
-        .project-single main .media-pagination ul.page-numbers li a, .project-single main .media-pagination ul.page-numbers li span {
+        .project-single main .media .media-pagination ul.page-numbers li a, .project-single main .media .media-pagination ul.page-numbers li span, .project-single main .podcast .media-pagination ul.page-numbers li a, .project-single main .podcast .media-pagination ul.page-numbers li span {
           text-decoration: none;
           font-family: CircularBook;
           font-size: 19px;
@@ -1820,24 +1883,24 @@ footer.contactfooter {
           padding: 0 10px;
           margin: 0 3px; }
           @media screen and (max-width: 767px) {
-            .project-single main .media-pagination ul.page-numbers li a, .project-single main .media-pagination ul.page-numbers li span {
+            .project-single main .media .media-pagination ul.page-numbers li a, .project-single main .media .media-pagination ul.page-numbers li span, .project-single main .podcast .media-pagination ul.page-numbers li a, .project-single main .podcast .media-pagination ul.page-numbers li span {
               margin: 0 1px;
               font-size: 16px;
               padding: 0 8px; } }
-          .project-single main .media-pagination ul.page-numbers li a.current, .project-single main .media-pagination ul.page-numbers li span.current {
+          .project-single main .media .media-pagination ul.page-numbers li a.current, .project-single main .media .media-pagination ul.page-numbers li span.current, .project-single main .podcast .media-pagination ul.page-numbers li a.current, .project-single main .podcast .media-pagination ul.page-numbers li span.current {
             background-color: black;
             color: white; }
-        .project-single main .media-pagination ul.page-numbers li .prev, .project-single main .media-pagination ul.page-numbers li .next {
+        .project-single main .media .media-pagination ul.page-numbers li .prev, .project-single main .media .media-pagination ul.page-numbers li .next, .project-single main .podcast .media-pagination ul.page-numbers li .prev, .project-single main .podcast .media-pagination ul.page-numbers li .next {
           margin: 0; }
-  .project-single main .podcast-image {
-    padding-bottom: 50px; }
-  .project-single main .podcast-text {
-    padding-bottom: 50px; }
-    .project-single main .podcast-text > :first-child {
+  .project-single main .media .podcast-image, .project-single main .podcast .podcast-image {
+    margin-bottom: 40px; }
+  .project-single main .media .podcast-text, .project-single main .podcast .podcast-text {
+    margin-bottom: 40px; }
+    .project-single main .media .podcast-text > :first-child, .project-single main .podcast .podcast-text > :first-child {
       margin-top: 0 !important; }
-    .project-single main .podcast-text > :last-child {
+    .project-single main .media .podcast-text > :last-child, .project-single main .podcast .podcast-text > :last-child {
       margin-bottom: 0 !important; }
-  .project-single main .podcast-item .podcast-content .pod-ep {
+  .project-single main .media .podcast-item .podcast-content .pod-ep, .project-single main .podcast .podcast-item .podcast-content .pod-ep {
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: .1em;
@@ -1845,19 +1908,19 @@ footer.contactfooter {
     font-weight: bold;
     margin-bottom: 0;
     line-height: 21px; }
-  .project-single main .podcast-item .podcast-content .pod-date {
+  .project-single main .media .podcast-item .podcast-content .pod-date, .project-single main .podcast .podcast-item .podcast-content .pod-date {
     font-family: CircularBook;
     font-weight: bold;
     margin-bottom: 0; }
-  .project-single main .podcast-item .podcast-content .pod-length {
+  .project-single main .media .podcast-item .podcast-content .pod-length, .project-single main .podcast .podcast-item .podcast-content .pod-length {
     font-size: 16px;
     margin-bottom: 12px; }
-  .project-single main .podcast-item .podcast-content .pod-description {
+  .project-single main .media .podcast-item .podcast-content .pod-description, .project-single main .podcast .podcast-item .podcast-content .pod-description {
     font-size: 16px;
     line-height: 22px;
     margin-bottom: 0; }
     @media screen and (max-width: 767px) {
-      .project-single main .podcast-item .podcast-content .pod-description {
+      .project-single main .media .podcast-item .podcast-content .pod-description, .project-single main .podcast .podcast-item .podcast-content .pod-description {
         margin-bottom: 20px; } }
 
 .project-single .project-next {

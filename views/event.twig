@@ -67,7 +67,7 @@
 					{% if post._EventStartDate %}
 						<p>{{ post._EventStartDate|date('l') }}</p>
 					{% endif %}
-					<p>{{ function('spellerberg_sp_date', post, 'Y-m-d') }}</p>
+					<p>{{ function('spellerberg_sp_date', post) }}</p>
 				</div>
 				<div class="event-info-location">
 					{% if function('get_term', post.event_venue) %}

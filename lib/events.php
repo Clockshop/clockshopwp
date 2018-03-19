@@ -143,15 +143,64 @@ function event_dates() {
 		$endTime = date('g', strtotime(get_field('_EventEndDate' , $postid)));
 		$s_hour = date('g', strtotime(get_field('_EventStartDate' , $postid)));
 		$s_min = date('i', strtotime(get_field('_EventStartDate' , $postid)));
-		$s_am = ' ' . date('a', strtotime(get_field('_EventEndDate' , $postid)));
-		$e_hour = date('g', strtotime(get_field('_EventStartDate' , $postid)));
-		$e_min = date('i', strtotime(get_field('_EventStartDate' , $postid)));
+		$s_am = ' ' . date('a', strtotime(get_field('_EventStartDate' , $postid)));
+		$e_hour = date('g', strtotime(get_field('_EventEndDate' , $postid)));
+		$e_min = date('i', strtotime(get_field('_EventEndDate' , $postid)));
 		$e_am = ' ' . date('a', strtotime(get_field('_EventEndDate' , $postid)));
 		return spellerberg_show_event_datetime( $startYear, $endYear, $startMonth, $endMonth, $startDay, $endDay, $startTime, $endTime, $weekday, $s_hour, $s_min, $s_am, $e_hour, $e_min, $e_am, $format );	
 	}
 	function spellerberg_show_event_datetime ( $startYear, $endYear, $startMonth, $endMonth, $startDay, $endDay, $startTime, $endTime, $weekday, $s_hour, $s_min, $s_am, $e_hour, $e_min, $e_am, $format) {
 		$output = '';
-		if ( $startYear == $endYear && $startMonth == "Jan" && $endMonth == "Dec" && $startDay == "1" && $endDay == "31") {
+
+		/*
+		echo '<p>startYear: ';
+		echo $startYear;
+		echo '</p>';
+		echo '<p> endYear: ';
+		echo $endYear;
+		echo '</p>';
+		echo '<p> startMonth: ';
+		echo $startMonth;
+		echo '</p>';
+		echo '<p> endMonth: ';
+		echo $endMonth;
+		echo '</p>';
+		echo '<p> startDay: ';
+		echo $startDay;
+		echo '</p>';
+		echo '<p> endDay: ';
+		echo $endDay;
+		echo '</p>';
+		echo '<p> weekday: ';
+		echo $weekday;
+		echo '</p>';
+		echo '<p> startTime: ';
+		echo $startTime;
+		echo '</p>';
+		echo '<p> endTime: ';
+		echo $endTime;
+		echo '</p>';
+		echo '<p> s_hour: ';
+		echo $s_hour;
+		echo '</p>';
+		echo '<p> s_min: ';
+		echo $s_min;
+		echo '</p>';
+		echo '<p> s_am: ';
+		echo $s_am;
+		echo '</p>';
+		echo '<p> e_hour: ';
+		echo $e_hour;
+		echo '</p>';
+		echo '<p> e_min: ';
+		echo $e_min;
+		echo '</p>';
+		echo '<p> e_am: ';
+		echo $e_am;
+		echo '</p>';
+		*/
+
+		if ( $startYear == $endYear && $startMonth == "January" && $endMonth == "December" && $startDay == "1" && $endDay == "31") {
 			// Is a year-long program
 			$output .= 'Annual program';
 		} else {
@@ -180,7 +229,9 @@ function event_dates() {
 				}
 			}
 			if ( $s_hour == '12' && $s_min == '00' && $s_am == ' am' && $e_hour == '11' && $e_min == '59') {
-				// Is All Day, no output	
+				// Is All Day, no output
+			} elseif ($format == 'notime') {
+				// no output
 			} else {
 				// Not All Day
 				// Set PM, and also output format
