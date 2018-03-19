@@ -1,6 +1,6 @@
-.carouselwrap {
+.home-slider-wrap {
 	padding: 0!important;
-	.carousel-main {
+	.home-slider {
 		.arrow {
 			a {
 				display: none;
@@ -8,123 +8,123 @@
 		}
 		> div {
 			> div {
-				.carousel-cell {
-					.slide {
-						min-height: 500px;
-						height: -moz-calc(100vh - 88px)!important;
-						height: -webkit-calc(100vh - 88px)!important;
-						height: -o-calc(100vh - 88px)!important;
-						height: calc(100vh - 88px)!important;
-						max-height: 140vw;
-						position: relative;
-						@media screen and (max-width: 999px) {
-							height: -moz-calc(100vh - 54px)!important;
-							height: -webkit-calc(100vh - 54px)!important;
-							height: -o-calc(100vh - 54px)!important;
-							height: calc(100vh - 54px)!important;
-						}
-						.content {
-							height: 100%;
-							> div {
-								position: absolute;
-								bottom: 0;
-								z-index: 1;
-								text-align: left;
-								padding-bottom: 80px;
-								@media screen and (max-width: 999px) {
-									padding-bottom: 60px;
-								}
-								.arrows {
-									height: 21px;
-									width: 100px;
-									margin-bottom: 40px;
-									a {
-										text-decoration: none;
-										display: block;
-										cursor: pointer;
-										.left-arrow {
-											width: 12px;
-											height: auto;
-											-moz-transform: scaleX(-1);
-											-o-transform: scaleX(-1);
-											-webkit-transform: scaleX(-1);
-											transform: scaleX(-1);
-											filter: FlipH;
-											-ms-filter: "FlipH";
-											display: inline-block;
-											position: absolute;
-											left: 0;
-										}
-										.right-arrow {
-											width: 12px;
-											height: auto;
-											margin-left: 25px;
-											position: absolute;
-											left: 0;
-											padding-left: 12px;
-										}
-									}
-								}
-								.slide-text {
-									font-size: 0;
-									min-height: 50px;
-									:first-child {
-										margin-left: 0!important;
-									}
-									.project-title {
-										display: inline;
-										font-size: 32px;
-										line-height: 40px;
-										font-family: CircularBook;
-										font-weight: bold;
-										color: white;
+				.slide {
+					min-height: 500px;
+					height: -moz-calc(100vh - 88px)!important;
+					height: -webkit-calc(100vh - 88px)!important;
+					height: -o-calc(100vh - 88px)!important;
+					height: calc(100vh - 88px)!important;
+					max-height: 140vw;
+					position: relative;
+					background-size: cover;
+					background-position: center;
+					@media screen and (max-width: 999px) {
+						height: -moz-calc(100vh - 54px)!important;
+						height: -webkit-calc(100vh - 54px)!important;
+						height: -o-calc(100vh - 54px)!important;
+						height: calc(100vh - 54px)!important;
+					}
+					.content {
+						height: 100%;
+						> div {
+							position: absolute;
+							bottom: 0;
+							z-index: 1;
+							text-align: left;
+							padding-bottom: 80px;
+							@media screen and (max-width: 999px) {
+								padding-bottom: 60px;
+							}
+							.arrows {
+								height: 21px;
+								width: 100px;
+								margin-bottom: 40px;
+								a {
+									text-decoration: none;
+									display: block;
+									cursor: pointer;
+									.left-arrow {
+										width: 12px;
+										height: auto;
+										-moz-transform: scaleX(-1);
+										-o-transform: scaleX(-1);
+										-webkit-transform: scaleX(-1);
+										transform: scaleX(-1);
+										filter: FlipH;
+										-ms-filter: "FlipH";
 										display: inline-block;
-										margin-top: 0;
-										margin-bottom: 0;
-										line-height: 42px;
-										vertical-align: bottom;
-										margin-right: 30px;
-										@media screen and (max-width: 767px) {
-											font-size: 28px;
-											line-height: 36px;
-										}
+										position: absolute;
+										left: 0;
 									}
-									.project-more {
-										box-sizing: border-box;
-										font-size: 16px;
-										font-family: CircularBook;
-										font-weight: bold;
-										color: white;
-										letter-spacing: .1em;
-										border-bottom: 4px solid white;
-										position: relative;
-										display: inline-block;
-										bottom: 10px;
-										text-transform: uppercase;
-										padding-top: 10px;
-										height: 36px;
-										text-decoration: none;
-										bottom: 0;
-										margin-right: 30px;
-										@media screen and (max-width: 767px) {
-											font-size: 14px;
-										}
+									.right-arrow {
+										width: 12px;
+										height: auto;
+										margin-left: 25px;
+										position: absolute;
+										left: 0;
+										padding-left: 12px;
+									}
+								}
+							}
+							.slide-text {
+								font-size: 0;
+								min-height: 50px;
+								:first-child {
+									margin-left: 0!important;
+								}
+								.project-title {
+									display: inline;
+									font-size: 32px;
+									line-height: 40px;
+									font-family: CircularBook;
+									font-weight: bold;
+									color: white;
+									display: inline-block;
+									margin-top: 0;
+									margin-bottom: 0;
+									line-height: 42px;
+									vertical-align: bottom;
+									margin-right: 30px;
+									@media screen and (max-width: 767px) {
+										font-size: 28px;
+										line-height: 36px;
+									}
+								}
+								.project-more {
+									box-sizing: border-box;
+									font-size: 16px;
+									font-family: CircularBook;
+									font-weight: bold;
+									color: white;
+									letter-spacing: .1em;
+									border-bottom: 4px solid white;
+									position: relative;
+									display: inline-block;
+									bottom: 10px;
+									text-transform: uppercase;
+									padding-top: 10px;
+									height: 36px;
+									text-decoration: none;
+									bottom: 0;
+									margin-right: 30px;
+									@media screen and (max-width: 767px) {
+										font-size: 14px;
 									}
 								}
 							}
 						}
-						.project-overlay {
-							background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
-							background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
-							background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
-							background: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
-							background: linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
-							width: 100%;
-						    height: 300px;
-						    bottom: 0;
-						    position: absolute;
-						    z-index: 0;
-						}
+					}
+					.project-overlay {
+						background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
+						background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
+						background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
+						background: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
+						background: linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
+						width: 100%;
+						height: 300px;
+						bottom: 0;
+						position: absolute;
+						z-index: 0;
 					}
 				}
 			}
