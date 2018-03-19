@@ -221,9 +221,9 @@
 
 								<div class="grid-3">
 
-									{% if program.event %}
+									{% if program.event.thumbnail %}
 										<div class="imagecell">
-											<a href="{{function('get_permalink', program.event.id)}}"><img src="{{ TimberImage(program.event)|resize(1434, 956) }}" /></a>
+											<a href="{{function('get_permalink', program.event.id)}}"><img src="{{ TimberImage(program.event.thumbnail)|resize(1434, 956) }}" /></a>
 										</div>
 									{% endif %}
 									<div class="descriptioncell">
@@ -287,9 +287,9 @@
 
 								<div class="grid-3">
 
-									{% if event %}
+									{% if event.thumbnail %}
 										<div class="imagecell">
-											<a href="{{function('get_permalink', event)}}"><img src="{{ TimberImage(event)|resize(1434, 956) }}" /></a>
+											<a href="{{function('get_permalink', event)}}"><img src="{{ TimberImage(event.thumbnail)|resize(1434, 956) }}" /></a>
 										</div>
 									{% endif %}
 									<div class="descriptioncell">								
