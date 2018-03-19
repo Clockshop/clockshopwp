@@ -41,9 +41,11 @@
 			    {% for item in post.get_field('features') %}
 
 					<div class="grid-3">
-						<div class="imagecell">
-							<a href="{{ item.feature_link.url }}"><img src="{{ TimberImage(item.thumbnail_image)|resize(1434, 956) }}" /></a>
-						</div>
+						{% if item.thumbnail_image %}
+							<div class="imagecell">
+								<a href="{{ item.feature_link.url }}"><img src="{{ TimberImage(item.thumbnail_image)|resize(1434, 956) }}" /></a>
+							</div>
+						{% endif %}
 						<div class="descriptioncell">
 							<h2><a href="{{item.feature_link.url}}">{{item.feature_title}}</a></h2>
 							<p class="content-type">{{item.content_type}}</p>
