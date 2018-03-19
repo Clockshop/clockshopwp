@@ -136,6 +136,12 @@
 	    });
 	}
 
+	function mobileNav() {
+		$('.opennav').on('click', function() {
+			$('.topnav').toggle();
+		});
+	}
+
 	signUpForm();
 
 	$(document).ready(function() {
@@ -149,6 +155,7 @@
 		removeEmptyPTags();
 		select2init();
 		homepageHeroSlider();
+		mobileNav();
 	});
 
 	$(window).load(function() {
