@@ -244,7 +244,7 @@
 											<p class="description">{{program.event.get_preview(25, false, '', true, '')}}</p>
 										{% endif %}
 										<p class="calltoaction">
-											<a href="{{function('get_permalink', program.event.id)}}">{{ program.event_list_cta_text|default('RSVP')}}</a>
+											<a href="{{function('get_permalink', program.event.id)}}">{{ program.event.get_field('event_list_cta_text')|default('RSVP')}}</a>
 										</p>
 									</div>
 								</div>
