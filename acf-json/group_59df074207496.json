@@ -395,6 +395,25 @@
                             "delay": 0
                         },
                         {
+                            "key": "field_5aaf1509d771b",
+                            "label": "Podcast Episodes Section Title",
+                            "name": "podcast_episodes_section_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5aad67a3ccbdb",
                             "label": "Podcast Episodes",
                             "name": "podcast_episodes",
@@ -953,5 +972,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1521445995
+    "modified": 1521448841
 }

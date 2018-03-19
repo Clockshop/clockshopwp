@@ -151,7 +151,7 @@
 					<div class="project-related-grid grid featured-grid">
 
 						{% if item.related_content_title %}
-							<h4>{{ item.related_content_title }}</h4>
+							<h4>{{ item.related_content_title|default('Related Content') }}</h4>
 						{% endif %}
 
 						{% for related in item.related_content %}
@@ -205,7 +205,7 @@
 
 						{% if item.upcoming_programs_section_title %}
 
-							<h4>{{ item.upcoming_programs_section_title }}</h4>
+							<h4>{{ item.upcoming_programs_section_title|default('Upcoming Programs') }}</h4>
 
 						{% endif %}
 
@@ -308,7 +308,7 @@
 					{% if pastEvents|length > 0 %}
 
 						<div class="past-events">
-							<h4>Past Events</h4>
+							<h4>{{ item.past_events_section_title|default('Past Events')}}</h4>
 							<div class="collapsable-sections collapsable-events">
 								{% for event in pastEvents %}
 									{% set lastYear = year|default('0') %}
@@ -416,7 +416,7 @@
 
 						{% if podcast_episodes %}
 
-							<h4>Podcast</h4>
+							<h4>{{ item.podcast_episodes_section_title|default('Podcast Episodes')}}</h4>
 
 							{% for podcast in podcast_episodes %}
 
