@@ -1641,7 +1641,7 @@ footer.contactfooter {
       font-family: CircularBook;
       text-decoration: none;
       margin-bottom: 0;
-      font-weight: normal; }
+      font-weight: normals; }
   .project-single main .project-slider {
     border-bottom: 4px solid black;
     margin: 40px 0; }
@@ -1796,7 +1796,7 @@ footer.contactfooter {
   .project-single main .project-programs-grid .project-grid-row .grid-3 a {
     text-decoration: none; }
     .project-single main .project-programs-grid .project-grid-row .grid-3 a .project-title {
-      margin-top: 15px !important;
+      margin-top: 0 !important;
       font-family: CircularBook;
       font-weight: bold;
       margin-bottom: 0; }
