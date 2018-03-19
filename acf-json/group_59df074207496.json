@@ -35,8 +35,8 @@
             "layouts": {
                 "5aad7177621d5": {
                     "key": "5aad7177621d5",
-                    "name": "artists_and_artwork_grid",
-                    "label": "Artists and Artwork Grid",
+                    "name": "artwork_and_artists_grid",
+                    "label": "Artwork and Artists Grid",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -52,7 +52,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "No fields here as all content is added dynamically--all artists and artwork project pages that are children of this page",
+                            "message": "No fields here as all content is added dynamically--all artwork and artists project pages that are children of this page",
                             "new_lines": "wpautop",
                             "esc_html": 0
                         }
@@ -953,5 +953,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1521436795
+    "modified": 1521445995
 }
