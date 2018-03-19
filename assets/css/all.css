@@ -1737,12 +1737,14 @@ footer.contactfooter {
     padding: 0 10px;
     box-sizing: border-box;
     vertical-align: top;
-    float: right;
+    display: inline-block;
+    margin-left: 16.66%;
     position: relative; }
     @media screen and (max-width: 767px) {
       .project-single main .project-related-grid .grid-2 {
         width: 100%;
-        float: none; } }
+        float: none;
+        margin-left: 0; } }
     .project-single main .project-related-grid .grid-2 h6 {
       line-height: 25px;
       margin-top: 0;
