@@ -1,7 +1,6 @@
 <?php
 
 function slider_func() {
-
 	$output = '<div class="project-slider">';
 	foreach( get_field("project_image_slider") as $item ):
 		$output .= '<div class="project-slide">';
@@ -71,5 +70,18 @@ function video_func( $atts ) {
 	}
 }
 add_shortcode( 'video_embed', 'video_func' );
+
+function button_func($atts) {
+    $a = shortcode_atts( array(
+		'text' => '',
+		'href' => '',
+		'target' => '',
+	), $atts );
+
+	$output = '<a class="button button-sc" href="' . $a['href'] . '" target="' . $a['target'] . '">' . $a['text'] . '</a>';
+    
+    return $output;
+}
+add_shortcode( 'button', 'button_func' );
 
 ?>
