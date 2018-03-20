@@ -132,8 +132,11 @@ button, .button {
     background-color: black;
     color: white; }
 
-.button-sc {
-  display: inline-block; }
+.button-sc-container {
+  display: block;
+  margin-bottom: 20px; }
+  .button-sc-container .button-sc {
+    display: inline-block; }
 
 #uparrow {
   display: none !important; }
