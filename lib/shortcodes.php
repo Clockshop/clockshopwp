@@ -78,7 +78,7 @@ function button_func($atts) {
 		'target' => '',
 	), $atts );
 
-	$output = '<a class="button button-sc" href="' . $a['href'] . '" target="' . $a['target'] . '">' . $a['text'] . '</a>';
+	$output = '<div class="button-sc-container"><a class="button button-sc" href="' . $a['href'] . '" target="' . $a['target'] . '">' . $a['text'] . '</a></div>';
     
     return $output;
 }
