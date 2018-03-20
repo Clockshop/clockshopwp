@@ -500,21 +500,27 @@
 			{% endif %}
 		{% endfor %}
 
-		{% if post.project_content_type == 'artist_single' %}
-			<div class="content project-next">
-				<a href="{{post.parent.link}}">
-					Back: {{post.parent.title}}
-				</a>
-			</div>
-		{% endif %}
+		{% set aa = 0 %}
+		{% for item in post.parent.get_field('project_page_content') %}
+			{% if item.acf_fc_layout == 'artwork_and_artists_grid'%}
+				<div class="content project-next">
+					<a href="{{post.parent.link}}">
+						Back: Artwork and Artists
+					</a>
+				</div>
+				{% set aa = 1 %}
+			{% endif %}
+		{% endfor %}
 
-		{% if post.project_content_type == 'program_single' %}
-			<div class="content project-next">
-				<a href="{{post.parent.link}}">
-					Back: {{post.parent.title}}
-				</a>
-			</div>
-		{% endif %}
+		{% for item in post.parent.get_field('project_page_content') %}
+			{% if item.acf_fc_layout == 'programs_grid' and aa == 0 %}
+				<div class="content project-next">
+					<a href="{{post.parent.link}}">
+						Back: Public Programs
+					</a>
+				</div>
+			{% endif %}
+		{% endfor %}
 
 	</div>
 
