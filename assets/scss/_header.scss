@@ -52,13 +52,14 @@
 				display: inline-block;
 				position: relative;
 				.menu-container {
+					font-size: 0;
 					-webkit-transition: opacity .25s ease-in-out;
 					-moz-transition: opacity .25s ease-in-out;
 					-o-transition: opacity .25s ease-in-out;
 					transition: opacity .25s ease-in-out;
 					display: inline-block;
 					ul {
-						display: inli ne-block;
+						display: inline-block;
 						font-size: 0;
 						li {
 							a {
@@ -91,6 +92,10 @@
 							    border-top: none !important;
 							}
 						}
+					}
+					.socials {
+						margin-left: 20px;
+						vertical-align: top;
 						.social {
 							a {
 								padding-left: 4.5px;
