@@ -857,12 +857,12 @@
                 "5aad6a0fbb278": {
                     "key": "5aad6a0fbb278",
                     "name": "upcoming_programs",
-                    "label": "Upcoming Programs",
+                    "label": "Upcoming + Past Events",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_5aad6a0fbb279",
-                            "label": "Upcoming Programs Section Title",
+                            "label": "Upcoming + Past Events Section Title",
                             "name": "upcoming_programs_section_title",
                             "type": "text",
                             "instructions": "",
@@ -881,7 +881,7 @@
                         },
                         {
                             "key": "field_5aad6a0fbb27a",
-                            "label": "Upcoming Programs",
+                            "label": "Upcoming + Past Events",
                             "name": "upcoming_programs",
                             "type": "repeater",
                             "instructions": "",
@@ -972,5 +972,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1521449668
+    "modified": 1523248564
 }
