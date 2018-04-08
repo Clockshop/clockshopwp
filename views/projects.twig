@@ -42,14 +42,14 @@
 					<div class="grid-3">
 						{% if function('get_field', 'featured_image', term).url %}
 						<div class="imagecell">
-							<a href="{{ function('get_field', 'action_url', term).url }}">
+							<a href="{{ function('get_field', 'cta_link', term).url }}">
 								<img src="{{ function('get_field', 'featured_image', term).url|resize(1434, 956) }}" />
 							</a>
 						</div>
 						{% endif %}
 						<div class="descriptioncell">
 							<h2>
-								<a href="{{ function('get_field', 'action_url', term).url }}">{{ term.name }}</a>
+								<a href="{{ function('get_field', 'cta_link', term).url }}">{{ term.name }}</a>
 							</h2>
 						</div>
 					</div>
