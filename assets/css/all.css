@@ -1660,10 +1660,15 @@ footer.contactfooter {
     .project-single main .project-slider:last-child {
       margin-bottom: 0 !important; }
     .project-single main .project-slider .project-slide {
-      height: auto;
-      font-size: 0; }
-      .project-single main .project-slider .project-slide img {
-        margin-bottom: 20px !important; }
+      font-size: 0;
+      height: auto; }
+      .project-single main .project-slider .project-slide .slide-image {
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px; }
+        .project-single main .project-slider .project-slide .slide-image img {
+          max-height: 633px;
+          margin: 0 auto; }
       .project-single main .project-slider .project-slide .caption {
         width: 50%;
         display: inline-block;

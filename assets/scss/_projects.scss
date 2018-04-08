@@ -238,10 +238,16 @@
 				margin-bottom: 0!important;
 			}
 			.project-slide {
-				height: auto;
 				font-size: 0;
-				img {
-					margin-bottom: 20px!important;
+				height: auto;
+				.slide-image {
+					width: 100%;
+					position: relative;
+					margin-bottom: 20px;
+					img {
+						max-height: 633px;
+						margin: 0 auto;
+					}
 				}
 				.caption {
 					width: 50%;
