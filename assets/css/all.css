@@ -531,13 +531,14 @@ main br {
         display: inline-block;
         position: relative; }
         .primarynav .topnav > div .menu-container {
+          font-size: 0;
           -webkit-transition: opacity .25s ease-in-out;
           -moz-transition: opacity .25s ease-in-out;
           -o-transition: opacity .25s ease-in-out;
           transition: opacity .25s ease-in-out;
           display: inline-block; }
           .primarynav .topnav > div .menu-container ul {
-            display: inli ne-block;
+            display: inline-block;
             font-size: 0; }
             .primarynav .topnav > div .menu-container ul li a {
               text-decoration: none;
@@ -559,15 +560,18 @@ main br {
             .primarynav .topnav > div .menu-container ul .current-menu-item a {
               border-bottom: 4px solid black !important;
               border-top: none !important; }
-            .primarynav .topnav > div .menu-container ul .social a {
+          .primarynav .topnav > div .menu-container .socials {
+            margin-left: 20px;
+            vertical-align: top; }
+            .primarynav .topnav > div .menu-container .socials .social a {
               padding-left: 4.5px;
               padding-right: 4.5px;
               margin-left: 0;
               margin-right: 0;
               cursor: pointer; }
-              .primarynav .topnav > div .menu-container ul .social a:hover {
+              .primarynav .topnav > div .menu-container .socials .social a:hover {
                 border-bottom: none; }
-            .primarynav .topnav > div .menu-container ul .social.first a {
+            .primarynav .topnav > div .menu-container .socials .social.first a {
               margin-left: 20px; }
         .primarynav .topnav > div .searchform {
           position: absolute;
