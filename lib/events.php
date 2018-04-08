@@ -63,7 +63,7 @@ function set_custom_mycpt_sortable_columns( $columns ) {
 }
 
 add_action( 'pre_get_posts', function ( $query ) {
-    if ( is_admin() && $query->is_main_query() && $query->get( 'post_type' ) == 'events' ) {
+    if ( (is_admin()) && ($query->is_main_query()) && ($query->get( 'post_type' ) == 'events') ) {
 		if ( $query->query_vars['orderby'] == 'Start Date' && $query->query_vars['order'] == 'desc' ) {  
 			$query->set('orderby', 'meta_value');  
 			$query->set('meta_key', '_EventStartDate');  
