@@ -96,8 +96,20 @@
 						{% for slide in item.project_image_slider %}
 						
 							<div class="project-slide">
-								<img src="{{TimberImage(slide.url).src|resize(1900, 1267)}}" />
-						
+								<pre>{{ dump(slide.sizes['large-height']) }}</pre>
+								<div class="slide-image">
+									{# Uncomment to add safeguard for very vertical images #}
+									{#
+									{% if slide.sizes['large-height'] > slide.sizes['large-width'] %}
+										<img src="{{TimberImage(slide.sizes.project_slider)|letterbox(1900, 1267)}}" />										
+									{% else %}
+									#}
+										<img src="{{TimberImage(slide.sizes.project_slider)}}" />
+									{#
+									{% endif %}
+									#}
+								</div>
+
 								{% if slide.caption %}
 						
 									<div class="caption caption-left">
