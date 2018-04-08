@@ -12,7 +12,7 @@ $context['oneMonth'] = $oneMonth;
 
 $args = array(
 	'posts_per_page'   => -1,
-    'order' => 'DESC',
+    'order' => 'ASC',
     'orderby' => 'meta_value',
     'meta_key' => '_EventStartDate',
     'post_type' => 'events',
@@ -36,7 +36,7 @@ $context['eventsNow'] = $eventsNow;
 
 $args = array(
 	'posts_per_page'   => -1,
-    'order' => 'DESC',
+    'order' => 'ASC',
     'orderby' => 'meta_value',
     'meta_key' => '_EventStartDate',
     'post_type' => 'events',
