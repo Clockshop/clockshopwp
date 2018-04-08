@@ -18,7 +18,7 @@
 
 				<h1>{{ post.title }}</h1>
 				
-				{% if post._EventCost and function('current_time', 'Y-m-d') <= post._EventStartDate|date('Y-m-d') %}
+				{% if post._EventCost %}
 					<p class="event-cost">{{ post._EventCost }}</p>
 				{% endif %}
 
