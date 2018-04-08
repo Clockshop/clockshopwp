@@ -7,7 +7,9 @@ $context['post'] = $post;
 $term = wp_get_post_terms( $post->id, 'projects' );
 $context['term'] = new TimberTerm($term[0], 'projects');
 $termMenu = get_field('project_menu', $term[0]);
-$context['termMenu'] = new TimberMenu($termMenu->slug);
+if ($termMenu) {
+	$context['termMenu'] = new TimberMenu($termMenu->slug);
+}
 
 $today = date("Y-m-d h:i:s A");
 $oneMonth = date('Y-m-d h:i:s A', strtotime("next month"));

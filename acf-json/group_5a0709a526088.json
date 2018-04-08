@@ -80,7 +80,7 @@
             },
             "save_format": "object",
             "container": 0,
-            "allow_null": 0
+            "allow_null": 1
         },
         {
             "key": "field_5a82653729c85",
@@ -121,5 +121,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1518524784
+    "modified": 1523245900
 }
