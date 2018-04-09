@@ -23,7 +23,7 @@
 				{% endif %}
 
 				{% if post.event_nationbuilder_url and function('current_time', 'Y-m-d') <= post._EventStartDate|date('Y-m-d') %}
-					<a href="{{ post.event_nationbuilder_url }}" class="button">{{ post.event_button_text|default('Get Tickets')}}</a>
+					<a target="_blank" href="{{ post.event_nationbuilder_url }}" class="button">{{ post.event_button_text|default('Get Tickets')}}</a>
 				{% endif %}
 
 			</div>

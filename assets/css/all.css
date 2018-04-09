@@ -487,6 +487,11 @@ main br {
     left: 0;
     z-index: 1000; } }
 
+.heading-sc {
+  padding-top: 12px;
+  border-top: 4px solid black;
+  margin-bottom: 20px; }
+
 .primarynav {
   border-bottom: 4px solid black;
   background: rgba(255, 255, 255, 0.95) !important; }
@@ -1126,6 +1131,10 @@ footer.contactfooter {
 .about-content {
   margin-top: 65px;
   margin-bottom: 60px; }
+  .about-content > :first-child {
+    margin-top: 0 !important; }
+  .about-content > :last-child {
+    margin-bottom: 0 !important; }
 
 .events .content {
   text-align: center; }

@@ -61,4 +61,15 @@ function button_func($atts) {
 }
 add_shortcode( 'button', 'button_func' );
 
+function heading_sc($atts) {
+    $a = shortcode_atts( array(
+		'title' => '',
+	), $atts );
+
+	$output = '<h4 class="heading-sc">' . $a['title'] . '</h4>';
+
+    return $output;
+}
+add_shortcode( 'heading', 'heading_sc' );
+
 ?>
