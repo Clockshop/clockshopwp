@@ -65,7 +65,11 @@
 			<div class="side-section-right">
 				<div class="event-info-date">
 					{% if post._EventStartDate %}
-						<p>{{ post._EventStartDate|date('l') }}</p>
+						{% if (post._EventStartDate|date('Y') == post._EventEndDate|date('Y')) and 
+							  (post._EventStartDate|date('F') == post._EventEndDate|date('F')) and 
+							  (post._EventStartDate|date('j') == post._EventEndDate|date('j')) %}
+							<p>{{ post._EventStartDate|date('l') }}</p>
+						{% endif %}
 					{% endif %}
 					<p>{{ function('spellerberg_sp_date', post) }}</p>
 				</div>
