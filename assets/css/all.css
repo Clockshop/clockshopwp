@@ -492,6 +492,10 @@ main br {
   border-top: 4px solid black;
   margin-bottom: 25px; }
 
+hr {
+  border-top: 4px solid black;
+  margin: 30px 0; }
+
 .primarynav {
   border-bottom: 4px solid black;
   background: rgba(255, 255, 255, 0.95) !important; }

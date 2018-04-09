@@ -201,23 +201,25 @@ function event_dates() {
 		echo '</p>';
 		*/
 
+		/*
 		if ( $startYear !== $endYear ) {
 			//Different Years
 			$output .= $startMonth . ' ' . $startDay . ', ' . $startYear;
 			$output .= ' &ndash; ' . $endMonth . ' ' . $endDay . ', ' . $endYear;
 		} else {
+		*/
 			//Same Years
 			if ($startMonth !== $endMonth) {
 				// Different Months
-				$output .= $startMonth . ' ' . $startDay . ' &ndash; ' . $endMonth . ' ' . $endDay . ', ' . $endYear;	
+				$output .= $startMonth . ' ' . $startDay . ' &ndash; ' . $endMonth . ' ' . $endDay/* . ', ' . $endYear*/;	
 			} else {
 				// Same Months
 				if ($startDay !== $endDay) {
 					// Different Day
-					$output .= $startMonth . ' ' . $startDay . '&ndash;' . $endDay . ', ' . $endYear;
+					$output .= $startMonth . ' ' . $startDay . '&ndash;' . $endDay/* . ', ' . $endYear*/;
 				} else {
 					// Same Day
-					$output .= $startMonth . ' ' . $startDay . ', ' . $startYear;
+					$output .= $startMonth . ' ' . $startDay/* . ', ' . $startYear*/;
 					
 					if ( $s_am == "am" ) :
 						$s_am = "am";
@@ -243,7 +245,9 @@ function event_dates() {
 					$output .= '&ndash;' . $e_hour . ':' . $e_min . $e_am;
 				}
 			}
+		/*
 		}
+		*/
 
 		return $output;
 	}
