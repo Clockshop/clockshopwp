@@ -231,18 +231,30 @@ function event_dates() {
 					else :
 						$e_am = "pm";
 					endif;
-			
+
 					if ( is_singular('events') ) {
-						$output .= '</p><p>' . $s_hour . ':' . $s_min;
+						if ($s_min == '00') {
+							$output .= '</p><p>' . $s_hour;
+						} else {
+							$output .= '</p><p>' . $s_hour . ':' . $s_min;
+						}
 					} else {
-						$output .= ', ' . $s_hour . ':' . $s_min;
+						if ($s_min == '00') {
+							$output .= ', ' . $s_hour;
+						} else {
+							$output .= ', ' . $s_hour . ':' . $s_min;
+						}
 					}
 					if ( $s_am !== $e_am ) {
 						// Different AM
 						$output .= '' . $s_am;
 					}
-			
-					$output .= '&ndash;' . $e_hour . ':' . $e_min . $e_am;
+
+					if ($e_min == '00') {
+						$output .= '&ndash;' . $e_hour . $e_am;
+					} else {
+						$output .= '&ndash;' . $e_hour . ':' . $e_min . $e_am;
+					}
 				}
 			}
 		/*
