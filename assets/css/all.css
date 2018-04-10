@@ -1344,7 +1344,7 @@ footer.contactfooter {
 .event-single {
   margin-bottom: 80px; }
   .event-single .event-header {
-    margin-top: 25px;
+    margin-top: 30px;
     padding-bottom: 30px;
     border-bottom: 4px solid black; }
     .event-single .event-header .side-section-left {
@@ -1455,8 +1455,9 @@ footer.contactfooter {
   .event-single .event-content .side-section-left {
     vertical-align: top; }
     .event-single .event-content .side-section-left h4 {
-      padding: 12px 0 30px;
-      margin-top: 0; }
+      padding: 12px 0 0;
+      margin-top: 0;
+      margin-bottom: 0; }
       @media screen and (max-width: 767px) {
         .event-single .event-content .side-section-left h4 {
           padding-bottom: 0;

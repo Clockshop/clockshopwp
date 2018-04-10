@@ -136,22 +136,6 @@
             "placeholder": ""
         },
         {
-            "key": "field_59cca5fee416f",
-            "label": "Event Twitter URL",
-            "name": "event_twitter_url",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
             "key": "field_5a5285b94ae11",
             "label": "Event Start Date\/Time",
             "name": "_EventStartDate",
@@ -320,5 +304,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1518347714
+    "modified": 1523353114
 }
