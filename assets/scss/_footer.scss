@@ -45,12 +45,12 @@ footer {
 		    text-align: center;
 		    margin-top: 40px;
 		    font-size: 15px;
-		    line-height: 21px;
-		    letter-spacing: .04em;
+		    line-height: 24px;
+			letter-spacing: .04em;
 			@media screen and (max-width: 899px) {
 				span:not(.dot) {
 					display: block;
-					margin-bottom: 10px;
+					margin-bottom: 5px;
 				}
 			}
 			span {
