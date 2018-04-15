@@ -74,7 +74,8 @@ if( have_rows( 'project_page_content' ) ) {
 				$page = 1;
 			}
 			$row = 0;
-			$items_per_page = 5;
+			//$items_per_page = 5;
+			$items_per_page = 9999999;
 			$items = get_sub_field( 'media_files' );
 			$total = count( $items );
 			$pages = ceil( $total / $items_per_page );
@@ -118,7 +119,8 @@ if( have_rows( 'project_page_content' ) ) {
 				$page = 1;
 			}
 			$row = 0;
-			$items_per_page = 5;
+			//$items_per_page = 5;
+			$items_per_page = 9999999;
 			$items = get_sub_field( 'podcast_episodes' );
 			$total = count( $items );
 			$pages = ceil( $total / $items_per_page );
