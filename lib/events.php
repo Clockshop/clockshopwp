@@ -201,25 +201,35 @@ function event_dates() {
 		echo '</p>';
 		*/
 
-		/*
 		if ( $startYear !== $endYear ) {
 			//Different Years
 			$output .= $startMonth . ' ' . $startDay . ', ' . $startYear;
 			$output .= ' &ndash; ' . $endMonth . ' ' . $endDay . ', ' . $endYear;
 		} else {
-		*/
 			//Same Years
 			if ($startMonth !== $endMonth) {
 				// Different Months
-				$output .= $startMonth . ' ' . $startDay . ' &ndash; ' . $endMonth . ' ' . $endDay/* . ', ' . $endYear*/;	
+				if ($format == 'noyear' && $endYear == date('Y')) {
+					$output .= $startMonth . ' ' . $startDay . ' &ndash; ' . $endMonth . ' ' . $endDay/* . ', ' . $endYear*/;	
+				} else {
+					$output .= $startMonth . ' ' . $startDay . ' &ndash; ' . $endMonth . ' ' . $endDay . ', ' . $endYear;
+				}
 			} else {
 				// Same Months
 				if ($startDay !== $endDay) {
 					// Different Day
-					$output .= $startMonth . ' ' . $startDay . '&ndash;' . $endDay/* . ', ' . $endYear*/;
+					if ($format == 'noyear' && $endYear == date('Y')) {
+						$output .= $startMonth . ' ' . $startDay . '&ndash;' . $endDay/* . ', ' . $endYear*/;
+					} else {
+						$output .= $startMonth . ' ' . $startDay . '&ndash;' . $endDay . ', ' . $endYear;
+					}
 				} else {
 					// Same Day
-					$output .= $startMonth . ' ' . $startDay/* . ', ' . $startYear*/;
+					if ($format == 'noyear' && $endYear == date('Y')) {
+						$output .= $startMonth . ' ' . $startDay/* . ', ' . $startYear*/;
+					} else {
+						$output .= $startMonth . ' ' . $startDay . ', ' . $startYear;
+					}
 					
 					if ( $s_am == "am" ) :
 						$s_am = "am";
@@ -257,9 +267,7 @@ function event_dates() {
 					}
 				}
 			}
-		/*
 		}
-		*/
 
 		return $output;
 	}

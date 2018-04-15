@@ -24,7 +24,7 @@
 								<a class="next"><img class="right-arrow" src="{{ TimberImage(theme.link ~ '/assets/images/arrow_black.png') }}" /></a>
 							{% endif %}
 							<h2><a href="{{ event.link }}">{{ event.title }}</a></h2>
-							<h3>{{ function('spellerberg_sp_date', event) }}</h3>
+							<h3>{{ function('spellerberg_sp_date', event, 'noyear') }}</h3>
 
 							{% if event.terms('projects') %}
 								<h5>{{ event.terms('projects')[0].name }}</h5>
@@ -66,7 +66,7 @@
 							{% endif %}
 							<div class="descriptioncell">
 								<h2><a href="{{ event.link }}">{{ event.title }}</a></h2>
-								<p class="content-type">{{ function('spellerberg_sp_date', event) }}</p>
+								<p class="content-type">{{ function('spellerberg_sp_date', event, 'noyear') }}</p>
 
 								{% if event.terms('projects') %}
 									<p class="add-descriptor">{{ event.terms('projects')[0].name }}</p>
@@ -124,7 +124,7 @@
 										{{ event.title }}
 									</a>
 								</p>
-								<p class="event-date"><span>{{ event._EventStartDate|date('F j') }}</span></p>
+								<p class="event-date"><span>{{ event._EventStartDate|date('F j, Y') }}</span></p>
 							</div>
 
 				{% if loop.last %}
