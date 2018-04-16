@@ -5,64 +5,68 @@ $post = new TimberPost();
 $context['post'] = $post;
 
 $term = wp_get_post_terms( $post->id, 'projects' );
-$context['term'] = new TimberTerm($term[0], 'projects');
-$termMenu = get_field('project_menu', $term[0]);
-if ($termMenu) {
-	$context['termMenu'] = new TimberMenu($termMenu->slug);
+if ($term) {
+    $context['term'] = new TimberTerm($term[0], 'projects');
+    $termMenu = get_field('project_menu', $term[0]);
+    if ($termMenu) {
+        $context['termMenu'] = new TimberMenu($termMenu->slug);
+    }    
 }
 
 $today = date("Y-m-d h:i:s A");
 $oneMonth = date('Y-m-d h:i:s A', strtotime("next month"));
 
-$args = array(
-	'posts_per_page' => 3,
-    'order' => 'ASC',
-    'orderby' => 'meta_value',
-    'meta_key' => '_EventStartDate',
-    'post_type' => 'events',
-	'post_status' => 'publish',
-	'tax_query' => array(
-		array(
-			'taxonomy' => 'projects',
-			'field' => 'id',
-			'terms' => $term[0]->term_id
-		)
-	),
-    'meta_query' => array(
-        array(
-            'key' => '_EventStartDate',
-            'value' => $today,
-            'compare' => '>='
+if ($term) {
+    $args = array(
+        'posts_per_page' => 3,
+        'order' => 'ASC',
+        'orderby' => 'meta_value',
+        'meta_key' => '_EventStartDate',
+        'post_type' => 'events',
+        'post_status' => 'publish',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'projects',
+                'field' => 'id',
+                'terms' => $term[0]->term_id
+            )
         ),
-    ),
-);
-$events = Timber::get_posts( $args );
-$context['events'] = $events;
+        'meta_query' => array(
+            array(
+                'key' => '_EventStartDate',
+                'value' => $today,
+                'compare' => '>='
+            ),
+        ),
+    );
+    $events = Timber::get_posts( $args );
+    $context['events'] = $events;
 
-$args = array(
-	'posts_per_page'   => -1,
-    'order' => 'DESC',
-    'orderby' => 'meta_value',
-    'meta_key' => '_EventStartDate',
-    'post_type' => 'events',
-	'post_status' => 'publish',
-	'tax_query' => array(
-		array(
-			'taxonomy' => 'projects',
-			'field' => 'id',
-			'terms' => $term[0]->term_id
-		)
-	),
-    'meta_query' => array(
-        array(
-            'key' => '_EventStartDate',
-            'value' => $today,
-            'compare' => '<'
-        )
-    ),
-);
-$pastEvents = Timber::get_posts( $args );
-$context['pastEvents'] = $pastEvents;
+    $args = array(
+        'posts_per_page'   => -1,
+        'order' => 'DESC',
+        'orderby' => 'meta_value',
+        'meta_key' => '_EventStartDate',
+        'post_type' => 'events',
+        'post_status' => 'publish',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'projects',
+                'field' => 'id',
+                'terms' => $term[0]->term_id
+            )
+        ),
+        'meta_query' => array(
+            array(
+                'key' => '_EventStartDate',
+                'value' => $today,
+                'compare' => '<'
+            )
+        ),
+    );
+    $pastEvents = Timber::get_posts( $args );
+    $context['pastEvents'] = $pastEvents;
+}
 
 // Media Embeds
 if( have_rows( 'page_content' ) ) {
