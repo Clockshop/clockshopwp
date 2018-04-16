@@ -459,6 +459,14 @@
 
 		</main>
 
+		{% if post.parent %}
+			<div class="content project-next">
+				<a href="{{post.parent.link}}">
+					Back: {{post.parent.name}}
+				</a>
+			</div>
+		{% endif %}
+
 		{#
 		{% for item in termMenu.items %}
 			{% if check == true %}
@@ -480,7 +488,6 @@
 				</div>
 			{% endif %}
 		{% endfor %}
-		#}
 
 		{% set aa = 0 %}
 		{% for item in post.parent.get_field('page_content') %}
@@ -503,6 +510,7 @@
 				</div>
 			{% endif %}
 		{% endfor %}
+		#}
 
 	</div>
 
