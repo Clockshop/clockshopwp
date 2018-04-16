@@ -1,10 +1,10 @@
 {
-    "key": "group_59df074207496",
-    "title": "Project (Post Type)",
+    "key": "group_5ad3d51ec1431",
+    "title": "Page",
     "fields": [
         {
-            "key": "field_5a2b66d05f6b7",
-            "label": "<h1 style=\"color: red;\">Project Page Reminder<\/h1>",
+            "key": "field_5ad3d51ed0b66",
+            "label": "<h1 style=\"color: red;\">Page Reminder<\/h1>",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -20,9 +20,9 @@
             "esc_html": 0
         },
         {
-            "key": "field_5aad5b2e8404e",
-            "label": "Project Page Content",
-            "name": "project_page_content",
+            "key": "field_5ad3d51ed0b97",
+            "label": "Page Content",
+            "name": "page_content",
             "type": "flexible_content",
             "instructions": "",
             "required": 0,
@@ -40,7 +40,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5aad720132e19",
+                            "key": "field_5ad3d51ed7e87",
                             "label": "Artwork and Artists Grid",
                             "name": "",
                             "type": "message",
@@ -67,7 +67,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5aad671568f37",
+                            "key": "field_5ad3d51ed7ebc",
                             "label": "Collapsable Sections",
                             "name": "collapsable_sections",
                             "type": "repeater",
@@ -86,7 +86,7 @@
                             "button_label": "Add Section",
                             "sub_fields": [
                                 {
-                                    "key": "field_5aad671568f38",
+                                    "key": "field_5ad3d51edd29c",
                                     "label": "Section Title",
                                     "name": "section_title",
                                     "type": "text",
@@ -105,7 +105,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_5aad671568f39",
+                                    "key": "field_5ad3d51edd2e1",
                                     "label": "Section Content",
                                     "name": "section_content",
                                     "type": "wysiwyg",
@@ -136,7 +136,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5aaedb32d99e2",
+                            "key": "field_5ad3d51ed7efd",
                             "label": "Events Grid Title",
                             "name": "events_grid_title",
                             "type": "text",
@@ -155,7 +155,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5aaed4e6af7bb",
+                            "key": "field_5ad3d51ed7f6d",
                             "label": "Events Grid",
                             "name": "",
                             "type": "message",
@@ -182,7 +182,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5aad663a68f27",
+                            "key": "field_5ad3d51ed812e",
                             "label": "Image Slider",
                             "name": "image_slider",
                             "type": "gallery",
@@ -207,7 +207,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5ad3ffa53ef71",
+                            "key": "field_5ad3f7707f793",
                             "label": "Image Slider Bottom Separator",
                             "name": "image_slider_bottom_separator",
                             "type": "true_false",
@@ -236,7 +236,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5aaee5f662175",
+                            "key": "field_5ad3d51ed7fa2",
                             "label": "Media Section Title",
                             "name": "media_section_title",
                             "type": "text",
@@ -255,7 +255,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5aad675e68f3c",
+                            "key": "field_5ad3d51ed7fcc",
                             "label": "Media Files",
                             "name": "media_files",
                             "type": "repeater",
@@ -274,7 +274,7 @@
                             "button_label": "Add Media File",
                             "sub_fields": [
                                 {
-                                    "key": "field_5aad675e68f3d",
+                                    "key": "field_5ad3d51eef3e8",
                                     "label": "Media File Title",
                                     "name": "media_file_title",
                                     "type": "text",
@@ -293,7 +293,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_5aad675e68f3e",
+                                    "key": "field_5ad3d51eef421",
                                     "label": "Media File Date",
                                     "name": "media_file_date",
                                     "type": "date_picker",
@@ -310,7 +310,7 @@
                                     "first_day": 1
                                 },
                                 {
-                                    "key": "field_5aad675e68f3f",
+                                    "key": "field_5ad3d51eef447",
                                     "label": "Media Video Embed",
                                     "name": "media_video_embed",
                                     "type": "textarea",
@@ -329,7 +329,7 @@
                                     "new_lines": ""
                                 },
                                 {
-                                    "key": "field_5aad675e68f40",
+                                    "key": "field_5ad3d51eef46d",
                                     "label": "Media Audio Embed",
                                     "name": "media_audio_embed",
                                     "type": "textarea",
@@ -350,7 +350,7 @@
                             ]
                         },
                         {
-                            "key": "field_5ad3ffbd3ef72",
+                            "key": "field_5ad3f8fcf4f24",
                             "label": "Media Bottom Separator",
                             "name": "media_bottom_separator",
                             "type": "true_false",
@@ -379,7 +379,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5aaedf1235f4d",
+                            "key": "field_5ad3d51ed800e",
                             "label": "Past Events Section Title",
                             "name": "past_events_section_title",
                             "type": "text",
@@ -398,7 +398,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5aaedf3535f4e",
+                            "key": "field_5ad3d51ed8049",
                             "label": "Past Events",
                             "name": "",
                             "type": "message",
@@ -425,7 +425,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5aad677668f42",
+                            "key": "field_5ad3d51ed8072",
                             "label": "Podcast Cover Image",
                             "name": "podcast_cover_image",
                             "type": "image",
@@ -449,7 +449,7 @@
                             "mime_types": ""
                         },
                         {
-                            "key": "field_5aad6794ccbda",
+                            "key": "field_5ad3d51ed8098",
                             "label": "Podcast Intro Text",
                             "name": "podcast_intro_text",
                             "type": "wysiwyg",
@@ -468,7 +468,7 @@
                             "delay": 0
                         },
                         {
-                            "key": "field_5aaf1509d771b",
+                            "key": "field_5ad3d51ed80be",
                             "label": "Podcast Episodes Section Title",
                             "name": "podcast_episodes_section_title",
                             "type": "text",
@@ -487,7 +487,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5aad67a3ccbdb",
+                            "key": "field_5ad3d51ed80e4",
                             "label": "Podcast Episodes",
                             "name": "podcast_episodes",
                             "type": "repeater",
@@ -506,7 +506,7 @@
                             "button_label": "Add Podcast Episode",
                             "sub_fields": [
                                 {
-                                    "key": "field_5aad67a3ccbdc",
+                                    "key": "field_5ad3d51f17797",
                                     "label": "Podcast Episode",
                                     "name": "podcast_episode",
                                     "type": "text",
@@ -525,7 +525,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_5aad67a3ccbdd",
+                                    "key": "field_5ad3d51f177ca",
                                     "label": "Podcast Episode Title",
                                     "name": "podcast_episode_title",
                                     "type": "text",
@@ -544,7 +544,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_5aad67a3ccbde",
+                                    "key": "field_5ad3d51f177f0",
                                     "label": "Podcast Episode Date",
                                     "name": "podcast_episode_date",
                                     "type": "date_picker",
@@ -561,7 +561,7 @@
                                     "first_day": 1
                                 },
                                 {
-                                    "key": "field_5aad67a3ccbdf",
+                                    "key": "field_5ad3d51f17814",
                                     "label": "Podcast Episode Length",
                                     "name": "podcast_episode_length",
                                     "type": "text",
@@ -580,7 +580,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_5aad67a3ccbe0",
+                                    "key": "field_5ad3d51f1783c",
                                     "label": "Podcast Episode Description",
                                     "name": "podcast_episode_description",
                                     "type": "textarea",
@@ -599,7 +599,7 @@
                                     "new_lines": ""
                                 },
                                 {
-                                    "key": "field_5aad67a3ccbe1",
+                                    "key": "field_5ad3d51f17864",
                                     "label": "Podcast Episode Embed",
                                     "name": "podcast_episode_embed",
                                     "type": "textarea",
@@ -620,7 +620,7 @@
                             ]
                         },
                         {
-                            "key": "field_5ad3ffd23ef73",
+                            "key": "field_5ad3f92ff4f25",
                             "label": "Podcast Bottom Separator",
                             "name": "podcast_bottom_separator",
                             "type": "true_false",
@@ -633,7 +633,7 @@
                                 "id": ""
                             },
                             "message": "",
-                            "default_value": 1,
+                            "default_value": 0,
                             "ui": 0,
                             "ui_on_text": "",
                             "ui_off_text": ""
@@ -649,7 +649,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5aae02711ecd6",
+                            "key": "field_5ad3d51ed8109",
                             "label": "Programs Grid",
                             "name": "",
                             "type": "message",
@@ -676,7 +676,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5aad67d9ccbe2",
+                            "key": "field_5ad3d51ed8153",
                             "label": "Project Title",
                             "name": "project_title",
                             "type": "text",
@@ -695,7 +695,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5aad5d1a84052",
+                            "key": "field_5ad3d51ed8178",
                             "label": "Project Subtitle",
                             "name": "project_subtitle",
                             "type": "text",
@@ -724,7 +724,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5aad666468f29",
+                            "key": "field_5ad3d51ed819c",
                             "label": "Related Content Title",
                             "name": "related_content_title",
                             "type": "text",
@@ -743,7 +743,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5aad667e68f2a",
+                            "key": "field_5ad3d51ed81c1",
                             "label": "Related Content",
                             "name": "related_content",
                             "type": "repeater",
@@ -762,7 +762,7 @@
                             "button_label": "Add Related Item",
                             "sub_fields": [
                                 {
-                                    "key": "field_5aad667e68f2b",
+                                    "key": "field_5ad3d51f39e84",
                                     "label": "Item URL",
                                     "name": "item_url",
                                     "type": "link",
@@ -777,7 +777,7 @@
                                     "return_format": "array"
                                 },
                                 {
-                                    "key": "field_5aad667e68f2c",
+                                    "key": "field_5ad3d51f39eb9",
                                     "label": "Item Title",
                                     "name": "item_title",
                                     "type": "text",
@@ -796,7 +796,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_5aad667e68f2d",
+                                    "key": "field_5ad3d51f39ee1",
                                     "label": "Item Description",
                                     "name": "item_description",
                                     "type": "textarea",
@@ -815,7 +815,7 @@
                                     "new_lines": ""
                                 },
                                 {
-                                    "key": "field_5aad667e68f2e",
+                                    "key": "field_5ad3d51f39f07",
                                     "label": "Item Type",
                                     "name": "item_type",
                                     "type": "text",
@@ -834,7 +834,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_5aad667e68f2f",
+                                    "key": "field_5ad3d51f39f31",
                                     "label": "Item Call to Action",
                                     "name": "item_call_to_action",
                                     "type": "text",
@@ -853,7 +853,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_5aad667e68f30",
+                                    "key": "field_5ad3d51f39f5b",
                                     "label": "Item Image",
                                     "name": "item_image",
                                     "type": "image",
@@ -889,7 +889,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5aad5b418404f",
+                            "key": "field_5ad3d51ed81e9",
                             "label": "Text Editor",
                             "name": "text_editor",
                             "type": "wysiwyg",
@@ -918,7 +918,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5aad6a0fbb279",
+                            "key": "field_5ad3d51ed820e",
                             "label": "Upcoming + Past Events Section Title",
                             "name": "upcoming_programs_section_title",
                             "type": "text",
@@ -937,7 +937,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5aad6a0fbb27a",
+                            "key": "field_5ad3d51ed8233",
                             "label": "Upcoming + Past Events",
                             "name": "upcoming_programs",
                             "type": "repeater",
@@ -956,7 +956,7 @@
                             "button_label": "Add Program",
                             "sub_fields": [
                                 {
-                                    "key": "field_5aad6a0fbb27b",
+                                    "key": "field_5ad3d51f53a93",
                                     "label": "Event",
                                     "name": "event",
                                     "type": "post_object",
@@ -980,7 +980,7 @@
                             ]
                         },
                         {
-                            "key": "field_5aaeae9abdc05",
+                            "key": "field_5ad3d51ed825b",
                             "label": "Right Section Title",
                             "name": "right_section_title",
                             "type": "text",
@@ -1002,14 +1002,14 @@
                     "min": "",
                     "max": ""
                 },
-                "5ad3eee002f8d": {
-                    "key": "5ad3eee002f8d",
+                "5ad3ebad191f6": {
+                    "key": "5ad3ebad191f6",
                     "name": "video",
                     "label": "Video",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5ad3eef302f8e",
+                            "key": "field_5ad3ebbe191f7",
                             "label": "Video ID",
                             "name": "video_id",
                             "type": "text",
@@ -1028,7 +1028,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_5ad3ef6d02f90",
+                            "key": "field_5ad3ef4bda5cf",
                             "label": "Video Source",
                             "name": "video_source",
                             "type": "select",
@@ -1053,7 +1053,7 @@
                             "placeholder": ""
                         },
                         {
-                            "key": "field_5ad3ef2402f8f",
+                            "key": "field_5ad3ebf5191f8",
                             "label": "Video Poster Image",
                             "name": "video_poster_image",
                             "type": "image",
@@ -1091,7 +1091,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "project"
+                "value": "page"
             }
         ]
     ],
@@ -1107,5 +1107,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1523868253
+    "modified": 1523866965
 }

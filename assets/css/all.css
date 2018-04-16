@@ -1625,7 +1625,7 @@ footer.contactfooter {
 
 .project-single main {
   padding-top: 40px;
-  padding-bottom: 40px; }
+  padding-bottom: 60px; }
   .project-single main > div {
     margin-top: 0;
     margin-bottom: 40px; }
@@ -1954,6 +1954,8 @@ footer.contactfooter {
     @media screen and (max-width: 767px) {
       .project-single main .media .podcast-item .podcast-content .pod-description, .project-single main .podcast .podcast-item .podcast-content .pod-description {
         margin-bottom: 20px; } }
+  .project-single main .video-flexible-content .video-container {
+    margin-bottom: 0 !important; }
 
 .project-single .project-next {
   display: block;

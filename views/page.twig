@@ -1,11 +1,509 @@
 {% extends "base.twig" %}
 
-{% block content %}
+{% block content %}	
 
-	{% if post.content %}
-		<div class="page content">
-			{{post.content}}
-		</div>
-    {% endif %}
+	<div class="project-single">
+
+		<main class="content">
+
+			{% for item in post.get_field('page_content') %}
+
+				{% if item.acf_fc_layout == 'text_editor' %}
+
+					<div class="project-content">
+						{{ item.text_editor }}
+					</div>
+
+				{% elseif item.acf_fc_layout == 'artwork_and_artists_grid' %}
+
+					<div class="artist-list">
+						<div class="grid featured-grid project-list-grid">
+							<div class="project-grid-row">
+								
+								{% for child in post.children('page') %}
+									
+									<div class="grid-3">
+										{% if child.thumbnail %}
+											<div class="imagecell">
+												<a href="{{child.link}}"><img src="{{ TimberImage(child.thumbnail)|resize(1434, 956) }}" /></a>
+											</div>
+										{% endif %}
+										<a href="{{child.link}}"><h3 class="project-title">{{ child.get_field('page_content').0.project_title|default(child.post_title)}}</h3></a>
+
+										{% set check = 0 %}
+										{% for item in child.get_field('page_content') %}
+											{% if item.acf_fc_layout == 'project_title_and_subtitle' and check == 0 %}
+												<h3 class="project-subtitle">{{item.project_subtitle}}</h3>
+												{% set check = 1 %}
+											{% endif %}
+										{% endfor %}
+
+									</div>
+
+									{% if loop.index % 3 == 0 and loop.index != loop.last %}
+										
+										</div><div class="project-grid-row">
+
+									{% endif %}
+
+								{% endfor %}
+
+							</div>
+						</div>
+					</div>
+
+				{% elseif item.acf_fc_layout == 'image_slider' %}
+
+					<div class="project-slider" style="{% if not item.image_slider_bottom_separator %}border-bottom: none;{% endif %}">
+						
+						{% for slide in item.image_slider %}
+
+							<div class="project-slide">
+								<div class="slide-image">
+									{# Uncomment to add safeguard for very vertical images #}
+									{#
+									{% if slide.sizes['large-height'] > slide.sizes['large-width'] %}
+										<img src="{{TimberImage(slide.sizes.project_slider)|letterbox(1900, 1267)}}" />										
+									{% else %}
+									#}
+										<img src="{{TimberImage(slide.sizes.project_slider)}}" />
+									{#
+									{% endif %}
+									#}
+								</div>
+
+								{% if slide.caption %}
+						
+									<div class="caption caption-left">
+										{{slide.caption}}
+						
+									</div>
+						
+								{% endif %}
+						
+								{% if slide.description %}
+						
+									<div class="caption caption-right">
+										{{slide.description}}
+									</div>
+						
+								{% endif %}
+						
+							</div>
+						
+						{% endfor %}
+					
+					</div>
+
+				{% elseif item.acf_fc_layout == 'project_title_and_subtitle' %}
+
+					<div class="project-title-subtitle">
+
+						{% if post.parent.children('page')|length > 1 %}
+
+							{% for child in post.parent.children('page') %}
+
+								{% if post.id == child.id %}
+
+									{% if loop.last %}
+										<a class="aa-nav aa-next" href="{{ post.parent.children('page').0.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+									{% else %}
+										<a class="aa-nav aa-next" href="{{ post.parent.children('page')[loop.index0 + 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+									{% endif %}
+
+									{% if loop.first %}
+										<a class="aa-nav aa-prev" href="{{ post.parent.children('page')[loop.length - 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+									{% else %}
+										<a class="aa-nav aa-prev" href="{{ post.parent.children('page')[loop.index0 - 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+									{% endif %}
+
+								{% endif %}
+
+								{% set prev = item %}
+
+							{% endfor %}
+
+						{% endif %}
+
+						<h3 class="project-title">{{item.project_title|default(post.title)}}</h3>
+						<p class="project-subtitle">{{item.project_subtitle}}</p>
+
+					</div>
+
+				{% elseif item.acf_fc_layout == 'related_content' %}
+
+					<div class="project-related-grid grid featured-grid">
+
+						{% if item.related_content_title %}
+							<h4>{{ item.related_content_title|default('Related Content') }}</h4>
+						{% endif %}
+
+						{% for related in item.related_content %}
+
+							<div class="grid-3">
+								{% if related.item_image %}
+									<div class="imagecell">
+										<a href="{{related.item_url.url}}"><img src="{{ TimberImage(related.item_image)|resize(1434, 956) }}" /></a>
+									</div>
+								{% endif %}
+								<div class="descriptioncell">
+									<h2><a href="{{related.item_url.url}}">{{related.item_title}}</a></h2>
+									<p class="content-type">{{related.item_type}}</p>
+									<p class="description">{{related.item_description}}</p>
+									<p class="calltoaction">
+										<a href="{{related.item_url.url}}">{{related.item_call_to_action}}</a>
+									</p>
+								</div>
+							</div>
+
+						{% endfor %}
+
+					</div>
+
+				{% elseif item.acf_fc_layout == 'programs_grid' %}
+
+					<div class="project-programs-grid grid featured-grid">
+						<div class="project-grid-row">
+	
+							{% for child in post.children('page') %}
+						
+								<div class="grid-3">
+									{% if child.thumbnail %}
+										<div class="imagecell">
+											<a href="{{child.link}}"><img src="{{ TimberImage(child.thumbnail)|resize(1434, 956) }}" /></a>
+										</div>
+									{% endif %}
+									<a href="{{child.link}}"><h3 class="project-title">{{child.post_title}}</h3></a>
+								</div>
+
+								{% if loop.index % 3 == 0 and loop.index != loop.last %}
+									
+									</div><div class="project-grid-row">
+
+								{% endif %}
+
+							{% endfor %}
+
+						</div>
+					</div>
+
+				{% elseif item.acf_fc_layout == 'upcoming_programs' %}
+
+					<div class="project-related-grid grid featured-grid">
+
+						{% if item.upcoming_programs_section_title %}
+
+							<h4>{{ item.upcoming_programs_section_title|default('Upcoming Programs') }}</h4>
+
+						{% endif %}
+
+						{% for program in item.upcoming_programs %}
+
+							{% if loop.index == 1 %}
+
+								<div class="grid-3">
+
+									{% if program.event.thumbnail %}
+										<div class="imagecell">
+											<a href="{{function('get_permalink', program.event.id)}}"><img src="{{ TimberImage(program.event.thumbnail)|resize(1434, 956) }}" /></a>
+										</div>
+									{% endif %}
+									<div class="descriptioncell">
+										<h2><a href="{{function('get_permalink', program.event.id)}}">{{program.event.post_title}}</a></h2>
+										<p class="content-type">{{function('spellerberg_sp_date', program.event)}}</p>
+										<p class="add-descriptor">{{ function('get_term', event.event_venue).name }}</p>
+										{% if item.event.post_excerpt %}
+											<p class="description">{{program.event.post_excerpt}}</p>
+										{% else %}
+											<p class="description">{{program.event.get_preview(25, false, '', true, '')}}</p>
+										{% endif %}
+										<p class="calltoaction">
+											<a href="{{function('get_permalink', program.event.id)}}">{{ program.event.get_field('event_list_cta_text')|default('RSVP')}}</a>
+										</p>
+									</div>
+								</div>
+
+							{% else %}
+
+								{% if loop.index == 2 %}
+									<div class="grid-2">
+										<h6>{{ item.right_section_title|default('Other Programs') }}</h6>
+								{% endif %}
+
+									<h5><a href="{{function('get_permalink', program.event.id)}}">{{program.event.post_title}}</a></h5>
+									<p>{{function('spellerberg_sp_date', program.event, 'notime')}}</p>
+
+								{% if loop.index == loop.last %}
+									</div>
+								{% endif %}
+
+							{% endif %}
+
+						{% endfor %}
+
+					</div>
+
+				{% elseif item.acf_fc_layout == 'collapsable_sections' %}
+
+					<div class="collapsable-sections">
+						{% for section in item.collapsable_sections %}
+							<section>
+								<p class="section-title">{{section.section_title}}</p>
+								<i class="fa fa-plus" aria-hidden="true"></i>
+								<div class="section-content">
+									{{section.section_content}}
+								</div>
+							</section>
+						{% endfor %}
+					</div>
+
+				{% elseif item.acf_fc_layout == 'events_grid' %}
+
+					{% if events|length > 0 %}
+
+						<div class="grid project-events-grid featured-grid">
+
+							<h4>{{ item.events_grid_title|default('Related Events')}}</h4>
+
+							{% for event in events %}
+
+								<div class="grid-3">
+
+									{% if event.thumbnail %}
+										<div class="imagecell">
+											<a href="{{function('get_permalink', event)}}"><img src="{{ TimberImage(event.thumbnail)|resize(1434, 956) }}" /></a>
+										</div>
+									{% endif %}
+									<div class="descriptioncell">								
+										<h2><a href="{{function('get_permalink', event)}}">{{event.post_title}}</a></h2>
+										<p class="content-type">{{ function('spellerberg_sp_date', event) }}</p>
+										<p class="add-descriptor">{{ function('get_term', event.event_venue).name }}</p>
+										{% if event.post_excerpt %}
+											<p class="description">{{ event.post_excerpt }}</p>
+										{% else %}
+											<p class="description">{{ function('wp_trim_words', event.post_content, '20', '...') }}</p>
+										{% endif %}
+										<p class="calltoaction">
+											<a href="{{event.url}}">{{ event.event_list_cta_text|default('RSVP')}}</a>
+										</p>
+									</div>
+								</div>
+
+							{% endfor %}
+
+						</div>
+
+					{% endif %}
+
+				{% elseif item.acf_fc_layout == 'past_events' %}
+
+					{% if pastEvents|length > 0 %}
+
+						<div class="past-events">
+							<h4>{{ item.past_events_section_title|default('Past Events')}}</h4>
+							<div class="collapsable-sections collapsable-events">
+								{% for event in pastEvents %}
+									{% set lastYear = year|default('0') %}
+									{% set year = event._EventStartDate|date('Y') %}
+									
+									{% if loop.index == 1 %}
+										<section>
+											<p class="section-title">{{ year }}</p>
+											<i class="fa fa-plus" aria-hidden="true"></i>
+											<div class="section-content">
+									{% elseif year != lastYear %}
+											</div>
+										</section>
+										<section>
+											<p class="section-title">{{ year }}</p>
+											{% set month = '0' %}
+											<i class="fa fa-plus" aria-hidden="true"></i>
+											<div class="section-content">
+									{% endif %}
+
+									{% set lastMonth = month|default('0') %}
+									{% set month = event._EventStartDate|date('F') %}
+									{% if lastMonth != month %}
+												<p class="event-month"><span>{{ month }}</span></p>
+									{% endif %}
+						
+												<div class="event-info">
+													<p class="event-title">
+														<a href="{{ event.link }}">
+															{% if event.terms('projects') %}
+																{{ event.terms('projects')[0].name ~ ': ' }}
+															{% endif %}
+															{{ event.title }}
+														</a>
+													</p>
+													<p class="event-date"><span>{{ event._EventStartDate|date('F j, Y') }}</span></p>
+												</div>
+
+									{% if loop.last %}
+											</div>
+										</section>
+									{% endif %}
+
+								{% endfor %}
+							</div>
+						</div>
+
+					{% endif %}
+
+				{% elseif item.acf_fc_layout == 'media' %}
+
+					{% if media_embeds %}
+
+						<div class="media">
+							<h4>{{ item.media_section_title|default('Recordings') }}</h4>
+
+							{% for media in media_embeds %}
+
+								<div class="media-item" style="{% if loop.last and not item.media_bottom_separator %}border-bottom: none;{% endif %}">		
+									<div class="media-content">
+										<h2>{{media.0}}</h2>
+										<p>{{media.1}}</p>
+									</div>
+									<div class="media-embed">
+										
+										{% if media.2%}
+											<div class="media-video-embed" style="background: url('{{theme.link}}/assets/images/loading.gif') center center no-repeat;">
+												<div class="video-container">
+													{{media.2}}
+												</div>
+											</div>
+										{% endif %}
+
+										{% if media.3%}
+											<div class="media-audio-embed" style="background: url('{{theme.link}}/assets/images/loading.gif') center center no-repeat;">
+												{{media.3}}
+											</div>
+										{% endif %}
+
+									</div>
+								</div>
+
+							{% endfor %}
+
+							{% if media_pagination %}
+
+								<div class="media-pagination">
+									{{media_pagination}}
+								</div>
+
+							{% endif %}
+
+						</div>
+
+					{% endif %}
+
+				{% elseif item.acf_fc_layout == 'podcast' %}
+
+					<div class="podcast">
+
+						{% if item.podcast_cover_image %}
+							<img class="podcast-image" src="{{TimberImage(item.podcast_cover_image)|resize(1900)}}" />
+						{% endif %}
+
+						<div class="podcast-text">
+							{{item.podcast_intro_text}}
+						</div>
+
+						{% if podcast_episodes %}
+
+							<h4>{{ item.podcast_episodes_section_title|default('Podcast Episodes')}}</h4>
+
+							{% for podcast in podcast_episodes %}
+
+								<div class="media-item podcast-item" style="{% if loop.last and not item.podcast_bottom_separator %}border-bottom: none;{% endif %}">
+									
+									<div class="media-content podcast-content">
+										<p class="pod-ep">{{podcast.0}}</p>
+										<h2 class="pod-title">{{podcast.1}}</h2>
+										<p class="pod-date">{{podcast.2}}</p>
+										<p class="pod-length">{{podcast.3}}</p>
+										<p class="pod-description">{{podcast.4}}</p>
+									</div>
+									
+									<div class="media-embed podcast-embed">
+										<div class="media-audio-embed" style="background: url('{{theme.link}}/assets/images/loading.gif') center center no-repeat;">
+											{{podcast.5}}
+										</div>
+									</div>
+
+								</div>
+
+							{% endfor %}
+
+							{% if podcast_pagination %}
+
+								<div class="media-pagination">
+									{{podcast_pagination}}
+								</div>
+
+							{% endif %}
+
+						{% endif %}
+
+					</div>
+
+				{% elseif item.acf_fc_layout == 'video' %}
+
+					<div class="video-flexible-content">
+						{{ function('do_shortcode', '[video_embed id="' ~ item.video_id ~ '" source="' ~ item.video_source ~ '" poster="' ~ item.video_poster_image.url ~ '"]') }}
+					</div>
+
+				{% endif %}
+	
+			{% endfor %}
+
+		</main>
+
+		{#
+		{% for item in termMenu.items %}
+			{% if check == true %}
+				<div class="content project-next">
+					<a href="{{item.link}}">
+						Next: {{item.title}}
+					</a>
+				</div>
+				{% set check = false %}
+			{% endif %}
+			{% if item.current %}
+				{% set check = true %}
+			{% endif %}
+			{% if loop.last and item.current %}
+				<div class="content project-next">
+					<a href="{{termMenu.items.0.link}}">
+						Next: {{termMenu.items.0.title}}
+					</a>
+				</div>
+			{% endif %}
+		{% endfor %}
+		#}
+
+		{% set aa = 0 %}
+		{% for item in post.parent.get_field('page_content') %}
+			{% if item.acf_fc_layout == 'artwork_and_artists_grid'%}
+				<div class="content project-next">
+					<a href="{{post.parent.link}}">
+						Back: Artwork and Artists
+					</a>
+				</div>
+				{% set aa = 1 %}
+			{% endif %}
+		{% endfor %}
+
+		{% for item in post.parent.get_field('page_content') %}
+			{% if item.acf_fc_layout == 'programs_grid' and aa == 0 %}
+				<div class="content project-next">
+					<a href="{{post.parent.link}}">
+						Back: Public Programs
+					</a>
+				</div>
+			{% endif %}
+		{% endfor %}
+
+	</div>
 
 {% endblock %}
