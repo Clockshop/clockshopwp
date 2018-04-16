@@ -497,6 +497,7 @@
 
 		</main>
 
+		{#
 		{% for item in termMenu.items %}
 			{% if check == true %}
 				<div class="content project-next">
@@ -517,16 +518,8 @@
 				</div>
 			{% endif %}
 		{% endfor %}
+		#}
 
-		{% if post.parent %}
-			<div class="content project-next">
-				<a href="{{post.parent.link}}">
-					Back: {{post.parent.name}}
-				</a>
-			</div>
-		{% endif %}
-
-		{#
 		{% set aa = 0 %}
 		{% for item in post.parent.get_field('project_page_content') %}
 			{% if item.acf_fc_layout == 'artwork_and_artists_grid'%}
