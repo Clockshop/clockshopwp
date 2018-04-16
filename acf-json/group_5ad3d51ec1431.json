@@ -1101,11 +1101,10 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
-        "the_content",
         "revisions",
         "author"
     ],
     "active": 1,
     "description": "",
-    "modified": 1523866965
+    "modified": 1523878471
 }
