@@ -89,11 +89,11 @@
 						</div>
 					</div>
 
-				{% elseif item.acf_fc_layout == 'image_slider' %}
+				{% elseif item.acf_fc_layout == 'project_image_slider' %}
 
 					<div class="project-slider" style="{% if not item.image_slider_bottom_separator %}border-bottom: none;{% endif %}">
 						
-						{% for slide in item.image_slider %}
+						{% for slide in item.project_image_slider %}
 						
 							<div class="project-slide">
 								<div class="slide-image">
