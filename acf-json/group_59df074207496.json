@@ -177,14 +177,14 @@
                 },
                 "5aad662768f26": {
                     "key": "5aad662768f26",
-                    "name": "image_slider",
+                    "name": "project_image_slider",
                     "label": "Image Slider",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_5aad663a68f27",
                             "label": "Image Slider",
-                            "name": "image_slider",
+                            "name": "project_image_slider",
                             "type": "gallery",
                             "instructions": "",
                             "required": 0,
@@ -1107,5 +1107,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1523868253
+    "modified": 1523925568
 }
