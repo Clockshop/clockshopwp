@@ -13,9 +13,7 @@
 							{% for item in termMenu.items %}
 								{% if item.current == true %}
 									<li class="active">
-								{% elseif ((post.project_content_type == 'artist_single') and (function('get_field', 'project_content_type', item.object_id) == 'artist_list')) %}
-									<li class="active">
-								{% elseif ((post.project_content_type == 'program_single') and (function('get_field', 'project_content_type', item.object_id) == 'program_list')) %}
+								{% elseif item.menu_object._menu_item_object_id == post.parent.id %}
 									<li class="active">
 								{% else %}
 									<li>
@@ -520,6 +518,15 @@
 			{% endif %}
 		{% endfor %}
 
+		{% if post.parent %}
+			<div class="content project-next">
+				<a href="{{post.parent.link}}">
+					Back: {{post.parent.name}}
+				</a>
+			</div>
+		{% endif %}
+
+		{#
 		{% set aa = 0 %}
 		{% for item in post.parent.get_field('project_page_content') %}
 			{% if item.acf_fc_layout == 'artwork_and_artists_grid'%}
@@ -541,6 +548,7 @@
 				</div>
 			{% endif %}
 		{% endfor %}
+		#}
 
 	</div>
 
