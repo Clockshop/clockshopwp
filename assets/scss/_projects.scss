@@ -169,7 +169,7 @@
 	}
 	main {
 		padding-top: 40px;
-		padding-bottom: 40px;
+		padding-bottom: 60px;
 		> div {
 			margin-top: 0;
 			margin-bottom: 40px;
@@ -608,6 +608,11 @@
 				.podcast-embed {
 					//
 				}
+			}
+		}
+		.video-flexible-content {
+			.video-container {
+				margin-bottom: 0!important;
 			}
 		}
 	}

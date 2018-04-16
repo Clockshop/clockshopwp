@@ -91,14 +91,13 @@
 						</div>
 					</div>
 
-				{% elseif item.acf_fc_layout == 'project_image_slider' %}
+				{% elseif item.acf_fc_layout == 'image_slider' %}
 
-					<div class="project-slider">
+					<div class="project-slider" style="{% if not item.image_slider_bottom_separator %}border-bottom: none;{% endif %}">
 						
-						{% for slide in item.project_image_slider %}
+						{% for slide in item.image_slider %}
 						
 							<div class="project-slide">
-								<pre>{{ dump(slide.sizes['large-height']) }}</pre>
 								<div class="slide-image">
 									{# Uncomment to add safeguard for very vertical images #}
 									{#
@@ -399,7 +398,7 @@
 
 							{% for media in media_embeds %}
 
-								<div class="media-item">		
+								<div class="media-item" style="{% if loop.last and not item.media_bottom_separator %}border-bottom: none;{% endif %}">		
 									<div class="media-content">
 										<h2>{{media.0}}</h2>
 										<p>{{media.1}}</p>
@@ -455,7 +454,7 @@
 
 							{% for podcast in podcast_episodes %}
 
-								<div class="media-item podcast-item">
+								<div class="media-item podcast-item" style="{% if loop.last and not item.podcast_bottom_separator %}border-bottom: none;{% endif %}">
 									
 									<div class="media-content podcast-content">
 										<p class="pod-ep">{{podcast.0}}</p>
@@ -487,6 +486,12 @@
 
 					</div>
 
+
+				{% elseif item.acf_fc_layout == 'video' %}
+
+					<div class="video-flexible-content">
+						{{ function('do_shortcode', '[video_embed id="' ~ item.video_id ~ '" source="' ~ item.video_source ~ '" poster="' ~ item.video_poster_image.url ~ '"]') }}
+					</div>
 
 				{% endif %}
 	
