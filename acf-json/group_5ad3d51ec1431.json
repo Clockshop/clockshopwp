@@ -33,6 +33,80 @@
                 "id": ""
             },
             "layouts": {
+                "5aee0ebe4b9e0": {
+                    "key": "5aee0ebe4b9e0",
+                    "name": "all_events",
+                    "label": "All Events",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aee0ece4b9e1",
+                            "label": "All Events",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Displays all events that belong to the selected project",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_5aee0ee54b9e2",
+                            "label": "All Events Section Title",
+                            "name": "all_events_section_title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5aee0ef14b9e3",
+                            "label": "Events to display",
+                            "name": "events_to_display",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "upcoming": "All Upcoming",
+                                "past": "All Past",
+                                "all": "All (past + upcoming)"
+                            },
+                            "default_value": [
+                                "all"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "5aad7177621d5": {
                     "key": "5aad7177621d5",
                     "name": "artwork_and_artists_grid",
@@ -1101,10 +1175,11 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
+        "the_content",
         "revisions",
         "author"
     ],
     "active": 1,
     "description": "",
-    "modified": 1523878471
+    "modified": 1525576121
 }

@@ -204,15 +204,15 @@ function event_dates() {
 		if ( $startYear !== $endYear ) {
 			//Different Years
 			$output .= $startMonth . ' ' . $startDay . ', ' . $startYear;
-			$output .= ' &ndash; ' . $endMonth . ' ' . $endDay . ', ' . $endYear;
+			$output .= '&ndash;' . $endMonth . ' ' . $endDay . ', ' . $endYear;
 		} else {
 			//Same Years
 			if ($startMonth !== $endMonth) {
 				// Different Months
 				if ($format == 'noyear' && $endYear == date('Y')) {
-					$output .= $startMonth . ' ' . $startDay . ' &ndash; ' . $endMonth . ' ' . $endDay/* . ', ' . $endYear*/;	
+					$output .= $startMonth . ' ' . $startDay . '&ndash;' . $endMonth . ' ' . $endDay/* . ', ' . $endYear*/;	
 				} else {
-					$output .= $startMonth . ' ' . $startDay . ' &ndash; ' . $endMonth . ' ' . $endDay . ', ' . $endYear;
+					$output .= $startMonth . ' ' . $startDay . '&ndash;' . $endMonth . ' ' . $endDay . ', ' . $endYear;
 				}
 			} else {
 				// Same Months
@@ -231,39 +231,41 @@ function event_dates() {
 						$output .= $startMonth . ' ' . $startDay . ', ' . $startYear;
 					}
 					
-					if ( $s_am == "am" ) :
-						$s_am = "am";
-					else :
-						$s_am = "pm";		
-					endif;
-					if ( $e_am == "am" ) :
-						$e_am = "am";
-					else :
-						$e_am = "pm";
-					endif;
+					if ($format != 'justDays') {
+						if ( $s_am == "am" ) :
+							$s_am = "am";
+						else :
+							$s_am = "pm";		
+						endif;
+						if ( $e_am == "am" ) :
+							$e_am = "am";
+						else :
+							$e_am = "pm";
+						endif;
 
-					if ( is_singular('events') ) {
-						if ($s_min == '00') {
-							$output .= '</p><p>' . $s_hour;
+						if ( is_singular('events') ) {
+							if ($s_min == '00') {
+								$output .= '</p><p>' . $s_hour;
+							} else {
+								$output .= '</p><p>' . $s_hour . ':' . $s_min;
+							}
 						} else {
-							$output .= '</p><p>' . $s_hour . ':' . $s_min;
+							if ($s_min == '00') {
+								$output .= ', ' . $s_hour;
+							} else {
+								$output .= ', ' . $s_hour . ':' . $s_min;
+							}
 						}
-					} else {
-						if ($s_min == '00') {
-							$output .= ', ' . $s_hour;
-						} else {
-							$output .= ', ' . $s_hour . ':' . $s_min;
+						if ( $s_am !== $e_am ) {
+							// Different AM
+							$output .= '' . $s_am;
 						}
-					}
-					if ( $s_am !== $e_am ) {
-						// Different AM
-						$output .= '' . $s_am;
-					}
 
-					if ($e_min == '00') {
-						$output .= '&ndash;' . $e_hour . $e_am;
-					} else {
-						$output .= '&ndash;' . $e_hour . ':' . $e_min . $e_am;
+						if ($e_min == '00') {
+							$output .= '&ndash;' . $e_hour . $e_am;
+						} else {
+							$output .= '&ndash;' . $e_hour . ':' . $e_min . $e_am;
+						}
 					}
 				}
 			}

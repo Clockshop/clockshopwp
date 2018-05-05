@@ -615,6 +615,24 @@
 				margin-bottom: 0!important;
 			}
 		}
+		.all-events {
+			.project-list-grid {
+				h4 {
+					margin-top: 0;
+				}
+				.project-grid-row {
+					.grid-3 {
+						a {
+							.project-title {
+								font-style: normal;
+							}
+						}
+						.project-subtitle {
+						}
+					}
+				}
+			}
+		}
 	}
 	.project-next {
 		display: block;

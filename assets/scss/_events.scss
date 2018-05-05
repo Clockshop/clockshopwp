@@ -232,6 +232,12 @@
 						margin-top: 0;
 						a {
 							text-decoration: none;
+							> i {
+								position: relative;
+								padding: 0;
+								line-height: inherit;
+								font-size: inherit;
+							}
 						}
 					}
 					.event-date {
