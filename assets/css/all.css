@@ -170,9 +170,6 @@ input {
 main img {
   height: auto; }
 
-main br {
-  display: none; }
-
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
