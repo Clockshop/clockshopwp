@@ -302,7 +302,7 @@
 
 							<h4>{{ item.events_grid_title|default('Related Events')}}</h4>
 
-							{% for event in events %}
+							{% for event in events|slice(0, 3) %}
 
 								<div class="grid-3">
 
@@ -491,6 +491,47 @@
 						{{ function('do_shortcode', '[video_embed id="' ~ item.video_id ~ '" source="' ~ item.video_source ~ '" poster="' ~ item.video_poster_image.url ~ '"]') }}
 					</div>
 
+				{% elseif item.acf_fc_layout == 'all_events' %}
+
+					<div class="all-events artist-list">
+						<div class="grid featured-grid project-list-grid">
+	
+							{% if item.all_events_section_title %}<h4>{{ item.all_events_section_title }}</h4>{% endif %}
+
+							<div class="project-grid-row">
+								
+								{% if item.events_to_display == 'upcoming' %}
+									{% set allEvents = events %}
+								{% elseif item.events_to_display == 'past' %}
+									{% set allEvents = pastEvents %}
+								{% elseif item.events_to_display == 'all' %}
+									{% set allEvents = allEvents %}
+								{% endif %}
+
+								{% for event in allEvents %}
+	
+									<div class="grid-3">
+										{% if event.thumbnail.sizes|length > 0 %}
+											<div class="imagecell">
+												<a href="{{function('get_permalink', event)}}"><img src="{{ TimberImage(event.thumbnail)|resize(1434, 956) }}" /></a>
+											</div>
+										{% endif %}
+										<a href="{{function('get_permalink', event)}}"><h3 class="project-title">{{event.post_title}}</h3></a>
+										<h3 class="project-subtitle">{{ function('spellerberg_sp_date', event, 'justDays') }}</h3>
+									</div>
+
+									{% if loop.index % 3 == 0 and loop.index != loop.last %}
+										
+										</div><div class="project-grid-row">
+
+									{% endif %}
+
+								{% endfor %}
+
+							</div>
+						</div>
+					</div>
+	
 				{% endif %}
 	
 			{% endfor %}

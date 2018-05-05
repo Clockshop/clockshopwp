@@ -4,8 +4,8 @@ $context = $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
-$today = date("Y-m-d h:i:s A");
-$oneMonth = date('Y-m-d h:i:s A', strtotime("next month"));
+$today = date("Y-m-d H:i:s");
+$oneMonth = date('Y-m-d H:i:s', strtotime("next month"));
 
 $context['today'] = $today;
 $context['oneMonth'] = $oneMonth;
@@ -20,14 +20,14 @@ $args = array(
     'meta_query' => array(
 		'relation' => 'AND',
         array(
-            'key' => '_EventStartDate',
+            'key' => '_EventEndDate',
             'value' => $today,
             'compare' => '>='
         ),
         array(
             'key' => '_EventStartDate',
             'value' => $oneMonth,
-            'compare' => '<='
+            'compare' => '<'
         )
     ),
 );

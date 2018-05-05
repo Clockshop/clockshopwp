@@ -11,11 +11,29 @@ if ($termMenu) {
 	$context['termMenu'] = new TimberMenu($termMenu->slug);
 }
 
-$today = date("Y-m-d h:i:s A");
-$oneMonth = date('Y-m-d h:i:s A', strtotime("next month"));
+$today = date("Y-m-d H:i:s");
+$oneMonth = date('Y-m-d H:i:s', strtotime("next month"));
 
 $args = array(
-	'posts_per_page' => 3,
+	'posts_per_page' => -1,
+    'order' => 'DESC',
+    'orderby' => 'meta_value',
+    'meta_key' => '_EventStartDate',
+    'post_type' => 'events',
+	'post_status' => 'publish',
+	'tax_query' => array(
+		array(
+			'taxonomy' => 'projects',
+			'field' => 'id',
+			'terms' => $term[0]->term_id
+		)
+	),
+);
+$allEvents = Timber::get_posts( $args );
+$context['allEvents'] = $allEvents;
+
+$args = array(
+	'posts_per_page' => -1,
     'order' => 'ASC',
     'orderby' => 'meta_value',
     'meta_key' => '_EventStartDate',
@@ -30,7 +48,7 @@ $args = array(
 	),
     'meta_query' => array(
         array(
-            'key' => '_EventStartDate',
+            'key' => '_EventEndDate',
             'value' => $today,
             'compare' => '>='
         ),
@@ -55,7 +73,7 @@ $args = array(
 	),
     'meta_query' => array(
         array(
-            'key' => '_EventStartDate',
+            'key' => '_EventEndDate',
             'value' => $today,
             'compare' => '<'
         )

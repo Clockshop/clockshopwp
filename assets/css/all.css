@@ -1334,6 +1334,11 @@ footer.contactfooter {
         margin-top: 0; }
         .past-events .collapsable-events section .section-content .event-info .event-title a {
           text-decoration: none; }
+          .past-events .collapsable-events section .section-content .event-info .event-title a > i {
+            position: relative;
+            padding: 0;
+            line-height: inherit;
+            font-size: inherit; }
       .past-events .collapsable-events section .section-content .event-info .event-date {
         font-size: 16px;
         margin-top: 0; }
@@ -1953,6 +1958,10 @@ footer.contactfooter {
         margin-bottom: 20px; } }
   .project-single main .video-flexible-content .video-container {
     margin-bottom: 0 !important; }
+  .project-single main .all-events .project-list-grid h4 {
+    margin-top: 0; }
+  .project-single main .all-events .project-list-grid .project-grid-row .grid-3 a .project-title {
+    font-style: normal; }
 
 .project-single .project-next {
   display: block;
