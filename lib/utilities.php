@@ -81,8 +81,10 @@ if ( !is_singular()) //if it is not a post or a page
 	echo '<meta property="og:type" content="article"/>';
 	echo '<meta property="og:url" content="' . get_permalink() . '"/>';
 	echo '<meta property="og:site_name" content="Clockshop"/>';
-	$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
-	echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
+	if (wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' )) {
+		$thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+		echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
+	}
 	echo "
 	";
 }
