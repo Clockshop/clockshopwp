@@ -1177,10 +1177,14 @@ footer.contactfooter {
         @media screen and (max-width: 767px) {
           .events-this-month .slick-list .slide-cell .slide .event-image {
             width: 100%;
-            padding-bottom: 0; } }
+            padding: 0;
+            height: auto; } }
         .events-this-month .slick-list .slide-cell .slide .event-image img {
           position: absolute;
           top: 0; }
+          @media screen and (max-width: 767px) {
+            .events-this-month .slick-list .slide-cell .slide .event-image img {
+              position: relative; } }
       .events-this-month .slick-list .slide-cell .slide .event-content {
         text-align: left;
         display: inline-block;
