@@ -36,7 +36,7 @@
 							{% if event.post_excerpt %}
 								<p class="excerpt">{{ event.post_excerpt }}</p>
 							{% else %}
-								<p class="excerpt">{{ event.preview.length(20).force.read_more(false).strip  }}</p>
+								<p class="excerpt">{{ event.preview.length(15).force.read_more(false).strip  }}</p>
 							{% endif %}
 						</div>
 					</div>
