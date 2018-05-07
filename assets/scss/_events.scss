@@ -31,6 +31,9 @@
 	.slick-list {
 		border-bottom: 4px solid black;
 		padding-bottom: 42px;
+		@media screen and (max-width: 767px) {
+			//height: auto;
+		}
 		.slide-cell {
 			width: 100%;
 			height: auto;
@@ -44,11 +47,15 @@
 					width: 60%;
 					@media screen and (max-width: 767px) {
 						width: 100%;
-						padding-bottom: 0;
+						padding: 0;
+						height: auto;
 					}
 					img {
 						position: absolute;
 						top: 0;
+						@media screen and (max-width: 767px) {
+							position: relative;
+						}
 					}
 				}
 				.event-content {
