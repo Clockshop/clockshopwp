@@ -42,6 +42,10 @@
 			</div>
 			<div class="side-section-left mobile">
 
+				{% if function('current_time', 'Y-m-d') > post._EventStartDate|date('Y-m-d') %}
+					<p class="past">PAST EVENT</p>
+				{% endif %}
+
 				{% if post.terms('projects') %}
 					<h5 class="event-project">{{ post.terms('projects')[0].name }}</h5>
 				{% endif %}
