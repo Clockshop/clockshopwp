@@ -5,7 +5,14 @@ $post = new TimberPost();
 $context['post'] = $post;
 
 $term = wp_get_post_terms( $post->id, 'projects' );
+
+$parentTerm = $term[0];
+while ($parentTerm->parent != '0') {
+	$parentTerm = get_term($parentTerm->parent);
+}
+
 $context['term'] = new TimberTerm($term[0], 'projects');
+$context['term']->title = $parentTerm->name;
 $termMenu = get_field('project_menu', $term[0]);
 if ($termMenu) {
 	$context['termMenu'] = new TimberMenu($termMenu->slug);
