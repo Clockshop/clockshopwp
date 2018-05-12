@@ -1284,6 +1284,26 @@ footer.contactfooter {
           margin-bottom: 0;
           margin-top: 10px;
           overflow: hidden; }
+        .events-this-month .slick-list .slide-cell .slide .event-content .calltoaction {
+          font-family: CircularBook;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 22px;
+          text-transform: uppercase;
+          letter-spacing: .1em;
+          margin-top: 20px;
+          margin-bottom: 0; }
+          @media screen and (max-width: 999px) {
+            .events-this-month .slick-list .slide-cell .slide .event-content .calltoaction {
+              font-size: 14px;
+              line-height: 18px;
+              margin-top: 20px; } }
+          .events-this-month .slick-list .slide-cell .slide .event-content .calltoaction a {
+            border-bottom: 4px solid black;
+            padding-bottom: 3px;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold; }
 
 .upcoming-events > div {
   text-align: left;

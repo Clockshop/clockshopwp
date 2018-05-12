@@ -38,6 +38,7 @@
 							{% else %}
 								<p class="excerpt">{{ event.preview.length(15).force.read_more(false).strip  }}</p>
 							{% endif %}
+							<p class="calltoaction"><a target="{{ event.event_list_cta_text_and_link.target}}" href="{{ event.event_list_cta_text_and_link.url|default(event.link) }}">{{ event.event_list_cta_text_and_link|default(event.event_list_cta_text)|default('RSVP')}}</a></p>
 						</div>
 					</div>
 				</div>
@@ -78,7 +79,7 @@
 									<p class="description">{{ event.preview.length(20).force.read_more(false).strip }}</p>
 								{% endif %}
 
-								<p class="calltoaction"><a href="{{ event.link }}">{{ event.event_list_cta_text|default('RSVP')}}</a></p>
+								<p class="calltoaction"><a target="{{ event.event_list_cta_text_and_link.target}}" href="{{ event.event_list_cta_text_and_link.url|default(event.link) }}">{{ event.event_list_cta_text_and_link|default(event.event_list_cta_text)|default('RSVP')}}</a></p>
 							</div>
 						</div>
 					{% endfor %}
