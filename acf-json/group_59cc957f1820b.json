@@ -249,10 +249,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_5a6cea47d9e84",
-            "label": "Event List CTA Text",
-            "name": "event_list_cta_text",
-            "type": "text",
+            "key": "field_5af76f6ddbb41",
+            "label": "Event List CTA Text and Link",
+            "name": "event_list_cta_text_and_link",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -261,11 +261,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "return_format": "array"
         },
         {
             "key": "field_59ccad05832e6",
@@ -304,5 +300,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1523353114
+    "modified": 1526191164
 }
