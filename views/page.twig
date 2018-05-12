@@ -217,9 +217,7 @@
 										{% else %}
 											<p class="description">{{program.event.get_preview(25, false, '', true, '')}}</p>
 										{% endif %}
-										<p class="calltoaction">
-											<a href="{{function('get_permalink', program.event.id)}}">{{ program.event.get_field('event_list_cta_text')|default('RSVP')}}</a>
-										</p>
+										<p class="calltoaction"><a href="{{ function('get_permalink', program.event.id) }}">{{ program.event.event_list_cta_text_and_link.title|default(program.event.event_list_cta_text)|default('RSVP')}}</a></p>
 									</div>
 								</div>
 
@@ -271,11 +269,11 @@
 
 									{% if event.thumbnail %}
 										<div class="imagecell">
-											<a href="{{function('get_permalink', event)}}"><img src="{{ TimberImage(event.thumbnail)|resize(1434, 956) }}" /></a>
+											<a href="{{event.link}}"><img src="{{ TimberImage(event.thumbnail)|resize(1434, 956) }}" /></a>
 										</div>
 									{% endif %}
 									<div class="descriptioncell">								
-										<h2><a href="{{function('get_permalink', event)}}">{{event.post_title}}</a></h2>
+										<h2><a href="{{event.link}}">{{event.post_title}}</a></h2>
 										<p class="content-type">{{ function('spellerberg_sp_date', event) }}</p>
 										<p class="add-descriptor">{{ function('get_term', event.event_venue).name }}</p>
 										{% if event.post_excerpt %}
@@ -284,7 +282,7 @@
 											<p class="description">{{ function('wp_trim_words', event.post_content, '20', '...') }}</p>
 										{% endif %}
 										<p class="calltoaction">
-											<a href="{{event.url}}">{{ event.event_list_cta_text|default('RSVP')}}</a>
+											<a href="{{event.link}}">{{ event.event_list_cta_text_and_link.title|default(event.event_list_cta_text)|default('RSVP')}}</a>
 										</p>
 									</div>
 								</div>
