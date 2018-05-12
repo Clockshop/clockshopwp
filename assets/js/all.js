@@ -201,6 +201,27 @@
 			});
 		}
 
+		function mobileNav() {
+			$('.opennav').on('click', function() {
+				$('.topnav').toggle();
+			});
+		}
+
+		function externalLinks() {
+			$('a').each( function() {
+				url = $(this).attr('href');
+				if (url != null) {
+					if (url.indexOf('http://') !== -1) {
+						if (url.indexOf(window.location.host) === -1) {
+							if ($(this).attr('target') !== '_blank') {
+								$(this).attr('target', '_blank');
+							}
+						}	
+					}
+				}
+			});
+		}
+
 		signUpForm();
 
 		$(document).ready(function() {
@@ -215,6 +236,7 @@
 			select2init();
 			homepageHeroSlider();
 			mobileNav();
+			externalLinks();
 		});
 
 		$(window).load(function() {
