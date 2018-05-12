@@ -449,9 +449,20 @@
 
 				{% elseif item.acf_fc_layout == 'video' %}
 
+					{% if item.show_captions == 1 %}
+						{% set captions = 'true' %}
+					{% else %}
+						{% set captions = 'false' %}
+					{% endif %}
+					{% if item.show_bottom_line == 1 %}
+						{% set line = 'true' %}
+					{% else %}
+						{% set line = 'false' %}
+					{% endif %}
 					<div class="video-flexible-content">
-						{{ function('do_shortcode', '[video_embed id="' ~ item.video_id ~ '" source="' ~ item.video_source ~ '" poster="' ~ item.video_poster_image.url ~ '"]') }}
+						{{ function('do_shortcode', '[video_embed id="' ~ item.video_id ~ '" source="' ~ item.video_source ~ '" poster="' ~ item.video_poster_image.url ~ '" captions="' ~ captions ~ '" left-caption="' ~ item.video_poster_image.caption ~ '" right-caption="' ~ item.video_poster_image.description ~ '" line="' ~ line ~ '"]') }}
 					</div>
+
 
 				{% elseif item.acf_fc_layout == 'all_events' %}
 

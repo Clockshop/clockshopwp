@@ -5,10 +5,22 @@ function video_func( $atts ) {
         'id' => '',
 		'source' => '',
 		'poster' => '',
+		'captions' => '',
+		'left-caption' => '',
+		'right-caption' => '',
+		'line' => '',
     ), $atts );
 
 	if ($a['source'] == 'vimeo') {
 		$output = '<div class="video-container video-container-' . $a['id'] . '"><div class="poster" style="background-image: url(' . $a['poster'] . ');"></div><iframe class="iframe-' . $a['id'] . '" src="https://player.vimeo.com/video/' . $a['id'] . '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
+		if ($a['line'] == 'true') {
+			$line = 'border-bottom: 4px solid black;';
+		} else {
+			$line = '';
+		}
+		if ($a['captions'] == 'true') {
+			$output .= '<div style="' . $line . '" class="video-caption"><div class="caption caption-left">' . $a['left-caption'] . '</div><div class="caption caption-right">' . $a['right-caption'] . '</div></div>';
+		}
 		$output .= '<script>';
 		$output .= 'var iframe' . $a['id'] . ' = document.querySelector(".iframe-' . $a['id'] . '");';
 		$output .= 'var player' . $a['id'] . ' = new Vimeo.Player(iframe' . $a['id'] . ');';
@@ -30,6 +42,14 @@ function video_func( $atts ) {
 		return $output;
 	} elseif ($a['source'] == 'youtube') {
 		$output = '<div id="video-container-' . $a['id'] . '" class="video-container video-container-' . $a['id'] . '"><div class="poster" style="background-image: url(' . $a['poster'] . ');"></div><div class="youtube-video" data-id="' . $a['id'] . '" id="' . $a['id'] . '"></div></div>';
+		if ($a['line'] == 'true') {
+			$line = 'border-bottom: 4px solid black;';
+		} else {
+			$line = '';
+		}
+		if ($a['captions'] == 'true') {
+			$output .= '<div style="' . $line . '" class="video-caption"><div class="caption caption-left">' . $a['left-caption'] . '</div><div class="caption caption-right">' . $a['right-caption'] . '</div></div>';
+		}
 		$output .= '<script>';
 		$output .= '(function($) {
 				$(document).ready(function() {
