@@ -36,7 +36,7 @@
 			arrows: false,
 			adaptiveHeight: true,
 			autoplay: true,
-			autoplaySpeed: 10000,
+			autoplaySpeed: 4000,
 		});
 
 		$('.prev').on( 'click', function() {
@@ -53,7 +53,7 @@
 			arrows: false,
 			adaptiveHeight: true,
 			autoplay: true,
-			autoplaySpeed: 10000,
+			autoplaySpeed: 4000,
 		});
 
 		$('.prev').on( 'click', function() {
@@ -90,7 +90,7 @@
 	function projectSlider() {
 		$('.project-slider').slick({
 			autoplay: true,
-			autoplaySpeed: 7500,
+			autoplaySpeed: 4000,
 			adaptiveHeight: true,
 		});
 	}
@@ -109,7 +109,7 @@
 	function homepageHeroSlider() {		
 		$('.home-slider').slick({
 			autoplay: true,
-			autoplaySpeed: 7500,
+			autoplaySpeed: 4000,
 			adaptiveHeight: true,
 			prevArrow: $('.prev'),
 			nextArrow: $('.next')		
