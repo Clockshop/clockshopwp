@@ -1123,7 +1123,7 @@ footer.contactfooter {
       background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), black 100%);
       background: -o-linear-gradient(top, rgba(255, 255, 255, 0), black 100%);
       background: linear-gradient(to bottom, rgba(255, 255, 255, 0), black 100%);
-      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.011) 7.7%, rgba(0, 0, 0, 0.041) 14.8%, rgba(0, 0, 0, 0.085) 21%, rgba(0, 0, 0, 0.137) 26.5%, rgba(0, 0, 0, 0.193) 31.4%, rgba(0, 0, 0, 0.253) 35.9%, rgba(0, 0, 0, 0.313) 40.1%, rgba(0, 0, 0, 0.377) 44.2%, rgba(0, 0, 0, 0.439) 48.1%, rgba(0, 0, 0, 0.502) 52%, rgba(0, 0, 0, 0.566) 56%, rgba(0, 0, 0, 0.63) 60.1%, rgba(0, 0, 0, 0.69) 64.3%, rgba(0, 0, 0, 0.749) 68.8%, rgba(0, 0, 0, 0.805) 73.7%, rgba(0, 0, 0, 0.857) 79.2%, rgba(0, 0, 0, 0.9) 85.4%, rgba(0, 0, 0, 0.93) 92.5%, rgba(0, 0, 0, 0.94) 100%);
+      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.01) 7.7%, rgba(0, 0, 0, 0.04) 14.8%, rgba(0, 0, 0, 0.081) 21%, rgba(0, 0, 0, 0.131) 26.5%, rgba(0, 0, 0, 0.185) 31.4%, rgba(0, 0, 0, 0.242) 35.9%, rgba(0, 0, 0, 0.3) 40.1%, rgba(0, 0, 0, 0.361) 44.2%, rgba(0, 0, 0, 0.421) 48.1%, rgba(0, 0, 0, 0.481) 52%, rgba(0, 0, 0, 0.542) 56%, rgba(0, 0, 0, 0.603) 60.1%, rgba(0, 0, 0, 0.661) 64.3%, rgba(0, 0, 0, 0.717) 68.8%, rgba(0, 0, 0, 0.771) 73.7%, rgba(0, 0, 0, 0.82) 79.2%, rgba(0, 0, 0, 0.862) 85.4%, rgba(0, 0, 0, 0.89) 92.5%, rgba(0, 0, 0, 0.9) 100%);
       width: 100%;
       height: 500px;
       bottom: 0;
