@@ -119,7 +119,8 @@
 						background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
 						background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
 						background: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
-						background: linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
+						background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 120%);
+						background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.009) 7.7%, hsla(0, 0%, 0%, 0.035) 14.8%, hsla(0, 0%, 0%, 0.072) 21%, hsla(0, 0%, 0%, 0.116) 26.5%, hsla(0, 0%, 0%, 0.164) 31.4%, hsla(0, 0%, 0%, 0.215) 35.9%, hsla(0, 0%, 0%, 0.267) 40.1%, hsla(0, 0%, 0%, 0.321) 44.2%, hsla(0, 0%, 0%, 0.374) 48.1%, hsla(0, 0%, 0%, 0.428) 52%, hsla(0, 0%, 0%, 0.482) 56%, hsla(0, 0%, 0%, 0.536) 60.1%, hsla(0, 0%, 0%, 0.587) 64.3%, hsla(0, 0%, 0%, 0.638) 68.8%, hsla(0, 0%, 0%, 0.685) 73.7%, hsla(0, 0%, 0%, 0.729) 79.2%, hsla(0, 0%, 0%, 0.766) 85.4%, hsla(0, 0%, 0%, 0.791) 92.5%, hsla(0, 0%, 0%, 0.8) 100%);
 						width: 100%;
 						height: 300px;
 						bottom: 0;
