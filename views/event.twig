@@ -31,11 +31,11 @@
 				
 				{% if post.get_field('event_images') %}
 					{% for item in post.get_field('event_images') %}
-						<img src="{{TimberImage(item)|resize(1434, 0, false) }}" />
+						<img src="{{TimberImage(item)|letterbox(1434, 956, 'fff') }}" />
 					{% endfor %}
 				{% else %}
 					{% if post.thumbnail %}
-						<img src="{{TimberImage(post.thumbnail)|resize(1434, 0, false) }}" />
+						<img src="{{TimberImage(post.thumbnail)|letterbox(1434, 956, 'fff') }}" />
 					{% endif %}
 				{% endif %}
 
