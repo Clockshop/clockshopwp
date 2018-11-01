@@ -1420,8 +1420,16 @@ footer.contactfooter {
         .event-single .event-header .side-section-left .button:hover {
           background: black;
           color: white; }
-    .event-single .event-header .side-section-right img {
-      height: auto; }
+    .event-single .event-header .side-section-right {
+      text-align: center; }
+      .event-single .event-header .side-section-right img {
+        height: auto; }
+      .event-single .event-header .side-section-right .event-thumbnail {
+        max-height: 400px;
+        width: auto !important;
+        display: block;
+        margin: 0 auto;
+        float: none; }
     .event-single .event-header .side-section-left.mobile {
       display: none;
       padding-right: 0; }
