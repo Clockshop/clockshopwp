@@ -330,8 +330,16 @@
 		}
 		.side-section-right {
 			//height: auto;
+			text-align: center;
 			img {
 				height: auto;
+			}
+			.event-thumbnail {
+				max-height: 400px;
+				width: auto!important;
+				display: block;
+				margin: 0 auto;
+				float: none;
 			}
 		}
 		.side-section-left.mobile {
