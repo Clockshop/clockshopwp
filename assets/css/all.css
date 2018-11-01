@@ -1390,7 +1390,7 @@ footer.contactfooter {
     padding-bottom: 30px;
     border-bottom: 4px solid black; }
     .event-single .event-header .side-section-left {
-      padding-right: 10px;
+      padding-right: 20px;
       box-sizing: border-box; }
       @media screen and (max-width: 767px) {
         .event-single .event-header .side-section-left {
