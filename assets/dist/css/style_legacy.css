@@ -13,7 +13,6 @@ hr { border: none; border-top: 1px solid #000; margin: 2em 0; }
 
 img { max-width: 100%; }
 
-figure {}
 figcaption { font-weight: 100; font-size: 0.83em; margin: 0 0 20px 0; }
 .caption { font-weight: 100; font-size: 0.83em; margin: 0 0 20px 0; }
 
@@ -145,7 +144,7 @@ article + p, article > p { margin-top: 0; }
 
 	.projecttemplate nav ul { border-top: none; }
 
-	.projecttemplate article { float: right; padding: 0 0 5em 0; width: 700px; }	
+	.projecttemplate article { float: right; padding: 0 0 5em 0; width: 700px; }
 
 }
 
@@ -157,7 +156,7 @@ article + p, article > p { margin-top: 0; }
 .primarynav a { color: #fff; display: block; }
 
 .primarynav .mobiletoggle { position: relative; }
-.primarynav a.homelink { background: url("images/mobilelogo.png") no-repeat; background-position: center center ; background-size: 77px 15px; display: block; position: absolute; width: 117px; right: 0; top: 0; bottom: 0; }
+.primarynav a.homelink { background: url("../images/mobilelogo.png") no-repeat; background-position: center center ; background-size: 77px 15px; display: block; position: absolute; width: 117px; right: 0; top: 0; bottom: 0; }
 .primarynav a.homelink span { display: none; }
 
 .primarynav .toggle { font-weight: 400; cursor: pointer; padding: 20px; font-size: 12px;  }
@@ -237,7 +236,7 @@ p.date { margin: 10px 0 48px 0; }
 /* Project 2.0 */
 
 .project-archive {
-	max-width:80%; 
+	max-width:80%;
 }
 
 .project-archive.ongoing .one-half.first{
@@ -255,7 +254,7 @@ p.date { margin: 10px 0 48px 0; }
 }
 
 .project-archive.bowtie h4 {
-	padding-bottom:0 !important; 
+	padding-bottom:0 !important;
 	margin-bottom:0 !important;
 }
 
@@ -294,12 +293,12 @@ p.date { margin: 10px 0 48px 0; }
 		color:#000;
 		font-weight:100;
 	}
-	
+
 	.project-archive h2 a:hover{
 		color: #ffd051;
 		border:none;
 	}
-	
+
 	.project-archive h2 a:hover{
 		text-decoration:none !important;
 		color: #ffd051;
@@ -312,19 +311,19 @@ p.date { margin: 10px 0 48px 0; }
 @media screen and (max-width: 900px) {
 		article.project-archive {padding-bottom:0;}
 		article.projectarchive {margin-top:0; padding-top:0;}
-		
+
 		.project-archive {max-width:100%;}
-		
+
 		.project-archive.ongoing .one-half{ width: 100% !important; float:none !important; margin:0;}
 		.project-archive.ongoing .one-half.first{ margin-bottom: 0; margin-top:20px; padding-bottom:0;}
-		
+
 		.project-archive.bowtie .one-third {width:47%; margin-left:5px; margin-right:5px; min-height:280px;}
 		.project-archive.bowtie .one-third.first {clear:none;}
-		
+
 		.project-archive.bowtie h4 {font-size:22px;}
-			
-		.project-archive.ongoing h2 {marign-top:0; padding-top:0; padding-bottom:0px;}
-		
+
+		.project-archive.ongoing h2 {padding-top:0; padding-bottom:0px;}
+
 	}
 
 
@@ -384,7 +383,7 @@ h2.tribe-events-page-title { font-weight: 200 !important; }
 
 @media screen and (min-width: 900px) {
 	.newsform { width: 468px; float: right; padding-top: 5px; clear: none; }
-	
+
 }
 
 /* Contact Footer */
@@ -403,7 +402,7 @@ h2.tribe-events-page-title { font-weight: 200 !important; }
 
 @media screen and (min-width: 900px) {
 	.contactfooter .clockshop {float: left; width: 245px; padding-top: 1.5px; }
-	
+
 	.contactfooter span { display: inline; }
 	.contactfooter .dot { padding: 0 1em; display: inline; }
 	.contactfooter .contacts { float: right; }

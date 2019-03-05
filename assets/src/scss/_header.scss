@@ -31,18 +31,16 @@
 			position: relative;
 			transition: all .1s ease;
 			.logo_horizontal {
-				background : url("../images/logo_h.svg") no-repeat 0 0;
+				background : url("../../dist/images/logo_h.svg") no-repeat 0 0;
 			    width: 165px;
 			    height: 32px;
 			    padding: 0;
 			    border: 0;
 			    border: 10px solid transparent;
-			    &:hover {
-			    }
 			}
 		}
 		.topnav {
-			display: inline-block!important;
+			//display: inline-block!important;
    			position: relative;
    			top: 30px;
    			padding: 0!important;
@@ -187,7 +185,7 @@
 		.mobiletoggle {
 			a {
 				left: 0;
-				background : url("../images/logo_h.svg") no-repeat 0 0;
+				background : url("../../dist/images/logo_h.svg") no-repeat 0 0;
 				height: 100%;
 				width: 162px;
 				box-sizing: border-box;
@@ -224,12 +222,6 @@
 				}
 			}
 		}
-		.logo_container {
-			.logo_horizontal {
-			    &:hover {
-			    }
-			}
-		}
 		.topnav {
 			display: none;
 			div {
@@ -257,18 +249,6 @@
 								&::-moz-selection {
 									background: white;
 								}
-								&:hover {
-								}
-								&:focus {
-								}
-							}
-							&:first-child {
-								a {
-								}
-							}
-						}
-						.current-menu-item {
-							a {
 							}
 						}
 						.social {
@@ -278,14 +258,10 @@
 							margin-bottom: 0;
 							a {
 								padding: 5px;
-								&:hover {
-								}
 							}
 						}
 						.social.first {
    							margin-left: -5px;
-   							a {
-							}
 						}
 					}
 				}
@@ -332,10 +308,6 @@
 			}
 			.search {
 				display: none;
-			    i {
-			    }
-			    .fa-times {
-			    }
 			}
 		}
 	}
