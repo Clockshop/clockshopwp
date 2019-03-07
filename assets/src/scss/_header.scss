@@ -1,5 +1,5 @@
 .primarynav {
-	border-bottom: 4px solid black;
+	border-bottom: 4px solid $black;
 	background: rgba(256,256,256,0.95)!important;
 }
 
@@ -71,7 +71,7 @@
 								border-top: none;
 								border-bottom: none;
 								&:hover {
-									border-bottom: 4px solid black;
+									border-bottom: 4px solid $black;
 									border-top: none!important;
 								}
 								&:focus {
@@ -86,7 +86,7 @@
 						}
 						.current-menu-item {
 							a {
-							    border-bottom: 4px solid black!important;
+							    border-bottom: 4px solid $black!important;
 							    border-top: none !important;
 							}
 						}
@@ -130,19 +130,19 @@
 						font-family: CircularBook;
 						font-weight: bold;
 					    padding: 5px 0;
-					    border-bottom: 4px solid black!important;
+					    border-bottom: 4px solid $black!important;
 					    background-color: transparent;
 						&::-webkit-input-placeholder {
-							color: black;
+							color: $black;
 						}
 						&::-moz-placeholder {
-							color: black;
+							color: $black;
 						}
 						&:-ms-input-placeholder {
-							color: black;
+							color: $black;
 						}
 						&:-moz-placeholder {
-							color: black;
+							color: $black;
 						}
 					}
 				}
@@ -154,7 +154,7 @@
 				height: 34px;
 				width: 34px;
 			    border-radius: 50%;
-			    background: black;
+			    background: $black;
 			    padding: 0;
 			    border: 0;
 			    vertical-align: top;
@@ -199,7 +199,7 @@
 				background-repeat: no-repeat;
 				background-position: center center;
 				float: right;
-				color: black;
+				color: $black;
 				padding: 14px;
 				width: 26px;
 				height: 26px;
@@ -213,7 +213,7 @@
 				background-repeat: no-repeat;
 				background-position: center center;
 				float: right;
-				color: black;
+				color: $black;
 				padding: 14px;
 				width: 26px;
 				height: 26px;
@@ -236,7 +236,7 @@
 							a {
 								text-decoration: none;
 								display: inline-block;
-								color: black;
+								color: $black;
 								font-size: 18px;
 								letter-spacing: .04em;
 								font-family: CircularBook;
@@ -244,10 +244,10 @@
 								border-top: none;
 								border-bottom: none;
 								&::selection {
-									background: white;
+									background: $white;
 								}
 								&::-moz-selection {
-									background: white;
+									background: $white;
 								}
 							}
 						}
@@ -283,25 +283,25 @@
 						font-family: CircularBook;
 						font-weight: bold;
 					    padding: 5px;
-					    border-bottom: 4px solid black!important;
+					    border-bottom: 4px solid $black!important;
 					    background-color: transparent;
 						&::selection {
-							background: white;
+							background: $white;
 						}
 						&::-moz-selection {
-							background: white;
+							background: $white;
 						}
 						&::-webkit-input-placeholder {
-							color: black;
+							color: $black;
 						}
 						&::-moz-placeholder {
-							color: black;
+							color: $black;
 						}
 						&:-ms-input-placeholder {
-							color: black;
+							color: $black;
 						}
 						&:-moz-placeholder {
-							color: black;
+							color: $black;
 						}
 					}
 				}

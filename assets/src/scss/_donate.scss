@@ -10,7 +10,7 @@
 			margin-top: 0;
 		}
 		> :last-child {
-			margin-bottom: 0; 
+			margin-bottom: 0;
 		}
 	}
 	section {
@@ -18,7 +18,7 @@
 			padding: 12px 0 30px;
 			margin: 0;
 			text-align: left;
-			border-top: 4px solid black;
+			border-top: 4px solid $black;
 		}
 		.section-content {
 		margin: 0 0 40px;
@@ -26,8 +26,8 @@
 				margin-top: 0;
 			}
 			> :last-child {
-				margin-bottom: 0; 
-			}	
+				margin-bottom: 0;
+			}
 		}
 		&:last-child {
 			.section-content {

@@ -26,7 +26,7 @@
 				padding: 0 25px;
 				left: 0;
 				right: 0;
-				@media screen and (max-width: 479px) {
+				@media screen and (max-width: $small-end) {
 					padding: 0 20px;
 				}
 				.mission {
@@ -34,16 +34,16 @@
 					line-height: 38px;
 					font-family: CircularBook;
 					font-weight: bold;
-					color: white;
+					color: $white;
 					display: inline-block;
 					margin-top: 40px;
 					margin-bottom: 60px;
-					@media screen and (max-width: 767px) {
+					@media screen and (max-width: $medium-end) {
 						font-size: 24px;
 						line-height: 32px;
 						margin-bottom: 40px;
 					}
-					@media screen and (max-width: 479px) {
+					@media screen and (max-width: $small-end) {
 						font-size: 18px;
 						line-height: 24px;
 					}
@@ -68,11 +68,11 @@
 		    position: absolute;
 		    bottom: 0;
 		    right: 20px;
-		    color: #999;
+		    color: $gray;
 			font-size: 14px;
 			font-family: CircularBook;
 			font-style: italic;
-			@media screen and (max-width: 767px) {
+			@media screen and (max-width: $medium-end) {
 				font-size: 12px;
 				margin-bottom: 12px;
 			}

@@ -14,7 +14,7 @@
 		text-align: center;
 		.newsform {
 			padding-bottom: 60px;
-			border-bottom: 4px solid black;
+			border-bottom: 4px solid $black;
 			h1 {
 				display: block;
 				text-align: center;
@@ -29,9 +29,9 @@
 
 .events-this-month {
 	.slick-list {
-		border-bottom: 4px solid black;
+		border-bottom: 4px solid $black;
 		padding-bottom: 42px;
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: $medium-end) {
 			//height: auto;
 		}
 		.slide-cell {
@@ -45,7 +45,7 @@
 					padding-top: 40%;
 					display: inline-block;
 					width: 60%;
-					@media screen and (max-width: 767px) {
+					@media screen and (max-width: $medium-end) {
 						width: 100%;
 						padding: 0;
 						height: auto;
@@ -53,7 +53,7 @@
 					img {
 						position: absolute;
 						top: 0;
-						@media screen and (max-width: 767px) {
+						@media screen and (max-width: $medium-end) {
 							position: relative;
 						}
 					}
@@ -72,10 +72,10 @@
 						padding-left: 20px;
 						padding-top: 20px;
 					}
-					@media screen and (min-width: 768px) and (max-width: 999px) {
+					@media screen and (min-width: $large-start) and (max-width: 999px) {
 						padding-top: 20px;
 					}
-					@media screen and (max-width: 767px) {
+					@media screen and (max-width: $medium-end) {
 						width: 100%;
 						padding-left: 0;
 						padding-top: 30px;
@@ -85,7 +85,7 @@
 						margin-bottom: 30px;
 						position: relative;
 						display: inline-block;
-						@media screen and (min-width: 768px) and (max-width: 999px) {
+						@media screen and (min-width: $large-start) and (max-width: 999px) {
 							margin-bottom: 20px;
 						}
 						.left-arrow {
@@ -116,7 +116,7 @@
 							font-size: 28px;
 							line-height: 30px!important;
 						}
-						@media screen and (max-width: 767px) {
+						@media screen and (max-width: $medium-end) {
 							margin-top: 0;
 						}
 						a {
@@ -172,13 +172,13 @@
 							margin-top: 20px;
 						}
 						a {
-							border-bottom: 4px solid black;
+							border-bottom: 4px solid $black;
 							padding-bottom: 3px;
 							display: inline-block;
 							text-decoration: none;
 							font-weight: bold;
 						}
-					}		
+					}
 				}
 			}
 		}
@@ -188,7 +188,7 @@
 .upcoming-events {
 	> div {
 		text-align: left;
-		border-bottom: 4px solid black;
+		border-bottom: 4px solid $black;
 		h4 {
 			font-size: 18px;
 			font-family: CircularBook;
@@ -219,10 +219,10 @@
 	}
 	.collapsable-events {
 		section {
-			@media screen and (min-width: 768px) {
+			@media screen and (min-width: $large-start) {
 				padding: 8px 50px;
 			}
-			@media screen and (max-width: 767px) {
+			@media screen and (max-width: $medium-end) {
 				padding: 8px 25px;
 			}
 			.section-title {
@@ -237,10 +237,10 @@
 				}
 				.event-month {
 					margin-top: 5px;
-					border-top: 4px solid black;
+					border-top: 4px solid $black;
 					span {
-						background-color: black;
-						color: white;
+						background-color: $black;
+						color: $white;
 						padding: 2px 5px;
 						text-transform: uppercase;
 						font-size: 18px;
@@ -253,10 +253,10 @@
 					margin-bottom: 25px;
 					vertical-align: top;
 					box-sizing: border-box;
-					@media screen and (min-width: 768px) {
+					@media screen and (min-width: $large-start) {
 						padding-right: 30px;
 					}
-					@media screen and (max-width: 767px) {
+					@media screen and (max-width: $medium-end) {
 						width: 100%;
 					}
 					.event-title {
@@ -290,18 +290,18 @@
 	.event-header {
 		margin-top: 30px;
 		padding-bottom: 30px;
-		border-bottom: 4px solid black;
+		border-bottom: 4px solid $black;
 		.side-section-left {
 			padding-right: 20px;
 			box-sizing: border-box;
-			@media screen and (max-width: 767px) {
+			@media screen and (max-width: $medium-end) {
 				display: none;
 			}
 			.past {
 				font-family: CircularBook;
 				font-weight: bold;
 				font-style: italic;
-				color: #999;
+				color: $gray;
 				margin-bottom: 0;
 			}
 			.event-project {
@@ -310,21 +310,21 @@
 			.event-cost {
 				font-family: CircularBook;
 				font-size: 16px;
-				color: #b3b3b3;
+				color: $lightgray;
 				margin-top: 5px;
 				margin-bottom: 0;
 			}
 			.button {
 				margin-top: 15px;
 				display: inline-block;
-				background: white;
-				color: black;
+				background: $white;
+				color: $black;
 				font-size: 18px;
 				letter-spacing: .08em;
 				padding: 13px 12px 12px;
 				&:hover {
-					background: black;
-					color: white;
+					background: $black;
+					color: $white;
 				}
 			}
 		}
@@ -345,19 +345,19 @@
 		.side-section-left.mobile {
 			display: none;
 			padding-right: 0;
-			@media screen and (max-width: 767px) {
+			@media screen and (max-width: $medium-end) {
 				display: block;
 			}
 		}
 	}
 	.event-info {
-		border-bottom: 4px solid black;
+		border-bottom: 4px solid $black;
 		.side-section-left {
 			vertical-align: top;
 			h4 {
 				padding: 12px 0 30px;
 				margin-top: 0;
-				@media screen and (max-width: 767px) {
+				@media screen and (max-width: $medium-end) {
 					padding-bottom: 0;
 					margin-bottom: 0;
 				}
@@ -367,7 +367,7 @@
 			margin-top: 25px;
 			margin-bottom: 40px;
 			font-size: 0;
-			@media screen and (max-width: 767px) {
+			@media screen and (max-width: $medium-end) {
 				margin-bottom: 30px;
 			}
 			> div {
@@ -375,7 +375,7 @@
 				display: inline-block;
 				padding-right: 10px;
 				box-sizing: border-box;
-				@media screen and (max-width: 767px) {
+				@media screen and (max-width: $medium-end) {
 					width: 100%!important;
 					margin-bottom: 20px;
 				}
@@ -394,7 +394,7 @@
 						font-size: 16px;
 					    margin-bottom: 6px;
 					}
-					@media screen and (max-width: 767px) {
+					@media screen and (max-width: $medium-end) {
 						font-size: 18px;
 					    margin-bottom: 8px;
 					}
@@ -442,7 +442,7 @@
 				padding: 12px 0 0;
 				margin-top: 0;
 				margin-bottom: 0;
-				@media screen and (max-width: 767px) {
+				@media screen and (max-width: $medium-end) {
 					padding-bottom: 0;
 					margin-bottom: 0;
 				}
@@ -461,7 +461,7 @@
 	.event-footer-cta {
 		width: 100%;
 		padding: 27px 30px;
-		border: 4px solid black;
+		border: 4px solid $black;
 		margin-top: 60px;
 		box-sizing: border-box;
 		h3 {
@@ -475,7 +475,7 @@
 			margin-top: 0;
 			margin-bottom: 0;
 			text-align: center;
-			@media screen and (max-width: 767px) {
+			@media screen and (max-width: $medium-end) {
 				font-size: 21px;
 				line-height: 28px;
 			}

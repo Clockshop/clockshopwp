@@ -78,14 +78,14 @@
 									line-height: 40px;
 									font-family: CircularBook;
 									font-weight: bold;
-									color: white;
+									color: $white;
 									display: inline-block;
 									margin-top: 0;
 									margin-bottom: 0;
 									line-height: 42px;
 									vertical-align: bottom;
 									margin-right: 30px;
-									@media screen and (max-width: 767px) {
+									@media screen and (max-width: $medium-end) {
 										font-size: 28px;
 										line-height: 36px;
 									}
@@ -95,9 +95,9 @@
 									font-size: 16px;
 									font-family: CircularBook;
 									font-weight: bold;
-									color: white;
+									color: $white;
 									letter-spacing: .1em;
-									border-bottom: 4px solid white;
+									border-bottom: 4px solid $white;
 									position: relative;
 									display: inline-block;
 									bottom: 10px;
@@ -107,7 +107,7 @@
 									text-decoration: none;
 									bottom: 0;
 									margin-right: 30px;
-									@media screen and (max-width: 767px) {
+									@media screen and (max-width: $medium-end) {
 										font-size: 14px;
 									}
 								}
@@ -138,7 +138,7 @@
 	margin: 0 -10px;
 	> h4 {
 		padding: 12px 0 30px;
-		border-top: 4px solid black;
+		border-top: 4px solid $black;
 		margin: 40px 10px 0;
 	}
 }

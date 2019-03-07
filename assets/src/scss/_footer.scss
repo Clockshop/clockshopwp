@@ -12,7 +12,7 @@ footer {
 				@media screen and (max-width: 999px) {
 					margin-bottom: 25px;
 				}
-				@media screen and (max-width: 767px) {
+				@media screen and (max-width: $medium-end) {
 					margin-bottom: 15px;
 				}
 			}
@@ -25,9 +25,9 @@ footer {
 		box-sizing: border-box;
 	    bottom: 0;
 	    padding-top: 80px;
-		background-color: black;
+		background-color: $black;
 		border: none;
-		@media screen and (max-width: 479px) {
+		@media screen and (max-width: $small-end) {
 		    padding-top: 55px;
 		}
 		.logo_container {
@@ -40,7 +40,7 @@ footer {
 			}
 		}
 		.contacts {
-		    color: white;
+		    color: $white;
 		    width: 100%;
 		    text-align: center;
 		    margin-top: 40px;
@@ -56,7 +56,7 @@ footer {
 			span {
 				a {
 					text-decoration: none;
-					color: white;
+					color: $white;
 				}
 				&:last-child {
 					margin-bottom: 0;
@@ -67,7 +67,7 @@ footer {
 		    }
 		}
 		.copyright {
-		    color: white;
+		    color: $white;
 		    width: 100%;
 		    text-align: center;
 		    margin-top: 40px;
@@ -85,7 +85,7 @@ footer {
 			bottom: 15px;
 			margin: auto;
 			a {
-				color: white;
+				color: $white;
 				font-size: 16px;
 			}
 		}

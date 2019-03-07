@@ -32,25 +32,25 @@
 			font-size: 22px;
 			font-family: CircularBook;
 		    padding: 5px 3px;
-		    border-bottom: 4px solid black!important;
+		    border-bottom: 4px solid $black!important;
 		    background-color: transparent;
 			&::selection {
-				background: white;
+				background: $white;
 			}
 			&::-moz-selection {
-				background: white;
+				background: $white;
 			}
 			&::-webkit-input-placeholder {
-				color: black;
+				color: $black;
 			}
 			&::-moz-placeholder {
-				color: black;
+				color: $black;
 			}
 			&:-ms-input-placeholder {
-				color: black;
+				color: $black;
 			}
 			&:-moz-placeholder {
-				color: black;
+				color: $black;
 			}
 		}
 	}
@@ -75,7 +75,7 @@
 					img {
 						width: 100%;
 						opacity: 0;
-					}					
+					}
 				}
 			}
 			.list-title {
@@ -91,25 +91,25 @@
 				@media screen and (max-width: 899px) {
 					font-size: 24px;
 				}
-				@media screen and (max-width: 767px) {
+				@media screen and (max-width: $medium-end) {
 					font-size: 18px;
 				}
-				@media screen and (max-width: 479px) {
+				@media screen and (max-width: $small-end) {
 					font-size: 16px;
 					padding-left: 15px;
 				}
 				a {
 					text-decoration: none;
 					&:hover {
-						color: black;
+						color: $black;
 						text-decoration: none;
-						border-bottom: 3px solid black;
+						border-bottom: 3px solid $black;
 					}
-					@media screen and (max-width: 767px) {
+					@media screen and (max-width: $medium-end) {
 						&:hover {
-							color: black;
+							color: $black;
 							text-decoration: none;
-							border-bottom: 2px solid black;
+							border-bottom: 2px solid $black;
 						}
 					}
 				}
@@ -128,14 +128,14 @@
 				display: inline-block;
 				padding: 0 10px;
 				margin: 0 3px;
-				@media screen and (max-width: 767px) {
+				@media screen and (max-width: $medium-end) {
 					margin: 0 1px;
 					font-size: 16px;
 					padding: 0 8px;
 				}
    				&.current {
-					background-color: black;
-					color: white;
+					background-color: $black;
+					color: $white;
 				}
 			}
 			.dots {

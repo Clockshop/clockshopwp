@@ -1,3 +1,15 @@
+$black: #000;
+$white: #fff;
+$gray: #999;
+$lightgray: #b3b3b3;
+
+$small-end: 479px;
+$medium-start: 480px;
+$medium-end: 767px;
+$large-start: 768px;
+$large-end: 1023px;
+$x-large-start: 1024px;
+
 body {
 	position: relative;
 	min-width: 320px;
@@ -19,13 +31,13 @@ p {
 }
 
 a {
-	color: #000;
+	color: $black;
 	font-weight: inherit;
 	text-decoration: none;
 	text-decoration: underline;
 	&:hover {
 		cursor: pointer;
-		color: black;
+		color: $black;
 	}
 }
 
@@ -74,7 +86,7 @@ h3 {
 	font-family: CircularBook;
 	font-weight: bold;
 	margin: 35px 0 25px 0;
-	@media screen and (max-width: 767px) {
+	@media screen and (max-width: $medium-end) {
 		font-size: 24px;
 		line-height: 32px;
 	}
@@ -110,14 +122,14 @@ button, .button {
     font-size: 18px;
     letter-spacing: .08em;
     padding: 13px 25px 12px;
-    border: 4px solid black;
+    border: 4px solid $black;
     line-height: 1;
     border-radius: 0;
     text-transform: uppercase;
     text-decoration: none;
 	&:hover {
-		background-color: black;
-		color: white;
+		background-color: $black;
+		color: $white;
 	}
 }
 
@@ -140,11 +152,11 @@ button, .button {
 	margin: 0 auto;
     box-sizing: border-box;
 	position: relative;
-	@media screen and (max-width: 767px) {
+	@media screen and (max-width: $medium-end) {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
-	@media screen and (max-width: 479px) {
+	@media screen and (max-width: $small-end) {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
@@ -192,11 +204,11 @@ main {
 		right: 0;
 		top: 0;
 		bottom: 0;
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: $medium-end) {
 			width: 75px;
 			height: 75px;
 		}
-		@media screen and (max-width: 479px) {
+		@media screen and (max-width: $small-end) {
 			width: 50px;
 			height: 50px;
 		}
@@ -250,7 +262,7 @@ main {
 		padding: 0 10px;
 		box-sizing: border-box;
 		vertical-align: top;
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: $medium-end) {
 			width: 100%;
 			// margin-bottom: 75px;
 			margin-bottom: 50px;
@@ -314,7 +326,7 @@ main {
 					margin-top: 20px;
 				}
 				a {
-					border-bottom: 4px solid black;
+					border-bottom: 4px solid $black;
 					padding-bottom: 3px;
 					display: inline-block;
 					text-decoration: none;
@@ -325,9 +337,9 @@ main {
 	}
 	.grid-bottom {
 	    padding-top: 80px;
-	    border-bottom: 4px solid black;
+	    border-bottom: 4px solid $black;
 	    margin: 0 10px;
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: $medium-end) {
 			padding-top: 0;
 		}
 	}
@@ -336,7 +348,7 @@ main {
 .collapsable-sections {
 	margin-bottom: 80px;
 	section {
-		border: 4px solid black;
+		border: 4px solid $black;
 		margin-bottom: 20px;
 		padding: 8px 40px 8px 15px;
 		position: relative;
@@ -347,7 +359,7 @@ main {
 			line-height: 26px;
 			font-family: CircularBook;
 			font-weight: bold;
-			@media screen and (max-width: 767px) {
+			@media screen and (max-width: $medium-end) {
 				font-size: 21px;
 			}
 		}
@@ -409,25 +421,25 @@ main {
 			font-size: 22px;
 			font-family: CircularBook;
 		    padding: 5px 3px;
-		    border-bottom: 4px solid black!important;
+		    border-bottom: 4px solid $black!important;
 		    background-color: transparent;
 			&::selection {
-				background: white;
+				background: $white;
 			}
 			&::-moz-selection {
-				background: white;
+				background: $white;
 			}
 			&::-webkit-input-placeholder {
-				color: black;
+				color: $black;
 			}
 			&::-moz-placeholder {
-				color: black;
+				color: $black;
 			}
 			&:-ms-input-placeholder {
-				color: black;
+				color: $black;
 			}
 			&:-moz-placeholder {
-				color: black;
+				color: $black;
 			}
 		}
 	}
@@ -452,7 +464,7 @@ main {
 								border-top: none;
 								border-left: none;
 								border-right: none;
-								border-bottom: 4px solid black;
+								border-bottom: 4px solid $black;
 								width: 100%;
 								max-width: 500px;
 								text-align: center;
@@ -462,16 +474,16 @@ main {
 								font-size: 18px;
 								line-height: 1;
 								&::-webkit-input-placeholder {
-								  color: #b3b3b3;
+								  color: $lightgray;
 								}
 								&::-moz-placeholder {
-								  color: #b3b3b3;
+								  color: $lightgray;
 								}
 								&:-ms-input-placeholder {
-								  color: #b3b3b3;
+								  color: $lightgray;
 								}
 								&:-moz-placeholder {
-								  color: #b3b3b3;
+								  color: $lightgray;
 								}
 							}
 						}
@@ -489,7 +501,7 @@ main {
 					letter-spacing: .08em;
 					padding: 13px 25px 12px;
 					margin-top: 35px;
-					border: 4px solid black;
+					border: 4px solid $black;
 					width: auto;
 					line-height: 1;
 					border-radius: 0;
@@ -545,7 +557,7 @@ main {
 		@media screen and (max-width: 999px) {
 			width: 30%;
 		}
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: $medium-end) {
 			width: 100%;
 		}
 	}
@@ -556,7 +568,7 @@ main {
 		@media screen and (max-width: 999px) {
 			width: 70%;
 		}
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: $medium-end) {
 			width: 100%;
 		}
 	}
@@ -586,11 +598,11 @@ main {
 
 .heading-sc {
     padding-top: 12px;
-    border-top: 4px solid black;
+    border-top: 4px solid $black;
 	margin-bottom: 25px;
 }
 
 hr {
-	border-top: 4px solid black;
+	border-top: 4px solid $black;
 	margin: 30px 0;
 }
