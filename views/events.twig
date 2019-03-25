@@ -6,7 +6,7 @@
 
 	{% if eventsNow %}
 		<div class="content">
-			<h1>Upcoming Events</h1>	
+			<h1>Upcoming Events</h1>
 		</div>
 		<section class="events-slider events-this-month content">
 			{% for event in eventsNow %}
@@ -20,8 +20,8 @@
 						</div>
 						<div class="event-content">
 							{% if eventsNow|length > 1 %}
-								<a class="prev"><img class="left-arrow" src="{{ TimberImage(theme.link ~ '/assets/images/arrow_black.png') }}"></a>
-								<a class="next"><img class="right-arrow" src="{{ TimberImage(theme.link ~ '/assets/images/arrow_black.png') }}" /></a>
+								<a class="prev"><img class="left-arrow" src="{{ TimberImage(theme.link ~ '/assets/dist/images/arrow_black.png') }}"></a>
+								<a class="next"><img class="right-arrow" src="{{ TimberImage(theme.link ~ '/assets/dist/images/arrow_black.png') }}" /></a>
 							{% endif %}
 							<h2><a href="{{ event.link }}">{{ event.title }}</a></h2>
 							<h3>{{ function('spellerberg_sp_date', event, 'noyear') }}</h3>
@@ -95,7 +95,7 @@
 			{% for event in pastEvents %}
 				{% set lastYear = year|default('0') %}
 				{% set year = event._EventStartDate|date('Y') %}
-				
+
 				{% if loop.index == 1 %}
 					<section>
 						<p class="section-title">{{ year }}</p>
@@ -115,7 +115,7 @@
 				{% if lastMonth != month %}
 							<p class="event-month"><span>{{ month }}</span></p>
 				{% endif %}
-	
+
 							<div class="event-info">
 								<p class="event-title">
 									<a href="{{ event.link }}">
