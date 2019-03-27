@@ -1,6 +1,6 @@
 {% extends "base.twig" %}
 
-{% block content %}	
+{% block content %}
 
 	<div class="project-single">
 
@@ -34,7 +34,7 @@
 								{{item.name}}
 							</option>
 						{% endfor %}
-						
+
 					</select>
 				</form>
 
@@ -56,9 +56,9 @@
 					<div class="artist-list">
 						<div class="grid featured-grid project-list-grid">
 							<div class="project-grid-row">
-								
+
 								{% for child in post.children('project') %}
-									
+
 									<div class="grid-3">
 										{% if child.thumbnail %}
 											<div class="imagecell">
@@ -78,7 +78,7 @@
 									</div>
 
 									{% if loop.index % 3 == 0 and loop.index != loop.last %}
-										
+
 										</div><div class="project-grid-row">
 
 									{% endif %}
@@ -92,15 +92,15 @@
 				{% elseif item.acf_fc_layout == 'project_image_slider' %}
 
 					<div class="project-slider" style="{% if not item.image_slider_bottom_separator %}border-bottom: none;{% endif %}">
-						
+
 						{% for slide in item.project_image_slider %}
-						
+
 							<div class="project-slide">
 								<div class="slide-image">
 									{# Uncomment to add safeguard for very vertical images #}
 									{#
 									{% if slide.sizes['large-height'] > slide.sizes['large-width'] %}
-										<img src="{{TimberImage(slide.sizes.project_slider)|letterbox(1900, 1267)}}" />										
+										<img src="{{TimberImage(slide.sizes.project_slider)|letterbox(1900, 1267)}}" />
 									{% else %}
 									#}
 										<img src="{{TimberImage(slide.sizes.project_slider)}}" />
@@ -110,26 +110,26 @@
 								</div>
 
 								{% if slide.caption %}
-						
+
 									<div class="caption caption-left">
 										{{slide.caption}}
-						
+
 									</div>
-						
+
 								{% endif %}
-						
+
 								{% if slide.description %}
-						
+
 									<div class="caption caption-right">
 										{{slide.description}}
 									</div>
-						
+
 								{% endif %}
-						
+
 							</div>
-						
+
 						{% endfor %}
-					
+
 					</div>
 
 				{% elseif item.acf_fc_layout == 'project_title_and_subtitle' %}
@@ -143,15 +143,15 @@
 								{% if post.id == child.id %}
 
 									{% if loop.last %}
-										<a class="aa-nav aa-next" href="{{ post.parent.children('project').0.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+										<a class="aa-nav aa-next" href="{{ post.parent.children('project').0.link }}"><img src="{{theme.link}}/assets/dist/images/arrow-slider.png" /></a>
 									{% else %}
-										<a class="aa-nav aa-next" href="{{ post.parent.children('project')[loop.index0 + 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+										<a class="aa-nav aa-next" href="{{ post.parent.children('project')[loop.index0 + 1].link }}"><img src="{{theme.link}}/assets/dist/images/arrow-slider.png" /></a>
 									{% endif %}
 
 									{% if loop.first %}
-										<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.length - 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+										<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.length - 1].link }}"><img src="{{theme.link}}/assets/dist/images/arrow-slider.png" /></a>
 									{% else %}
-										<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.index0 - 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
+										<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.index0 - 1].link }}"><img src="{{theme.link}}/assets/dist/images/arrow-slider.png" /></a>
 									{% endif %}
 
 								{% endif %}
@@ -201,9 +201,9 @@
 
 					<div class="project-programs-grid grid featured-grid">
 						<div class="project-grid-row">
-	
+
 							{% for child in post.children('project') %}
-						
+
 								<div class="grid-3">
 									{% if child.thumbnail %}
 										<div class="imagecell">
@@ -214,7 +214,7 @@
 								</div>
 
 								{% if loop.index % 3 == 0 and loop.index != loop.last %}
-									
+
 									</div><div class="project-grid-row">
 
 								{% endif %}
@@ -309,7 +309,7 @@
 											<a href="{{event.link}}"><img src="{{ TimberImage(event.thumbnail)|resize(1434, 956) }}" /></a>
 										</div>
 									{% endif %}
-									<div class="descriptioncell">								
+									<div class="descriptioncell">
 										<h2><a href="{{event.link}}">{{event.post_title}}</a></h2>
 										<p class="content-type">{{ function('spellerberg_sp_date', event) }}</p>
 										<p class="add-descriptor">{{ function('get_term', event.event_venue).name }}</p>
@@ -340,7 +340,7 @@
 								{% for event in pastEvents %}
 									{% set lastYear = year|default('0') %}
 									{% set year = event._EventStartDate|date('Y') %}
-									
+
 									{% if loop.index == 1 %}
 										<section>
 											<p class="section-title">{{ year }}</p>
@@ -361,7 +361,7 @@
 									{% if lastMonth != month %}
 												<p class="event-month"><span>{{ month }}</span></p>
 									{% endif %}
-						
+
 												<div class="event-info">
 													<p class="event-title">
 														<a href="{{ event.link }}">
@@ -394,13 +394,13 @@
 
 							{% for media in media_embeds %}
 
-								<div class="media-item" style="{% if loop.last and not item.media_bottom_separator %}border-bottom: none;{% endif %}">		
+								<div class="media-item" style="{% if loop.last and not item.media_bottom_separator %}border-bottom: none;{% endif %}">
 									<div class="media-content">
 										<h2>{{media.0}}</h2>
 										<p>{{media.1}}</p>
 									</div>
 									<div class="media-embed">
-										
+
 										{% if media.2%}
 											<div class="media-video-embed" style="background: url('{{theme.link}}/assets/images/loading.gif') center center no-repeat;">
 												<div class="video-container">
@@ -451,7 +451,7 @@
 							{% for podcast in podcast_episodes %}
 
 								<div class="media-item podcast-item" style="{% if loop.last and not item.podcast_bottom_separator %}border-bottom: none;{% endif %}">
-									
+
 									<div class="media-content podcast-content">
 										<p class="pod-ep">{{podcast.0}}</p>
 										<h2 class="pod-title">{{podcast.1}}</h2>
@@ -459,7 +459,7 @@
 										<p class="pod-length">{{podcast.3}}</p>
 										<p class="pod-description">{{podcast.4}}</p>
 									</div>
-									
+
 									<div class="media-embed podcast-embed">
 										<div class="media-audio-embed" style="background: url('{{theme.link}}/assets/images/loading.gif') center center no-repeat;">
 											{{podcast.5}}
@@ -503,11 +503,11 @@
 
 					<div class="all-events artist-list">
 						<div class="grid featured-grid project-list-grid">
-	
+
 							{% if item.all_events_section_title %}<h4>{{ item.all_events_section_title }}</h4>{% endif %}
 
 							<div class="project-grid-row">
-								
+
 								{% if item.events_to_display == 'upcoming' %}
 									{% set allEvents = events %}
 								{% elseif item.events_to_display == 'past' %}
@@ -517,7 +517,7 @@
 								{% endif %}
 
 								{% for event in allEvents %}
-	
+
 									<div class="grid-3">
 										{% if event.thumbnail.sizes|length > 0 %}
 											<div class="imagecell">
@@ -529,7 +529,7 @@
 									</div>
 
 									{% if loop.index % 3 == 0 and loop.index != loop.last %}
-										
+
 										</div><div class="project-grid-row">
 
 									{% endif %}
@@ -539,9 +539,9 @@
 							</div>
 						</div>
 					</div>
-	
+
 				{% endif %}
-	
+
 			{% endfor %}
 
 		</main>
