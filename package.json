@@ -53,7 +53,7 @@
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "detect-it": "^3.0.5",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "parsleyjs": "^2.8.1",
     "popper.js": "^1.14.6"
   }
