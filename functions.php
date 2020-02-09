@@ -27,6 +27,6 @@ function enable_wpautop(){
 add_action( 'after_setup_theme', 'enable_wpautop' );
 
 // Set LA as default timezone
-//date_default_timezone_set('America/Los_Angeles');
+date_default_timezone_set('America/Los_Angeles');
 
 ?>

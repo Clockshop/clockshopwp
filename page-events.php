@@ -9,6 +9,21 @@ $context['post'] = $post;
 $today = date("Y-m-d H:i:s");
 $oneMonth = date('Y-m-d H:i:s', strtotime("next month"));
 
+// echo '<br>';
+// echo '<br>';
+// echo '<br>';
+// echo '<br>';
+// echo '<br>';
+// print_r('now: ' . $today);
+// echo '<br>';
+// echo '9053: ' . get_field('_EventEndDate', 9053);
+// echo '<br>';
+// echo '8154: ' . get_field('_EventEndDate', 8154);
+// echo '<br>';
+// var_dump(get_field('_EventEndDate', 9053) >= $today);
+// echo '<br>';
+// var_dump(get_field('_EventEndDate', 8154) >= $today);
+
 $context['today'] = $today;
 $context['oneMonth'] = $oneMonth;
 
@@ -16,7 +31,7 @@ $args = array(
 	'posts_per_page'   => -1,
     'order' => 'ASC',
     'orderby' => 'meta_value',
-    'meta_key' => '_EventStartDate',
+    'meta_key' => '_EventEndDate',
     'post_type' => 'events',
 	'post_status' => 'publish',
     'meta_query' => array(
