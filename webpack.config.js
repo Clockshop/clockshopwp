@@ -14,12 +14,16 @@ module.exports = {
     extensions: [".js", ".scss"]
   },
   devServer: {
-    disableHostCheck: true
+    disableHostCheck: true,
+    hot: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    }
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: devMode ? 'styles.css' : 'styles.[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      filename: 'styles.css',
+      chunkFilename: '[id].css'
     }),
   ],
   module: {

@@ -186,10 +186,26 @@
 // }
 
 .upcoming-events {
-	> div {
-		text-align: left;
+	padding-bottom: 20px;
+	&:after {
+		content: '';
+		position: absolute;
 		border-bottom: 4px solid $black;
-		> div {
+		bottom: 0;
+		width: calc(100% - 50px);
+		left: 25px;
+		@media screen and (max-width: 767px) {
+			width: calc(100% - 40px);
+			left: 20px;
+		}
+		@media screen and (max-width: 479px) {
+			width: calc(100% - 30px);
+			left: 15px;
+		}
+	}
+	.grid {
+		text-align: left;
+		.grid-3 {
 			margin-bottom: 60px;
 		}
 		// h4 {
