@@ -143,15 +143,15 @@
 								{% if post.id == child.id %}
 
 									{% if loop.last %}
-										<a class="aa-nav aa-next" href="{{ post.parent.children('project').0.link }}"><img src="{{theme.link}}/assets/dist/images/arrow-slider.png" /></a>
+										<a class="aa-nav aa-next" href="{{ post.parent.children('project').0.link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
 									{% else %}
-										<a class="aa-nav aa-next" href="{{ post.parent.children('project')[loop.index0 + 1].link }}"><img src="{{theme.link}}/assets/dist/images/arrow-slider.png" /></a>
+										<a class="aa-nav aa-next" href="{{ post.parent.children('project')[loop.index0 + 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
 									{% endif %}
 
 									{% if loop.first %}
-										<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.length - 1].link }}"><img src="{{theme.link}}/assets/dist/images/arrow-slider.png" /></a>
+										<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.length - 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
 									{% else %}
-										<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.index0 - 1].link }}"><img src="{{theme.link}}/assets/dist/images/arrow-slider.png" /></a>
+										<a class="aa-nav aa-prev" href="{{ post.parent.children('project')[loop.index0 - 1].link }}"><img src="{{theme.link}}/assets/images/arrow-slider.png" /></a>
 									{% endif %}
 
 								{% endif %}

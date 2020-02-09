@@ -192,7 +192,7 @@ main {
 	cursor: pointer;
 	&:before {
 		content: '';
-		background-image: url('../../dist/images/play.png');
+		background-image: url('../../assets/images/play.png');
 		background-size: cover;
 		width: 100px;
 		height: 100px;
@@ -578,7 +578,7 @@ main {
 	.logotype {
 		width: 69px;
 		height: 180px;
-		background : url("../../dist/images/logotype.svg") no-repeat 0 0;
+		background : url("../../assets/images/logotype.svg") no-repeat 0 0;
 		position: fixed;
 		top: 150px;
 		right: 6px;
@@ -588,7 +588,7 @@ main {
 		display: block;
 		width: 69px;
 		height: 180px;
-		background : url("../../dist/images/logo.svg") no-repeat 0 0;
+		background : url("../../assets/images/logo.svg") no-repeat 0 0;
 		position: fixed;
 		top: 150px;
 		left: 0;

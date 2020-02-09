@@ -1,5 +1,7 @@
 <?php
 
+/* Template Name: Events */ 
+
 $context = $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
@@ -24,33 +26,33 @@ $args = array(
             'value' => $today,
             'compare' => '>='
         ),
-        array(
-            'key' => '_EventStartDate',
-            'value' => $oneMonth,
-            'compare' => '<'
-        )
+        // array(
+        //     'key' => '_EventStartDate',
+        //     'value' => $oneMonth,
+        //     'compare' => '<'
+        // )
     ),
 );
-$eventsNow = Timber::get_posts( $args );
-$context['eventsNow'] = $eventsNow;
+$events = Timber::get_posts( $args );
+$context['events'] = $events;
 
-$args = array(
-	'posts_per_page'   => -1,
-    'order' => 'ASC',
-    'orderby' => 'meta_value',
-    'meta_key' => '_EventStartDate',
-    'post_type' => 'events',
-	'post_status' => 'publish',
-    'meta_query' => array(
-        array(
-            'key' => '_EventStartDate',
-            'value' => $oneMonth,
-            'compare' => '>='
-        )
-    ),
-);
-$upcomingEvents = Timber::get_posts( $args );
-$context['upcomingEvents'] = $upcomingEvents;
+// $args = array(
+// 	'posts_per_page'   => -1,
+//     'order' => 'ASC',
+//     'orderby' => 'meta_value',
+//     'meta_key' => '_EventStartDate',
+//     'post_type' => 'events',
+// 	'post_status' => 'publish',
+//     'meta_query' => array(
+//         array(
+//             'key' => '_EventStartDate',
+//             'value' => $oneMonth,
+//             'compare' => '>='
+//         )
+//     ),
+// );
+// $upcomingEvents = Timber::get_posts( $args );
+// $context['upcomingEvents'] = $upcomingEvents;
 
 $args = array(
 	'posts_per_page'   => -1,

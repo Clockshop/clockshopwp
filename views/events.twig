@@ -4,45 +4,70 @@
 
 <div class="events">
 
-	{% if eventsNow %}
+	{% if events %}
 		<div class="content">
-			<h1>Upcoming Events</h1>
+			<h1>{{ post.upcoming_events_title|default('Upcoming Events') }}</h1>
 		</div>
-		<section class="events-slider events-this-month content">
-			{% for event in eventsNow %}
-				<div class="slide-cell">
-					<div class="slide">
-						{# <pre style="font-size: 12px; text-align: left;">{{dump(event)}}</pre> #}
-						<div class="event-image">
-							<a href="{{ event.link }}">
-								<img src="{{ TimberImage(event.thumbnail)|resize(1434, 956) }}" />
-							</a>
-						</div>
-						<div class="event-content">
-							{% if eventsNow|length > 1 %}
-								<a class="prev"><img class="left-arrow" src="{{ TimberImage(theme.link ~ '/assets/dist/images/arrow_black.png') }}"></a>
-								<a class="next"><img class="right-arrow" src="{{ TimberImage(theme.link ~ '/assets/dist/images/arrow_black.png') }}" /></a>
-							{% endif %}
+		<section class="content upcoming-events">
+			<div class="grid featured-grid">
+				{% for event in events %}
+					<div class="grid-3">
+						{% if event.thumbnail %}
+							<div class="imagecell">
+								<a href="{{ event.link }}"><img src="{{ TimberImage(event.thumbnail)|resize(1434, 956) }}" /></a>
+							</div>
+						{% endif %}
+						<div class="descriptioncell">
 							<h2><a href="{{ event.link }}">{{ event.title }}</a></h2>
-							<h3>{{ function('spellerberg_sp_date', event, 'noyear') }}</h3>
+							<p class="content-type">{{ function('spellerberg_sp_date', event, 'noyear') }}</p>
 
 							{% if event.terms('projects') %}
-								<h5>{{ event.terms('projects')[0].name }}</h5>
+								<p class="add-descriptor">{{ event.terms('projects')[0].name }}</p>
 							{% endif %}
 
-							{% if event._EventCost %}
-								<h5 class="cost">{{ event._EventCost }}</h5>
-							{% endif %}
 							{% if event.post_excerpt %}
-								<p class="excerpt">{{ event.post_excerpt }}</p>
+								<p class="description">{{ event.post_excerpt }}</p>
 							{% else %}
-								<p class="excerpt">{{ event.preview.length(15).force.read_more(false).strip  }}</p>
+								<p class="description">{{ event.preview.length(20).force.read_more(false).strip }}</p>
 							{% endif %}
+
 							<p class="calltoaction"><a target="{{ event.event_list_cta_text_and_link.target}}" href="{{ event.event_list_cta_text_and_link.url|default(event.link) }}">{{ event.event_list_cta_text_and_link.title|default(event.event_list_cta_text)|default('RSVP')}}</a></p>
 						</div>
 					</div>
-				</div>
-			{% endfor %}
+
+					{# <div class="slide-cell">
+						<div class="slide">
+							<div class="event-image">
+								<a href="{{ event.link }}">
+									<img src="{{ TimberImage(event.thumbnail)|resize(1434, 956) }}" />
+								</a>
+							</div>
+							<div class="event-content">
+								{% if eventsNow|length > 1 %}
+									<a class="prev"><img class="left-arrow" src="{{ TimberImage(theme.link ~ '/assets/images/arrow_black.png') }}"></a>
+									<a class="next"><img class="right-arrow" src="{{ TimberImage(theme.link ~ '/assets/images/arrow_black.png') }}" /></a>
+								{% endif %}
+								<h2><a href="{{ event.link }}">{{ event.title }}</a></h2>
+								<h3>{{ function('spellerberg_sp_date', event, 'noyear') }}</h3>
+
+								{% if event.terms('projects') %}
+									<h5>{{ event.terms('projects')[0].name }}</h5>
+								{% endif %}
+
+								{% if event._EventCost %}
+									<h5 class="cost">{{ event._EventCost }}</h5>
+								{% endif %}
+								{% if event.post_excerpt %}
+									<p class="excerpt">{{ event.post_excerpt }}</p>
+								{% else %}
+									<p class="excerpt">{{ event.preview.length(15).force.read_more(false).strip  }}</p>
+								{% endif %}
+								<p class="calltoaction"><a target="{{ event.event_list_cta_text_and_link.target}}" href="{{ event.event_list_cta_text_and_link.url|default(event.link) }}">{{ event.event_list_cta_text_and_link.title|default(event.event_list_cta_text)|default('RSVP')}}</a></p>
+							</div>
+						</div>
+					</div> #}
+				{% endfor %}
+			</div>
 		</section>
 	{% else %}
 		<div class="no-events content">
@@ -53,7 +78,7 @@
 		</div>
 	{% endif %}
 
-	{% if upcomingEvents %}
+	{# {% if upcomingEvents %}
 		<section class="content upcoming-events">
 			<div>
 				<h4>Further Out</h4>
@@ -87,7 +112,7 @@
 				</div>
 			</div>
 		</section>
-	{% endif %}
+	{% endif %} #}
 
 	<section class="content past-events">
 		<h4>Past Events</h4>

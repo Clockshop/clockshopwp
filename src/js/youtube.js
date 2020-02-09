@@ -27,3 +27,6 @@ function onPlayerReady() {
 		}
 	}
 }
+
+window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+window.onPlayerReady = onPlayerReady;

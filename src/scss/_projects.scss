@@ -145,13 +145,13 @@
 				-webkit-appearance: none;
 				-moz-appearance: none;
 				appearance: none;
-				background-image: url('../../dist/images/arrow-down.png');
+				background-image: url('../../assets/images/arrow-down.png');
 				background-repeat: no-repeat;
 				background-size: 24px;
 				background-position: right 10px top;
 			}
 			select + span {
-				background-image: url('../../dist/images/arrow-down.png');
+				background-image: url('../../assets/images/arrow-down.png');
 				background-repeat: no-repeat;
 				background-size: 24px;
 				background-position: right 10px top;
@@ -288,7 +288,7 @@
 					    display: block;
 					    background-size: contain;
 					    background-repeat: no-repeat;
-					    background-image: url('../../dist/images/arrow-slider.png');
+					    background-image: url('../../assets/images/arrow-slider.png');
 				    }
 			    }
 			    &.slick-next {
@@ -300,7 +300,7 @@
 					    display: block;
 					    background-size: contain;
 					    background-repeat: no-repeat;
-					    background-image: url('../../dist/images/arrow-slider.png');
+					    background-image: url('../../assets/images/arrow-slider.png');
 						-moz-transform: scale(-1, 1);
 						-webkit-transform: scale(-1, 1);
 						-o-transform: scale(-1, 1);

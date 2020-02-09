@@ -24,7 +24,7 @@ function create_events_pt() {
 		//"rewrite" => array( "slug" => "projects/%projects%", "with_front" => true ),
 		'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'revisions', 'page-attributes', 'excerpt' ),
 		'public' => true,
-		'has_archive' => 'events',
+		'has_archive' => false,
 		'show_in_menu' => true,
 		'hierarchical' => true,
 		'menu_icon' => 'dashicons-calendar',
