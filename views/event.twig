@@ -8,7 +8,7 @@
 		<section class="event-header side-section">
 			<div class="side-section-left">
 
-				{% if function('current_time', 'Y-m-d') > post._EventStartDate|date('Y-m-d') %}
+				{% if function('current_time', 'Y-m-d H:i:s') > post._EventEndDate|date('Y-m-d H:i:s') %}
 					<p class="past">PAST EVENT</p>
 				{% endif %}
 

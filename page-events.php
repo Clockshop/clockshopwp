@@ -17,27 +17,15 @@ $oneMonth = date('Y-m-d H:i:s', strtotime("next month"));
 // echo '<br>';
 // echo 'Now (LA time): ' . $now->format('Y-m-d H:i:s');
 // echo '<br>';
-// echo '9053 (start): ' . get_field('_EventStartDate', 9053);
-// echo '<br>';
-// echo '9053 (end): ' . get_field('_EventEndDate', 9053);
-// echo '<br>';
 // echo '8154 (start): ' . get_field('_EventStartDate', 8154);
 // echo '<br>';
 // echo '8154 (end): ' . get_field('_EventEndDate', 8154);
 // echo '<br>';
-// echo '9053 end >= now? ';
-// var_dump(get_field('_EventEndDate', 9053) >= $now->format('Y-m-d H:i:s'));
+// echo '8154 end < now? ';
+// var_dump(get_field('_EventEndDate', 8154) < $now->format('Y-m-d H:i:s'));
 // echo '<br>';
 // echo '8154 end >= now? ';
 // var_dump(get_field('_EventEndDate', 8154) >= $now->format('Y-m-d H:i:s'));
-// echo '<br>';
-// echo '9053 start < now? ';
-// var_dump(get_field('_EventEndDate', 9053) >= $now->format('Y-m-d H:i:s'));
-// echo '<br>';
-// echo '8154 end < now? ';
-// var_dump(get_field('_EventEndDate', 8154) >= $now->format('Y-m-d H:i:s'));
-
-//$context['oneMonth'] = $oneMonth;
 
 $args = array(
 	'posts_per_page'   => -1,
