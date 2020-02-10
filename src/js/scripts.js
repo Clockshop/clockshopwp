@@ -7,12 +7,12 @@
 				$('.topnav .search div').addClass('closed');
 				$('.topnav .searchform').hide();
 				$('.menu-container').css('opacity', '1');
-				$('.topnav .searchform input').focus();
 			} else {
 				$('.topnav .search div').removeClass('closed');
 				$('.topnav .search div').addClass('opened');
 				$('.menu-container').css('opacity', '0');
 				$('.topnav .searchform').fadeIn();
+				$('#s').focus();
 			}
 		});
 	}
