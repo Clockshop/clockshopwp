@@ -6,26 +6,39 @@ $context = $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
-$today = date("Y-m-d H:i:s");
+$timestamp = time();
+$now = new DateTime("now", new DateTimeZone('America/Los_Angeles')); //first argument "must" be a string
+$now->setTimestamp($timestamp); //adjust the object to correct timestamp
 $oneMonth = date('Y-m-d H:i:s', strtotime("next month"));
 
 // echo '<br>';
 // echo '<br>';
 // echo '<br>';
 // echo '<br>';
+// echo 'Now (LA time): ' . $now->format('Y-m-d H:i:s');
 // echo '<br>';
-// print_r('now: ' . $today);
+// echo '9053 (start): ' . get_field('_EventStartDate', 9053);
 // echo '<br>';
-// echo '9053: ' . get_field('_EventEndDate', 9053);
+// echo '9053 (end): ' . get_field('_EventEndDate', 9053);
 // echo '<br>';
-// echo '8154: ' . get_field('_EventEndDate', 8154);
+// echo '8154 (start): ' . get_field('_EventStartDate', 8154);
 // echo '<br>';
-// var_dump(get_field('_EventEndDate', 9053) >= $today);
+// echo '8154 (end): ' . get_field('_EventEndDate', 8154);
 // echo '<br>';
-// var_dump(get_field('_EventEndDate', 8154) >= $today);
+// echo '9053 end >= now? ';
+// var_dump(get_field('_EventEndDate', 9053) >= $now->format('Y-m-d H:i:s'));
+// echo '<br>';
+// echo '8154 end >= now? ';
+// var_dump(get_field('_EventEndDate', 8154) >= $now->format('Y-m-d H:i:s'));
+// echo '<br>';
+// echo '9053 start < now? ';
+// var_dump(get_field('_EventEndDate', 9053) >= $now->format('Y-m-d H:i:s'));
+// echo '<br>';
+// echo '8154 end < now? ';
+// var_dump(get_field('_EventEndDate', 8154) >= $now->format('Y-m-d H:i:s'));
 
-$context['today'] = $today;
-$context['oneMonth'] = $oneMonth;
+$context['today'] = $now->format('Y-m-d H:i:s');
+//$context['oneMonth'] = $oneMonth;
 
 $args = array(
 	'posts_per_page'   => -1,
@@ -38,7 +51,7 @@ $args = array(
 		'relation' => 'AND',
         array(
             'key' => '_EventEndDate',
-            'value' => $today,
+            'value' => $now->format('Y-m-d H:i:s'),
             'compare' => '>='
         ),
         // array(
@@ -78,8 +91,8 @@ $args = array(
 	'post_status' => 'publish',
     'meta_query' => array(
         array(
-            'key' => '_EventStartDate',
-            'value' => $today,
+            'key' => '_EventEndDate',
+            'value' => $now->format('Y-m-d H:i:s'),
             'compare' => '<'
         )
     ),
