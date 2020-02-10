@@ -37,7 +37,6 @@ $oneMonth = date('Y-m-d H:i:s', strtotime("next month"));
 // echo '8154 end < now? ';
 // var_dump(get_field('_EventEndDate', 8154) >= $now->format('Y-m-d H:i:s'));
 
-$context['today'] = $now->format('Y-m-d H:i:s');
 //$context['oneMonth'] = $oneMonth;
 
 $args = array(
