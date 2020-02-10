@@ -4,11 +4,10 @@
 
 <div class="events">
 
-	<div class="content">
-		<h1>{{ post.upcoming_events_title|default('Upcoming Events') }}</h1>
-	</div>
-
 	{% if events %}
+		<div class="content">
+			<h1>{{ post.upcoming_events_title|default('Upcoming Events') }}</h1>
+		</div>
 		<section class="content upcoming-events">
 			<div class="grid featured-grid">
 				{% for event in events %}
@@ -73,7 +72,7 @@
 	{% else %}
 		<div class="no-events content">
 			<div class="newsform">
-				<h1>Nothing this month! Subscribe and stay tuned.</h1>
+				<h1>{{ post.no_events_message|default('There are no upcoming events! Subscribe and stay tuned.') }}</h1>
 				{{signup_form}}
 			</div>
 		</div>
